@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="705.88" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>C 语言知识骨架与学习路线</title>
+  <desc>001-C语言 板块全貌图：编译主链、语言核心与内存指针两块、三册学习路线（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="400" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a0Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">C 语言 · 知识骨架与学习路线</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：本库建库批 · 口径 C17 · 2026-11-14</text>
+
+  <!-- 顶：编译主链 -->
+  <rect x="18" y="44" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="58" font-size="9" fill="#4A4945">编译主链 —— 源码到程序（001 §1.2 四阶段）</text>
+  <rect x="19" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="61" y="76" font-size="9" fill="#1F4468" text-anchor="middle">源码</text>
+  <text x="61" y="88" font-size="8" fill="#4A4945" text-anchor="middle">hello.c</text>
+  <line x1="104" y1="80" x2="112" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="112" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="154" y="76" font-size="9" fill="#1F4468" text-anchor="middle">预处理</text>
+  <text x="154" y="88" font-size="8" fill="#4A4945" text-anchor="middle">hello.i</text>
+  <line x1="197" y1="80" x2="205" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="205" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="247" y="76" font-size="9" fill="#1F4468" text-anchor="middle">编译</text>
+  <text x="247" y="88" font-size="8" fill="#4A4945" text-anchor="middle">hello.s</text>
+  <line x1="290" y1="80" x2="298" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="298" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="340" y="76" font-size="9" fill="#1F4468" text-anchor="middle">汇编</text>
+  <text x="340" y="88" font-size="8" fill="#4A4945" text-anchor="middle">hello.o</text>
+  <line x1="383" y1="80" x2="391" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="391" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="433" y="76" font-size="9" fill="#1F4468" text-anchor="middle">链接</text>
+  <text x="433" y="88" font-size="8" fill="#4A4945" text-anchor="middle">可执行文件</text>
+  <line x1="476" y1="80" x2="484" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="484" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="526" y="76" font-size="9" fill="#1F4468" text-anchor="middle">加载运行</text>
+  <text x="526" y="88" font-size="8" fill="#4A4945" text-anchor="middle">操作系统装载</text>
+  <line x1="569" y1="80" x2="577" y2="80" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <rect x="577" y="64" width="85" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="619" y="76" font-size="9" fill="#1F4468" text-anchor="middle">输出结果</text>
+  <text x="619" y="88" font-size="8" fill="#4A4945" text-anchor="middle">退出码 0</text>
+
+  <!-- 中：两块语言核心 -->
+  <rect x="18" y="120" width="310" height="112" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="134" font-size="9" fill="#4A4945">语言核心 —— 002 基础语法与控制流</text>
+  <rect x="26" y="142" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="97" y="155" font-size="9" fill="#1F4468" text-anchor="middle">类型 = 宽度 + 解释</text>
+  <text x="97" y="167" font-size="8" fill="#4A4945" text-anchor="middle">int · char · sizeof</text>
+  <rect x="178" y="142" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="249" y="155" font-size="9" fill="#1F4468" text-anchor="middle">运算符与位运算</text>
+  <text x="249" y="167" font-size="8" fill="#4A4945" text-anchor="middle">置位 · 清位 · 移位</text>
+  <rect x="26" y="182" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="97" y="195" font-size="9" fill="#1F4468" text-anchor="middle">分支与循环</text>
+  <text x="97" y="207" font-size="8" fill="#4A4945" text-anchor="middle">if · switch · while(1)</text>
+  <rect x="178" y="182" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="249" y="195" font-size="9" fill="#1F4468" text-anchor="middle">函数与值传递</text>
+  <text x="249" y="207" font-size="8" fill="#4A4945" text-anchor="middle">原型 · 拷贝 · 返回值</text>
+
+  <rect x="352" y="120" width="310" height="112" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="360" y="134" font-size="9" fill="#4A4945">内存与指针 —— 003 指针与内存模型</text>
+  <rect x="360" y="142" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="431" y="155" font-size="9" fill="#1F4468" text-anchor="middle">内存是编址字节</text>
+  <text x="431" y="167" font-size="8" fill="#4A4945" text-anchor="middle">地址 · 取址符</text>
+  <rect x="512" y="142" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="583" y="155" font-size="9" fill="#1F4468" text-anchor="middle">指针与解引用</text>
+  <text x="583" y="167" font-size="8" fill="#4A4945" text-anchor="middle">存地址 · 顺着地址读写</text>
+  <rect x="360" y="182" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="431" y="195" font-size="9" fill="#1F4468" text-anchor="middle">数组字符串与退化</text>
+  <text x="431" y="207" font-size="8" fill="#4A4945" text-anchor="middle">下标即地址运算 · 结尾哨兵</text>
+  <rect x="512" y="182" width="142" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="583" y="195" font-size="9" fill="#1F4468" text-anchor="middle">内存四区与堆栈</text>
+  <text x="583" y="207" font-size="8" fill="#4A4945" text-anchor="middle">malloc/free · 泄漏</text>
+
+  <!-- 底：三册学习路线 -->
+  <circle cx="70" cy="276" r="16" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="70" y="280" font-size="9.5" font-weight="600" fill="#1F4468" text-anchor="middle">001</text>
+  <circle cx="340" cy="276" r="16" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="340" y="280" font-size="9.5" font-weight="600" fill="#1F4468" text-anchor="middle">002</text>
+  <circle cx="610" cy="276" r="16" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="610" y="280" font-size="9.5" font-weight="600" fill="#1F4468" text-anchor="middle">003</text>
+  <line x1="88" y1="276" x2="322" y2="276" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <line x1="358" y1="276" x2="592" y2="276" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
+  <text x="205" y="268" font-size="8" fill="#8C8980" text-anchor="middle">先跑起来</text>
+  <text x="475" y="268" font-size="8" fill="#8C8980" text-anchor="middle">再懂内存</text>
+  <text x="70" y="306" font-size="8.5" fill="#4A4945" text-anchor="middle">环境 · 编译四阶段</text>
+  <text x="340" y="306" font-size="8.5" fill="#4A4945" text-anchor="middle">语法 · 位运算 · 函数</text>
+  <text x="610" y="306" font-size="8.5" fill="#4A4945" text-anchor="middle">指针 · 栈堆 · 内存错误</text>
+
+  <!-- 总结 -->
+  <rect x="18" y="320" width="644" height="40" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="345" font-size="9.5" font-weight="600" fill="#7A4A12">学完本板块你能：独立编译运行 C 程序 · 说清指针与内存错误 · 带着"内存是编址格子"的直觉进入体系结构板块</text>
+  <text x="32" y="378" font-size="8" fill="#8C8980">口径 C17 · 工具链 GCC（MinGW-w64）· 三用法：教材 / 手册 / 术语反查 — 2026-11-14</text>
+</svg>
