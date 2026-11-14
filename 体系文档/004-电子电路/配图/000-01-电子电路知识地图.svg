@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="592.94" viewBox="0 0 680 336" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>电子电路知识地图</title>
+  <desc>004-电子电路 板块全貌图：从电到芯片三层 + 点灯电路与最小系统四件（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="336" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a4Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">电子电路 · 知识地图</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：本库建库批 · 口径 C17/直流低压 · 2026-11-14</text>
+
+  <!-- 左：从电到芯片三层 -->
+  <rect x="18" y="44" width="336" height="184" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="58" font-size="9" fill="#4A4945">从电到芯片 —— 三层地基（001 → 003 → 002）</text>
+  <rect x="26" y="66" width="320" height="44" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="38" y="83" font-size="9" font-weight="600" fill="#1F4468">物理层 —— 电的三要素（001）</text>
+  <text x="38" y="99" font-size="8" fill="#4A4945">电压·电流·电阻 · 欧姆定律 U=IR · 上拉下拉</text>
+  <line x1="186" y1="110" x2="186" y2="118" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="26" y="118" width="320" height="44" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="38" y="135" font-size="9" font-weight="600" fill="#1F4468">元件层 —— 五类常客（003）</text>
+  <text x="38" y="151" font-size="8" fill="#4A4945">R · C · LED · 二极管 · 晶体管 · 去耦 0.1μF</text>
+  <line x1="186" y1="162" x2="186" y2="170" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="26" y="170" width="320" height="44" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="38" y="187" font-size="9" font-weight="600" fill="#1F4468">数字层 —— 0/1 与门（002）</text>
+  <text x="38" y="203" font-size="8" fill="#4A4945">电平区间 · 三门真值表 · 触发器 → 寄存器</text>
+
+  <!-- 右上：点灯电路 -->
+  <rect x="372" y="44" width="290" height="96" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="384" y="60" font-size="9" font-weight="600" fill="#1F4468">点灯电路（003 §3.4）—— 第一行代码的硬件底稿</text>
+  <rect x="384" y="92" width="46" height="20" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="407" y="105" font-size="8.5" fill="#1F4468" text-anchor="middle">GPIO</text>
+  <line x1="430" y1="102" x2="442" y2="102" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="444" y="93" width="56" height="18" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="472" y="105" font-size="8.5" fill="#4A4945" text-anchor="middle">220Ω</text>
+  <line x1="500" y1="102" x2="512" y2="102" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="514" y="93" width="48" height="18" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="538" y="105" font-size="8.5" fill="#7A4A12" text-anchor="middle">LED</text>
+  <line x1="562" y1="102" x2="574" y2="102" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="576" y="93" width="44" height="18" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="598" y="105" font-size="8.5" fill="#4A4945" text-anchor="middle">GND</text>
+  <text x="384" y="128" font-size="8" fill="#4A4945">写 1 = 引脚内部接 3.3V；写 0 = 接 GND（灌电流）</text>
+
+  <!-- 右下：最小系统四件 -->
+  <rect x="372" y="148" width="290" height="92" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
+  <text x="384" y="164" font-size="9" font-weight="600" fill="#46337A">MCU 最小系统四件（003 §3.3）</text>
+  <text x="384" y="182" font-size="8.5" fill="#4A4945">① 供电 3.3V + 每脚一颗 0.1μF 去耦</text>
+  <text x="384" y="198" font-size="8.5" fill="#4A4945">② 复位：RC 上电复位 + 复位按键</text>
+  <text x="384" y="214" font-size="8.5" fill="#4A4945">③ 时钟：晶振 / 内部 RC —— CPU 的心跳</text>
+  <text x="384" y="230" font-size="8.5" fill="#4A4945">④ BOOT：决定从哪启动，配错烧不进</text>
+
+  <!-- 总结 -->
+  <rect x="18" y="252" width="644" height="40" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="277" font-size="9.5" font-weight="600" fill="#7A4A12">学完本板块你能：算出限流电阻 · 解释芯片旁的去耦电容 · 数清最小系统四件 —— 硬件底稿已备好，下一站 005 点灯</text>
+  <text x="32" y="306" font-size="8" fill="#8C8980">口径：直流低压 ≤5V · 元件参数为典型值，以 datasheet 为准 — 2026-11-14</text>
+</svg>

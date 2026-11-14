@@ -31,7 +31,7 @@
   <text x="38" y="262" font-size="8" fill="#4A4945">执行机制与数据放置（002 / 003）</text>
   <rect x="26" y="276" width="320" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="38" y="291" font-size="9" font-weight="600" fill="#1F4468">逻辑门与晶体管</text>
-  <text x="38" y="304" font-size="8" fill="#4A4945">电子电路的世界（规划 004）</text>
+  <text x="38" y="304" font-size="8" fill="#4A4945">电子电路的世界（004 电子电路）</text>
 
   <!-- 右：硬件形态两线 + 三问 -->
   <rect x="372" y="44" width="290" height="104" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
