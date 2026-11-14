@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="875.30" viewBox="0 0 680 496" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>技术学习路线（数据校准版）</title>
-  <desc>基于 Boss直聘 苏锡常 846 份嵌入式 JD 频率实测的三阶段学习路线：底座已完成、春招冲刺、差异化加深、入职补充（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="496" fill="#FFFFFF"/>
+<svg width="1200" height="910.59" viewBox="0 0 680 516" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>技术学习路线（学习顺序版，从零开始）</title>
+  <desc>计算机大四（计科）从零开始的嵌入式学习顺序：语言与电路并行 → 机器 → 系统 → 载体线分叉 → 项目收口；每站带勾选框，JD 频率作数据锚（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="516" fill="#FFFFFF"/>
   <defs>
     <marker id="aRBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">技术学习路线 · 数据校准版（软硬结合方向）</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">数据源：Boss直聘 846 份 JD（苏锡常）· 2026-11</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">技术学习路线 · 学习顺序版（从零开始）</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">频率锚：Boss直聘 846 份 JD（苏锡常）· 2026-11</text>
 
-  <!-- 已完成地基 -->
-  <rect x="18" y="44" width="400" height="34" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="66" font-size="8.5" fill="#1D5A45">已完成地基（知识库 001~004，17 册）：C 语言 · 计算机体系结构 · 操作系统原理 · 电子电路</text>
-  <line x1="218" y1="78" x2="218" y2="92" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 起点 -->
+  <rect x="18" y="44" width="400" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="26" y="60" font-size="9" fill="#1F4468">起点：计算机科学与技术大四 · 运维背景</text>
+  <text x="26" y="76" font-size="8.5" fill="#4A4945">目标：软硬结合嵌入式工程师 · 校招主战场 = 2027 春招</text>
+  <line x1="340" y1="84" x2="340" y2="96" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 阶段一 -->
-  <rect x="18" y="92" width="400" height="160" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="106" font-size="9" font-weight="600" fill="#2B2A27">阶段一 · 春招冲刺（现在 → 2027.3）—— 主战场</text>
-  <rect x="26" y="114" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="127" font-size="9" fill="#1F4468">005 MCU 与外设（STM32F103）★</text>
-  <text x="34" y="141" font-size="8" fill="#4A4945">GPIO → 中断 → 定时器 → UART → I2C/SPI → ADC → DMA</text>
-  <rect x="26" y="152" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="165" font-size="9" fill="#1F4468">PCB 原理图阅读 + 示波器/万用表调试 ★</text>
-  <text x="34" y="179" font-size="8" fill="#4A4945">40% 全榜第一 · 应届生最容易被刷的点</text>
-  <rect x="26" y="190" width="384" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="203" font-size="9" fill="#1F4468">RTOS 最小版 ○ · 驱动分层思维 ★</text>
-  <text x="34" y="216" font-size="8" fill="#4A4945">11% —— 顺手学，别深入</text>
-  <rect x="26" y="224" width="384" height="20" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="34" y="238" font-size="8.5" fill="#7A4A12">产出：2~3 个完整 STM32 项目（面试作品集）</text>
-  <line x1="218" y1="252" x2="218" y2="264" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 第一站 -->
+  <rect x="18" y="96" width="400" height="102" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="110" font-size="9" font-weight="600" fill="#2B2A27">第一站 · 语言与电路（并行）☐</text>
+  <rect x="26" y="118" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="131" font-size="9" fill="#1F4468">001 C 语言 ☐</text>
+  <text x="34" y="146" font-size="8" fill="#4A4945">001 环境/编译 → 002 语法/位运算 → 003 指针 → 004 结构体位域</text>
+  <rect x="26" y="156" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="169" font-size="9" fill="#1F4468">004 电子电路 ☐（与 C 并行）</text>
+  <text x="34" y="184" font-size="8" fill="#4A4945">电压/电阻/欧姆定律 → 逻辑门 → 元器件与最小系统</text>
+  <line x1="340" y1="198" x2="340" y2="210" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 阶段二 -->
-  <rect x="18" y="264" width="400" height="130" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="278" font-size="9" font-weight="600" fill="#2B2A27">阶段二 · 差异化加深（2027 春招后）</text>
-  <rect x="26" y="286" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="299" font-size="9" fill="#1F4468">工控常识 + Modbus 通信 ★</text>
-  <text x="34" y="313" font-size="8" fill="#4A4945">39% 全榜第二 · 三城制造业刚需，多在工业类公司</text>
-  <rect x="26" y="324" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="337" font-size="9" fill="#1F4468">方向选修（按落脚城市的产业链）○</text>
-  <text x="34" y="351" font-size="8" fill="#4A4945">苏州=电机FOC/家电 · 常州=工控装备 · 新能源=BMS/电源</text>
-  <rect x="26" y="362" width="384" height="24" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="378" font-size="8.5" fill="#1F4468">嵌入式 Linux 门票 ○（交叉编译 + 简单字符设备驱动，15%）</text>
-  <line x1="218" y1="394" x2="218" y2="406" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 第二站 -->
+  <rect x="18" y="210" width="400" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="224" font-size="9" font-weight="600" fill="#2B2A27">第二站 · 机器 ☐</text>
+  <rect x="26" y="232" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="245" font-size="9" fill="#1F4468">002 计算机体系结构 ☐</text>
+  <text x="34" y="260" font-size="8" fill="#4A4945">抽象塔 → CPU 与指令集 → 存储层次与缓存</text>
+  <line x1="340" y1="274" x2="340" y2="286" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 阶段三 -->
-  <rect x="18" y="406" width="400" height="48" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="420" font-size="9" font-weight="600" fill="#2B2A27">阶段三 · 入职后按岗补 ○</text>
-  <text x="26" y="438" font-size="8.5" fill="#4A4945">低功耗(4%) · FPGA(6%) · DSP(6%) · 固件/OTA(9%) —— JD 提及率低，按岗位需要再补</text>
+  <!-- 第三站 -->
+  <rect x="18" y="286" width="400" height="56" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="300" font-size="9" font-weight="600" fill="#2B2A27">第三站 · 系统 ☐</text>
+  <rect x="26" y="308" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="321" font-size="9" fill="#1F4468">003 操作系统原理 ☐</text>
+  <text x="34" y="336" font-size="8" fill="#4A4945">职责与启动 → 进程与线程 → 中断与系统调用</text>
+  <line x1="340" y1="342" x2="340" y2="354" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 右：数据面板 -->
+  <!-- 第四站 -->
+  <rect x="18" y="354" width="400" height="100" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="368" font-size="9" font-weight="600" fill="#2B2A27">第四站 · 载体线（分叉，先 MCU）☐</text>
+  <rect x="26" y="376" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="389" font-size="9" fill="#1F4468">005 MCU 与外设（STM32 实战）☐</text>
+  <text x="34" y="403" font-size="8" fill="#4A4945">点灯 → 串口 → I2C/SPI → 中断 → DMA（买 F103C8T6+ST-Link）</text>
+  <rect x="26" y="414" width="384" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="429" font-size="8.5" fill="#1F4468">006 RTOS ☐ · 007 嵌入式 Linux ☐（可并行，JD 低频别提前）</text>
+  <line x1="340" y1="454" x2="340" y2="466" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+
+  <!-- 收口 -->
+  <rect x="18" y="466" width="400" height="38" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="26" y="481" font-size="8.5" fill="#7A4A12">收口 ☐：2~3 个完整 STM32 项目作品集</text>
+  <text x="26" y="496" font-size="8.5" fill="#7A4A12">+ 求职（校招主战场 · 可投池 406，工业类 135 优先）</text>
+
+  <!-- 右：频率锚 + 标记说明 -->
   <rect x="430" y="44" width="232" height="162" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="442" y="62" font-size="9" font-weight="600" fill="#1F4468">JD 频率榜 Top 8（846 份）</text>
   <text x="442" y="82" font-size="8.5" fill="#4A4945">① PCB/硬件调试　40%</text>
@@ -61,17 +70,10 @@
   <text x="442" y="162" font-size="8.5" fill="#4A4945">⑥ 电源/BMS　26%</text>
   <text x="442" y="178" font-size="8.5" fill="#4A4945">⑦ 汽车电子　25%</text>
   <text x="442" y="194" font-size="8.5" fill="#4A4945">⑧ 传感器/ADC　24%</text>
-  <rect x="430" y="214" width="232" height="88" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="442" y="232" font-size="9" font-weight="600" fill="#46337A">求职动作（27 届应届）</text>
-  <text x="442" y="252" font-size="8.5" fill="#4A4945">① 校招 = 主战场（2027 春招）</text>
-  <text x="442" y="270" font-size="8.5" fill="#4A4945">② 秋招补录：现在就投</text>
-  <text x="442" y="288" font-size="8.5" fill="#4A4945">③ 可投池 406（工业类 135）</text>
-  <rect x="430" y="310" width="232" height="52" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="442" y="330" font-size="8.5" fill="#4A4945">知识库进度：001~004 已建成（17 册）</text>
-  <text x="442" y="348" font-size="8.5" fill="#4A4945">下一批：005 MCU（买 F103C8T6+ST-Link）</text>
-
-  <!-- 总结 -->
-  <rect x="18" y="424" width="644" height="40" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="449" font-size="9" font-weight="600" fill="#7A4A12">底座三件套不变：单片机 37% · C 35% · 驱动 35%；差异化 = PCB 读图 + 工控深耕；RTOS(11%)/Linux(15%) 低频，别提前卷</text>
-  <text x="32" y="478" font-size="8" fill="#8C8980">数据源：Boss直聘 苏锡常 846 份 JD 全文（7 关键词，2026-11）· 频率为样本估计 · 27 届应届视角</text>
+  <rect x="430" y="214" width="232" height="110" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
+  <text x="442" y="232" font-size="9" font-weight="600" fill="#46337A">使用说明</text>
+  <text x="442" y="252" font-size="8.5" fill="#4A4945">标记：☐ = 未开始（学完打勾）</text>
+  <text x="442" y="270" font-size="8.5" fill="#4A4945">频率 = JD 提及占比（846 份苏锡常）</text>
+  <text x="442" y="288" font-size="8.5" fill="#4A4945">已具备存量：Linux / Python（运维）</text>
+  <text x="442" y="306" font-size="8.5" fill="#4A4945">RTOS 11% · Linux 15% —— 低频别提前</text>
 </svg>
