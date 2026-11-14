@@ -1,79 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="910.59" viewBox="0 0 680 516" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>技术学习路线（学习顺序版，从零开始）</title>
-  <desc>计算机大四（计科）从零开始的嵌入式学习顺序：语言与电路并行 → 机器 → 系统 → 载体线分叉 → 项目收口；每站带勾选框，JD 频率作数据锚（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="516" fill="#FFFFFF"/>
+<svg width="1200" height="758.82" viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>嵌入式技术学习路线（泳道顺序图）</title>
+  <desc>技术学习路线泳道图：自上而下即学习顺序——语言基础 → 硬件基础 → 理论 → 实战主线 → 进阶与收口；①②可并行（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="430" fill="#FFFFFF"/>
   <defs>
     <marker id="aRBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">技术学习路线 · 学习顺序版（从零开始）</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">频率锚：Boss直聘 846 份 JD（苏锡常）· 2026-11</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">嵌入式技术学习路线 · 泳道顺序图（自上而下 = 学习顺序）</text>
 
-  <!-- 起点 -->
-  <rect x="18" y="44" width="400" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="26" y="60" font-size="9" fill="#1F4468">起点：计算机科学与技术大四 · 运维背景</text>
-  <text x="26" y="76" font-size="8.5" fill="#4A4945">目标：软硬结合嵌入式工程师 · 校招主战场 = 2027 春招</text>
-  <line x1="340" y1="84" x2="340" y2="96" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 泳道 ① 语言基础 -->
+  <rect x="18" y="44" width="644" height="56" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="60" font-size="9" font-weight="600" fill="#2B2A27">泳道 ① · 语言基础</text>
+  <rect x="26" y="68" width="628" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="85" font-size="9" fill="#1F4468">C 语言：环境与编译 → 语法与位运算 → 指针与内存 → 结构体/位域/预处理</text>
+  <line x1="340" y1="100" x2="340" y2="116" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 第一站 -->
-  <rect x="18" y="96" width="400" height="102" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="110" font-size="9" font-weight="600" fill="#2B2A27">第一站 · 语言与电路（并行）☐</text>
-  <rect x="26" y="118" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="131" font-size="9" fill="#1F4468">001 C 语言 ☐</text>
-  <text x="34" y="146" font-size="8" fill="#4A4945">001 环境/编译 → 002 语法/位运算 → 003 指针 → 004 结构体位域</text>
-  <rect x="26" y="156" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="169" font-size="9" fill="#1F4468">004 电子电路 ☐（与 C 并行）</text>
-  <text x="34" y="184" font-size="8" fill="#4A4945">电压/电阻/欧姆定律 → 逻辑门 → 元器件与最小系统</text>
-  <line x1="340" y1="198" x2="340" y2="210" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 泳道 ② 硬件基础 -->
+  <rect x="18" y="116" width="644" height="56" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="132" font-size="9" font-weight="600" fill="#2B2A27">泳道 ② · 硬件基础（与 ① 并行，摸板前完成）</text>
+  <rect x="26" y="140" width="628" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="157" font-size="9" fill="#1F4468">电子电路：电压/电流/欧姆定律 → 逻辑门 → 元器件与 MCU 最小系统</text>
+  <line x1="340" y1="172" x2="340" y2="188" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 第二站 -->
-  <rect x="18" y="210" width="400" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="224" font-size="9" font-weight="600" fill="#2B2A27">第二站 · 机器 ☐</text>
-  <rect x="26" y="232" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="245" font-size="9" fill="#1F4468">002 计算机体系结构 ☐</text>
-  <text x="34" y="260" font-size="8" fill="#4A4945">抽象塔 → CPU 与指令集 → 存储层次与缓存</text>
-  <line x1="340" y1="274" x2="340" y2="286" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 泳道 ③ 理论 -->
+  <rect x="18" y="188" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="204" font-size="9" font-weight="600" fill="#2B2A27">泳道 ③ · 理论（机器与系统）</text>
+  <rect x="26" y="212" width="300" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="231" font-size="9" fill="#1F4468">计算机体系结构：抽象塔 → CPU/指令集 → 存储</text>
+  <line x1="326" y1="227" x2="346" y2="227" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <rect x="346" y="212" width="296" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="354" y="231" font-size="9" fill="#1F4468">操作系统原理：职责/启动 → 进程线程 → 中断</text>
+  <line x1="340" y1="252" x2="340" y2="268" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 第三站 -->
-  <rect x="18" y="286" width="400" height="56" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="300" font-size="9" font-weight="600" fill="#2B2A27">第三站 · 系统 ☐</text>
-  <rect x="26" y="308" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="321" font-size="9" fill="#1F4468">003 操作系统原理 ☐</text>
-  <text x="34" y="336" font-size="8" fill="#4A4945">职责与启动 → 进程与线程 → 中断与系统调用</text>
-  <line x1="340" y1="342" x2="340" y2="354" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <!-- 泳道 ④ 实战主线 -->
+  <rect x="18" y="268" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="284" font-size="9" font-weight="600" fill="#2B2A27">泳道 ④ · 实战主线（软硬结合落地点）</text>
+  <rect x="26" y="292" width="330" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="311" font-size="9" fill="#1F4468">STM32 外设实战：点灯→串口→I2C/SPI→中断→DMA</text>
+  <line x1="356" y1="307" x2="376" y2="307" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <rect x="376" y="292" width="268" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="384" y="311" font-size="9" fill="#1F4468">RTOS（FreeRTOS）：任务/队列/信号量</text>
+  <line x1="340" y1="332" x2="340" y2="348" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
 
-  <!-- 第四站 -->
-  <rect x="18" y="354" width="400" height="100" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="368" font-size="9" font-weight="600" fill="#2B2A27">第四站 · 载体线（分叉，先 MCU）☐</text>
-  <rect x="26" y="376" width="384" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="389" font-size="9" fill="#1F4468">005 MCU 与外设（STM32 实战）☐</text>
-  <text x="34" y="403" font-size="8" fill="#4A4945">点灯 → 串口 → I2C/SPI → 中断 → DMA（买 F103C8T6+ST-Link）</text>
-  <rect x="26" y="414" width="384" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="34" y="429" font-size="8.5" fill="#1F4468">006 RTOS ☐ · 007 嵌入式 Linux ☐（可并行，JD 低频别提前）</text>
-  <line x1="340" y1="454" x2="340" y2="466" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
-
-  <!-- 收口 -->
-  <rect x="18" y="466" width="400" height="38" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="26" y="481" font-size="8.5" fill="#7A4A12">收口 ☐：2~3 个完整 STM32 项目作品集</text>
-  <text x="26" y="496" font-size="8.5" fill="#7A4A12">+ 求职（校招主战场 · 可投池 406，工业类 135 优先）</text>
-
-  <!-- 右：频率锚 + 标记说明 -->
-  <rect x="430" y="44" width="232" height="162" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="442" y="62" font-size="9" font-weight="600" fill="#1F4468">JD 频率榜 Top 8（846 份）</text>
-  <text x="442" y="82" font-size="8.5" fill="#4A4945">① PCB/硬件调试　40%</text>
-  <text x="442" y="98" font-size="8.5" fill="#4A4945">② 工业控制/PLC　39%</text>
-  <text x="442" y="114" font-size="8.5" fill="#4A4945">③ 单片机(STM32)　37%</text>
-  <text x="442" y="130" font-size="8.5" fill="#4A4945">④ C 语言　35%</text>
-  <text x="442" y="146" font-size="8.5" fill="#4A4945">⑤ 驱动开发　35%</text>
-  <text x="442" y="162" font-size="8.5" fill="#4A4945">⑥ 电源/BMS　26%</text>
-  <text x="442" y="178" font-size="8.5" fill="#4A4945">⑦ 汽车电子　25%</text>
-  <text x="442" y="194" font-size="8.5" fill="#4A4945">⑧ 传感器/ADC　24%</text>
-  <rect x="430" y="214" width="232" height="110" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="442" y="232" font-size="9" font-weight="600" fill="#46337A">使用说明</text>
-  <text x="442" y="252" font-size="8.5" fill="#4A4945">标记：☐ = 未开始（学完打勾）</text>
-  <text x="442" y="270" font-size="8.5" fill="#4A4945">频率 = JD 提及占比（846 份苏锡常）</text>
-  <text x="442" y="288" font-size="8.5" fill="#4A4945">已具备存量：Linux / Python（运维）</text>
-  <text x="442" y="306" font-size="8.5" fill="#4A4945">RTOS 11% · Linux 15% —— 低频别提前</text>
+  <!-- 泳道 ⑤ 进阶与收口 -->
+  <rect x="18" y="348" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="364" font-size="9" font-weight="600" fill="#2B2A27">泳道 ⑤ · 进阶与收口</text>
+  <rect x="26" y="372" width="330" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="34" y="391" font-size="9" fill="#1F4468">嵌入式 Linux：交叉编译 → 内核 → 驱动</text>
+  <line x1="356" y1="387" x2="376" y2="387" stroke="#7FA6D0" marker-end="url(#aRBlue)"/>
+  <rect x="376" y="372" width="268" height="30" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="384" y="391" font-size="9" fill="#7A4A12">项目作品集（2~3 个 STM32 项目）+ 求职</text>
+  <text x="26" y="418" font-size="8" fill="#8C8980">① 与 ② 可并行 · 自上而下即学习顺序 · 编号对应知识库板块：①=001-C语言 ②=004-电子电路 ③=002-体系结构+003-OS ④⑤=005/006/007（规划）</text>
 </svg>
