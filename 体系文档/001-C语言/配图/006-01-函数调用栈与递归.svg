@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="592.94" viewBox="0 0 680 336" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>函数调用栈与递归</title>
+  <desc>006-函数与作用域：fact(3) 的栈帧压栈过程与返回值回归路径（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="336" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a6Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">006 · 调用栈与递归：fact(3) 的压栈与回归</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：006 §6.7 · 003 §3.4 栈 · 2026-11-15</text>
+
+  <rect x="18" y="44" width="300" height="216" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="60" font-size="9" fill="#4A4945">压栈 —— 每层调用占一帧（栈顶在上）</text>
+  <rect x="30" y="70" width="272" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="42" y="86" font-size="9" fill="#7A4A12">fact(1) · n=1</text>
+  <text x="42" y="100" font-size="8" fill="#4A4945">出口：n&lt;=1，return 1</text>
+  <rect x="30" y="112" width="272" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="42" y="128" font-size="9" fill="#1F4468">fact(2) · n=2</text>
+  <text x="42" y="142" font-size="8" fill="#4A4945">等待 fact(1) 的结果</text>
+  <rect x="30" y="154" width="272" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="42" y="170" font-size="9" fill="#1F4468">fact(3) · n=3</text>
+  <text x="42" y="184" font-size="8" fill="#4A4945">等待 fact(2) 的结果</text>
+  <rect x="30" y="196" width="272" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="42" y="212" font-size="9" fill="#1F4468">main</text>
+  <text x="42" y="226" font-size="8" fill="#4A4945">栈底：调用 fact(3) 后停在这一行等</text>
+  <line x1="312" y1="90" x2="312" y2="108" stroke="#7FA6D0" marker-end="url(#a6Blue)"/>
+
+  <rect x="336" y="44" width="326" height="216" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="344" y="60" font-size="9" fill="#4A4945">回归 —— 返回值沿调用链逐层回传</text>
+  <rect x="348" y="70" width="298" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="360" y="86" font-size="9" fill="#1F4468">fact(1) 返回 1</text>
+  <text x="360" y="100" font-size="8" fill="#4A4945">碰到出口，递进结束</text>
+  <rect x="348" y="112" width="298" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="360" y="128" font-size="9" fill="#1F4468">fact(2) = 2 × 1 = 2</text>
+  <text x="360" y="142" font-size="8" fill="#4A4945">拿到结果才能算自己</text>
+  <rect x="348" y="154" width="298" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="360" y="170" font-size="9" fill="#1F4468">fact(3) = 3 × 2 = 6</text>
+  <text x="360" y="184" font-size="8" fill="#4A4945">逐层向上</text>
+  <rect x="348" y="196" width="298" height="36" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="360" y="212" font-size="9" fill="#1F4468">main 收到 6</text>
+  <text x="360" y="226" font-size="8" fill="#4A4945">各帧出栈销毁，栈清空</text>
+  <line x1="654" y1="90" x2="654" y2="108" stroke="#7FA6D0" marker-end="url(#a6Blue)"/>
+
+  <rect x="18" y="272" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="295" font-size="9.5" font-weight="600" fill="#7A4A12">递归深度 = 栈帧层数：没出口或太深就栈溢出——写递归先写出口，实参变化朝出口走</text>
+  <text x="32" y="324" font-size="8" fill="#8C8980">口径 C17 · 五步法与断点调试观察法见 006 §6.7/§6.8 — 2026-11-15</text>
+</svg>

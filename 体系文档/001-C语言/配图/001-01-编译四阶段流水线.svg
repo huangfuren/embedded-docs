@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="405.88" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>编译四阶段流水线</title>
+  <desc>001-环境搭建与第一个程序：.c 到 .exe 的四阶段流水线，每阶段标注单步命令与产物（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="230" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a1Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">001 · 编译四阶段流水线</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：001 §1.5 本机实测 · 2026-11-15</text>
+
+  <rect x="18" y="44" width="644" height="90" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="19" y="58" width="118" height="58" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="78" y="74" font-size="9" fill="#1F4468" text-anchor="middle">源码</text>
+  <text x="78" y="88" font-size="7.5" fill="#4A4945" text-anchor="middle">手写保存</text>
+  <text x="78" y="102" font-size="8" fill="#4A4945" text-anchor="middle">hello.c</text>
+  <line x1="139" y1="87" x2="147" y2="87" stroke="#7FA6D0" marker-end="url(#a1Blue)"/>
+  <rect x="149" y="58" width="118" height="58" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="208" y="74" font-size="9" fill="#1F4468" text-anchor="middle">① 预处理</text>
+  <text x="208" y="88" font-size="7.5" fill="#4A4945" text-anchor="middle">gcc -E hello.c</text>
+  <text x="208" y="102" font-size="8" fill="#4A4945" text-anchor="middle">hello.i</text>
+  <line x1="269" y1="87" x2="277" y2="87" stroke="#7FA6D0" marker-end="url(#a1Blue)"/>
+  <rect x="279" y="58" width="118" height="58" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="338" y="74" font-size="9" fill="#1F4468" text-anchor="middle">② 编译</text>
+  <text x="338" y="88" font-size="7.5" fill="#4A4945" text-anchor="middle">gcc -S hello.i</text>
+  <text x="338" y="102" font-size="8" fill="#4A4945" text-anchor="middle">hello.s 汇编</text>
+  <line x1="399" y1="87" x2="407" y2="87" stroke="#7FA6D0" marker-end="url(#a1Blue)"/>
+  <rect x="409" y="58" width="118" height="58" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="468" y="74" font-size="9" fill="#1F4468" text-anchor="middle">③ 汇编</text>
+  <text x="468" y="88" font-size="7.5" fill="#4A4945" text-anchor="middle">gcc -c hello.s</text>
+  <text x="468" y="102" font-size="8" fill="#4A4945" text-anchor="middle">hello.o 机器码</text>
+  <line x1="529" y1="87" x2="537" y2="87" stroke="#7FA6D0" marker-end="url(#a1Blue)"/>
+  <rect x="539" y="58" width="118" height="58" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="598" y="74" font-size="9" fill="#1F4468" text-anchor="middle">④ 链接</text>
+  <text x="598" y="88" font-size="7.5" fill="#4A4945" text-anchor="middle">gcc hello.o</text>
+  <text x="598" y="102" font-size="8" fill="#4A4945" text-anchor="middle">hello.exe</text>
+  <text x="26" y="127" font-size="8" fill="#8C8980">一条命令 gcc -Wall hello.c -o hello.exe = 四阶段自动连跑；单步命令见 §1.5 表格</text>
+
+  <rect x="18" y="152" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="175" font-size="9.5" font-weight="600" fill="#7A4A12">报错发生在哪个阶段，问题就出在哪一层——.i 看宏、.s 看汇编、链接错看名字对不上</text>
+  <text x="32" y="212" font-size="8" fill="#8C8980">口径 C17 · GCC 16.2.0（MinGW-w64）· 产物行数实测：hello.i 1041 行 — 2026-11-15</text>
+</svg>

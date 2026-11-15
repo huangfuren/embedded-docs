@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="547.06" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>指针家族一图认全</title>
+  <desc>007-指针进阶与动态内存：五种声明格式的含义对照与读法口诀（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="310" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a7Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">007 · 指针家族：五种声明一眼辨</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：007 §7.3/§7.4/§7.6 · 2026-11-15</text>
+
+  <rect x="18" y="48" width="316" height="56" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="30" y="68" font-size="9.5" fill="#1F4468">int *p[4] —— 指针数组</text>
+  <text x="30" y="86" font-size="8" fill="#4A4945">是数组，装 4 个指针；典型用途：字符串数组</text>
+  <rect x="346" y="48" width="316" height="56" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="358" y="68" font-size="9.5" fill="#1F4468">int (*p)[4] —— 数组指针</text>
+  <text x="358" y="86" font-size="8" fill="#4A4945">是指针，指向数组整体；p+1 跨整个数组</text>
+  <rect x="18" y="112" width="316" height="56" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="30" y="132" font-size="9.5" fill="#1F4468">int *f() —— 指针函数</text>
+  <text x="30" y="150" font-size="8" fill="#4A4945">是函数，返回指针；别返回局部变量地址</text>
+  <rect x="346" y="112" width="316" height="56" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="358" y="132" font-size="9.5" fill="#1F4468">int (*p)() —— 函数指针</text>
+  <text x="358" y="150" font-size="8" fill="#4A4945">是指针，指向函数；回调的载体（§7.4）</text>
+  <rect x="18" y="176" width="316" height="56" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="30" y="196" font-size="9.5" fill="#1F4468">int **p —— 二级指针</text>
+  <text x="30" y="214" font-size="8" fill="#4A4945">存一级指针的地址；解两次星星才到数据</text>
+  <rect x="346" y="176" width="316" height="56" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="358" y="196" font-size="9.5" font-weight="600" fill="#7A4A12">读法口诀</text>
+  <text x="358" y="214" font-size="8" fill="#7A4A12">[] 优先级高于 *：(*p) 括号把指针焊住，p[4] 先是数组</text>
+
+  <rect x="18" y="248" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="271" font-size="9.5" font-weight="600" fill="#7A4A12">步长铁律：指针 +1 走"指向类型"的宽度——int* 走 4 字节、char* 走 1 字节（§7.1 实测）</text>
+  <text x="32" y="300" font-size="8" fill="#8C8980">口径 C17 · 全部声明可由 §7.3 实测程序验证 · 2026-11-15</text>
+</svg>
