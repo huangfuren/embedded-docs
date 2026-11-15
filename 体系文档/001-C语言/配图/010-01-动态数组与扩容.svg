@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="582.35" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>动态数组：容量、长度与扩容</title>
+  <desc>010-动态数组与链表：length 游标、capacity 边界与 realloc 扩容前后的内存对照（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="330" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a10Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+    <marker id="a10Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">010 · 动态数组：满了才扩，扩容 ×2</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：010 §10.1 ds_array 本机实测 · 2026-11-15</text>
+
+  <!-- 扩容前 -->
+  <rect x="18" y="44" width="644" height="96" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="60" font-size="9" fill="#4A4945">扩容前：init 5 格，length=3，capacity=5（灰格 = 有容量没数据）</text>
+  <rect x="26" y="70" width="52" height="26" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="52" y="87" font-size="8" fill="#7A4A12" text-anchor="middle">data</text>
+  <line x1="80" y1="83" x2="98" y2="83" stroke="#D9A458" marker-end="url(#a10Amber)"/>
+  <rect x="100" y="70" width="56" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="128" y="87" font-size="8.5" fill="#1F4468" text-anchor="middle">10</text>
+  <rect x="160" y="70" width="56" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="188" y="87" font-size="8.5" fill="#1F4468" text-anchor="middle">20</text>
+  <rect x="220" y="70" width="56" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="248" y="87" font-size="8.5" fill="#1F4468" text-anchor="middle">30</text>
+  <rect x="280" y="70" width="56" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <rect x="340" y="70" width="56" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <line x1="278" y1="106" x2="278" y2="114" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <text x="278" y="128" font-size="8" fill="#1F4468" text-anchor="middle">length=3（游标）</text>
+  <line x1="398" y1="66" x2="398" y2="100" stroke="#D2948C" stroke-dasharray="3,2"/>
+  <text x="404" y="88" font-size="8" fill="#7A322B">capacity=5（边界）</text>
+
+  <!-- 扩容箭头 -->
+  <line x1="340" y1="146" x2="340" y2="172" stroke="#D9A458" marker-end="url(#a10Amber)"/>
+  <text x="352" y="164" font-size="8.5" fill="#7A4A12">插入第 6 个：length == capacity → realloc ×2（5 → 10 格）</text>
+
+  <!-- 扩容后 -->
+  <rect x="18" y="178" width="644" height="98" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="194" font-size="9" fill="#4A4945">扩容后：length=6，capacity=10（旧 5 格内容原样复制进新块）</text>
+  <rect x="26" y="202" width="52" height="26" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="52" y="219" font-size="8" fill="#7A4A12" text-anchor="middle">data</text>
+  <line x1="80" y1="215" x2="98" y2="215" stroke="#D9A458" marker-end="url(#a10Amber)"/>
+  <rect x="100" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="122" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">10</text>
+  <rect x="148" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="170" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">20</text>
+  <rect x="196" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="218" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">30</text>
+  <rect x="244" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="266" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">40</text>
+  <rect x="292" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="314" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">50</text>
+  <rect x="340" y="202" width="44" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="362" y="219" font-size="8.5" fill="#1F4468" text-anchor="middle">60</text>
+  <rect x="388" y="202" width="44" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <rect x="436" y="202" width="44" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <rect x="484" y="202" width="44" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <rect x="532" y="202" width="44" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
+  <line x1="386" y1="238" x2="386" y2="246" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <text x="386" y="260" font-size="8" fill="#1F4468" text-anchor="middle">length=6</text>
+  <line x1="578" y1="198" x2="578" y2="232" stroke="#D2948C" stroke-dasharray="3,2"/>
+  <text x="584" y="220" font-size="8" fill="#7A322B">capacity=10</text>
+
+  <rect x="18" y="284" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="307" font-size="9.5" font-weight="600" fill="#7A4A12">中间插入要整体后移（平均搬 n/2）——这是数组"改中间慢"的根源；尾插用 length 当游标是免费的</text>
+  <text x="32" y="326" font-size="8" fill="#8C8980">口径 C17 · 完整示例 ds_array.c 见 010 §10.1（扩容实测 len 3→6）— 2026-11-15</text>
+</svg>

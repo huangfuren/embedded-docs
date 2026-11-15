@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="547.06" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>快速排序：基准分区</title>
+  <desc>014-查找与排序：快排一轮分区的基准、low/high 双指针与归位（ds_sort 本机实录）（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="310" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a14Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">014 · 快排一轮分区：基准归位，左小右大</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：014 §14.4 ds_sort 本机实录 · 2026-11-15</text>
+
+  <!-- 分区前 -->
+  <rect x="18" y="44" width="644" height="106" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="60" font-size="9" fill="#4A4945">分区前：基准 key = arr[start]（讲义基础版取首元素），low 从左、high 从右相向推进</text>
+  <rect x="30" y="70" width="62" height="34" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="61" y="91" font-size="8.5" fill="#7A4A12" text-anchor="middle">9 ★基准</text>
+  <rect x="96" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="127" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">-16</text>
+  <rect x="162" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="193" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">40</text>
+  <rect x="228" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="259" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">23</text>
+  <rect x="294" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="325" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">-30</text>
+  <rect x="360" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="391" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">-49</text>
+  <rect x="426" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="457" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">25</text>
+  <rect x="492" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="523" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">21</text>
+  <rect x="558" y="70" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="589" y="91" font-size="8.5" fill="#1F4468" text-anchor="middle">30</text>
+  <line x1="61" y1="108" x2="61" y2="130" stroke="#D9A458" marker-end="url(#a14Blue)"/>
+  <text x="61" y="146" font-size="7.5" fill="#7A4A12" text-anchor="middle">key</text>
+  <text x="380" y="108" font-size="8" fill="#4A4945" text-anchor="middle">high 从右找 &lt; 基准的 → low 从左找 &gt; 基准的 → 交换 → 相遇即分区完成</text>
+
+  <!-- 分区后 -->
+  <rect x="18" y="156" width="644" height="106" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="172" font-size="9" fill="#4A4945">一轮分区后：基准归位（落在最终位置），左半全 ≤ 基准、右半全 ≥ 基准，递归两半</text>
+  <rect x="30" y="182" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="61" y="203" font-size="8.5" fill="#1F4468" text-anchor="middle">≤ 基准</text>
+  <rect x="96" y="182" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="127" y="203" font-size="8.5" fill="#1F4468" text-anchor="middle">≤ 基准</text>
+  <rect x="162" y="182" width="62" height="34" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="193" y="203" font-size="8.5" fill="#7A4A12" text-anchor="middle">基准归位</text>
+  <rect x="228" y="182" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="259" y="203" font-size="8.5" fill="#1F4468" text-anchor="middle">≥ 基准</text>
+  <rect x="294" y="182" width="62" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="325" y="203" font-size="8.5" fill="#1F4468" text-anchor="middle">≥ 基准</text>
+  <line x1="224" y1="226" x2="162" y2="226" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <text x="90" y="230" font-size="8" fill="#4A4945">递归左半</text>
+  <line x1="258" y1="226" x2="310" y2="226" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <text x="286" y="230" font-size="8" fill="#4A4945" text-anchor="middle">递归右半</text>
+  <text x="26" y="250" font-size="8" fill="#8C8980">一轮分区扫描 O(n)；均衡分区递归 log₂n 层 → 平均 O(n·log₂n)；递归栈空间 O(log n)</text>
+
+  <rect x="18" y="272" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="295" font-size="9.5" font-weight="600" fill="#7A4A12">坑：基准取首元素在近有序数据上退化 O(n²)——工程版取中值/随机基准；出口 start >= end 必写</text>
+</svg>

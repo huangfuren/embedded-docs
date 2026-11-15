@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="635.29" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>七种复杂度的增长曲线</title>
+  <desc>013-时间与空间复杂度：O(1)/O(log n)/O(√n)/O(n)/O(n log n)/O(n²)/O(n³) 的增长趋势示意曲线（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="360" fill="#FFFFFF"/>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">013 · 七种阶的增长曲线（示意，非等比例尺）</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：013 §13.1 ds_complexity 实测 n=1000 · 2026-11-15</text>
+
+  <!-- 坐标轴 -->
+  <line x1="70" y1="300" x2="640" y2="300" stroke="#4A4945" marker-end="url(#a13G)"/>
+  <line x1="70" y1="300" x2="70" y2="60" stroke="#4A4945" marker-end="url(#a13G)"/>
+  <text x="630" y="318" font-size="8.5" fill="#4A4945" text-anchor="end">问题规模 n →</text>
+  <text x="76" y="70" font-size="8.5" fill="#4A4945">操作次数 ↑</text>
+
+  <!-- 曲线（示意走势） -->
+  <polyline points="70,285 640,285" fill="none" stroke="#8C8980" stroke-width="2"/>
+  <polyline points="70,282 240,262 440,248 640,240" fill="none" stroke="#8C8980" stroke-width="2" stroke-dasharray="4,3"/>
+  <polyline points="70,296 300,268 640,228" fill="none" stroke="#9C8ACB" stroke-width="2" stroke-dasharray="4,3"/>
+  <polyline points="70,298 360,240 640,180" fill="none" stroke="#7FA6D0" stroke-width="2.5"/>
+  <polyline points="70,298 280,268 460,190 640,110" fill="none" stroke="#9C8ACB" stroke-width="2.5"/>
+  <polyline points="70,298 200,270 330,180 420,60" fill="none" stroke="#D9A458" stroke-width="2.5"/>
+  <polyline points="70,298 160,288 260,230 330,60" fill="none" stroke="#D2948C" stroke-width="2.5"/>
+
+  <!-- 标注 -->
+  <text x="120" y="294" font-size="8" fill="#8C8980">O(1)</text>
+  <text x="470" y="240" font-size="8" fill="#8C8980">O(log₂n)</text>
+  <text x="560" y="222" font-size="8" fill="#46337A">O(√n)</text>
+  <text x="600" y="172" font-size="8" fill="#1F4468">O(n)</text>
+  <text x="600" y="100" font-size="8" fill="#46337A">O(n·log₂n)</text>
+  <text x="352" y="170" font-size="8" fill="#7A4A12">O(n²)</text>
+  <text x="264" y="222" font-size="8" fill="#7A322B">O(n³)</text>
+  <text x="360" y="120" font-size="7.5" fill="#8C8980">曲线越陡，规模变大时代价涨得越凶</text>
+
+  <rect x="18" y="326" width="644" height="34" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="348" font-size="9.5" font-weight="600" fill="#7A4A12">本机实测（n=1000）：1 → 9 → 32 → 1000 → 9000 → 100 万 → 10 亿——排序与查找选型全看这条阶梯</text>
+  <defs>
+    <marker id="a13G" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4A4945"/>
+    </marker>
+  </defs>
+</svg>
