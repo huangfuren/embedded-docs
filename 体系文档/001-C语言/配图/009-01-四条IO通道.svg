@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="606.9" viewBox="0 0 680 344" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>四条 IO 通道</title>
+  <desc>009-命令行参数与字符串格式化：printf/scanf 与 sprintf/sscanf 的四条数据通道，方向以程序为原点（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="344" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a9Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+    <marker id="a9Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">009 · 四条 IO 通道：设备流与字符串流</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：009 §9.2/§9.3 本机实测 · 2026-11-15</text>
+
+  <!-- 中央程序 -->
+  <rect x="290" y="120" width="100" height="90" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="340" y="158" font-size="10" fill="#1F4468" text-anchor="middle">程序</text>
+  <text x="340" y="176" font-size="7.5" fill="#4A4945" text-anchor="middle">方向的原点</text>
+
+  <!-- 键盘 → 程序（scanf） -->
+  <rect x="60" y="120" width="90" height="40" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
+  <text x="105" y="144" font-size="9" fill="#4A4945" text-anchor="middle">键盘</text>
+  <line x1="152" y1="140" x2="286" y2="140" stroke="#7FA6D0" marker-end="url(#a9Blue)"/>
+  <text x="219" y="134" font-size="7.5" fill="#1F4468" text-anchor="middle">scanf · 从输入缓冲取数</text>
+
+  <!-- 程序 → 屏幕（printf） -->
+  <rect x="530" y="60" width="90" height="40" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
+  <text x="575" y="84" font-size="9" fill="#4A4945" text-anchor="middle">屏幕</text>
+  <polyline points="372,120 372,90 526,90" fill="none" stroke="#7FA6D0" marker-end="url(#a9Blue)"/>
+  <text x="460" y="84" font-size="7.5" fill="#1F4468" text-anchor="middle">printf · 格式化后送 stdout</text>
+
+  <!-- 程序 → buf（sprintf） -->
+  <rect x="530" y="200" width="90" height="40" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="575" y="218" font-size="9" fill="#7A4A12" text-anchor="middle">字符串 buf</text>
+  <text x="575" y="232" font-size="7.5" fill="#7A4A12" text-anchor="middle">（内存里的字符数组）</text>
+  <polyline points="392,185 466,185 466,215 526,215" fill="none" stroke="#D9A458" marker-end="url(#a9Amber)"/>
+  <text x="452" y="179" font-size="7.5" fill="#7A4A12" text-anchor="middle">sprintf · 格式化写进 buf</text>
+
+  <!-- buf → 程序（sscanf） -->
+  <polyline points="528,242 478,242 478,205 394,205" fill="none" stroke="#D9A458" marker-end="url(#a9Amber)"/>
+  <text x="452" y="258" font-size="7.5" fill="#7A4A12" text-anchor="middle">sscanf · 按格式从 buf 读出</text>
+
+  <text x="60" y="286" font-size="8.5" fill="#4A4945">printf/scanf 与 sprintf/sscanf 只差第一个参数——目的地/数据源从设备换成了字符串</text>
+  <rect x="18" y="298" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="321" font-size="9.5" font-weight="600" fill="#7A4A12">方向口诀不变：write/put 是出程序，read/get 是进程序——buf 也是一条通道，只是住在内存里</text>
+</svg>

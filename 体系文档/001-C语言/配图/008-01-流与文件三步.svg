@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="547.06" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+<svg width="1200" height="596.47" viewBox="0 0 680 338" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>流的方向与文件操作三步</title>
-  <desc>008-文件IO：三条标准流的方向判定与 fopen-读写-fclose 三步纪律（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="310" fill="#FFFFFF"/>
+  <desc>008-文件IO：三条标准流以程序为中轴的方向关系与 fopen-读写-fclose 三步纪律（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="338" fill="#FFFFFF"/>
   <defs>
     <marker id="a8Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+    <marker id="a8Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
     </marker>
   </defs>
   <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">008 · 流的方向与文件操作三步</text>
   <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：008 §8.1/§8.4 本机实测 · 2026-11-15</text>
 
-  <rect x="18" y="44" width="300" height="176" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <!-- 左：三条标准流（程序中轴） -->
+  <rect x="18" y="44" width="300" height="192" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
   <text x="26" y="60" font-size="9" fill="#4A4945">标准流 —— 方向以程序自己为参照物</text>
-  <rect x="26" y="70" width="276" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="38" y="86" font-size="9" fill="#1F4468">stdin（标准输入）</text>
-  <text x="38" y="102" font-size="8" fill="#4A4945">键盘 → 程序 · scanf / getchar / fgets</text>
-  <rect x="26" y="116" width="276" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="38" y="132" font-size="9" fill="#1F4468">stdout（标准输出）</text>
-  <text x="38" y="148" font-size="8" fill="#4A4945">程序 → 屏幕 · printf / putchar / puts</text>
-  <rect x="26" y="162" width="276" height="40" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="38" y="178" font-size="9" fill="#7A322B">stderr（标准错误）</text>
-  <text x="38" y="194" font-size="8" fill="#7A322B">错误专用通道 · 默认不被 &gt; 重定向捕获</text>
+  <rect x="26" y="72" width="76" height="36" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
+  <text x="64" y="94" font-size="8.5" fill="#4A4945" text-anchor="middle">键盘</text>
+  <rect x="210" y="72" width="94" height="126" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="257" y="128" font-size="9.5" fill="#1F4468" text-anchor="middle">程序</text>
+  <text x="257" y="144" font-size="7.5" fill="#4A4945" text-anchor="middle">（方向的原点）</text>
+  <line x1="104" y1="90" x2="206" y2="90" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
+  <text x="155" y="84" font-size="7.5" fill="#1F4468" text-anchor="middle">stdin</text>
+  <rect x="26" y="122" width="76" height="36" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
+  <text x="64" y="144" font-size="8.5" fill="#4A4945" text-anchor="middle">屏幕</text>
+  <line x1="206" y1="140" x2="106" y2="140" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
+  <text x="155" y="134" font-size="7.5" fill="#1F4468" text-anchor="middle">stdout</text>
+  <rect x="26" y="162" width="76" height="36" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="64" y="184" font-size="8.5" fill="#7A322B" text-anchor="middle">屏幕(错误)</text>
+  <line x1="206" y1="180" x2="106" y2="180" stroke="#D2948C" marker-end="url(#a8Red)"/>
+  <text x="155" y="174" font-size="7.5" fill="#7A322B" text-anchor="middle">stderr</text>
+  <text x="26" y="224" font-size="7.5" fill="#8C8980">stdin: scanf·getchar·fgets | stdout: printf·putchar·puts | stderr: fprintf</text>
 
-  <rect x="336" y="44" width="326" height="176" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <!-- 右：文件操作三步 -->
+  <rect x="336" y="44" width="326" height="192" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
   <text x="344" y="60" font-size="9" fill="#4A4945">文件操作三步 —— fopen 与 fclose 严格配对</text>
   <rect x="344" y="70" width="302" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="356" y="86" font-size="9" fill="#1F4468">① 创建流：fopen(路径, mode)</text>
@@ -34,11 +46,11 @@
   <rect x="344" y="162" width="302" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="356" y="178" font-size="9" fill="#1F4468">③ 关闭流：fclose(fp)</text>
   <text x="356" y="194" font-size="8" fill="#4A4945">解除文件占用 + 把缓冲区数据冲到磁盘</text>
-  <line x1="495" y1="110" x2="495" y2="114" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
-  <line x1="495" y1="156" x2="495" y2="160" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
+  <line x1="495" y1="112" x2="495" y2="114" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
+  <line x1="495" y1="158" x2="495" y2="160" stroke="#7FA6D0" marker-end="url(#a8Blue)"/>
 
-  <text x="26" y="240" font-size="8" fill="#4A4945">mode 一句话：r 只读（不创建）· w 只写（覆盖，不存在则创建）· a 追加（保留原内容）· 带 b 走二进制不转换换行</text>
-  <rect x="18" y="248" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="271" font-size="9.5" font-weight="600" fill="#7A4A12">方向口诀：get / read / input 是进程序，put / write / output 是出程序——忘了 fclose 丢数据</text>
-  <text x="32" y="300" font-size="8" fill="#8C8980">口径 C17 · mode 全表 12 种见 008 §8.4 · 2026-11-15</text>
+  <text x="26" y="254" font-size="8" fill="#4A4945">mode 一句话：r 只读（不创建）· w 只写（覆盖，不存在则创建）· a 追加（保留原内容）· 带 b 走二进制不转换换行</text>
+  <rect x="18" y="262" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="285" font-size="9.5" font-weight="600" fill="#7A4A12">方向口诀：get / read / input 是进程序，put / write / output 是出程序——忘了 fclose 丢数据</text>
+  <text x="32" y="322" font-size="8" fill="#8C8980">口径 C17 · mode 全表 12 种见 008 §8.4 · 2026-11-15</text>
 </svg>

@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="582.35" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>数组内存布局</title>
-  <desc>005-数组与字符串：一维数组的连续格子与索引、二维数组按一维连续存放的实证（680 内部坐标系 x 1.764706）</desc>
+  <desc>005-数组与字符串：一维数组的连续格子与 +4 地址递进、二维数组的读序编号与行距实证（680 内部坐标系 x 1.764706）</desc>
   <rect x="0" y="0" width="680" height="330" fill="#FFFFFF"/>
   <defs>
     <marker id="a5Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
+    <marker id="a5Purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9C8ACB"/>
+    </marker>
   </defs>
   <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">005 · 数组内存布局：连续存放，索引从 0 起</text>
   <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：005 §5.1/§5.2 本机实测 · 2026-11-15</text>
 
+  <!-- 一维：连续格子 + 地址递进箭头 -->
   <rect x="18" y="44" width="644" height="104" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">一维 int arr[5] = {10, 20, 30, 40, 50}</text>
-  <rect x="26" y="68" width="72" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="62" y="90" font-size="9.5" fill="#1F4468" text-anchor="middle">10</text>
-  <rect x="104" y="68" width="72" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="140" y="90" font-size="9.5" fill="#1F4468" text-anchor="middle">20</text>
-  <rect x="182" y="68" width="72" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="218" y="90" font-size="9.5" fill="#1F4468" text-anchor="middle">30</text>
-  <rect x="260" y="68" width="72" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="296" y="90" font-size="9.5" fill="#1F4468" text-anchor="middle">40</text>
-  <rect x="338" y="68" width="72" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="374" y="90" font-size="9.5" fill="#1F4468" text-anchor="middle">50</text>
-  <text x="62" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[0]</text>
-  <text x="140" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[1]</text>
-  <text x="218" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[2]</text>
-  <text x="296" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[3]</text>
-  <text x="374" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[4]</text>
-  <text x="440" y="80" font-size="8" fill="#1D5A45">相邻元素地址差 = sizeof(int) = 4 字节</text>
-  <text x="440" y="96" font-size="8" fill="#1D5A45">最大索引 = 长度 - 1（arr[5] 已越界）</text>
-  <text x="440" y="112" font-size="8" fill="#4A4945">长度公式只在定义处有效（003 §3.3）</text>
+  <text x="26" y="60" font-size="9" fill="#4A4945">一维 int arr[5] = {10, 20, 30, 40, 50} —— 相邻格子地址差恒为 4 字节</text>
+  <rect x="26" y="70" width="64" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="58" y="92" font-size="9.5" fill="#1F4468" text-anchor="middle">10</text>
+  <rect x="104" y="70" width="64" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="136" y="92" font-size="9.5" fill="#1F4468" text-anchor="middle">20</text>
+  <rect x="182" y="70" width="64" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="214" y="92" font-size="9.5" fill="#1F4468" text-anchor="middle">30</text>
+  <rect x="260" y="70" width="64" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="292" y="92" font-size="9.5" fill="#1F4468" text-anchor="middle">40</text>
+  <rect x="338" y="70" width="64" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="370" y="92" font-size="9.5" fill="#1F4468" text-anchor="middle">50</text>
+  <line x1="92" y1="87" x2="102" y2="87" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <line x1="170" y1="87" x2="180" y2="87" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <line x1="248" y1="87" x2="258" y2="87" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <line x1="326" y1="87" x2="336" y2="87" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <text x="97" y="80" font-size="6.5" fill="#8C8980" text-anchor="middle">+4</text>
+  <text x="175" y="80" font-size="6.5" fill="#8C8980" text-anchor="middle">+4</text>
+  <text x="253" y="80" font-size="6.5" fill="#8C8980" text-anchor="middle">+4</text>
+  <text x="331" y="80" font-size="6.5" fill="#8C8980" text-anchor="middle">+4</text>
+  <text x="58" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[0]</text>
+  <text x="136" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[1]</text>
+  <text x="214" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[2]</text>
+  <text x="292" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[3]</text>
+  <text x="370" y="118" font-size="8" fill="#8C8980" text-anchor="middle">[4]</text>
+  <text x="430" y="82" font-size="8" fill="#1D5A45">最大索引 = 长度 - 1（arr[5] 已越界）</text>
+  <text x="430" y="98" font-size="8" fill="#1D5A45">arr[2] = *(arr + 2)：下标就是地址运算</text>
+  <text x="430" y="114" font-size="8" fill="#4A4945">长度公式只在定义处有效（003 §3.7 坑 3）</text>
 
+  <!-- 二维：读序编号 + 行距 -->
   <rect x="18" y="156" width="644" height="112" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="172" font-size="9" fill="#4A4945">二维 int arr[2][3] = {{1, 2, 3}, {4, 5, 6}} —— 内存里仍是一条线</text>
+  <text x="26" y="172" font-size="9" fill="#4A4945">二维 int arr[2][3] = {{1, 2, 3}, {4, 5, 6}} —— 圆号 = 按一维连续读的顺序</text>
   <rect x="26" y="182" width="72" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="62" y="202" font-size="9.5" fill="#1F4468" text-anchor="middle">1</text>
   <rect x="104" y="182" width="72" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
@@ -46,10 +59,26 @@
   <text x="140" y="238" font-size="9.5" fill="#46337A" text-anchor="middle">5</text>
   <rect x="182" y="218" width="72" height="30" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="218" y="238" font-size="9.5" fill="#46337A" text-anchor="middle">6</text>
+  <circle cx="32" cy="188" r="7" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="32" y="191" font-size="7" fill="#1F4468" text-anchor="middle">1</text>
+  <circle cx="110" cy="188" r="7" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="110" y="191" font-size="7" fill="#1F4468" text-anchor="middle">2</text>
+  <circle cx="188" cy="188" r="7" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="188" y="191" font-size="7" fill="#1F4468" text-anchor="middle">3</text>
+  <circle cx="32" cy="224" r="7" fill="#FFFFFF" stroke="#9C8ACB"/>
+  <text x="32" y="227" font-size="7" fill="#46337A" text-anchor="middle">4</text>
+  <circle cx="110" cy="224" r="7" fill="#FFFFFF" stroke="#9C8ACB"/>
+  <text x="110" y="227" font-size="7" fill="#46337A" text-anchor="middle">5</text>
+  <circle cx="188" cy="224" r="7" fill="#FFFFFF" stroke="#9C8ACB"/>
+  <text x="188" y="227" font-size="7" fill="#46337A" text-anchor="middle">6</text>
+  <line x1="98" y1="233" x2="104" y2="233" stroke="#9C8ACB" marker-end="url(#a5Purple)"/>
+  <line x1="176" y1="233" x2="182" y2="233" stroke="#9C8ACB" marker-end="url(#a5Purple)"/>
+  <line x1="98" y1="197" x2="104" y2="197" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <line x1="176" y1="197" x2="182" y2="197" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
   <text x="272" y="192" font-size="8" fill="#1D5A45">&amp;arr[0] 与 &amp;arr[1] 差 12 字节 = 一行（无空隙）</text>
   <text x="272" y="208" font-size="8" fill="#1D5A45">拿元素指针 p2 连续读 6 个：1 2 3 4 5 6（arr2d_flat 实测）</text>
   <text x="272" y="224" font-size="8" fill="#4A4945">三种指针同址：&amp;arr、&amp;arr[0]、&amp;arr[0][0]</text>
-  <text x="272" y="240" font-size="8" fill="#4A4945">蓝 = 第 0 行 · 紫 = 第 1 行；拍平初始化 {1,2,3,4,5,6} 本就按此顺序存</text>
+  <text x="272" y="240" font-size="8" fill="#4A4945">蓝 = 第 0 行 · 紫 = 第 1 行；拍平初始化本就按此顺序存</text>
 
   <rect x="18" y="276" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
   <text x="32" y="299" font-size="9.5" font-weight="600" fill="#7A4A12">数组装得下就放，放不下别硬塞：越界不报错，边界只能自己管（最大索引 = 长度 - 1）</text>

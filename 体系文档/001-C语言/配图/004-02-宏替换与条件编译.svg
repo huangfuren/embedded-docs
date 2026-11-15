@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="529.41" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>宏替换与条件编译</title>
+  <desc>004-结构体位域与预处理：宏是编译前的文本替换、条件编译是编译前的代码裁剪（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="300" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a4Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">004 · 预处理器：先替换、再裁剪，然后才轮到编译器</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：004 §4.5/§4.6 本机实测 · 2026-11-15</text>
+
+  <!-- 左：宏 = 编译前文本替换 -->
+  <rect x="18" y="44" width="320" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="26" y="60" font-size="9" fill="#4A4945">带参宏：编译前的文本替换</text>
+  <rect x="26" y="68" width="304" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="36" y="85" font-size="8" fill="#1F4468">#define SQ(x)  ((x) * (x))</text>
+  <line x1="178" y1="96" x2="178" y2="108" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <text x="188" y="106" font-size="7.5" fill="#8C8980">调用 SQ(2+3)，预处理器整体替换</text>
+  <rect x="26" y="112" width="304" height="26" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
+  <text x="36" y="129" font-size="8" fill="#4A4945">SQ(2+3)  →  ((2+3) * (2+3))</text>
+  <line x1="178" y1="140" x2="178" y2="152" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <text x="188" y="150" font-size="7.5" fill="#8C8980">编译器拿到的只有展开结果</text>
+  <rect x="26" y="156" width="304" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="36" y="173" font-size="8" fill="#1F4468">编译器从没见过 SQ —— 也没有函数调用</text>
+  <text x="26" y="200" font-size="8" fill="#7A322B">副作用实锤（§4.6 实测）：SQ(j++) → (j++)*(j++)</text>
+  <text x="26" y="216" font-size="8" fill="#7A322B">j 加了两次 → 输出 2 12 30，还挨 -Wsequence-point 警告</text>
+  <text x="26" y="240" font-size="7.5" fill="#8C8980">对照函数：func(2+3) 由编译器生成指令 + 调用跳转，参数先求值</text>
+
+  <!-- 右：条件编译 = 编译前裁剪 -->
+  <rect x="352" y="44" width="310" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="360" y="60" font-size="9" fill="#4A4945">条件编译：编译前裁剪代码（FLAG=2 实测）</text>
+  <rect x="360" y="68" width="294" height="28" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="370" y="86" font-size="8" fill="#7A322B">#if FLAG == 1 → UNIT="ms"   （丢弃）</text>
+  <rect x="360" y="102" width="294" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="370" y="120" font-size="8" fill="#1F4468">#elif FLAG == 2 → UNIT="us"  （保留）</text>
+  <rect x="360" y="136" width="294" height="28" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="370" y="154" font-size="8" fill="#7A322B">#else → UNIT="s"   （丢弃）</text>
+  <line x1="507" y1="168" x2="507" y2="180" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <rect x="360" y="184" width="294" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="370" y="201" font-size="8" fill="#1F4468">编译器只看到 UNIT = "us"</text>
+  <text x="360" y="228" font-size="8" fill="#4A4945">#if 0 … #endif：整段丢弃，比注释干净</text>
+  <text x="360" y="244" font-size="8" fill="#4A4945">_WIN32 / __linux__ 平台宏：一份代码适配多平台</text>
+
+  <rect x="18" y="264" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="287" font-size="9.5" font-weight="600" fill="#7A4A12">都发生在编译之前：宏没有调用开销但会翻倍副作用；条件编译让调试开关与跨芯片适配互不打架</text>
+</svg>
