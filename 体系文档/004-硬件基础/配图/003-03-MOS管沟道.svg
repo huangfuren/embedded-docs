@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>MOS 管：栅极电压控制沟道</title>
+  <rect x="0" y="0" width="1200" height="520" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">MOS 管：栅极电压控制沟道，芯片的最小单位</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 §3.5 · 栅极是绝缘的，几乎不耗电流——这是 MOS 与三极管最根本的区别</text>
+
+  <!-- 左：结构 -->
+  <rect x="60" y="92" width="520" height="206" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="118" font-size="12.5" font-weight="bold" fill="#37474f">剖面看结构：栅极隔着绝缘层"遥控"沟道</text>
+
+  <!-- 衬底 -->
+  <rect x="96" y="176" width="440" height="66" fill="#eceff1" stroke="#90a4ae" stroke-width="1.2"/>
+  <text x="316" y="230" font-size="11" fill="#37474f" text-anchor="middle">P 型衬底（体）</text>
+  <!-- 源区 / 漏区 -->
+  <rect x="106" y="176" width="90" height="66" fill="#bbdefb" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="151" y="200" font-size="11" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N+</text>
+  <text x="151" y="218" font-size="11" fill="#0d2f5c" text-anchor="middle">源区</text>
+  <rect x="436" y="176" width="90" height="66" fill="#bbdefb" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="481" y="200" font-size="11" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N+</text>
+  <text x="481" y="218" font-size="11" fill="#0d2f5c" text-anchor="middle">漏区</text>
+
+  <!-- 绝缘层与栅极 -->
+  <rect x="196" y="164" width="240" height="12" fill="#fff9c4" stroke="#f9a825" stroke-width="1.2"/>
+  <rect x="196" y="146" width="240" height="14" fill="#5e35b1" stroke="#5e35b1" stroke-width="1"/>
+  <text x="316" y="158" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">栅极 G</text>
+
+  <!-- 沟道虚线 -->
+  <line x1="200" y1="206" x2="432" y2="206" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <text x="316" y="198" font-size="11" fill="#1b3d1e" text-anchor="middle">感应沟道（加栅压才出现）</text>
+
+  <!-- 引线 -->
+  <line x1="151" y1="176" x2="151" y2="140" stroke="#616161" stroke-width="1.5"/>
+  <text x="151" y="134" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">S 源极</text>
+  <line x1="481" y1="176" x2="481" y2="140" stroke="#616161" stroke-width="1.5"/>
+  <text x="481" y="134" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">D 漏极</text>
+
+  <text x="80" y="266" font-size="11.5" fill="#37474f">栅压够大 → 绝缘层下方感应出电子沟道 → S 与 D 之间导通</text>
+  <text x="80" y="286" font-size="11.5" fill="#5e35b1">栅极与沟道之间隔着绝缘层，所以控制端几乎不耗电流</text>
+
+  <!-- 右：两种沟道 -->
+  <rect x="620" y="92" width="520" height="206" rx="6" fill="#ffffff" stroke="#5e35b1" stroke-width="2"/>
+  <text x="640" y="118" font-size="12.5" font-weight="bold" fill="#5e35b1">两种沟道：N 与 P 正好互补</text>
+
+  <rect x="640" y="130" width="240" height="90" rx="5" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="760" y="152" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N 沟道（NMOS）</text>
+  <text x="656" y="176" font-size="11" fill="#0d2f5c">栅极给高电平（&gt; Vth）导通</text>
+  <text x="656" y="196" font-size="11" fill="#0d2f5c">电流 D → S</text>
+  <text x="656" y="214" font-size="11" fill="#616161">多用于低边开关</text>
+
+  <rect x="896" y="130" width="224" height="90" rx="5" fill="#ffffff" stroke="#c62828" stroke-width="1.5"/>
+  <text x="1008" y="152" font-size="12" font-weight="bold" fill="#7f0000" text-anchor="middle">P 沟道（PMOS）</text>
+  <text x="912" y="176" font-size="11" fill="#7f0000">栅极给低电平（&lt; Vth）导通</text>
+  <text x="912" y="196" font-size="11" fill="#7f0000">电流 S → D</text>
+  <text x="912" y="214" font-size="11" fill="#616161">多用于高边开关</text>
+
+  <text x="640" y="242" font-size="11.5" fill="#5e35b1">增强型：默认关断，加栅压才开通（Vth 是开启门槛）</text>
+  <text x="640" y="262" font-size="11.5" fill="#5e35b1">耗尽型：默认就通，加栅压才关断</text>
+  <text x="640" y="284" font-size="11" fill="#616161">开发板上做开关的几乎都是增强型——默认关断更安全</text>
+
+  <!-- 下：对比 -->
+  <rect x="60" y="316" width="1080" height="150" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="340" font-size="12.5" font-weight="bold" fill="#37474f">与三极管的分界：一个看电流、一个看电压</text>
+
+  <line x1="80" y1="352" x2="1120" y2="352" stroke="#90a4ae" stroke-width="1"/>
+  <text x="96" y="372" font-size="11.5" font-weight="bold" fill="#37474f">对比项</text>
+  <text x="340" y="372" font-size="11.5" font-weight="bold" fill="#0d2f5c">三极管（BJT）</text>
+  <text x="700" y="372" font-size="11.5" font-weight="bold" fill="#5e35b1">MOS 管（FET）</text>
+
+  <text x="96" y="398" font-size="11" fill="#37474f">控制量</text>
+  <text x="340" y="398" font-size="11" fill="#0d2f5c">基极电流</text>
+  <text x="700" y="398" font-size="11" fill="#5e35b1">栅极电压</text>
+
+  <text x="96" y="420" font-size="11" fill="#37474f">控制端耗流</text>
+  <text x="340" y="420" font-size="11" fill="#0d2f5c">要，持续消耗</text>
+  <text x="700" y="420" font-size="11" fill="#5e35b1">几乎不耗（绝缘）</text>
+
+  <text x="96" y="442" font-size="11" fill="#37474f">载流子 / 速度</text>
+  <text x="340" y="442" font-size="11" fill="#0d2f5c">电子 + 空穴，较慢</text>
+  <text x="700" y="442" font-size="11" fill="#5e35b1">仅多子，快、适合高频</text>
+
+  <text x="860" y="398" font-size="11" fill="#616161">小电流、低成本、</text>
+  <text x="860" y="414" font-size="11" fill="#616161">简单开关 → 三极管</text>
+  <text x="860" y="440" font-size="11" fill="#616161">大电流、高频、低损耗</text>
+  <text x="860" y="456" font-size="11" fill="#616161">→ MOS 管</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="486" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="496" font-size="11" fill="#37474f">N+ 掺杂区（源/漏）</text>
+  <rect x="280" y="486" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="310" y="496" font-size="11" fill="#37474f">绝缘层</text>
+  <rect x="440" y="486" width="22" height="12" rx="3" fill="#5e35b1" stroke="#5e35b1" stroke-width="1"/>
+  <text x="470" y="496" font-size="11" fill="#37474f">栅极 G</text>
+  <rect x="580" y="486" width="22" height="12" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="610" y="496" font-size="11" fill="#37474f">衬底（体）</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>数字电路 · 知识地图</title>
+  <defs>
+    <marker id="arwD" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#90a4ae"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="500" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">数字电路 · 知识地图</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：001 逻辑门与数字信号 · 口径：3.3V CMOS 典型值，判定阈值以 datasheet 为准 · 2026-11-19</text>
+
+  <text x="60" y="100" font-size="13" font-weight="bold" fill="#37474f">一条链爬四层：连续的电 → 离散的 0/1 → 组合出运算 → 记住状态</text>
+
+  <!-- ① 表示层 -->
+  <rect x="60" y="114" width="252" height="140" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="78" y="140" font-size="13" font-weight="bold" fill="#0d2f5c">① 表示：0/1 是什么</text>
+  <text x="78" y="164" font-size="11.5" fill="#0d2f5c">高电平区间 / 低电平区间</text>
+  <text x="78" y="184" font-size="11.5" fill="#0d2f5c">中间是禁止区（不确定态）</text>
+  <text x="78" y="208" font-size="11.5" fill="#0d2f5c">余量 = 噪声容限</text>
+  <text x="78" y="232" font-size="11" fill="#616161">0 不是"没电"，是明确的低电平</text>
+
+  <line x1="314" y1="184" x2="334" y2="184" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arwD)"/>
+
+  <!-- ② 门层 -->
+  <rect x="336" y="114" width="252" height="140" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="354" y="140" font-size="13" font-weight="bold" fill="#123314">② 门：最小运算单元</text>
+  <text x="354" y="164" font-size="11.5" fill="#1b3d1e">与（全 1 才 1）= &amp;&amp;</text>
+  <text x="354" y="184" font-size="11.5" fill="#1b3d1e">或（有 1 就 1）= ||</text>
+  <text x="354" y="204" font-size="11.5" fill="#1b3d1e">非（取反）= !</text>
+  <text x="354" y="228" font-size="11" fill="#616161">NAND 一种就能拼出全部逻辑</text>
+
+  <line x1="590" y1="184" x2="610" y2="184" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arwD)"/>
+
+  <!-- ③ 组合层 -->
+  <rect x="612" y="114" width="252" height="140" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="630" y="140" font-size="13" font-weight="bold" fill="#5d4700">③ 组合：拼出加法</text>
+  <text x="630" y="164" font-size="11.5" fill="#5d4700">只由当前输入决定，无记忆</text>
+  <text x="630" y="186" font-size="11.5" fill="#5d4700">半加器：和 = A ^ B</text>
+  <text x="630" y="206" font-size="11.5" fill="#5d4700">　　　　进位 = A &amp; B</text>
+  <text x="630" y="230" font-size="11" fill="#616161">CPU 的 ALU 是它的规模化</text>
+
+  <line x1="866" y1="184" x2="886" y2="184" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arwD)"/>
+
+  <!-- ④ 时序层 -->
+  <rect x="888" y="114" width="252" height="140" rx="6" fill="#d1c4e9" stroke="#5e35b1" stroke-width="2"/>
+  <text x="906" y="140" font-size="13" font-weight="bold" fill="#5e35b1">④ 时序：装记忆</text>
+  <text x="906" y="164" font-size="11.5" fill="#5e35b1">触发器只在时钟边沿看 D</text>
+  <text x="906" y="184" font-size="11.5" fill="#5e35b1">输出 Q 保持到下个边沿</text>
+  <text x="906" y="208" font-size="11.5" fill="#5e35b1">32 个并排 = 32 位寄存器</text>
+  <text x="906" y="232" font-size="11" fill="#616161">时钟纪律：同步设计的根</text>
+
+  <!-- 下左：真值表 -->
+  <rect x="60" y="276" width="520" height="164" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="300" font-size="12.5" font-weight="bold" fill="#37474f">真值表不用背：gates.c 跑一遍就出来</text>
+
+  <rect x="80" y="312" width="480" height="26" fill="#eceff1"/>
+  <text x="106" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">A</text>
+  <text x="156" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">B</text>
+  <text x="246" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">A&amp;&amp;B</text>
+  <text x="336" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">A||B</text>
+  <text x="416" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">!A</text>
+  <text x="496" y="330" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">A^B</text>
+
+  <text x="106" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="156" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="246" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="336" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="416" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="496" y="360" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+
+  <text x="106" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="156" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="246" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="336" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="416" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="496" y="384" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+
+  <text x="106" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="156" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="246" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="336" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="416" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="496" y="408" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+
+  <text x="106" y="430" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="156" y="430" font-size="11.5" fill="#37474f" text-anchor="middle">1</text>
+  <text x="246" y="430" font-size="11.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">1</text>
+  <text x="336" y="430" font-size="11.5" font-weight="bold" fill="#2e7d32" text-anchor="middle">1</text>
+  <text x="416" y="430" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+  <text x="496" y="430" font-size="11.5" fill="#37474f" text-anchor="middle">0</text>
+
+  <!-- 下右：对照与提示 -->
+  <rect x="620" y="276" width="520" height="164" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="640" y="300" font-size="12.5" font-weight="bold" fill="#37474f">为什么用 C 就能学数字电路</text>
+  <text x="640" y="324" font-size="11.5" fill="#37474f">C 的逻辑运算符与门一一对应——</text>
+  <text x="640" y="346" font-size="11.5" fill="#37474f">&amp;&amp; 与  || 或  ! 非  ^ 异或</text>
+  <text x="640" y="372" font-size="11.5" fill="#5d4700">一个 for 双循环枚举四种输入，</text>
+  <text x="640" y="394" font-size="11.5" fill="#5d4700">四行真值表自己就长出来了。</text>
+  <text x="640" y="420" font-size="11" fill="#616161">全机可复现：gcc -Wall gates.c -o gates.exe</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="468" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="478" font-size="11" fill="#37474f">表示层</text>
+  <rect x="190" y="468" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="220" y="478" font-size="11" fill="#37474f">门层</text>
+  <rect x="300" y="468" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="330" y="478" font-size="11" fill="#37474f">组合层</text>
+  <rect x="420" y="468" width="22" height="12" rx="3" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1"/>
+  <text x="450" y="478" font-size="11" fill="#37474f">时序层</text>
+  <rect x="550" y="468" width="22" height="12" rx="3" fill="#eceff1" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="580" y="478" font-size="11" fill="#37474f">表头</text>
+</svg>
