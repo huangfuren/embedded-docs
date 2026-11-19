@@ -1,81 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="652.94" viewBox="0 0 680 370" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>栈与队列：LIFO 与 FIFO</title>
-  <desc>012-栈与队列：栈的栈顶进出、队列的队尾进队首出与假溢出（ds_stack/ds_queue 本机实录）（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="370" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="520" fill="#ffffff"/>
   <defs>
-    <marker id="a12Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c"/>
     </marker>
-    <marker id="a12Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
-    </marker>
-    <marker id="a12Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">012 · 栈（LIFO）与队列（FIFO）：进出规则对照</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：012 §12.1/§12.2 ds_stack/ds_queue 本机实录 · 2026-11-19</text>
 
-  <!-- 左：栈 -->
-  <rect x="18" y="44" width="300" height="196" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">栈 —— 只在栈顶一端进出（LIFO）</text>
-  <rect x="120" y="76" width="90" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="165" y="94" font-size="8.5" fill="#1F4468" text-anchor="middle">40（栈顶）</text>
-  <rect x="120" y="108" width="90" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="165" y="126" font-size="8.5" fill="#1F4468" text-anchor="middle">30</text>
-  <rect x="120" y="140" width="90" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="165" y="158" font-size="8.5" fill="#1F4468" text-anchor="middle">20</text>
-  <rect x="120" y="172" width="90" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="165" y="190" font-size="8.5" fill="#1F4468" text-anchor="middle">10（栈底）</text>
-  <line x1="286" y1="90" x2="220" y2="90" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <text x="253" y="84" font-size="7.5" fill="#1F4468" text-anchor="middle">push</text>
-  <line x1="220" y1="90" x2="286" y2="90" stroke="#D9A458" marker-end="url(#a12Amber)"/>
-  <text x="253" y="102" font-size="7.5" fill="#7A4A12" text-anchor="middle">pop → 40</text>
-  <text x="26" y="226" font-size="8" fill="#1D5A45">本机实录：压 10/20/30/40，两次 pop 弹出 40、30</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">012 · 栈（LIFO）与队列（FIFO）：进出规则对照</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：012 §12.1/§12.2 ds_stack / ds_queue 本机实录 · C17 · 2026-11-19</text>
 
-  <!-- 右：队列 -->
-  <rect x="336" y="44" width="326" height="196" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="344" y="60" font-size="9" fill="#4A4945">队列 —— 队尾进、队首出（FIFO）</text>
-  <rect x="352" y="88" width="56" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="380" y="106" font-size="8.5" fill="#1F4468" text-anchor="middle">400</text>
-  <rect x="412" y="88" width="56" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="440" y="106" font-size="8.5" fill="#1F4468" text-anchor="middle">500</text>
-  <rect x="472" y="88" width="56" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="500" y="106" font-size="8.5" fill="#1F4468" text-anchor="middle">600</text>
-  <line x1="600" y1="102" x2="532" y2="102" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <text x="566" y="96" font-size="7.5" fill="#1F4468" text-anchor="middle">en_queue</text>
-  <text x="380" y="80" font-size="7.5" fill="#4A4945" text-anchor="middle">front（出）</text>
-  <text x="524" y="80" font-size="7.5" fill="#4A4945" text-anchor="middle">rear（进）</text>
-  <line x1="380" y1="124" x2="330" y2="124" stroke="#D9A458" marker-end="url(#a12Amber)"/>
-  <text x="355" y="138" font-size="7.5" fill="#7A4A12" text-anchor="middle">del_queue</text>
-  <text x="352" y="166" font-size="8" fill="#4A4945">出队顺序 = 入队顺序（先进先出）</text>
-  <text x="352" y="184" font-size="8" fill="#1D5A45">本机实录：出 3 进 3 后 400 500 600 1000 2000 3000</text>
-  <text x="352" y="202" font-size="8" fill="#8C8980">满队列拒绝：第 7 个 en_queue(700) 没进去</text>
+  <!-- 左面板：栈 -->
+  <rect x="40" y="70" width="540" height="330" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="98" font-size="15" font-weight="bold" fill="#1b5e20">栈：只在栈顶一端进出（后进先出）</text>
 
-  <!-- 假溢出 -->
-  <rect x="18" y="248" width="644" height="70" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="264" font-size="9" fill="#4A4945">假溢出：front 后移后前段格子"废了"——取模绕回（循环队列）治好它</text>
-  <rect x="26" y="272" width="52" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
-  <text x="52" y="289" font-size="8" fill="#8C8980" text-anchor="middle">废</text>
-  <rect x="82" y="272" width="52" height="26" rx="3" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3,2"/>
-  <text x="108" y="289" font-size="8" fill="#8C8980" text-anchor="middle">废</text>
-  <rect x="138" y="272" width="52" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="164" y="289" font-size="8" fill="#1F4468" text-anchor="middle">400</text>
-  <rect x="194" y="272" width="52" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="220" y="289" font-size="8" fill="#1F4468" text-anchor="middle">500</text>
-  <rect x="250" y="272" width="52" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="276" y="289" font-size="8" fill="#1F4468" text-anchor="middle">600</text>
-  <rect x="306" y="272" width="52" height="26" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="332" y="289" font-size="8" fill="#46337A" text-anchor="middle">1000</text>
-  <rect x="362" y="272" width="52" height="26" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="388" y="289" font-size="8" fill="#46337A" text-anchor="middle">2000</text>
-  <rect x="418" y="272" width="52" height="26" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="444" y="289" font-size="8" fill="#46337A" text-anchor="middle">3000</text>
-  <polyline points="404,285 404,258 356,258 356,268" fill="none" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <text x="392" y="252" font-size="7.5" fill="#1F4468" text-anchor="middle">rear 绕回</text>
-  <text x="486" y="285" font-size="8" fill="#1D5A45">出 3 进 3：新数据写进绕回后的空格（实测）</text>
+  <rect x="230" y="130" width="160" height="48" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="310" y="160" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">40（栈顶）</text>
+  <rect x="230" y="182" width="160" height="48" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="310" y="212" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">30</text>
+  <rect x="230" y="234" width="160" height="48" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="310" y="264" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">20</text>
+  <rect x="230" y="286" width="160" height="48" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="310" y="316" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">10（栈底）</text>
 
-  <rect x="18" y="326" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="349" font-size="9.5" font-weight="600" fill="#7A4A12">栈后进先出（函数调用/括号匹配/回退）；队列先进先出（缓冲/排队/RTOS 消息）——嵌入式两个无处不在的模型</text>
+  <line x1="310" y1="104" x2="310" y2="124" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="322" y="118" font-size="11.5" fill="#e65100">push 压入</text>
+  <line x1="226" y1="154" x2="190" y2="154" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="182" y="158" font-size="11.5" fill="#388e3c" text-anchor="end">pop 弹出</text>
+
+  <text x="60" y="356" font-size="11.5" fill="#37474f">本机实录：压 10 / 20 / 30 / 40，两次 pop 得到 40、30</text>
+  <text x="60" y="378" font-size="11.5" fill="#616161">后进去的先出来——这就是函数调用与递归的模型</text>
+
+  <!-- 右面板：队列 -->
+  <rect x="620" y="70" width="540" height="330" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="640" y="98" font-size="15" font-weight="bold" fill="#0d47a1">队列：队尾进、队首出（先进先出）</text>
+
+  <rect x="686" y="140" width="96" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="790" y="140" width="96" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="894" y="140" width="96" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="998" y="140" width="96" height="52" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="734" y="172" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">100</text>
+  <text x="838" y="172" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">200</text>
+  <text x="942" y="172" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">300</text>
+  <text x="1046" y="172" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">400</text>
+
+  <text x="734" y="214" font-size="11.5" fill="#0d47a1" text-anchor="middle">front（出）</text>
+  <text x="1046" y="214" font-size="11.5" fill="#e65100" text-anchor="middle">rear（进）</text>
+
+  <line x1="680" y1="166" x2="644" y2="166" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="662" y="150" font-size="11.5" fill="#388e3c" text-anchor="middle">出队</text>
+  <line x1="1100" y1="166" x2="1136" y2="166" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="1118" y="150" font-size="11.5" fill="#e65100" text-anchor="middle">入队</text>
+
+  <text x="640" y="308" font-size="11.5" fill="#37474f">出队顺序 = 入队顺序：先进去的先被取走</text>
+  <text x="640" y="330" font-size="11.5" fill="#c62828">满队列拒绝：第 7 次 en_queue(700) 没能进去</text>
+  <text x="640" y="352" font-size="11.5" fill="#c62828">假溢出：front 后移后前段格子作废 → 取模绕回（循环队列）</text>
+  <text x="640" y="378" font-size="11.5" fill="#616161">本机实录：出 3 进 3 后为 400 500 600 1000 2000 3000</text>
+
+  <!-- 结论 -->
+  <rect x="40" y="420" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="444" font-size="13" font-weight="bold" fill="#5d4037">一个只在顶端动（栈），一个一端进、另一端出（队列）——限制访问位置换来的是 O(1) 进出</text>
+  <text x="62" y="466" font-size="12" fill="#5d4037">栈用于回溯（递归、撤销、括号匹配），队列用于排队（任务调度、BFS 层序遍历）</text>
+
+  <!-- 图例 -->
+  <rect x="40" y="494" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="506" font-size="12" fill="#37474f">普通元素</text>
+  <rect x="200" y="494" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="232" y="506" font-size="12" fill="#37474f">当前操作端（栈顶 / 队尾）</text>
+  <line x1="450" y1="501" x2="484" y2="501" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="496" y="506" font-size="12" fill="#37474f">取出（pop / 出队）</text>
+  <line x1="680" y1="501" x2="714" y2="501" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="726" y="506" font-size="12" fill="#37474f">放入（push / 入队）</text>
 </svg>

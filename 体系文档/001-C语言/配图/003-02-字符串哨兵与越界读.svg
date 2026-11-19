@@ -1,62 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="582.35" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>字符串哨兵与越界读</title>
-  <desc>003-数组与字符串：%s 沿哨兵停、无哨兵越界读到邻居（c=jacktom 本机实录）（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="330" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="600" fill="#ffffff"/>
   <defs>
-    <marker id="a3Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
-    </marker>
-    <marker id="a3Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">003 · \0 哨兵：%s 的"停止符"</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：003 §3.3 str_demo 本机实录 · 2026-11-19</text>
 
-  <!-- 有哨兵 -->
-  <rect x="18" y="44" width="644" height="104" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">有哨兵：char e[] = "lily" —— %s 读到 \0 就停</text>
-  <rect x="26" y="70" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="52" y="90" font-size="9" fill="#1F4468" text-anchor="middle">l</text>
-  <rect x="84" y="70" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="110" y="90" font-size="9" fill="#1F4468" text-anchor="middle">i</text>
-  <rect x="142" y="70" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="168" y="90" font-size="9" fill="#1F4468" text-anchor="middle">l</text>
-  <rect x="200" y="70" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="226" y="90" font-size="9" fill="#1F4468" text-anchor="middle">y</text>
-  <rect x="258" y="70" width="52" height="32" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="284" y="90" font-size="9" fill="#46337A" text-anchor="middle">\0</text>
-  <line x1="52" y1="116" x2="278" y2="116" stroke="#7FA6D0" marker-end="url(#a3Blue)"/>
-  <text x="165" y="128" font-size="7.5" fill="#4A4945" text-anchor="middle">%s 从头逐字符读，撞上哨兵就收工</text>
-  <text x="430" y="92" font-size="8.5" fill="#1D5A45">输出: lily</text>
-  <text x="430" y="110" font-size="8" fill="#1D5A45">sizeof e = 5（含哨兵）</text>
-  <text x="430" y="128" font-size="8" fill="#4A4945">strlen(e) = 4（有效字符）</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">003 · 字符串 = 以 \0 结尾的字符数组</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：003 §3.3 str_demo 本机实录 · C17 · 2026-11-19</text>
 
-  <!-- 无哨兵 -->
-  <rect x="18" y="156" width="644" height="118" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="172" font-size="9" fill="#4A4945">无哨兵：char c[] = {'j','a','c','k'} —— %s 越过 c，连到邻居 b 的 \0 才停（本机实录）</text>
-  <rect x="26" y="182" width="52" height="32" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="52" y="202" font-size="9" fill="#7A322B" text-anchor="middle">j</text>
-  <rect x="84" y="182" width="52" height="32" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="110" y="202" font-size="9" fill="#7A322B" text-anchor="middle">a</text>
-  <rect x="142" y="182" width="52" height="32" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="168" y="202" font-size="9" fill="#7A322B" text-anchor="middle">c</text>
-  <rect x="200" y="182" width="52" height="32" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="226" y="202" font-size="9" fill="#7A322B" text-anchor="middle">k</text>
-  <rect x="258" y="182" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="284" y="202" font-size="9" fill="#1F4468" text-anchor="middle">t</text>
-  <rect x="316" y="182" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="342" y="202" font-size="9" fill="#1F4468" text-anchor="middle">o</text>
-  <rect x="374" y="182" width="52" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="400" y="202" font-size="9" fill="#1F4468" text-anchor="middle">m</text>
-  <rect x="432" y="182" width="52" height="32" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
-  <text x="458" y="202" font-size="9" fill="#46337A" text-anchor="middle">\0</text>
-  <line x1="52" y1="228" x2="452" y2="228" stroke="#D2948C" marker-end="url(#a3Red)"/>
-  <text x="252" y="240" font-size="7.5" fill="#7A322B" text-anchor="middle">%s 停不下来——c 后面没有哨兵，一路读进邻居 b 的地盘，撞见 b 的 \0 才收工</text>
-  <text x="26" y="262" font-size="8.5" fill="#7A322B">输出: jacktom（c 的 4 个字符 + 邻居 b 的 "tom"，全凭内存运气）</text>
+  <text x="40" y="96" font-size="17" font-weight="bold" fill="#1b5e20">有哨兵：char e[] = &quot;lily&quot; —— 编译器自动补 \0</text>
 
-  <rect x="18" y="282" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="305" font-size="9.5" font-weight="600" fill="#7A4A12">哨兵是字符串的停止符：手写数组必补 '\0'；最推荐字面量写法 char s[] = "lily"（自动带哨兵）</text>
-  <text x="32" y="326" font-size="8" fill="#8C8980">口径 C17 · 完整示例 str_demo.c 见 003 §3.3 — 2026-11-19</text>
+  <rect x="80" y="120" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="190" y="120" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="300" y="120" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="410" y="120" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="520" y="120" width="100" height="60" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="130" y="158" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">l</text>
+  <text x="240" y="158" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">i</text>
+  <text x="350" y="158" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">l</text>
+  <text x="460" y="158" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">y</text>
+  <text x="570" y="158" font-size="17" font-weight="bold" fill="#7f3f00" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">\0</text>
+  <text x="570" y="200" font-size="11.5" fill="#7f3f00" text-anchor="middle">哨兵</text>
+
+  <rect x="660" y="120" width="500" height="96" rx="8" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="682" y="146" font-size="13" font-weight="bold" fill="#123314">%s 从头逐字符读，撞上哨兵就收工</text>
+  <text x="682" y="172" font-size="12.5" fill="#1b3d1e">sizeof e = 5（含哨兵）　strlen(e) = 4（数到哨兵为止）</text>
+  <text x="682" y="198" font-size="12.5" fill="#1b3d1e">终端输出：lily</text>
+
+  <text x="40" y="262" font-size="17" font-weight="bold" fill="#7f0000">没有哨兵：char c[] = {'j','a','c','k'}，紧跟 char b[] = &quot;tom&quot;</text>
+
+  <rect x="80" y="286" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="190" y="286" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="300" y="286" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="410" y="286" width="100" height="60" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="530" y="286" width="100" height="60" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <rect x="640" y="286" width="100" height="60" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <rect x="750" y="286" width="100" height="60" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <rect x="860" y="286" width="100" height="60" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="130" y="324" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">j</text>
+  <text x="240" y="324" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">a</text>
+  <text x="350" y="324" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">c</text>
+  <text x="460" y="324" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">k</text>
+  <text x="580" y="324" font-size="20" font-weight="bold" fill="#0d2f5c" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">t</text>
+  <text x="690" y="324" font-size="20" font-weight="bold" fill="#0d2f5c" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">o</text>
+  <text x="800" y="324" font-size="20" font-weight="bold" fill="#0d2f5c" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">m</text>
+  <text x="910" y="324" font-size="17" font-weight="bold" fill="#7f3f00" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">\0</text>
+
+  <line x1="520" y1="278" x2="520" y2="352" stroke="#c62828" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="330" y="370" font-size="11.5" fill="#c62828" text-anchor="middle">c 的地盘（4 格，无哨兵）</text>
+  <text x="795" y="370" font-size="11.5" fill="#1565c0" text-anchor="middle">b 的地盘（有哨兵）</text>
+
+  <rect x="40" y="386" width="1120" height="76" rx="8" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="62" y="412" font-size="13" font-weight="bold" fill="#7f0000">%s 停不下来：c 的第 5 格不在 c 里，而是邻居 b 的第 1 格</text>
+  <text x="62" y="438" font-size="12.5" fill="#7f0000">一路读进 b 的地盘，撞见 b 的 \0 才收工　→　终端输出 jacktom（c 的 4 字 + b 的 3 字）</text>
+  <text x="62" y="458" font-size="12" fill="#7f0000">换一台机器、换一次编译，邻居可能是别的残留值——输出就是另一串乱码</text>
+
+  <rect x="40" y="476" width="1120" height="52" rx="8" fill="#fff8e1" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="62" y="508" font-size="13" font-weight="bold" fill="#5d4037">结论：手写字符数组必补 '\0'；最推荐字面量写法 char s[] = &quot;lily&quot;，哨兵自动带上</text>
+
+  <rect x="40" y="552" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="564" font-size="12" fill="#37474f">本数组字符</text>
+  <rect x="170" y="552" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="202" y="564" font-size="12" fill="#37474f">邻居数组（不该被读到）</text>
+  <rect x="372" y="552" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="404" y="564" font-size="12" fill="#37474f">\0 哨兵（%s 的停止符）</text>
+  <rect x="572" y="552" width="22" height="14" rx="3" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="604" y="564" font-size="12" fill="#37474f">哨兵齐全时的正常输出</text>
+  <rect x="766" y="552" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="798" y="564" font-size="12" fill="#37474f">缺哨兵的后果</text>
 </svg>

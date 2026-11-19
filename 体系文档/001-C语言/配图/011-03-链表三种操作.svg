@@ -1,91 +1,129 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="688.24" viewBox="0 0 680 390" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>链表三种操作：头插、中插、删除的指针赋值顺序</title>
-  <desc>011-动态数组与链表：链表增删只改两个指针，头插改 header、中插改前驱的 next、删除摘链后必须 free；赋值顺序错则链断或内存泄漏（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="390" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 590"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="590" fill="#ffffff"/>
   <defs>
-    <marker id="a11Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
     </marker>
-    <marker id="a11Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
-    <marker id="a11Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c62828"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">011 · 链表三种操作：改的永远只有两个指针</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：011 §11.2 ds_list.c 本机实测 · 2026-11-19</text>
-  <text x="32" y="48" font-size="8" fill="#8C8980">橙色是本次新建的节点，红色是本次要摘除的节点；每个操作只动两个指针，赋值顺序不能颠倒。</text>
 
-  <!-- 行 1：头插 -->
-  <rect x="18" y="62" width="80" height="76" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="58" y="86" font-size="9" font-weight="600" fill="#1F4468" text-anchor="middle">① 头插</text>
-  <text x="58" y="104" font-size="7.5" fill="#4A4945" text-anchor="middle">index = 0</text>
-  <text x="58" y="122" font-size="7.5" fill="#8C8980" text-anchor="middle">改 header</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">011 · 链表三种操作：改的永远只有两个指针</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：011 §11.2 ds_list.c 本机实测 · C17 · 2026-11-19</text>
 
-  <text x="155" y="79" font-size="7" fill="#7A4A12" text-anchor="middle">header 改指向 N</text>
-  <rect x="126" y="85" width="58" height="30" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="155" y="104" font-size="8" fill="#7A4A12" text-anchor="middle">N（新）</text>
-  <line x1="186" y1="100" x2="212" y2="100" stroke="#D9A458" marker-end="url(#a11Amber)"/>
-  <text x="199" y="94" font-size="7" fill="#7A4A12" text-anchor="middle">①</text>
-  <rect x="214" y="85" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="243" y="104" font-size="8" fill="#1F4468" text-anchor="middle">A</text>
-  <line x1="274" y1="100" x2="300" y2="100" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
-  <rect x="302" y="85" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="331" y="104" font-size="8" fill="#1F4468" text-anchor="middle">B</text>
+  <text x="40" y="86" font-size="12" fill="#37474f">橙色 = 本次新建的节点，红色 = 本次要摘除的节点；每个操作只动两个指针，赋值顺序不能颠倒</text>
 
-  <text x="402" y="88" font-size="7.5" fill="#4A4945">① N-&gt;next = list-&gt;header　（新节点接旧头）</text>
-  <text x="402" y="106" font-size="7.5" fill="#4A4945">② list-&gt;header = N　（头指向新节点）</text>
-  <text x="402" y="126" font-size="7.5" fill="#8C8980">全程只改两个指针，A、B 一格没动</text>
+  <rect x="40" y="110" width="140" height="96" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="110" y="146" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">① 头插</text>
+  <text x="110" y="170" font-size="11.5" fill="#5d4700" text-anchor="middle">index = 0</text>
+  <text x="110" y="190" font-size="11.5" fill="#5d4700" text-anchor="middle">改 header</text>
 
-  <!-- 行 2：中插 -->
-  <rect x="18" y="142" width="80" height="76" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="58" y="166" font-size="9" font-weight="600" fill="#1F4468" text-anchor="middle">② 中插</text>
-  <text x="58" y="184" font-size="7.5" fill="#4A4945" text-anchor="middle">A 之后</text>
-  <text x="58" y="202" font-size="7.5" fill="#8C8980" text-anchor="middle">改 A 的 next</text>
+  <rect x="200" y="132" width="110" height="52" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <line x1="255" y1="132" x2="255" y2="184" stroke="#e65100" stroke-width="1"/>
+  <text x="227" y="164" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">5</text>
+  <text x="282" y="164" font-size="11.5" fill="#7f3f00" text-anchor="middle">·</text>
+  <text x="227" y="202" font-size="11" fill="#7f3f00" text-anchor="middle">新节点 N</text>
+  <line x1="312" y1="158" x2="326" y2="158" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
 
-  <text x="155" y="159" font-size="7" fill="#8C8980" text-anchor="middle">header 不动</text>
-  <rect x="126" y="165" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="155" y="184" font-size="8" fill="#1F4468" text-anchor="middle">A</text>
-  <line x1="186" y1="180" x2="212" y2="180" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
-  <rect x="214" y="165" width="58" height="30" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="243" y="184" font-size="8" fill="#7A4A12" text-anchor="middle">N（新）</text>
-  <line x1="274" y1="180" x2="300" y2="180" stroke="#D9A458" marker-end="url(#a11Amber)"/>
-  <text x="287" y="174" font-size="7" fill="#7A4A12" text-anchor="middle">②</text>
-  <rect x="302" y="165" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="331" y="184" font-size="8" fill="#1F4468" text-anchor="middle">B</text>
+  <rect x="330" y="132" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="385" y1="132" x2="385" y2="184" stroke="#2e7d32" stroke-width="1"/>
+  <text x="357" y="164" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">10</text>
+  <text x="412" y="164" font-size="11.5" fill="#2e5230" text-anchor="middle">·</text>
+  <line x1="442" y1="158" x2="476" y2="158" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <text x="402" y="168" font-size="7.5" fill="#4A4945">① N-&gt;next = A-&gt;next　（先接住后继）</text>
-  <text x="402" y="186" font-size="7.5" fill="#4A4945">② A-&gt;next = N　（再断开前驱）</text>
-  <text x="402" y="206" font-size="7.5" fill="#7A322B">顺序颠倒：A-&gt;next 先被覆盖，B 就丢了</text>
+  <rect x="480" y="132" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="535" y1="132" x2="535" y2="184" stroke="#2e7d32" stroke-width="1"/>
+  <text x="507" y="164" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">20</text>
+  <line x1="592" y1="158" x2="626" y2="158" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="636" y="164" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">NULL</text>
 
-  <!-- 行 3：删除 -->
-  <rect x="18" y="222" width="80" height="76" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="58" y="246" font-size="9" font-weight="600" fill="#7A322B" text-anchor="middle">③ 删除</text>
-  <text x="58" y="264" font-size="7.5" fill="#7A322B" text-anchor="middle">摘 B</text>
-  <text x="58" y="282" font-size="7.5" fill="#8C8980" text-anchor="middle">摘链 + free</text>
+  <text x="780" y="150" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">① N-&gt;next = list-&gt;header</text>
+  <text x="780" y="176" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">② list-&gt;header = N</text>
+  <text x="780" y="200" font-size="11.5" fill="#616161">先接旧头，再改头——顺序反了新头就断了</text>
 
-  <rect x="126" y="251" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="155" y="270" font-size="8" fill="#1F4468" text-anchor="middle">A</text>
-  <line x1="186" y1="266" x2="212" y2="266" stroke="#D2948C" stroke-dasharray="4 3" marker-end="url(#a11Red)"/>
-  <text x="199" y="280" font-size="6.5" fill="#8C8980" text-anchor="middle">原指向</text>
-  <rect x="214" y="251" width="58" height="30" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="243" y="270" font-size="8" fill="#7A322B" text-anchor="middle">B（摘除）</text>
-  <line x1="274" y1="266" x2="300" y2="266" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
-  <path d="M155,251 L155,236 L331,236 L331,249" fill="none" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
-  <text x="243" y="231" font-size="7" fill="#1F4468" text-anchor="middle">② 改指 C</text>
-  <rect x="302" y="251" width="58" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="331" y="270" font-size="8" fill="#1F4468" text-anchor="middle">C</text>
+  <rect x="40" y="240" width="140" height="96" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="110" y="276" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">② 中插</text>
+  <text x="110" y="300" font-size="11.5" fill="#5d4700" text-anchor="middle">A 之后</text>
+  <text x="110" y="320" font-size="11.5" fill="#5d4700" text-anchor="middle">改 A 的 next</text>
 
-  <text x="402" y="252" font-size="7.5" fill="#4A4945">① del = A-&gt;next　（先留住待删节点）</text>
-  <text x="402" y="270" font-size="7.5" fill="#4A4945">② A-&gt;next = del-&gt;next　（摘链）</text>
-  <text x="402" y="288" font-size="7.5" fill="#7A322B">③ free(del)　漏这步就是内存泄漏</text>
+  <rect x="200" y="262" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="255" y1="262" x2="255" y2="314" stroke="#2e7d32" stroke-width="1"/>
+  <text x="227" y="294" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">10</text>
+  <text x="282" y="294" font-size="11.5" fill="#2e5230" text-anchor="middle">·</text>
+  <text x="227" y="332" font-size="11" fill="#123314" text-anchor="middle">A</text>
+  <line x1="312" y1="288" x2="326" y2="288" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
 
-  <!-- 结论 -->
-  <rect x="18" y="312" width="644" height="44" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="331" font-size="9.5" font-weight="600" fill="#7A4A12">链表高效的全部秘密：增删只改两个指针，一格数据都不搬</text>
-  <text x="32" y="348" font-size="8" fill="#7A4A12">代价写在另一半：「找到位置」本身仍要 O(n)——所以「链表增删快」的完整表述必须先说「找到之后」</text>
+  <rect x="330" y="262" width="110" height="52" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <line x1="385" y1="262" x2="385" y2="314" stroke="#e65100" stroke-width="1"/>
+  <text x="357" y="294" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle">5</text>
+  <text x="412" y="294" font-size="11.5" fill="#7f3f00" text-anchor="middle">·</text>
+  <text x="357" y="332" font-size="11" fill="#7f3f00" text-anchor="middle">新节点 N</text>
+  <line x1="442" y1="288" x2="476" y2="288" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <text x="32" y="376" font-size="8" fill="#8C8980">口径 C17 · 完整 API 与实码见 001-C语言/code/011/ds_list.c · 2026-11-19</text>
+  <rect x="480" y="262" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="535" y1="262" x2="535" y2="314" stroke="#2e7d32" stroke-width="1"/>
+  <text x="507" y="294" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">20</text>
+  <line x1="592" y1="288" x2="626" y2="288" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="636" y="294" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">NULL</text>
+
+  <text x="780" y="280" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">① N-&gt;next = A-&gt;next</text>
+  <text x="780" y="306" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">② A-&gt;next = N</text>
+  <text x="780" y="330" font-size="11.5" fill="#616161">先把 A 的后继交给 N，再让 A 指向 N</text>
+
+  <rect x="40" y="370" width="140" height="104" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="110" y="406" font-size="15" font-weight="bold" fill="#7f0000" text-anchor="middle">③ 删除</text>
+  <text x="110" y="430" font-size="11.5" fill="#7f0000" text-anchor="middle">摘掉 B</text>
+  <text x="110" y="450" font-size="11.5" fill="#7f0000" text-anchor="middle">别忘 free</text>
+
+  <rect x="200" y="392" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="255" y1="392" x2="255" y2="444" stroke="#2e7d32" stroke-width="1"/>
+  <text x="227" y="424" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">10</text>
+  <text x="282" y="424" font-size="11.5" fill="#2e5230" text-anchor="middle">·</text>
+  <text x="227" y="462" font-size="11" fill="#123314" text-anchor="middle">A</text>
+
+  <rect x="330" y="392" width="110" height="52" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <line x1="385" y1="392" x2="385" y2="444" stroke="#c62828" stroke-width="1"/>
+  <text x="357" y="424" font-size="15" font-weight="bold" fill="#7f0000" text-anchor="middle">20</text>
+  <line x1="442" y1="418" x2="476" y2="418" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="480" y="392" width="110" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <line x1="535" y1="392" x2="535" y2="444" stroke="#2e7d32" stroke-width="1"/>
+  <text x="507" y="424" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">30</text>
+  <line x1="592" y1="418" x2="626" y2="418" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="636" y="424" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">NULL</text>
+  <text x="507" y="462" font-size="11" fill="#123314" text-anchor="middle">C</text>
+  <text x="357" y="462" font-size="11" fill="#7f0000" text-anchor="middle">B（待删）</text>
+
+  <path d="M 260 386 Q 390 350 512 386" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="386" y="356" font-size="11.5" fill="#c62828" text-anchor="middle">② 改指 C</text>
+
+  <text x="780" y="402" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">① del = A-&gt;next</text>
+  <text x="780" y="426" font-size="12" fill="#263238" font-family="ui-monospace,Menlo,Consolas,monospace">② A-&gt;next = del-&gt;next</text>
+  <text x="780" y="450" font-size="12" fill="#c62828" font-family="ui-monospace,Menlo,Consolas,monospace">③ free(del)</text>
+  <text x="780" y="470" font-size="11.5" fill="#616161">漏 ③ 就是内存泄漏</text>
+
+  <rect x="40" y="486" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="518" font-size="13" font-weight="bold" fill="#5d4037">共同规律：先让新节点接住后继，再让前驱改指——顺序颠倒就会断链或丢节点</text>
+
+  <rect x="40" y="562" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="574" font-size="12" fill="#37474f">已有节点</text>
+  <rect x="200" y="562" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="232" y="574" font-size="12" fill="#37474f">新建节点</text>
+  <rect x="360" y="562" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="392" y="574" font-size="12" fill="#37474f">待删除节点</text>
+  <line x1="540" y1="569" x2="582" y2="569" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="594" y="574" font-size="12" fill="#37474f">删后的新指向</text>
+  <rect x="760" y="562" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="792" y="574" font-size="12" fill="#37474f">操作类型与改动位置</text>
 </svg>

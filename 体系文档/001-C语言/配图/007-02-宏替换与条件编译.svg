@@ -1,48 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="529.41" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>宏替换与条件编译</title>
-  <desc>007-结构体位域与预处理：宏是编译前的文本替换、条件编译是编译前的代码裁剪（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="300" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 524"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="524" fill="#ffffff"/>
   <defs>
-    <marker id="a7Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">007 · 预处理器：先替换、再裁剪，然后才轮到编译器</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：007 §7.5/§7.6 本机实测 · 2026-11-19</text>
 
-  <!-- 左：宏 = 编译前文本替换 -->
-  <rect x="18" y="44" width="320" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">带参宏：编译前的文本替换</text>
-  <rect x="26" y="68" width="304" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="36" y="85" font-size="8" fill="#1F4468">#define SQ(x)  ((x) * (x))</text>
-  <line x1="178" y1="96" x2="178" y2="108" stroke="#7FA6D0" marker-end="url(#a7Blue)"/>
-  <text x="188" y="106" font-size="7.5" fill="#8C8980">调用 SQ(2+3)，预处理器整体替换</text>
-  <rect x="26" y="112" width="304" height="26" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
-  <text x="36" y="129" font-size="8" fill="#4A4945">SQ(2+3)  →  ((2+3) * (2+3))</text>
-  <line x1="178" y1="140" x2="178" y2="152" stroke="#7FA6D0" marker-end="url(#a7Blue)"/>
-  <text x="188" y="150" font-size="7.5" fill="#8C8980">编译器拿到的只有展开结果</text>
-  <rect x="26" y="156" width="304" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="36" y="173" font-size="8" fill="#1F4468">编译器从没见过 SQ —— 也没有函数调用</text>
-  <text x="26" y="200" font-size="8" fill="#7A322B">副作用实锤（§7.6 实测）：SQ(j++) → (j++)*(j++)</text>
-  <text x="26" y="216" font-size="8" fill="#7A322B">j 加了两次 → 输出 2 12 30，还挨 -Wsequence-point 警告</text>
-  <text x="26" y="240" font-size="7.5" fill="#8C8980">对照函数：func(2+3) 由编译器生成指令 + 调用跳转，参数先求值</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">007 · 预处理器：先替换、再裁剪，然后才轮到编译器</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.5/§7.6 本机实测 · C17 · 2026-11-19</text>
 
-  <!-- 右：条件编译 = 编译前裁剪 -->
-  <rect x="352" y="44" width="310" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="360" y="60" font-size="9" fill="#4A4945">条件编译：编译前裁剪代码（FLAG=2 实测）</text>
-  <rect x="360" y="68" width="294" height="28" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="370" y="86" font-size="8" fill="#7A322B">#if FLAG == 1 → UNIT="ms"   （丢弃）</text>
-  <rect x="360" y="102" width="294" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="370" y="120" font-size="8" fill="#1F4468">#elif FLAG == 2 → UNIT="us"  （保留）</text>
-  <rect x="360" y="136" width="294" height="28" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="370" y="154" font-size="8" fill="#7A322B">#else → UNIT="s"   （丢弃）</text>
-  <line x1="507" y1="168" x2="507" y2="180" stroke="#7FA6D0" marker-end="url(#a7Blue)"/>
-  <rect x="360" y="184" width="294" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="370" y="201" font-size="8" fill="#1F4468">编译器只看到 UNIT = "us"</text>
-  <text x="360" y="228" font-size="8" fill="#4A4945">#if 0 … #endif：整段丢弃，比注释干净</text>
-  <text x="360" y="244" font-size="8" fill="#4A4945">_WIN32 / __linux__ 平台宏：一份代码适配多平台</text>
+  <text x="40" y="88" font-size="17" font-weight="bold" fill="#1b5e20">带参宏：编译前的纯文本替换</text>
+  <text x="40" y="110" font-size="12" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">#define SQ(x)  ((x) * (x))</text>
 
-  <rect x="18" y="264" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="287" font-size="9.5" font-weight="600" fill="#7A4A12">都发生在编译之前：宏没有调用开销但会翻倍副作用；条件编译让调试开关与跨芯片适配互不打架</text>
+  <rect x="40" y="126" width="300" height="76" rx="6" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+  <text x="58" y="152" font-size="11.5" fill="#546e7a">你写的调用</text>
+  <text x="58" y="180" font-size="15" font-weight="bold" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">SQ(2 + 3)</text>
+  <line x1="348" y1="164" x2="392" y2="164" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="156" font-size="11" fill="#616161" text-anchor="middle">展开</text>
+
+  <rect x="400" y="126" width="340" height="76" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="418" y="152" font-size="11.5" fill="#2e5230">预处理器交出的结果</text>
+  <text x="418" y="180" font-size="14" font-weight="bold" fill="#123314" font-family="ui-monospace,Menlo,Consolas,monospace">((2 + 3) * (2 + 3))</text>
+  <line x1="748" y1="164" x2="792" y2="164" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="770" y="156" font-size="11" fill="#616161" text-anchor="middle">编译</text>
+
+  <rect x="800" y="126" width="360" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="818" y="152" font-size="11.5" fill="#0d2f5c">编译器看到的：只是一个乘式</text>
+  <text x="818" y="180" font-size="15" font-weight="bold" fill="#0d2f5c">25　（编译器从没见过 SQ）</text>
+
+  <rect x="40" y="216" width="1120" height="46" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="60" y="245" font-size="12.5" fill="#7f0000">副作用实锤：SQ(j++) 展开成 ((j++) * (j++)) —— j 被加了两次，输出 2 12 30 并触发 -Wsequence-point</text>
+
+  <text x="40" y="298" font-size="17" font-weight="bold" fill="#0d47a1">条件编译：编译前的代码裁剪（FLAG = 2 实测）</text>
+
+  <rect x="40" y="316" width="340" height="76" rx="6" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="58" y="342" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">#if FLAG == 1</text>
+  <text x="58" y="366" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">UNIT = &quot;ms&quot;</text>
+  <text x="330" y="366" font-size="11.5" fill="#616161" text-anchor="end">丢弃</text>
+
+  <rect x="400" y="316" width="340" height="76" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="418" y="342" font-size="12" fill="#123314" font-family="ui-monospace,Menlo,Consolas,monospace">#elif FLAG == 2</text>
+  <text x="418" y="366" font-size="12" font-weight="bold" fill="#123314" font-family="ui-monospace,Menlo,Consolas,monospace">UNIT = &quot;us&quot;</text>
+  <text x="690" y="366" font-size="11.5" fill="#1b3d1e" text-anchor="end">保留</text>
+
+  <rect x="760" y="316" width="400" height="76" rx="6" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="778" y="342" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">#else</text>
+  <text x="778" y="366" font-size="12" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">UNIT = &quot;s&quot;</text>
+  <text x="1120" y="366" font-size="11.5" fill="#616161" text-anchor="end">丢弃</text>
+
+  <text x="40" y="414" font-size="11.5" fill="#616161">编译器只看到保留下来的那一段——另外两段在预处理阶段就被整段删掉了，不参与编译</text>
+
+  <rect x="40" y="432" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="464" font-size="13" font-weight="bold" fill="#5d4037">两者都发生在编译之前：宏没有调用开销但会翻倍副作用；条件编译让调试开关与跨平台适配互不打架</text>
+
+  <rect x="40" y="502" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="514" font-size="12" fill="#37474f">保留 / 生效的代码</text>
+  <rect x="240" y="502" width="22" height="14" rx="3" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="272" y="514" font-size="12" fill="#37474f">被丢弃的代码</text>
+  <rect x="440" y="502" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="472" y="514" font-size="12" fill="#37474f">编译器实际看到的</text>
+  <line x1="660" y1="509" x2="702" y2="509" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="714" y="514" font-size="12" fill="#37474f">预处理阶段推进</text>
+  <rect x="880" y="502" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="912" y="514" font-size="12" fill="#37474f">副作用 / 危险写法</text>
 </svg>

@@ -1,63 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="582.35" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>值传递与传地址</title>
-  <desc>002-基础语法与控制流：swap 两个版本——值传递改副本失败、传地址改真身成功（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="330" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 546"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="546" fill="#ffffff"/>
   <defs>
-    <marker id="a2Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
     </marker>
-    <marker id="a2Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">002 · 值传递 vs 传地址：swap 两版结局</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：002 §2.6 本机实录 · 2026-11-15</text>
 
-  <!-- 左：值传递 -->
-  <rect x="18" y="44" width="326" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">swap_broken —— 换的是副本（值传递）</text>
-  <rect x="30" y="72" width="130" height="64" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="95" y="88" font-size="8.5" fill="#1F4468" text-anchor="middle">main 的真身</text>
-  <rect x="38" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="64" y="113" font-size="8.5" fill="#1F4468" text-anchor="middle">x = 1</text>
-  <rect x="96" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="122" y="113" font-size="8.5" fill="#1F4468" text-anchor="middle">y = 9</text>
-  <line x1="164" y1="104" x2="200" y2="104" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="182" y="98" font-size="7.5" fill="#8C8980" text-anchor="middle">拷贝</text>
-  <rect x="202" y="72" width="132" height="64" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="268" y="88" font-size="8.5" fill="#1F4468" text-anchor="middle">函数内的副本 a、b</text>
-  <rect x="210" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="236" y="113" font-size="8.5" fill="#1F4468" text-anchor="middle">a = 1</text>
-  <rect x="268" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="294" y="113" font-size="8.5" fill="#1F4468" text-anchor="middle">b = 9</text>
-  <text x="268" y="132" font-size="8" fill="#4A4945" text-anchor="middle">函数里换成了 a=9, b=1</text>
-  <text x="182" y="156" font-size="8" fill="#7A322B">返回 → 副本销毁，白换</text>
-  <text x="182" y="188" font-size="9" fill="#7A322B">main 结果：x=1, y=9 纹丝不动</text>
-  <text x="182" y="204" font-size="7.5" fill="#8C8980">实参是拷贝——改副本伤不到真身</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">002 · 值传递 vs 传地址：swap 两版结局</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：002 §2.6 本机实录 · C17 · 2026-11-19</text>
 
-  <!-- 右：传地址 -->
-  <rect x="352" y="44" width="310" height="212" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="360" y="60" font-size="9" fill="#4A4945">swap_ok —— 顺着地址改真身（传地址）</text>
-  <rect x="364" y="72" width="130" height="64" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="429" y="88" font-size="8.5" fill="#1F4468" text-anchor="middle">main 的真身</text>
-  <rect x="372" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="398" y="113" font-size="8.5" fill="#1D5A45" text-anchor="middle">x = 9</text>
-  <rect x="430" y="96" width="52" height="26" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="456" y="113" font-size="8.5" fill="#1D5A45" text-anchor="middle">y = 1</text>
-  <line x1="496" y1="104" x2="532" y2="104" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="514" y="98" font-size="7.5" fill="#8C8980" text-anchor="middle">&amp;x &amp;y</text>
-  <rect x="534" y="72" width="118" height="64" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="593" y="88" font-size="8.5" fill="#1F4468" text-anchor="middle">函数里的指针</text>
-  <text x="593" y="106" font-size="8" fill="#4A4945" text-anchor="middle">p = &amp;x, q = &amp;y</text>
-  <text x="593" y="124" font-size="8" fill="#4A4945" text-anchor="middle">*p 与 *q 交换</text>
-  <line x1="534" y1="124" x2="500" y2="108" stroke="#D9A458" marker-end="url(#a2Amber)"/>
-  <line x1="534" y1="132" x2="500" y2="116" stroke="#D9A458" marker-end="url(#a2Amber)"/>
-  <text x="514" y="148" font-size="7.5" fill="#7A4A12" text-anchor="middle">琥珀箭头 = 顺着地址改真身</text>
-  <text x="507" y="188" font-size="9" fill="#1D5A45">main 结果：x=9, y=1 换成功了</text>
-  <text x="507" y="204" font-size="7.5" fill="#8C8980">函数拿到了真身的地址</text>
+  <rect x="40" y="72" width="1120" height="152" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="100" font-size="15" font-weight="bold" fill="#7f0000">swap_broken —— 换的是副本（值传递）</text>
 
-  <rect x="18" y="268" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="291" font-size="9.5" font-weight="600" fill="#7A4A12">铁律：C 的实参永远是拷贝——想改调用者的变量，把地址交出去（纪律见 003 §3.2）</text>
-  <text x="32" y="322" font-size="8" fill="#8C8980">口径 C17 · 完整示例与实录见 002 §2.6 swap.c — 2026-11-15</text>
+  <rect x="60" y="116" width="150" height="88" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="135" y="140" font-size="11.5" fill="#2e5230" text-anchor="middle">main 真身 x</text>
+  <text x="135" y="180" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle">1</text>
+
+  <rect x="220" y="116" width="150" height="88" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="295" y="140" font-size="11.5" fill="#2e5230" text-anchor="middle">main 真身 y</text>
+  <text x="295" y="180" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle">9</text>
+
+  <text x="385" y="168" font-size="11.5" fill="#616161" text-anchor="middle">拷贝一份</text>
+  <line x1="378" y1="180" x2="432" y2="180" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="440" y="116" width="150" height="88" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="515" y="140" font-size="11.5" fill="#5d4700" text-anchor="middle">函数内副本 a</text>
+  <text x="515" y="180" font-size="20" font-weight="bold" fill="#7f3f00" text-anchor="middle">1</text>
+
+  <rect x="600" y="116" width="150" height="88" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="675" y="140" font-size="11.5" fill="#5d4700" text-anchor="middle">函数内副本 b</text>
+  <text x="675" y="180" font-size="20" font-weight="bold" fill="#7f3f00" text-anchor="middle">9</text>
+
+  <rect x="800" y="116" width="340" height="88" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="820" y="150" font-size="12.5" fill="#7f0000">函数里换成了 a=9、b=1</text>
+  <text x="820" y="180" font-size="12.5" font-weight="bold" fill="#7f0000">返回后副本销毁 → x=1、y=9 纹丝不动</text>
+
+  <rect x="40" y="264" width="1120" height="152" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="292" font-size="15" font-weight="bold" fill="#1b5e20">swap_ok —— 顺着地址改真身（传地址）</text>
+
+  <rect x="60" y="308" width="150" height="84" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="135" y="330" font-size="11.5" fill="#1b3d1e" text-anchor="middle">main 真身 x</text>
+  <text x="135" y="370" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle">9</text>
+
+  <rect x="220" y="308" width="150" height="84" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="295" y="330" font-size="11.5" fill="#1b3d1e" text-anchor="middle">main 真身 y</text>
+  <text x="295" y="370" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle">1</text>
+
+  <text x="385" y="343" font-size="11.5" fill="#e65100" text-anchor="middle">交出 &amp;x &amp;y</text>
+  <line x1="378" y1="356" x2="432" y2="356" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <rect x="440" y="308" width="150" height="84" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="515" y="330" font-size="11.5" fill="#7f3f00" text-anchor="middle">指针 p</text>
+  <text x="515" y="364" font-size="12" fill="#7f3f00" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">p = &amp;x</text>
+
+  <rect x="600" y="308" width="150" height="84" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="675" y="330" font-size="11.5" fill="#7f3f00" text-anchor="middle">指针 q</text>
+  <text x="675" y="364" font-size="12" fill="#7f3f00" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">q = &amp;y</text>
+
+  <path d="M 515 392 L 515 408" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M 675 392 L 675 408" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M 140 408 L 675 408" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M 140 408 L 140 395" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+  <path d="M 300 408 L 300 395" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+
+  <rect x="800" y="308" width="340" height="84" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="820" y="340" font-size="12.5" fill="#123314">*p 与 *q 交换的是真身里存的值</text>
+  <text x="820" y="368" font-size="12.5" font-weight="bold" fill="#123314">main 结果：x=9、y=1 换成功了</text>
+
+  <rect x="40" y="436" width="1120" height="56" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="462" font-size="13" font-weight="bold" fill="#5d4037">铁律：C 的实参永远是拷贝——想改调用者的变量，只能把地址交出去</text>
+  <text x="62" y="482" font-size="12" fill="#5d4037">所以「传地址」不是另一种调用方式，而是「把地址当作值拷贝过去」，函数再顺着地址走回去</text>
+
+  <rect x="40" y="512" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="524" font-size="12" fill="#37474f">调用者的真身</text>
+  <rect x="200" y="512" width="22" height="14" rx="3" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="232" y="524" font-size="12" fill="#37474f">已被改动的真身</text>
+  <rect x="380" y="512" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="412" y="524" font-size="12" fill="#37474f">函数内副本</text>
+  <rect x="530" y="512" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="562" y="524" font-size="12" fill="#37474f">存地址的指针</text>
+  <rect x="700" y="512" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="732" y="524" font-size="12" fill="#37474f">失败结局</text>
+  <rect x="850" y="512" width="22" height="14" rx="3" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="882" y="524" font-size="12" fill="#37474f">成功结局</text>
+  <line x1="1000" y1="519" x2="1042" y2="519" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+  <text x="1054" y="524" font-size="12" fill="#37474f">顺地址改真身</text>
 </svg>

@@ -1,53 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="529.41" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>结构体对齐与重排</title>
-  <desc>007-结构体位域与预处理：成员偏移、padding 与重排收益（12→8 本机实测）（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="300" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="500" fill="#ffffff"/>
   <defs>
-    <marker id="a7Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">007 · 内存对齐：padding 从哪来、重排省多少</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：007 §7.1/§7.5 本机实测 · 2026-11-19</text>
 
-  <!-- 声明顺序：12 字节 -->
-  <text x="26" y="58" font-size="9" fill="#4A4945">按声明顺序 {char c1; int n; char c2} —— 本机 sizeof = 12 字节（偏移：c1@0 n@4 c2@8）</text>
-  <rect x="26" y="66" width="24" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="38" y="86" font-size="7.5" fill="#1F4468" text-anchor="middle">c1</text>
-  <rect x="50" y="66" width="72" height="32" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="86" y="86" font-size="7.5" fill="#7A322B" text-anchor="middle">pad×3</text>
-  <rect x="122" y="66" width="96" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="170" y="86" font-size="7.5" fill="#1F4468" text-anchor="middle">n@4</text>
-  <rect x="218" y="66" width="24" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="230" y="86" font-size="7.5" fill="#1F4468" text-anchor="middle">c2</text>
-  <rect x="242" y="66" width="72" height="32" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="278" y="86" font-size="7.5" fill="#7A322B" text-anchor="middle">pad×3</text>
-  <text x="330" y="72" font-size="8" fill="#4A4945">n 是 int（4 字节），必须住在 4 的倍数地址上</text>
-  <text x="330" y="90" font-size="8" fill="#7A322B">两段 padding 共 6 字节——浪费了整整一半</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">007 · 内存对齐：padding 从哪来、重排能省多少</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.1/§7.5 本机实测 · C17 · 2026-11-19</text>
 
-  <!-- 重排箭头 -->
-  <line x1="170" y1="104" x2="170" y2="134" stroke="#7FA6D0" marker-end="url(#a7Blue)"/>
-  <text x="182" y="124" font-size="8.5" fill="#1F4468">成员从大到小重排 —— 不改任何逻辑，白捡的优化</text>
+  <text x="40" y="86" font-size="12" fill="#37474f">规则只有一条：每个成员必须落在「自身大小的整数倍」地址上——所以中间和末尾都会插空</text>
 
-  <!-- 重排后：8 字节 -->
-  <text x="26" y="152" font-size="9" fill="#4A4945">重排后 {int n; char c1; char c2} —— 本机 sizeof = 8 字节</text>
-  <rect x="26" y="160" width="96" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="74" y="180" font-size="7.5" fill="#1F4468" text-anchor="middle">n@0</text>
-  <rect x="122" y="160" width="24" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="134" y="180" font-size="7.5" fill="#1F4468" text-anchor="middle">c1@4</text>
-  <rect x="146" y="160" width="24" height="32" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="158" y="180" font-size="7.5" fill="#1F4468" text-anchor="middle">c2@5</text>
-  <rect x="170" y="160" width="48" height="32" fill="#FAE6E4" stroke="#D2948C"/>
-  <text x="194" y="180" font-size="7.5" fill="#7A322B" text-anchor="middle">padding×2</text>
-  <text x="330" y="172" font-size="8" fill="#1D5A45">12 → 8：同样三个成员，只换声明顺序</text>
-  <text x="330" y="188" font-size="8" fill="#1D5A45">通信协议报文才用 pack(1)=6，代价是跨边界访问慢</text>
+  <text x="40" y="120" font-size="17" font-weight="bold" fill="#7f0000">原始写法 struct { char c1; int n; char c2; } —— sizeof = 12</text>
 
-  <!-- 本机实录对照 -->
-  <rect x="26" y="208" width="636" height="46" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="36" y="226" font-size="8.5" fill="#4A4945">本机实录：offsetof(Student1{char,char,int}) = 0/1/4，sizeof=8 | Student2{char,int,char} = 0/4/8，sizeof=12 | pack(4) 的 {int,double,char} = 16（默认 24）</text>
-  <text x="36" y="244" font-size="8" fill="#8C8980">两准则：① 成员偏移量是其自身大小的整数倍 ② 结构体总大小是最大成员大小的整数倍——两准则 + 偏移量公式，任何 struct 的 sizeof 都能纸上算出</text>
+  <text x="100" y="146" font-size="11" fill="#616161">字节 0</text>
+  <text x="413" y="146" font-size="11" fill="#616161" text-anchor="middle">4</text>
+  <text x="684" y="146" font-size="11" fill="#616161" text-anchor="middle">8</text>
+  <text x="892" y="146" font-size="11" fill="#616161" text-anchor="middle">12</text>
 
-  <rect x="18" y="264" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="287" font-size="9.5" font-weight="600" fill="#7A4A12">嵌入式内存紧张时：成员按"从大到小"重排是白捡的优化；pack(1) 只留给通信报文解析</text>
+  <rect x="100" y="154" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="129" y="188" font-size="12" fill="#123314" text-anchor="middle">c1</text>
+
+  <rect x="163" y="154" width="174" height="56" rx="4" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="250" y="180" font-size="11.5" fill="#616161" text-anchor="middle">padding 3 字节</text>
+  <text x="250" y="198" font-size="11" fill="#616161" text-anchor="middle">为对齐 n 而空出来</text>
+
+  <rect x="342" y="154" width="232" height="56" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="458" y="180" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">n（int，4 字节）</text>
+  <text x="458" y="200" font-size="11.5" fill="#0d2f5c" text-anchor="middle">必须落在 4 的倍数地址</text>
+
+  <rect x="579" y="154" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="608" y="188" font-size="12" fill="#123314" text-anchor="middle">c2</text>
+
+  <rect x="642" y="154" width="174" height="56" rx="4" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="729" y="180" font-size="11.5" fill="#616161" text-anchor="middle">padding 3 字节</text>
+  <text x="729" y="198" font-size="11" fill="#616161" text-anchor="middle">为让总大小整除 4</text>
+
+  <text x="840" y="186" font-size="15" font-weight="bold" fill="#7f0000">9 字节数据 + 6 字节空洞 = 12</text>
+  <text x="840" y="210" font-size="11.5" fill="#37474f">浪费了整整一半空间</text>
+
+  <text x="40" y="252" font-size="17" font-weight="bold" fill="#1b5e20">重排后 struct { int n; char c1; char c2; } —— sizeof = 8</text>
+
+  <text x="100" y="278" font-size="11" fill="#616161">字节 0</text>
+  <text x="371" y="278" font-size="11" fill="#616161" text-anchor="middle">4</text>
+  <text x="561" y="278" font-size="11" fill="#616161" text-anchor="middle">8</text>
+
+  <rect x="100" y="286" width="232" height="56" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="216" y="312" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">n（int，4 字节）</text>
+  <text x="216" y="332" font-size="11.5" fill="#0d2f5c" text-anchor="middle">放在最前面，正好对齐</text>
+
+  <rect x="337" y="286" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="366" y="320" font-size="12" fill="#123314" text-anchor="middle">c1</text>
+
+  <rect x="400" y="286" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="429" y="320" font-size="12" fill="#123314" text-anchor="middle">c2</text>
+
+  <rect x="463" y="286" width="116" height="56" rx="4" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="521" y="312" font-size="11.5" fill="#616161" text-anchor="middle">padding 2</text>
+  <text x="521" y="330" font-size="11" fill="#616161" text-anchor="middle">仅为补齐到 4 的倍数</text>
+
+  <text x="600" y="318" font-size="15" font-weight="bold" fill="#1b5e20">12 → 8：成员一个没少</text>
+  <text x="600" y="342" font-size="11.5" fill="#37474f">只换了声明顺序，逻辑完全不变</text>
+
+  <rect x="840" y="278" width="320" height="80" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="860" y="302" font-size="13" font-weight="bold" fill="#263238">什么时候用 pack(1)</text>
+  <text x="860" y="324" font-size="11.5" fill="#37474f">通信协议报文要求字节紧凑时</text>
+  <text x="860" y="344" font-size="11.5" fill="#37474f">代价：跨边界访问变慢，甚至出错</text>
+
+  <rect x="40" y="388" width="1120" height="56" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="412" font-size="13" font-weight="bold" fill="#5d4037">嵌入式省内存的第一招：成员按「从大到小」声明，不花一行业务代码就省下 padding</text>
+  <text x="62" y="434" font-size="12" fill="#5d4037">pack(1) 只留给报文解析——普通结构体用它，换来的是一次次非对齐访问</text>
+
+  <rect x="40" y="464" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="476" font-size="12" fill="#37474f">char 成员（1 字节）</text>
+  <rect x="250" y="464" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="282" y="476" font-size="12" fill="#37474f">int 成员（4 字节）</text>
+  <rect x="450" y="464" width="22" height="14" rx="3" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="482" y="476" font-size="12" fill="#37474f">padding（编译器插入的空洞）</text>
 </svg>

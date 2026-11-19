@@ -1,56 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="670.59" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>变量与指针：一个盒子装值，一个盒子装格号</title>
-  <desc>005-指针与内存模型：变量三件套（名字/地址/类型）、指针变量存的是格号、取地址与解引用互逆（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="380" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="430" fill="#ffffff"/>
   <defs>
-    <marker id="a5Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
-    <marker id="a5Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">005 · 变量与指针：一个盒子装值，一个盒子装格号</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：005 §5.1~5.2 addr.c 本机实测 · 2026-11-19</text>
 
-  <!-- ① 变量三件套 -->
-  <text x="18" y="54" font-size="8.5" fill="#1F4468">① 变量三件套 —— 名字、地址、类型，缺一不成变量</text>
-  <rect x="18" y="62" width="300" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="30" y="81" font-size="8" fill="#4A4945">名字  x　—— 写给人和编译器看，编译后就不存在了</text>
-  <rect x="18" y="98" width="300" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="30" y="117" font-size="8" fill="#4A4945">地址  0x7ffd1000　—— 硬件只认这个编号</text>
-  <rect x="18" y="134" width="300" height="30" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="30" y="153" font-size="8" fill="#4A4945">类型  int　—— 占 4 格，按整数解释</text>
-  <text x="18" y="182" font-size="8" fill="#8C8980">三件套齐了才叫变量：名字是我们加的，地址和类型才是硬件视角。</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">005 · 变量与指针：一个盒子装值，一个盒子装格号</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.1~5.2 addr.c 本机实测 · C17 · 2026-11-19</text>
 
-  <!-- ② 指针自己也是盒子 -->
-  <text x="350" y="54" font-size="8.5" fill="#7A4A12">② 指针变量 —— 自己也是盒子，里面装的是别人的格号</text>
-  <rect x="350" y="62" width="190" height="44" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="362" y="80" font-size="8" fill="#7A4A12">p　（int* 类型，宽 8 字节）</text>
-  <text x="362" y="97" font-size="9.5" font-weight="600" fill="#7A4A12">0x7ffd1000</text>
-  <text x="350" y="124" font-size="8" fill="#8C8980">p 自己也住在内存里，自己的地址是 0x7ffd2000</text>
+  <text x="40" y="88" font-size="17" font-weight="bold" fill="#1b5e20">① 变量三件套：缺一不成变量</text>
 
-  <!-- 两个盒子 + 指向箭头 -->
-  <text x="70" y="200" font-size="7.5" fill="#8C8980">x 的格子　@0x7ffd1000</text>
-  <rect x="70" y="206" width="100" height="44" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="120" y="235" font-size="12" font-weight="600" fill="#1F4468" text-anchor="middle">42</text>
+  <rect x="40" y="106" width="480" height="48" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="56" y="136" font-size="13" font-weight="bold" fill="#616161">名字</text>
+  <text x="120" y="136" font-size="15" font-weight="bold" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">x</text>
+  <text x="170" y="136" font-size="11.5" fill="#37474f">写给人和编译器看，编译后就不存在</text>
 
-  <text x="470" y="200" font-size="7.5" fill="#8C8980">p 的格子　@0x7ffd2000</text>
-  <rect x="470" y="206" width="120" height="44" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="530" y="233" font-size="8" fill="#7A4A12" text-anchor="middle">0x7ffd1000</text>
+  <rect x="40" y="160" width="480" height="48" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="56" y="190" font-size="13" font-weight="bold" fill="#616161">地址</text>
+  <text x="120" y="190" font-size="15" font-weight="bold" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">0x7ffd1000</text>
+  <text x="250" y="190" font-size="11.5" fill="#37474f">硬件只认这个编号</text>
 
-  <line x1="464" y1="228" x2="178" y2="228" stroke="#D9A458" marker-end="url(#a5Amber)"/>
-  <text x="321" y="220" font-size="7.5" fill="#7A4A12" text-anchor="middle">p 里存的格号，就指向这个格子</text>
+  <rect x="40" y="214" width="480" height="48" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="56" y="244" font-size="13" font-weight="bold" fill="#616161">类型</text>
+  <text x="120" y="244" font-size="15" font-weight="bold" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">int</text>
+  <text x="170" y="244" font-size="11.5" fill="#37474f">占 4 格，按整数解释</text>
 
-  <!-- ③ & 与 * 互逆 -->
-  <rect x="18" y="268" width="300" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="30" y="290" font-size="8" fill="#1F4468">&amp;x　取地址：从变量拿到它的格号</text>
-  <text x="334" y="290" font-size="8" fill="#8C8980" text-anchor="middle">互逆</text>
-  <rect x="350" y="268" width="312" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="362" y="290" font-size="8" fill="#1F4468">*p　解引用：拿格号去读 / 写那个格子</text>
+  <text x="40" y="292" font-size="12" fill="#616161">名字是我们加的，地址和类型才是硬件视角</text>
 
-  <rect x="18" y="316" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="339" font-size="9.5" font-weight="600" fill="#7A4A12">指针 = 存地址的变量；&amp; 与 * 是一对互逆动作，C 的指针语法全部从这一句长出来</text>
-  <text x="32" y="370" font-size="8" fill="#8C8980">口径 C17 · 图中地址为示意值，本机实录（每次运行会变，看差值）见 005 §5.1 addr.c · 2026-11-19</text>
+  <text x="600" y="88" font-size="17" font-weight="bold" fill="#1b5e20">② 指针也是盒子，里面装别人的格号</text>
+
+  <rect x="600" y="106" width="230" height="66" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="612" y="126" font-size="11" fill="#2e5230">x 的格子 @0x7ffd1000</text>
+  <text x="715" y="158" font-size="20" font-weight="bold" fill="#123314" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">42</text>
+
+  <rect x="930" y="106" width="230" height="66" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="942" y="126" font-size="11" fill="#7f3f00">p 的格子 @0x7ffd2000</text>
+  <text x="1045" y="156" font-size="15" font-weight="bold" fill="#7f3f00" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">0x7ffd1000</text>
+
+  <line x1="920" y1="140" x2="840" y2="140" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="880" y="130" font-size="11" fill="#7f3f00" text-anchor="middle">指向</text>
+
+  <rect x="600" y="196" width="260" height="66" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="616" y="220" font-size="13" font-weight="bold" fill="#123314">&amp;x　取地址</text>
+  <text x="616" y="244" font-size="11.5" fill="#1b3d1e">变量 → 它的格号</text>
+
+  <rect x="900" y="196" width="260" height="66" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="916" y="220" font-size="13" font-weight="bold" fill="#123314">*p　解引用</text>
+  <text x="916" y="244" font-size="11.5" fill="#1b3d1e">按格号去读写那个格子</text>
+
+  <line x1="868" y1="229" x2="888" y2="229" stroke="#388e3c" stroke-width="2" marker-start="url(#arrowGreen)" marker-end="url(#arrowGreen)"/>
+  <text x="878" y="252" font-size="11" fill="#388e3c" text-anchor="middle">互逆</text>
+
+  <rect x="40" y="310" width="1120" height="56" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="334" font-size="13" font-weight="bold" fill="#5d4037">指针 = 存地址的变量；&amp; 与 * 是一对互逆动作</text>
+  <text x="62" y="356" font-size="12" fill="#5d4037">C 的指针语法全部从这一句长出来：p 自己也有地址，*p 才谈到 x 的值</text>
+
+  <rect x="40" y="396" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="408" font-size="12" fill="#37474f">普通变量格（装值）</text>
+  <rect x="230" y="396" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="262" y="408" font-size="12" fill="#37474f">指针变量格（装格号）</text>
+  <rect x="430" y="396" width="22" height="14" rx="3" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="462" y="408" font-size="12" fill="#37474f">取地址 / 解引用动作</text>
 </svg>

@@ -1,72 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="582.35" viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>三种控制流执行路径</title>
-  <desc>002-基础语法与控制流：顺序、分支、循环三种结构的执行路径图（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="330" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="460" fill="#ffffff"/>
   <defs>
-    <marker id="a2Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#388e3c"/>
     </marker>
-    <marker id="a2Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">002 · 三种控制流：执行路径一图看全</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：002 §2.4/§2.5 · 2026-11-15</text>
 
-  <!-- 顺序 -->
-  <rect x="18" y="44" width="204" height="216" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="60" font-size="9" fill="#4A4945">顺序 —— 从上到下逐句执行</text>
-  <rect x="65" y="76" width="110" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="120" y="94" font-size="8.5" fill="#1F4468" text-anchor="middle">语句 A</text>
-  <line x1="120" y1="106" x2="120" y2="134" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <rect x="65" y="138" width="110" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="120" y="156" font-size="8.5" fill="#1F4468" text-anchor="middle">语句 B</text>
-  <line x1="120" y1="168" x2="120" y2="196" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <rect x="65" y="200" width="110" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="120" y="218" font-size="8.5" fill="#1F4468" text-anchor="middle">语句 C</text>
-  <text x="120" y="248" font-size="7.5" fill="#8C8980" text-anchor="middle">95% 的代码都是这条直线</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">002 · 三种控制流：顺序、分支、循环的执行路径</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：002 §2.4/§2.5 · C17 · 2026-11-19</text>
 
-  <!-- 分支 -->
-  <rect x="238" y="44" width="204" height="216" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="246" y="60" font-size="9" fill="#4A4945">分支 —— 条件定走哪条路</text>
-  <polygon points="340,72 386,100 340,128 294,100" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="340" y="104" font-size="8.5" fill="#7A4A12" text-anchor="middle">条件?</text>
-  <rect x="250" y="150" width="86" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="293" y="168" font-size="8.5" fill="#1F4468" text-anchor="middle">语句体 1</text>
-  <rect x="344" y="150" width="86" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="387" y="168" font-size="8.5" fill="#1F4468" text-anchor="middle">语句体 2</text>
-  <line x1="314" y1="112" x2="300" y2="146" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="296" y="134" font-size="7" fill="#1D5A45">true</text>
-  <line x1="366" y1="112" x2="380" y2="146" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="388" y="134" font-size="7" fill="#4A4945">false(else)</text>
-  <line x1="293" y1="180" x2="293" y2="200" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <line x1="387" y1="180" x2="387" y2="200" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <rect x="294" y="204" width="92" height="26" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
-  <text x="340" y="221" font-size="8" fill="#4A4945" text-anchor="middle">继续往下</text>
-  <text x="340" y="248" font-size="7.5" fill="#8C8980" text-anchor="middle">switch 与 if 同族，漏 break 会穿落</text>
+  <rect x="40" y="76" width="360" height="336" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="106" font-size="17" font-weight="bold" fill="#1b5e20">顺序</text>
+  <text x="116" y="106" font-size="11.5" fill="#616161">从上到下逐句执行</text>
 
-  <!-- 循环 -->
-  <rect x="458" y="44" width="204" height="216" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="466" y="60" font-size="9" fill="#4A4945">循环 —— 条件不满足才出来</text>
-  <polygon points="560,72 606,100 560,128 514,100" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="560" y="104" font-size="8.5" fill="#7A4A12" text-anchor="middle">条件?</text>
-  <rect x="514" y="150" width="92" height="28" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="560" y="168" font-size="8.5" fill="#1F4468" text-anchor="middle">循环体 + 步进</text>
-  <rect x="514" y="204" width="92" height="26" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
-  <text x="560" y="221" font-size="8" fill="#4A4945" text-anchor="middle">往下走</text>
-  <line x1="534" y1="112" x2="560" y2="146" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="528" y="136" font-size="7" fill="#1D5A45">true</text>
-  <line x1="560" y1="180" x2="560" y2="200" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <line x1="606" y1="100" x2="640" y2="100" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <line x1="640" y1="100" x2="640" y2="217" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <line x1="640" y1="217" x2="610" y2="217" stroke="#7FA6D0" marker-end="url(#a2Blue)"/>
-  <text x="620" y="94" font-size="7" fill="#4A4945" text-anchor="middle">false</text>
-  <polyline points="514,164 486,164 486,100 508,100" fill="none" stroke="#D2948C" marker-end="url(#a2Red)"/>
-  <text x="494" y="94" font-size="7" fill="#7A322B" text-anchor="middle">回边</text>
-  <text x="560" y="248" font-size="7.5" fill="#8C8980" text-anchor="middle">三要素：初始化 / 条件 / 步进</text>
+  <rect x="120" y="126" width="200" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="220" y="154" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">语句 A</text>
+  <line x1="220" y1="172" x2="220" y2="186" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
 
-  <rect x="18" y="272" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="295" font-size="9.5" font-weight="600" fill="#7A4A12">break 结束整层 · continue 跳过本轮 · 循环写完先想首末取值防 off-by-one（§2.4/§2.5 实录）</text>
-  <text x="32" y="326" font-size="8" fill="#8C8980">口径 C17 · 场景口诀：次数明确用 for，不明确用 while，至少一次用 do-while — 2026-11-15</text>
+  <rect x="120" y="190" width="200" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="220" y="218" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">语句 B</text>
+  <line x1="220" y1="236" x2="220" y2="250" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <rect x="120" y="254" width="200" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="220" y="282" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">语句 C</text>
+
+  <text x="60" y="336" font-size="11.5" fill="#37474f">绝大多数代码就是这条直线</text>
+  <text x="60" y="358" font-size="11.5" fill="#616161">没有判断，也没有回边</text>
+
+  <rect x="420" y="76" width="360" height="336" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="440" y="106" font-size="17" font-weight="bold" fill="#8d6e00">分支</text>
+  <text x="496" y="106" font-size="11.5" fill="#616161">条件决定走哪条路</text>
+
+  <rect x="520" y="126" width="180" height="44" rx="22" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="610" y="154" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">条件 ?</text>
+
+  <path d="M 610 172 L 610 196 L 510 196 L 510 212" fill="none" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <path d="M 610 196 L 685 196 L 685 212" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+  <text x="502" y="190" font-size="11" fill="#388e3c" text-anchor="end">true</text>
+  <text x="692" y="190" font-size="11" fill="#e65100">false</text>
+
+  <rect x="440" y="216" width="150" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="510" y="244" font-size="13" font-weight="bold" fill="#123314" text-anchor="middle">语句体 1</text>
+
+  <rect x="610" y="216" width="150" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="685" y="244" font-size="13" font-weight="bold" fill="#123314" text-anchor="middle">语句体 2（else）</text>
+
+  <path d="M 510 262 L 510 286 L 610 286 L 610 296" fill="none" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <path d="M 685 262 L 685 286 L 610 286" fill="none" stroke="#388e3c" stroke-width="2"/>
+
+  <rect x="510" y="300" width="200" height="44" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="610" y="328" font-size="13" font-weight="bold" fill="#123314" text-anchor="middle">继续往下</text>
+
+  <text x="440" y="372" font-size="11.5" fill="#37474f">switch 与 if 同族；漏 break 会穿落到下一个分支</text>
+
+  <rect x="800" y="76" width="360" height="336" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="820" y="106" font-size="17" font-weight="bold" fill="#0d47a1">循环</text>
+  <text x="876" y="106" font-size="11.5" fill="#616161">条件不满足才出来</text>
+
+  <rect x="880" y="126" width="180" height="44" rx="22" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="970" y="154" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">条件 ?</text>
+
+  <line x1="970" y1="172" x2="970" y2="212" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="980" y="196" font-size="11" fill="#388e3c">true</text>
+
+  <rect x="880" y="216" width="180" height="44" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="970" y="238" font-size="13" font-weight="bold" fill="#123314" text-anchor="middle">循环体</text>
+  <text x="970" y="254" font-size="11" fill="#2e5230" text-anchor="middle">+ 步进</text>
+
+  <path d="M 880 238 L 852 238 L 852 148 L 876 148" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="838" y="200" font-size="11" fill="#1565c0" text-anchor="end">回边</text>
+
+  <path d="M 1062 148 L 1092 148 L 1092 296" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+  <text x="1100" y="142" font-size="11" fill="#e65100">false</text>
+  <rect x="1036" y="300" width="112" height="34" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="1092" y="322" font-size="12" font-weight="bold" fill="#123314" text-anchor="middle">退出循环</text>
+
+  <text x="820" y="336" font-size="11.5" fill="#37474f">三要素：初始化 / 条件 / 步进</text>
+  <text x="820" y="358" font-size="11.5" fill="#616161">步进忘了写就是死循环</text>
+
+  <rect x="40" y="438" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="450" font-size="12" fill="#37474f">顺序执行的语句块</text>
+  <rect x="240" y="438" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="272" y="450" font-size="12" fill="#37474f">判断点</text>
+  <line x1="360" y1="445" x2="402" y2="445" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="414" y="450" font-size="12" fill="#37474f">条件成立，继续</text>
+  <line x1="560" y1="445" x2="602" y2="445" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowOrange)"/>
+  <text x="614" y="450" font-size="12" fill="#37474f">条件不成立，走另一条路</text>
+  <rect x="820" y="438" width="22" height="14" rx="3" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="852" y="450" font-size="12" fill="#37474f">两路汇合后的出口</text>
 </svg>

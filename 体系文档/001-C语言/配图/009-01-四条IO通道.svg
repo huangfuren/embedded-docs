@@ -1,48 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="606.9" viewBox="0 0 680 344" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>四条 IO 通道</title>
-  <desc>009-命令行参数与字符串格式化：printf/scanf 与 sprintf/sscanf 的四条数据通道，方向以程序为原点（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="344" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="440" fill="#ffffff"/>
   <defs>
-    <marker id="a9Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
     </marker>
-    <marker id="a9Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">009 · 四条 IO 通道：设备流与字符串流</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：009 §9.2/§9.3 本机实测 · 2026-11-15</text>
 
-  <!-- 中央程序 -->
-  <rect x="290" y="120" width="100" height="90" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="340" y="158" font-size="10" fill="#1F4468" text-anchor="middle">程序</text>
-  <text x="340" y="176" font-size="7.5" fill="#4A4945" text-anchor="middle">方向的原点</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">009 · 四条 IO 通道：设备流与字符串流</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：009 §9.2/§9.3 本机实测 · C17 · 2026-11-19</text>
 
-  <!-- 键盘 → 程序（scanf） -->
-  <rect x="60" y="120" width="90" height="40" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
-  <text x="105" y="144" font-size="9" fill="#4A4945" text-anchor="middle">键盘</text>
-  <line x1="152" y1="140" x2="286" y2="140" stroke="#7FA6D0" marker-end="url(#a9Blue)"/>
-  <text x="219" y="134" font-size="7.5" fill="#1F4468" text-anchor="middle">scanf · 从输入缓冲取数</text>
+  <text x="40" y="86" font-size="12" fill="#37474f">printf 与 sprintf 只差第一个参数：目的地从「屏幕」换成「内存里的字符数组」</text>
 
-  <!-- 程序 → 屏幕（printf） -->
-  <rect x="530" y="60" width="90" height="40" rx="3" fill="#FFFFFF" stroke="#CFCCC2"/>
-  <text x="575" y="84" font-size="9" fill="#4A4945" text-anchor="middle">屏幕</text>
-  <polyline points="372,120 372,90 526,90" fill="none" stroke="#7FA6D0" marker-end="url(#a9Blue)"/>
-  <text x="460" y="84" font-size="7.5" fill="#1F4468" text-anchor="middle">printf · 格式化后送 stdout</text>
+  <rect x="520" y="176" width="160" height="72" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="600" y="204" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">程序</text>
+  <text x="600" y="228" font-size="11.5" fill="#2e5230" text-anchor="middle">方向的原点</text>
 
-  <!-- 程序 → buf（sprintf） -->
-  <rect x="530" y="200" width="90" height="40" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="575" y="218" font-size="9" fill="#7A4A12" text-anchor="middle">字符串 buf</text>
-  <text x="575" y="232" font-size="7.5" fill="#7A4A12" text-anchor="middle">（内存里的字符数组）</text>
-  <polyline points="392,185 466,185 466,215 526,215" fill="none" stroke="#D9A458" marker-end="url(#a9Amber)"/>
-  <text x="452" y="179" font-size="7.5" fill="#7A4A12" text-anchor="middle">sprintf · 格式化写进 buf</text>
+  <rect x="120" y="120" width="200" height="60" rx="6" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+  <text x="220" y="146" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">键盘</text>
+  <text x="220" y="168" font-size="11.5" fill="#546e7a" text-anchor="middle">输入设备</text>
+  <path d="M 324 150 L 400 150 L 400 194 L 512 194" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="462" y="166" font-size="12" fill="#1565c0" text-anchor="middle">scanf</text>
+  <text x="462" y="184" font-size="11" fill="#616161" text-anchor="middle">从输入缓冲取数</text>
 
-  <!-- buf → 程序（sscanf） -->
-  <polyline points="528,242 478,242 478,205 394,205" fill="none" stroke="#D9A458" marker-end="url(#a9Amber)"/>
-  <text x="452" y="258" font-size="7.5" fill="#7A4A12" text-anchor="middle">sscanf · 按格式从 buf 读出</text>
+  <rect x="880" y="120" width="200" height="60" rx="6" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+  <text x="980" y="146" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">屏幕</text>
+  <text x="980" y="168" font-size="11.5" fill="#546e7a" text-anchor="middle">输出设备</text>
+  <path d="M 688 194 L 800 194 L 800 150 L 872 150" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="740" y="166" font-size="12" fill="#37474f" text-anchor="middle">printf</text>
+  <text x="740" y="184" font-size="11" fill="#616161" text-anchor="middle">格式化后送 stdout</text>
 
-  <text x="60" y="286" font-size="8.5" fill="#4A4945">printf/scanf 与 sprintf/sscanf 只差第一个参数——目的地/数据源从设备换成了字符串</text>
-  <rect x="18" y="298" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="321" font-size="9.5" font-weight="600" fill="#7A4A12">方向口诀不变：write/put 是出程序，read/get 是进程序——buf 也是一条通道，只是住在内存里</text>
+  <rect x="120" y="260" width="200" height="60" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="220" y="286" font-size="13" font-weight="bold" fill="#7f3f00" text-anchor="middle">字符串 buf</text>
+  <text x="220" y="308" font-size="11.5" fill="#5d4700" text-anchor="middle">内存里的字符数组</text>
+  <path d="M 324 290 L 400 290 L 400 232 L 512 232" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="462" y="270" font-size="12" fill="#1565c0" text-anchor="middle">sscanf</text>
+  <text x="462" y="288" font-size="11" fill="#616161" text-anchor="middle">按格式从 buf 读</text>
+
+  <rect x="880" y="260" width="200" height="60" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="980" y="286" font-size="13" font-weight="bold" fill="#7f3f00" text-anchor="middle">字符串 buf</text>
+  <text x="980" y="308" font-size="11.5" fill="#5d4700" text-anchor="middle">同一个 buf，另一条通道</text>
+  <path d="M 688 232 L 800 232 L 800 290 L 872 290" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="740" y="270" font-size="12" fill="#37474f" text-anchor="middle">sprintf</text>
+  <text x="740" y="288" font-size="11" fill="#616161" text-anchor="middle">格式化写进 buf</text>
+
+  <rect x="40" y="352" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="62" y="376" font-size="13" font-weight="bold" fill="#5d4037">方向口诀不变：put / write 是出程序，get / read 是进程序——buf 也是一条通道，只是它住在内存里</text>
+  <text x="62" y="396" font-size="12" fill="#5d4037">所以 printf / scanf 与 sprintf / sscanf，只差一个「目的地是屏幕还是内存」</text>
+
+  <rect x="40" y="418" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="72" y="430" font-size="12" fill="#37474f">程序</text>
+  <rect x="180" y="418" width="22" height="14" rx="3" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+  <text x="212" y="430" font-size="12" fill="#37474f">设备通道</text>
+  <rect x="340" y="418" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="372" y="430" font-size="12" fill="#37474f">字符串通道（内存）</text>
+  <line x1="560" y1="425" x2="602" y2="425" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="614" y="430" font-size="12" fill="#37474f">流入程序</text>
+  <line x1="720" y1="425" x2="762" y2="425" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="774" y="430" font-size="12" fill="#37474f">流出程序</text>
 </svg>
