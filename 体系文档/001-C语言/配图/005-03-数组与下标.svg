@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="617.65" viewBox="0 0 680 350" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>下标就是地址运算：arr[i] 等价于 *(arr+i)</title>
+  <desc>005-指针与内存模型：数组名退化为首元素地址、三种等价写法指向同一格子、数组名不可赋值而指针可移动（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="350" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a5Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">005 · 下标就是地址运算：arr[i] 与 *(arr + i) 是同一件事</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：005 §5.1 addr.c 本机实测 · 2026-11-19</text>
+
+  <text x="18" y="52" font-size="8.5" fill="#4A4945">数组名不是指针，但它会「退化成」首元素地址——下标的全部含义，就是"从首地址走 i 个元素"。</text>
+
+  <!-- 数组四个格子 -->
+  <text x="14" y="102" font-size="10" font-weight="600" fill="#1F4468">arr</text>
+  <line x1="44" y1="97" x2="57" y2="97" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+
+  <text x="108" y="64" font-size="7.5" fill="#8C8980" text-anchor="middle">[0]</text>
+  <rect x="60" y="70" width="96" height="48" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="108" y="100" font-size="12" font-weight="600" fill="#1F4468" text-anchor="middle">10</text>
+  <text x="108" y="134" font-size="7.5" fill="#8C8980" text-anchor="middle">0x1000</text>
+
+  <text x="212" y="64" font-size="7.5" fill="#8C8980" text-anchor="middle">[1]</text>
+  <rect x="164" y="70" width="96" height="48" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="212" y="100" font-size="12" font-weight="600" fill="#1F4468" text-anchor="middle">20</text>
+  <text x="212" y="134" font-size="7.5" fill="#8C8980" text-anchor="middle">0x1004</text>
+
+  <text x="316" y="64" font-size="7.5" fill="#8C8980" text-anchor="middle">[2]</text>
+  <rect x="268" y="70" width="96" height="48" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="316" y="100" font-size="12" font-weight="600" fill="#7A4A12" text-anchor="middle">30</text>
+  <text x="316" y="134" font-size="7.5" fill="#7A4A12" text-anchor="middle">0x1008</text>
+
+  <text x="420" y="64" font-size="7.5" fill="#8C8980" text-anchor="middle">[3]</text>
+  <rect x="372" y="70" width="96" height="48" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="420" y="100" font-size="12" font-weight="600" fill="#1F4468" text-anchor="middle">40</text>
+  <text x="420" y="134" font-size="7.5" fill="#8C8980" text-anchor="middle">0x100C</text>
+
+  <text x="480" y="90" font-size="8" fill="#8C8980">相邻元素地址相差 4</text>
+  <text x="480" y="106" font-size="8" fill="#8C8980">= sizeof(int)，不是 1</text>
+
+  <!-- 三种等价写法 -->
+  <rect x="18" y="156" width="140" height="32" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="88" y="177" font-size="9.5" fill="#1F4468" text-anchor="middle">arr[2]</text>
+  <line x1="164" y1="172" x2="199" y2="172" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <rect x="204" y="156" width="190" height="32" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="299" y="177" font-size="9.5" fill="#1F4468" text-anchor="middle">*(arr + 2)</text>
+  <line x1="400" y1="172" x2="435" y2="172" stroke="#7FA6D0" marker-end="url(#a5Blue)"/>
+  <rect x="440" y="156" width="222" height="32" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="551" y="177" font-size="9.5" fill="#7A4A12" text-anchor="middle">0x1008 那个格子（值 30）</text>
+  <text x="18" y="204" font-size="8" fill="#8C8980">三种写法落到同一个格子：偏移 2 个元素 × 每元素 4 字节 = 首地址 + 8 字节。</text>
+
+  <!-- 数组名 vs 指针 -->
+  <rect x="18" y="220" width="300" height="48" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="30" y="240" font-size="8.5" fill="#7A322B">数组名 arr：是「常量地址」，不可改</text>
+  <text x="30" y="258" font-size="8" fill="#4A4945">arr = p;  arr++;  → 编译报错</text>
+  <rect x="350" y="220" width="312" height="48" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="362" y="240" font-size="8.5" fill="#1F4468">指针 p：是可移动的变量</text>
+  <text x="362" y="258" font-size="8" fill="#4A4945">p = arr;  p++;  → 合法，p 改指向 arr[1]</text>
+
+  <rect x="18" y="282" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="305" font-size="9.5" font-weight="600" fill="#7A4A12">数组名能当指针用，是「退化」不是「就是」：退化后丢掉长度，sizeof 立刻从 16 变 8</text>
+  <text x="32" y="336" font-size="8" fill="#8C8980">口径 C17 · 图中地址为示意值，本机实录见 005 §5.1（arr[1] 与 *(arr+1) 同值）· 2026-11-19</text>
+</svg>

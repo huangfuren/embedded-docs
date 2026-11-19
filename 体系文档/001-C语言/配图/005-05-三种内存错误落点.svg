@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="564.71" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>三种内存错误各自落在哪里</title>
+  <desc>005-指针与内存模型：野指针、数组越界、释放后使用三类错误的落点对照与后果（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="320" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a5Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">005 · 三种内存错误，各自落在哪里</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：005 §5.5 bug_overrun.c 本机实录 · 2026-11-19</text>
+
+  <text x="18" y="52" font-size="8.5" fill="#4A4945">C 不做边界检查、不管指针是否有效：三种错误都能编译通过、正常跑完——区别只在"踩到谁的格子"。</text>
+
+  <!-- 第 1 行：野指针 -->
+  <rect x="18" y="70" width="200" height="44" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="30" y="88" font-size="8.5" fill="#7A322B">野指针：指针从未被赋值</text>
+  <text x="30" y="104" font-size="7.5" fill="#4A4945">int *p;　*p = 1;</text>
+  <line x1="222" y1="92" x2="256" y2="92" stroke="#D2948C" marker-end="url(#a5Red)"/>
+  <rect x="262" y="79" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="290" y="79" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="318" y="79" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="346" y="79" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="374" y="79" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <rect x="402" y="79" width="28" height="26" rx="2" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="416" y="97" font-size="9" fill="#7A322B" text-anchor="middle">?</text>
+  <text x="444" y="86" font-size="8" fill="#4A4945">落在"随机"的格子上——因为 p 里的</text>
+  <text x="444" y="100" font-size="8" fill="#4A4945">格号本身就是栈上残留的垃圾值</text>
+
+  <!-- 第 2 行：数组越界 -->
+  <rect x="18" y="132" width="200" height="44" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="30" y="150" font-size="8.5" fill="#7A322B">数组越界：下标超出长度</text>
+  <text x="30" y="166" font-size="7.5" fill="#4A4945">int a[4];　a[4] = 12345;</text>
+  <line x1="222" y1="154" x2="256" y2="154" stroke="#D2948C" marker-end="url(#a5Red)"/>
+  <rect x="262" y="141" width="28" height="26" rx="2" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <rect x="290" y="141" width="28" height="26" rx="2" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <rect x="318" y="141" width="28" height="26" rx="2" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <rect x="346" y="141" width="28" height="26" rx="2" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <rect x="374" y="141" width="28" height="26" rx="2" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="388" y="159" font-size="9" fill="#7A322B" text-anchor="middle">×</text>
+  <rect x="402" y="141" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="444" y="148" font-size="8" fill="#4A4945">落在紧邻的下一个格子上——程序照常</text>
+  <text x="444" y="162" font-size="8" fill="#4A4945">退出、毫无异样（本册 bug_overrun 实证）</text>
+
+  <!-- 第 3 行：释放后使用 -->
+  <rect x="18" y="194" width="200" height="44" rx="3" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="30" y="212" font-size="8.5" fill="#7A322B">释放后使用：free 完还去读写</text>
+  <text x="30" y="228" font-size="7.5" fill="#4A4945">free(p);　*p = 1;</text>
+  <line x1="222" y1="216" x2="256" y2="216" stroke="#D2948C" marker-end="url(#a5Red)"/>
+  <rect x="262" y="203" width="28" height="26" rx="2" fill="#FAE6E4" stroke="#D2948C"/>
+  <text x="276" y="221" font-size="9" fill="#7A322B" text-anchor="middle">×</text>
+  <rect x="290" y="203" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3 2"/>
+  <rect x="318" y="203" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3 2"/>
+  <rect x="346" y="203" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3 2"/>
+  <rect x="374" y="203" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2" stroke-dasharray="3 2"/>
+  <rect x="402" y="203" width="28" height="26" rx="2" fill="#F4F2EC" stroke="#CFCCC2"/>
+  <text x="444" y="210" font-size="8" fill="#4A4945">落在已归还的堆格上——堆结构损坏，</text>
+  <text x="444" y="224" font-size="8" fill="#4A4945">崩溃位置与出错位置完全无关</text>
+
+  <text x="262" y="240" font-size="7" fill="#8C8980">蓝 = 你的合法格子　红 = 错误落点　虚线 = 已归还</text>
+
+  <rect x="18" y="252" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="275" font-size="9.5" font-weight="600" fill="#7A4A12">三种错 C 都不拦：野指针靠"声明即置 NULL"，越界靠"边界用 &lt; len"，释放后靠"free 完立刻置 NULL"</text>
+  <text x="32" y="306" font-size="8" fill="#8C8980">口径 C17 · 越界不报错为本机 bug_overrun 实录（005 §5.5）· 地址与落点为示意，实际取决于编译器布局 · 2026-11-19</text>
+</svg>
