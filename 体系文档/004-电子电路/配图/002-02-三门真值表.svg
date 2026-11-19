@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>三门真值表与 gates.c</title>
+  <rect x="0" y="0" width="1200" height="510" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">真值表不用背：跑一遍 gates.c，四行输出自己长出来</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 002 §2.2 · 代码与输出均为本机实录，可用 gcc 复现 · 2026-11-14</text>
+
+  <rect x="60" y="96" width="510" height="240" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="122" font-size="12.5" font-weight="bold" fill="#37474f">gates.c 的核心四行：两个循环枚举输入，一次打印四列</text>
+  <text x="80" y="152" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">for (int a = 0; a &lt;= 1; a++)</text>
+  <text x="80" y="176" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">    for (int b = 0; b &lt;= 1; b++)</text>
+  <text x="80" y="200" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">        printf("%d %d |   %d     %d     %d    %d\n",</text>
+  <text x="80" y="224" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">               a, b, a &amp;&amp; b, a || b, !a, a ^ b);</text>
+  <text x="80" y="264" font-size="11" fill="#616161">编译：gcc -Wall gates.c -o gates.exe　运行：.\gates.exe</text>
+  <text x="80" y="290" font-size="11" fill="#7f3f00">试一试补一列 NAND = !(a &amp;&amp; b)：四行全 1，只有 1 1 行是 0</text>
+  <text x="80" y="312" font-size="11" fill="#7f3f00">这就是「一种门能拼出全部逻辑」的第一直觉</text>
+
+  <rect x="610" y="138" width="520" height="50" fill="#eceff1"/>
+  <text x="658" y="156" font-size="11" fill="#37474f" text-anchor="middle">输入</text>
+  <text x="926" y="156" font-size="11" fill="#37474f" text-anchor="middle">输出</text>
+  <text x="634" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">A</text>
+  <text x="682" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">B</text>
+  <text x="774" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">A&amp;&amp;B</text>
+  <text x="878" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">A||B</text>
+  <text x="967" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">!A</text>
+  <text x="1067" y="180" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">A^B</text>
+  <line x1="610" y1="138" x2="1130" y2="138" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="610" y1="188" x2="1130" y2="188" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="610" y1="224" x2="1130" y2="224" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="610" y1="260" x2="1130" y2="260" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="610" y1="296" x2="1130" y2="296" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="610" y1="332" x2="1130" y2="332" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="712" y1="138" x2="712" y2="332" stroke="#90a4ae" stroke-width="1.5"/>
+  <rect x="616" y="191" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="634" y="210" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="664" y="191" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="682" y="210" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="756" y="191" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="774" y="210" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="860" y="191" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="878" y="210" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="949" y="191" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="967" y="210" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="1049" y="191" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1067" y="210" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="616" y="227" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="634" y="246" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="664" y="227" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="682" y="246" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="756" y="227" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="774" y="246" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="860" y="227" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="878" y="246" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="949" y="227" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="967" y="246" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="1049" y="227" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="1067" y="246" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="616" y="263" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="634" y="282" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="664" y="263" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="682" y="282" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="756" y="263" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="774" y="282" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="860" y="263" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="878" y="282" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="949" y="263" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="967" y="282" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="1049" y="263" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="1067" y="282" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="616" y="299" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="634" y="318" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="664" y="299" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="682" y="318" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="756" y="299" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="774" y="318" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="860" y="299" width="36" height="22" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="878" y="318" font-size="12.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">1</text>
+  <rect x="949" y="299" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="967" y="318" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+  <rect x="1049" y="299" width="36" height="22" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1067" y="318" font-size="12.5" font-weight="normal" fill="#616161" text-anchor="middle">0</text>
+
+  <rect x="60" y="356" width="250" height="84" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="80" y="382" font-size="12" font-weight="bold" fill="#0d2f5c">A &amp;&amp; B　与门</text>
+  <text x="80" y="406" font-size="11.5" fill="#37474f">全 1 才是 1</text>
+  <text x="80" y="426" font-size="11" fill="#616161">两只开关串联：都要按下</text>
+  <rect x="330" y="356" width="250" height="84" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="350" y="382" font-size="12" font-weight="bold" fill="#0d2f5c">A || B　或门</text>
+  <text x="350" y="406" font-size="11.5" fill="#37474f">有 1 就是 1</text>
+  <text x="350" y="426" font-size="11" fill="#616161">两只开关并联：按一只就行</text>
+  <rect x="600" y="356" width="250" height="84" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="620" y="382" font-size="12" font-weight="bold" fill="#0d2f5c">! A　非门</text>
+  <text x="620" y="406" font-size="11.5" fill="#37474f">输入取反</text>
+  <text x="620" y="426" font-size="11" fill="#616161">硬件里就是一个反相器</text>
+  <rect x="870" y="356" width="250" height="84" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="890" y="382" font-size="12" font-weight="bold" fill="#0d2f5c">A ^ B　异或</text>
+  <text x="890" y="406" font-size="11.5" fill="#37474f">不同才是 1</text>
+  <text x="890" y="426" font-size="11" fill="#616161">不进位加法：1+1=0 进 1</text>
+
+  <rect x="60" y="480" width="22" height="12" rx="3" fill="#eceff1" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="90" y="490" font-size="11" fill="#37474f">表头</text>
+  <rect x="170" y="480" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="200" y="490" font-size="11" fill="#37474f">输出为 1</text>
+  <rect x="300" y="480" width="22" height="12" rx="3" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="330" y="490" font-size="11" fill="#37474f">输出为 0</text>
+</svg>

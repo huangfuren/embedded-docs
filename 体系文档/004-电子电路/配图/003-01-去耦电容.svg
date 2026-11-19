@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>去耦电容之谜</title>
+  <defs>
+    <marker id="arwD" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,0 L3.5,7 z" fill="#e65100"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="530" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">去耦电容：芯片旁边那颗 0.1μF，是几十纳秒的救命水</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 003 §3.2 · 口径：0.1μF 为工程惯例值，波形为原理示意，非实测 · 2026-11-14</text>
+
+  <!-- 左：拓扑 -->
+  <rect x="60" y="96" width="500" height="284" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="122" font-size="12.5" font-weight="bold" fill="#37474f">根源：电源在远处，中间这段导线还有电感</text>
+
+  <rect x="80" y="200" width="100" height="60" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="130" y="226" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">电源</text>
+  <text x="130" y="246" font-size="11" fill="#0d2f5c" text-anchor="middle">3.3 V</text>
+
+  <line x1="180" y1="230" x2="240" y2="230" stroke="#616161" stroke-width="1.5"/>
+  <path d="M 240 230 a 13 13 0 0 1 26 0 a 13 13 0 0 1 26 0 a 13 13 0 0 1 26 0" fill="none" stroke="#616161" stroke-width="1.5"/>
+  <line x1="318" y1="230" x2="430" y2="230" stroke="#616161" stroke-width="1.5"/>
+  <text x="266" y="204" font-size="11" fill="#616161" text-anchor="middle">导线有电感 L</text>
+
+  <circle cx="380" cy="230" r="4" fill="#616161"/>
+  <line x1="380" y1="230" x2="380" y2="296" stroke="#616161" stroke-width="1.5"/>
+  <rect x="360" y="296" width="40" height="5" fill="#f9a825"/>
+  <rect x="360" y="308" width="40" height="5" fill="#f9a825"/>
+  <line x1="380" y1="313" x2="380" y2="340" stroke="#616161" stroke-width="1.5"/>
+  <line x1="364" y1="340" x2="396" y2="340" stroke="#616161" stroke-width="2"/>
+  <line x1="370" y1="346" x2="390" y2="346" stroke="#616161" stroke-width="2"/>
+  <line x1="376" y1="352" x2="384" y2="352" stroke="#616161" stroke-width="2"/>
+
+  <text x="410" y="300" font-size="11.5" font-weight="bold" fill="#5d4700">0.1 μF</text>
+  <text x="410" y="320" font-size="11" fill="#616161">贴着电源脚装，</text>
+  <text x="410" y="338" font-size="11" fill="#616161">不是随手放板边</text>
+
+  <rect x="430" y="190" width="110" height="90" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <text x="485" y="222" font-size="12" font-weight="bold" fill="#37474f" text-anchor="middle">MCU</text>
+  <text x="485" y="244" font-size="10" fill="#616161" text-anchor="middle">几十亿个门</text>
+  <text x="485" y="262" font-size="10" fill="#616161" text-anchor="middle">同时翻转</text>
+
+  <text x="80" y="368" font-size="11" fill="#7f0000">远处的电源来不及送水，电压在芯片脚上瞬间塌下去 —— 电容就装在塌陷点旁边</text>
+
+  <!-- 右：波形 -->
+  <rect x="600" y="96" width="540" height="284" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="620" y="122" font-size="12.5" font-weight="bold" fill="#37474f">同一颗芯片，去耦电容装不装，电源脚电压两样</text>
+
+  <text x="646" y="244" font-size="11" font-weight="bold" fill="#37474f" text-anchor="end">VDD</text>
+
+  <line x1="660" y1="240" x2="1100" y2="240" stroke="#c62828" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="660" y1="285" x2="1100" y2="285" stroke="#c62828" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <path d="M 660 240 L 752 240 L 760 262 L 768 300 L 776 305 L 784 288 L 792 250 L 800 240 L 1100 240"
+        fill="none" stroke="#c62828" stroke-width="2" stroke-linejoin="round"/>
+
+  <path d="M 660 240 L 760 240 L 800 240 L 900 239 L 1000 241 L 1100 240"
+        fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <line x1="776" y1="214" x2="776" y2="232" stroke="#e65100" stroke-width="1.5" marker-end="url(#arwD)"/>
+  <text x="776" y="208" font-size="11" fill="#e65100" text-anchor="middle">门群同时翻转</text>
+
+  <text x="1100" y="232" font-size="11" fill="#1b3d1e" text-anchor="end">有 0.1μF：电压几乎不动</text>
+  <text x="1100" y="303" font-size="11" fill="#c62828" text-anchor="end">复位阈值：掉下去就重启</text>
+  <text x="660" y="332" font-size="11" fill="#c62828">没去耦：塌到阈值以下 → 偶发复位、行为诡异</text>
+  <text x="660" y="356" font-size="11" fill="#616161">所以「每个电源脚旁一颗」是铁律 —— 省掉它不是省成本，是埋故障</text>
+
+  <!-- 电容三用途 -->
+  <rect x="60" y="400" width="340" height="70" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="80" y="426" font-size="11.5" font-weight="bold" fill="#37474f">滤波</text>
+  <text x="80" y="450" font-size="11" fill="#616161">电源入口放一颗大电容，把波动抹平</text>
+
+  <rect x="430" y="400" width="340" height="70" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="450" y="426" font-size="11.5" font-weight="bold" fill="#37474f">耦合</text>
+  <text x="450" y="450" font-size="11" fill="#616161">隔直流通交流，只把信号送过去</text>
+
+  <rect x="800" y="400" width="340" height="70" rx="6" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="820" y="426" font-size="11.5" font-weight="bold" fill="#5d4700">去耦（本节主角）</text>
+  <text x="820" y="450" font-size="11" fill="#5d4700">贴着电源脚就近供水，填平瞬间缺口</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="500" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="510" font-size="11" fill="#37474f">供电</text>
+  <rect x="160" y="500" width="22" height="12" rx="3" fill="#f9a825" stroke="#f9a825" stroke-width="1"/>
+  <text x="190" y="510" font-size="11" fill="#37474f">电容极板</text>
+  <rect x="280" y="500" width="22" height="12" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="310" y="510" font-size="11" fill="#37474f">芯片</text>
+  <rect x="370" y="500" width="22" height="12" rx="3" fill="#fff8e1" stroke="#f9a825" stroke-width="1"/>
+  <text x="400" y="510" font-size="11" fill="#37474f">去耦用途</text>
+</svg>

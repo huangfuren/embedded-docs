@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>触发器与寄存器</title>
+  <rect x="0" y="0" width="1200" height="600" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">触发器：只在时钟边沿那一瞬看 D，其余时间纹丝不动</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 002 §2.4 · 口径：上升沿触发，D 型触发器 · 2026-11-14</text>
+
+  <!-- 左：符号 -->
+  <rect x="60" y="96" width="460" height="334" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+
+  <line x1="110" y1="182" x2="170" y2="182" stroke="#616161" stroke-width="1.5"/>
+  <text x="110" y="170" font-size="11" fill="#1565c0">D 输入</text>
+  <text x="110" y="272" font-size="11" fill="#5e35b1">CLK 时钟</text>
+  <line x1="110" y1="284" x2="170" y2="284" stroke="#616161" stroke-width="1.5"/>
+
+  <rect x="170" y="150" width="200" height="170" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="2"/>
+  <text x="186" y="176" font-size="12" font-weight="bold" fill="#1565c0">D</text>
+  <text x="354" y="176" font-size="12" font-weight="bold" fill="#2e7d32" text-anchor="end">Q</text>
+  <path d="M 170 272 L 184 284 L 170 296" fill="none" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="270" y="240" font-size="13" font-weight="bold" fill="#37474f" text-anchor="middle">D 触发器</text>
+  <text x="270" y="262" font-size="11" fill="#616161" text-anchor="middle">1 位记忆单元</text>
+
+  <line x1="370" y1="182" x2="430" y2="182" stroke="#616161" stroke-width="1.5"/>
+  <text x="488" y="170" font-size="11" fill="#2e7d32" text-anchor="end">Q 输出</text>
+
+  <text x="80" y="352" font-size="11.5" font-weight="bold" fill="#1b3d1e">边沿到来那一瞬：Q ← D（锁存）</text>
+  <text x="80" y="374" font-size="11.5" fill="#616161">其余时间：D 怎么变，Q 都当没看见</text>
+  <text x="80" y="404" font-size="11" fill="#5e35b1">时钟 = 全体触发器同时动手的号令（晶振提供，003 §3.3）</text>
+
+  <!-- 右：时序图 -->
+  <rect x="560" y="96" width="580" height="334" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="580" y="122" font-size="12.5" font-weight="bold" fill="#37474f">时序图：Q 只在上升沿（竖虚线）跟着 D 变</text>
+
+  <rect x="620" y="126" width="480" height="48" fill="#d1c4e9"/>
+  <rect x="620" y="186" width="480" height="48" fill="#bbdefb"/>
+  <rect x="620" y="246" width="480" height="48" fill="#c8e6c9"/>
+
+  <text x="604" y="152" font-size="11.5" font-weight="bold" fill="#5e35b1" text-anchor="end">CLK</text>
+  <text x="604" y="212" font-size="11.5" font-weight="bold" fill="#1565c0" text-anchor="end">D</text>
+  <text x="604" y="272" font-size="11.5" font-weight="bold" fill="#2e7d32" text-anchor="end">Q</text>
+
+  <line x1="660" y1="126" x2="660" y2="296" stroke="#90a4ae" stroke-width="1" stroke-dasharray="5 4"/>
+  <line x1="780" y1="126" x2="780" y2="296" stroke="#90a4ae" stroke-width="1" stroke-dasharray="5 4"/>
+  <line x1="900" y1="126" x2="900" y2="296" stroke="#90a4ae" stroke-width="1" stroke-dasharray="5 4"/>
+  <line x1="1020" y1="126" x2="1020" y2="296" stroke="#90a4ae" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <path d="M 620 170 L 660 170 L 660 130 L 720 130 L 720 170 L 780 170 L 780 130 L 840 130 L 840 170 L 900 170 L 900 130 L 960 130 L 960 170 L 1020 170 L 1020 130 L 1080 130 L 1080 170 L 1100 170"
+        fill="none" stroke="#5e35b1" stroke-width="2" stroke-linejoin="miter"/>
+
+  <path d="M 620 190 L 700 190 L 700 230 L 860 230 L 860 190 L 1100 190"
+        fill="none" stroke="#1565c0" stroke-width="2" stroke-linejoin="miter"/>
+
+  <path d="M 620 290 L 660 290 L 660 250 L 780 250 L 780 290 L 1020 290 L 1020 250 L 1100 250"
+        fill="none" stroke="#2e7d32" stroke-width="2" stroke-linejoin="miter"/>
+
+
+  <text x="580" y="322" font-size="11" fill="#1b3d1e">① 采样到 D=1 → Q 抬到 1　② 采样到 D=0 → Q 落到 0</text>
+  <text x="580" y="344" font-size="11" fill="#1b3d1e">③ D 还是 0 → Q 不动（不是每个边沿都变）　④ D 已回到 1 → Q 跟着抬到 1</text>
+  <text x="580" y="372" font-size="11" fill="#7f0000">中间那段 D 在两次边沿之间抖动，Q 全程平直 —— 这就是「抗干扰」的物理来源</text>
+  <text x="580" y="396" font-size="11" fill="#616161">没有时钟纪律，门延迟差异会让电路自己打架 —— 同步设计的根就在这一条</text>
+
+  <!-- 下：寄存器 -->
+  <text x="60" y="468" font-size="12.5" font-weight="bold" fill="#37474f">寄存器 = 触发器的并排：一颗时钟管住一排</text>
+
+  <rect x="100" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="122" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D0</text>
+  <rect x="152" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="174" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D1</text>
+  <rect x="204" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="226" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D2</text>
+  <rect x="256" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="278" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D3</text>
+  <text x="326" y="508" font-size="13" fill="#616161" text-anchor="middle">⋯</text>
+  <rect x="350" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="372" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D29</text>
+  <rect x="402" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="424" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D30</text>
+  <rect x="454" y="482" width="44" height="38" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="476" y="506" font-size="11" fill="#1b3d1e" text-anchor="middle">D31</text>
+
+  <line x1="100" y1="536" x2="498" y2="536" stroke="#5e35b1" stroke-width="1.5"/>
+  <line x1="122" y1="520" x2="122" y2="536" stroke="#5e35b1" stroke-width="1.5"/>
+  <line x1="476" y1="520" x2="476" y2="536" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="122" y="552" font-size="11" fill="#5e35b1">同一根 CLK</text>
+
+  <text x="530" y="500" font-size="11.5" fill="#37474f">32 个触发器共用一个时钟 —— 一次边沿，32 位同时刷新</text>
+  <text x="530" y="522" font-size="11.5" fill="#616161">这就是「CPU 手边便签」的物理形态：寄存器不是一个抽象名词，是一排能记住电平的小电路</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="582" width="22" height="12" rx="3" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1"/>
+  <text x="90" y="592" font-size="11" fill="#37474f">时钟 CLK</text>
+  <rect x="200" y="582" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="230" y="592" font-size="11" fill="#37474f">输入 D</text>
+  <rect x="320" y="582" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="350" y="592" font-size="11" fill="#37474f">输出 Q / 触发器单元</text>
+</svg>

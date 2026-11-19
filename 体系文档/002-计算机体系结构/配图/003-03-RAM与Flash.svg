@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>RAM 与 Flash：易失与非易失，以及上电后的搬家</title>
+  <rect x="0" y="0" width="1200" height="470" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">RAM 与 Flash：三条本质差异，决定数据能不能活过断电</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 003 §3.3 · 口径：本机与 MCU 双线对照（16GB DRAM / 1TB NVMe；SRAM 20KB / Flash 64KB）· 2026-11-14</text>
+
+  <!-- RAM -->
+  <rect x="60" y="96" width="520" height="142" rx="8" fill="#ffffff" stroke="#1565c0" stroke-width="2"/>
+  <text x="80" y="122" font-size="14" font-weight="bold" fill="#0d2f5c">RAM —— 易失（断电就没）</text>
+  <text x="80" y="148" font-size="11.5" fill="#0d2f5c">断电后：数据全部丢失</text>
+  <text x="80" y="172" font-size="11.5" fill="#0d2f5c">写入：任意写、按字节写，想改几次改几次</text>
+  <text x="80" y="196" font-size="11.5" fill="#0d2f5c">寿命：无限次写（理论上）</text>
+  <text x="80" y="222" font-size="11" fill="#616161">本机：内存条 16GB　｜　MCU：片内 SRAM 20KB</text>
+
+  <!-- Flash -->
+  <rect x="620" y="96" width="520" height="142" rx="8" fill="#fafafa" stroke="#90a4ae" stroke-width="2"/>
+  <text x="640" y="122" font-size="14" font-weight="bold" fill="#37474f">Flash —— 非易失（断电还在）</text>
+  <text x="640" y="148" font-size="11.5" fill="#37474f">断电后：数据保留</text>
+  <text x="640" y="172" font-size="11.5" fill="#37474f">写入：只能把 1 改成 0，按块擦除后才能重写</text>
+  <text x="640" y="196" font-size="11.5" fill="#37474f">寿命：有擦写次数上限（万次量级）</text>
+  <text x="640" y="222" font-size="11" fill="#616161">本机：固态盘 1TB　｜　MCU：片内 Flash 64KB（存程序）</text>
+
+  <!-- 下半：启动搬家 -->
+  <text x="60" y="268" font-size="13" font-weight="bold" fill="#37474f">上电后第一件事：启动代码替你把变量安顿好（哈佛结构的直接后果）</text>
+
+  <rect x="60" y="280" width="250" height="92" rx="6" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="78" y="304" font-size="12" font-weight="bold" fill="#37474f">① Flash：.data 初值</text>
+  <text x="78" y="326" font-size="11" fill="#37474f">有初值的全局变量，</text>
+  <text x="78" y="346" font-size="11" fill="#37474f">初值静静躺在 Flash 里</text>
+
+  <rect x="336" y="280" width="250" height="92" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="354" y="304" font-size="12" font-weight="bold" fill="#123314">② 搬进 SRAM</text>
+  <text x="354" y="326" font-size="11" fill="#1b3d1e">启动代码逐字节拷贝 ——</text>
+  <text x="354" y="346" font-size="11" fill="#1b3d1e">变量必须在可读写的地方</text>
+
+  <rect x="612" y="280" width="250" height="92" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="630" y="304" font-size="12" font-weight="bold" fill="#123314">③ .bss 清零</text>
+  <text x="630" y="326" font-size="11" fill="#1b3d1e">没写初值的全局变量，</text>
+  <text x="630" y="346" font-size="11" fill="#1b3d1e">在 SRAM 里直接抹成 0</text>
+
+  <rect x="888" y="280" width="250" height="92" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="906" y="304" font-size="12" font-weight="bold" fill="#5d4700">④ 跳 main</text>
+  <text x="906" y="326" font-size="11" fill="#5d4700">内存摆好了，</text>
+  <text x="906" y="346" font-size="11" fill="#5d4700">开始跑你的代码</text>
+
+  <line x1="310" y1="326" x2="332" y2="326" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="586" y1="326" x2="608" y2="326" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="862" y1="326" x2="884" y2="326" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 结论 -->
+  <rect x="60" y="390" width="1080" height="44" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="418" font-size="13" fill="#7f3f00">结论：哪些值断电后还在，不由 C 语法决定，由它住在哪个区决定 —— 想掉电保存，必须显式写 Flash/EEPROM</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="446" width="22" height="12" rx="3" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="90" y="456" font-size="11" fill="#37474f">RAM（易失）</text>
+  <rect x="220" y="446" width="22" height="12" rx="3" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="250" y="456" font-size="11" fill="#37474f">Flash（非易失）</text>
+  <rect x="410" y="446" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="440" y="456" font-size="11" fill="#37474f">搬进 SRAM / 清零</text>
+  <rect x="600" y="446" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="630" y="456" font-size="11" fill="#37474f">进入 main</text>
+</svg>

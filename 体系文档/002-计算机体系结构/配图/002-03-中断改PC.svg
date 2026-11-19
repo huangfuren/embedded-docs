@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>中断就是改 PC：事件到达，跳到固定入口</title>
+  <rect x="0" y="0" width="1200" height="500" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#90a4ae"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">中断就是改 PC：事件到达，跳到固定入口</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 002 §2.5 catch.c 本机实录（signal 模拟中断）· 2026-11-14</text>
+
+  <!-- 主流程 -->
+  <text x="60" y="104" font-size="13" font-weight="bold" fill="#37474f">主流程（被打断的一方）</text>
+
+  <rect x="60" y="118" width="140" height="86" rx="6" fill="#ffffff" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="78" y="144" font-size="12" font-weight="bold" fill="#37474f">main 开始</text>
+  <text x="78" y="166" font-size="11" fill="#616161">进入无限循环</text>
+  <text x="78" y="186" font-size="11" fill="#616161">round 从 1 开始</text>
+
+  <rect x="215" y="118" width="140" height="86" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="233" y="144" font-size="12" font-weight="bold" fill="#0d2f5c">signal()</text>
+  <text x="233" y="166" font-size="11" fill="#0d2f5c">注册处理函数</text>
+  <text x="233" y="186" font-size="11" fill="#0d2f5c">SIGINT → on_int</text>
+
+  <rect x="370" y="118" width="140" height="86" rx="6" fill="#ffffff" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="388" y="144" font-size="12" font-weight="bold" fill="#37474f">round 1</text>
+  <text x="388" y="166" font-size="11" fill="#616161">忙等一段</text>
+  <text x="388" y="186" font-size="11" fill="#616161">输出 working…</text>
+
+  <rect x="525" y="118" width="140" height="86" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="543" y="144" font-size="12" font-weight="bold" fill="#5d4700">round 2</text>
+  <text x="543" y="166" font-size="11" fill="#5d4700">忙等后 raise</text>
+  <text x="543" y="186" font-size="11" fill="#5d4700">模拟 Ctrl+C</text>
+
+  <line x1="200" y1="161" x2="213" y2="161" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="355" y1="161" x2="368" y2="161" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="510" y1="161" x2="523" y2="161" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 循环回边：round2 回到 round1 -->
+  <path d="M 595 204 L 595 236 L 440 236 L 440 208" fill="none" stroke="#90a4ae" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowGray)"/>
+  <text x="517" y="256" font-size="11" fill="#616161" text-anchor="middle">一直循环，直到被事件打断</text>
+
+  <!-- 轮询对照 -->
+  <rect x="60" y="280" width="605" height="100" rx="8" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="304" font-size="12.5" font-weight="bold" fill="#37474f">没有中断会怎样？只能轮询</text>
+  <text x="80" y="328" font-size="11.5" fill="#37474f">轮询：主循环一遍遍问「串口有数据吗」—— 99% 的询问是白跑</text>
+  <text x="80" y="350" font-size="11.5" fill="#37474f">中断：事情真的发生了才叫你，平时 CPU 该干什么干什么</text>
+  <text x="80" y="370" font-size="11" fill="#616161">所以中断不是「干扰」，它是实时性的来源（002 §2.6 坑表第 5 条）</text>
+
+  <!-- 中断链 -->
+  <text x="766" y="104" font-size="13" font-weight="bold" fill="#7f3f00">事件到达后的处理链</text>
+
+  <rect x="700" y="118" width="440" height="78" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="720" y="144" font-size="12.5" font-weight="bold" fill="#0d2f5c">中断向量表：编号 → 处理函数入口</text>
+  <text x="720" y="166" font-size="11.5" fill="#0d2f5c">住在 Flash 固定位置，上电时硬件先找到它（001 §1.3 启动链）</text>
+  <text x="720" y="186" font-size="11" fill="#0d2f5c">查表这一步由硬件完成 —— 不需要任何软件参与</text>
+
+  <rect x="700" y="222" width="440" height="92" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="720" y="248" font-size="12.5" font-weight="bold" fill="#7f3f00">on_int() —— ISR 中断处理函数</text>
+  <text x="720" y="270" font-size="11.5" fill="#7f3f00">本例只打印一行就退出；真实 ISR 要快进快出</text>
+  <text x="720" y="292" font-size="11" fill="#7f3f00">ISR 里不能 printf / 延时 / 死等（OS 003 §3.2 四条纪律）</text>
+
+  <rect x="700" y="340" width="440" height="52" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="720" y="362" font-size="12" font-weight="bold" fill="#37474f">exit(0) —— 本例不返回</text>
+  <text x="720" y="382" font-size="11" fill="#37474f">真实中断处理完必须回到被打断的那条指令</text>
+
+  <!-- 触发箭头 -->
+  <path d="M 595 118 L 595 96 L 720 96 L 720 116" fill="none" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="606" y="90" font-size="11" fill="#e65100">SIGINT 到达</text>
+
+  <line x1="920" y1="196" x2="920" y2="220" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="920" y1="314" x2="920" y2="338" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <text x="60" y="412" font-size="11.5" fill="#37474f">真实外设中断走同一条链：串口来字节 / 定时器到点 → 硬件保存现场 → 查向量表 → 跳 ISR → 恢复现场返回</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="428" width="1080" height="38" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="453" font-size="12.5" fill="#7f3f00">一句话：中断的价值不在「打断」，而在「不用轮询」—— CPU 不必一遍遍问「好了吗」</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="478" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="488" font-size="11" fill="#37474f">注册与向量表</text>
+  <rect x="260" y="478" width="22" height="12" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="290" y="488" font-size="11" fill="#37474f">ISR 中断处理</text>
+  <rect x="440" y="478" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="470" y="488" font-size="11" fill="#37474f">触发点</text>
+  <rect x="580" y="478" width="22" height="12" rx="3" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="610" y="488" font-size="11" fill="#37474f">对照说明</text>
+</svg>

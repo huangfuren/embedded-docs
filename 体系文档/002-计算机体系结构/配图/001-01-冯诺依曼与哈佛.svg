@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>冯·诺依曼与哈佛：指令与数据放不放一起</title>
+  <rect x="0" y="0" width="1200" height="480" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">冯·诺依曼与哈佛：指令和数据放不放一起</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 001 §1.2 · 口径：机制通用，Cortex-M 与 PC 双线对照 · 2026-11-14</text>
+
+  <!-- ================= 左：冯·诺依曼 ================= -->
+  <rect x="60" y="100" width="520" height="256" rx="12" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="128" font-size="14" font-weight="bold" fill="#0d2f5c">冯·诺依曼结构：一个存储器装两样东西</text>
+
+  <!-- CPU -->
+  <rect x="92" y="150" width="150" height="98" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="167" y="176" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">CPU</text>
+  <text x="167" y="200" font-size="11.5" fill="#0d2f5c" text-anchor="middle">控制器（取指译码）</text>
+  <text x="167" y="222" font-size="11.5" fill="#0d2f5c" text-anchor="middle">运算器 ALU</text>
+
+  <!-- 共享总线 -->
+  <line x1="242" y1="199" x2="330" y2="199" stroke="#1565c0" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="286" y="190" font-size="11" fill="#1565c0" text-anchor="middle">共享</text>
+  <text x="286" y="216" font-size="11" fill="#1565c0" text-anchor="middle">总线</text>
+
+  <!-- 唯一存储器 -->
+  <rect x="330" y="150" width="228" height="98" rx="6" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="444" y="172" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">存储器（只有一块）</text>
+  <rect x="344" y="184" width="42" height="30" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="365" y="204" font-size="11" fill="#0d2f5c" text-anchor="middle">指令</text>
+  <rect x="390" y="184" width="42" height="30" rx="4" fill="#ffffff" stroke="#90a4ae" stroke-width="1"/>
+  <text x="411" y="204" font-size="11" fill="#37474f" text-anchor="middle">数据</text>
+  <rect x="436" y="184" width="42" height="30" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="457" y="204" font-size="11" fill="#0d2f5c" text-anchor="middle">指令</text>
+  <rect x="482" y="184" width="42" height="30" rx="4" fill="#ffffff" stroke="#90a4ae" stroke-width="1"/>
+  <text x="503" y="204" font-size="11" fill="#37474f" text-anchor="middle">数据</text>
+  <text x="444" y="236" font-size="11" fill="#0d2f5c" text-anchor="middle">取指与取数抢同一条通道，只能排队</text>
+
+  <text x="80" y="276" font-size="11.5" fill="#37474f">「存储程序」思想：程序像数据一样存起来，换程序 = 换存储内容</text>
+  <text x="80" y="300" font-size="11.5" fill="#37474f">计算机因此通用 —— 这是 PC 的演化主形</text>
+  <text x="80" y="326" font-size="11" fill="#616161">代价：取指和取数互相等，用缓存调和（003 §3.2）</text>
+
+  <!-- ================= 右：哈佛 ================= -->
+  <rect x="620" y="100" width="520" height="256" rx="12" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="640" y="128" font-size="14" font-weight="bold" fill="#123314">哈佛结构：分开存、分开走</text>
+
+  <!-- CPU -->
+  <rect x="650" y="150" width="150" height="98" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="725" y="176" font-size="12.5" font-weight="bold" fill="#123314" text-anchor="middle">CPU</text>
+  <text x="725" y="200" font-size="11.5" fill="#1b3d1e" text-anchor="middle">取指走指令通道</text>
+  <text x="725" y="222" font-size="11.5" fill="#1b3d1e" text-anchor="middle">取数走数据通道</text>
+
+  <!-- 两条独立通道 -->
+  <path d="M 800 176 L 880 158" fill="none" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <path d="M 800 224 L 880 248" fill="none" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="806" y="152" font-size="11" fill="#2e7d32">指令通道</text>
+  <text x="806" y="270" font-size="11" fill="#2e7d32">数据通道</text>
+
+  <!-- Flash -->
+  <rect x="880" y="122" width="240" height="78" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="900" y="146" font-size="12.5" font-weight="bold" fill="#123314">Flash 64KB · 只读</text>
+  <text x="900" y="168" font-size="11.5" fill="#1b3d1e">程序（指令）住这儿</text>
+  <text x="900" y="190" font-size="11" fill="#2e5230">擦写有寿命，不能当变量用</text>
+
+  <!-- SRAM -->
+  <rect x="880" y="216" width="240" height="78" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="900" y="240" font-size="12.5" font-weight="bold" fill="#123314">SRAM 20KB · 可读写</text>
+  <text x="900" y="262" font-size="11.5" fill="#1b3d1e">变量与栈住这儿</text>
+  <text x="900" y="284" font-size="11" fill="#1b3d1e">断电即失，容量只有 KB 级</text>
+
+  <text x="640" y="304" font-size="11.5" fill="#37474f">两条通道独立 —— 取指与取数可以同时进行，不必排队</text>
+  <text x="640" y="328" font-size="11" fill="#616161">代价：存储器要两套，但 MCU 片内做得到（这就是 Cortex-M 的选择）</text>
+
+  <!-- ================= 结论 ================= -->
+  <rect x="60" y="376" width="1080" height="52" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="408" font-size="13" fill="#7f3f00">哈佛结构的直接后果：程序放 Flash、变量放 SRAM —— 两份独立容量、两种速度、两种寿命（003 §3.3 的 RAM/Flash 分工全部建立在此）</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="444" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="456" font-size="11" fill="#37474f">冯·诺依曼（同住）</text>
+  <rect x="260" y="444" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="290" y="456" font-size="11" fill="#37474f">哈佛（分开）</text>
+  <rect x="430" y="444" width="22" height="14" rx="3" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
+  <text x="460" y="456" font-size="11" fill="#37474f">数据存储器 SRAM</text>
+  <rect x="640" y="444" width="22" height="14" rx="3" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
+  <text x="670" y="456" font-size="11" fill="#37474f">结论</text>
+  <line x1="740" y1="451" x2="782" y2="451" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="790" y="456" font-size="11" fill="#37474f">数据流向</text>
+</svg>

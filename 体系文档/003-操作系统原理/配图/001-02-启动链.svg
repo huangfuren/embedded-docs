@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 562" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>启动链：从加电到第一个进程（PC 与 MCU 对照）</title>
+  <rect x="0" y="0" width="1200" height="562" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#90a4ae"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">启动链：从按下电源到第一个进程，四棒接力</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 001 §1.3 tasklist 本机实录（Windows 11 10.0.26100）· 2026-11-14</text>
+
+  <!-- PC 行 -->
+  <text x="60" y="104" font-size="13" font-weight="bold" fill="#0d2f5c">通用计算机（PC）</text>
+
+  <rect x="60" y="116" width="250" height="72" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="78" y="140" font-size="12" font-weight="bold" fill="#0d2f5c">① 固件 BIOS/UEFI</text>
+  <text x="78" y="162" font-size="11" fill="#0d2f5c">自检硬件，找启动盘</text>
+  <text x="78" y="180" font-size="10" fill="#0d2f5c">出厂就有，烧在主板 ROM</text>
+
+  <rect x="336" y="116" width="250" height="72" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="354" y="140" font-size="12" font-weight="bold" fill="#0d2f5c">② 引导程序 GRUB</text>
+  <text x="354" y="162" font-size="11" fill="#0d2f5c">加载内核到内存</text>
+  <text x="354" y="180" font-size="10" fill="#0d2f5c">多系统选择就在这里</text>
+
+  <rect x="612" y="116" width="250" height="72" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="630" y="140" font-size="12" font-weight="bold" fill="#123314">③ 内核装载</text>
+  <text x="630" y="162" font-size="11" fill="#1b3d1e">初始化四大子系统</text>
+  <text x="630" y="180" font-size="10" fill="#2e5230">内存、调度、驱动就位</text>
+
+  <rect x="888" y="116" width="252" height="72" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="906" y="140" font-size="12" font-weight="bold" fill="#123314">④ 第一个进程 init</text>
+  <text x="906" y="162" font-size="11" fill="#1b3d1e">一切进程的祖先</text>
+  <text x="906" y="180" font-size="10" fill="#1b3d1e">它再去拉起所有服务</text>
+
+  <line x1="310" y1="152" x2="332" y2="152" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="586" y1="152" x2="608" y2="152" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="862" y1="152" x2="884" y2="152" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- MCU 行 -->
+  <text x="60" y="222" font-size="13" font-weight="bold" fill="#37474f">MCU（Cortex-M）：同样的四棒，但每一棒都更短</text>
+
+  <rect x="60" y="234" width="250" height="72" rx="6" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="78" y="258" font-size="12" font-weight="bold" fill="#37474f">① 芯片 ROM 代码</text>
+  <text x="78" y="280" font-size="11" fill="#37474f">厂商烧死的启动代码</text>
+  <text x="78" y="298" font-size="10" fill="#616161">用户改不了，也不该改</text>
+
+  <rect x="336" y="234" width="250" height="72" rx="6" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="354" y="258" font-size="12" font-weight="bold" fill="#37474f">② 向量表定入口</text>
+  <text x="354" y="280" font-size="11" fill="#37474f">复位向量指向启动代码</text>
+  <text x="354" y="298" font-size="10" fill="#616161">省掉了 bootloader 这一环</text>
+
+  <rect x="612" y="234" width="250" height="72" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="630" y="258" font-size="12" font-weight="bold" fill="#123314">③ 跑 main 或 RTOS</text>
+  <text x="630" y="280" font-size="11" fill="#1b3d1e">先把 .data 搬到 SRAM</text>
+  <text x="630" y="298" font-size="10" fill="#2e5230">.bss 清零后才进 main</text>
+
+  <rect x="888" y="234" width="252" height="72" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="906" y="258" font-size="12" font-weight="bold" fill="#123314">④ 主循环 / 调度器</text>
+  <text x="906" y="280" font-size="11" fill="#1b3d1e">裸机是前后台，RTOS 是调度</text>
+  <text x="906" y="298" font-size="10" fill="#1b3d1e">没有 init，没有进程</text>
+
+  <line x1="310" y1="270" x2="332" y2="270" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="586" y1="270" x2="608" y2="270" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="862" y1="270" x2="884" y2="270" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 上下对应虚线 -->
+  <line x1="185" y1="192" x2="185" y2="230" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="461" y1="192" x2="461" y2="230" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="737" y1="192" x2="737" y2="230" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="1014" y1="192" x2="1014" y2="230" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 活证据 -->
+  <text x="60" y="342" font-size="13" font-weight="bold" fill="#37474f">活证据：启动链的产物现在就活在你机器上（tasklist 实录）</text>
+
+  <rect x="60" y="354" width="620" height="112" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="376" font-size="11" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">tasklist | findstr /i "smss csrss services lsass"</text>
+  <text x="76" y="400" font-size="11" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">smss.exe</text>
+  <text x="230" y="400" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">820</text>
+  <text x="330" y="400" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">Services</text>
+  <text x="470" y="400" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">420 K</text>
+  <text x="76" y="420" font-size="11" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">csrss.exe</text>
+  <text x="230" y="420" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">1360</text>
+  <text x="330" y="420" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">Services</text>
+  <text x="470" y="420" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">3,156 K</text>
+  <text x="76" y="440" font-size="11" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">services.exe</text>
+  <text x="230" y="440" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">1680</text>
+  <text x="330" y="440" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">Services</text>
+  <text x="470" y="440" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">9,124 K</text>
+  <text x="76" y="460" font-size="11" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">lsass.exe</text>
+  <text x="230" y="460" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">1728</text>
+  <text x="330" y="460" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">Services</text>
+  <text x="470" y="460" font-size="11" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">22,696 K</text>
+
+  <rect x="700" y="354" width="440" height="112" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="718" y="378" font-size="11.5" font-weight="bold" fill="#5d4700">这一排就是启动链的直接产物</text>
+  <text x="718" y="400" font-size="11" fill="#5d4700">smss 是内核拉起的第一个用户进程</text>
+  <text x="718" y="420" font-size="11" fill="#5d4700">csrss / winlogon / services / lsass 依次跟上</text>
+  <text x="718" y="442" font-size="11" fill="#5d4700">每次开机都重演「内核拉起 init → init 拉起服务」</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="484" width="1080" height="38" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="509" font-size="12.5" fill="#7f3f00">CPU 上电只会做一件事：从固定地址取指执行 —— 之后全是接力，谁都没有「凭空启动」的特权</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="542" width="22" height="10" rx="2" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="551" font-size="10" fill="#37474f">PC 启动棒次</text>
+  <rect x="220" y="542" width="22" height="10" rx="2" fill="#fafafa" stroke="#90a4ae" stroke-width="1"/>
+  <text x="250" y="551" font-size="10" fill="#37474f">MCU 对应棒次</text>
+  <rect x="400" y="542" width="22" height="10" rx="2" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
+  <text x="430" y="551" font-size="10" fill="#37474f">交棒终点（第一个执行流）</text>
+  <rect x="600" y="542" width="22" height="10" rx="2" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="630" y="551" font-size="10" fill="#37474f">内核与系统层</text>
+  <rect x="760" y="542" width="22" height="10" rx="2" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="790" y="551" font-size="10" fill="#37474f">读法要点</text>
+</svg>

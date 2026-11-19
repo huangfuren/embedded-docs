@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>系统调用：一次受控的用户态到内核态穿越</title>
+  <rect x="0" y="0" width="1200" height="500" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c62828"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">系统调用：一次受控的用户态 → 内核态穿越</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 003 §3.3 · 口径：通用模型（svc / syscall），Linux 与 FreeRTOS 双线 · 2026-11-14</text>
+
+  <!-- 用户态区 -->
+  <rect x="60" y="92" width="1080" height="128" rx="8" fill="#fafafa" stroke="#bbdefb" stroke-width="1"/>
+  <text x="76" y="112" font-size="11" fill="#1565c0">用户态（受限运行级别：不能碰硬件、不能访问内核内存）</text>
+
+  <rect x="80" y="124" width="230" height="80" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="96" y="148" font-size="12" font-weight="bold" fill="#0d2f5c">① 应用调用函数</text>
+  <text x="96" y="170" font-size="11" fill="#0d2f5c">write(fd, "abc", 3)</text>
+  <text x="96" y="190" font-size="11" fill="#0d2f5c">看起来就是个普通函数</text>
+
+  <rect x="340" y="124" width="230" height="80" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="356" y="148" font-size="12" font-weight="bold" fill="#0d2f5c">② 装参数与调用号</text>
+  <text x="356" y="170" font-size="11" fill="#0d2f5c">rax = 1（write 的编号）</text>
+  <text x="356" y="190" font-size="11" fill="#0d2f5c">rdi / rsi / rdx 放参数</text>
+
+  <rect x="600" y="124" width="230" height="80" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="616" y="148" font-size="12" font-weight="bold" fill="#7f3f00">③ 执行陷阱指令</text>
+  <text x="616" y="170" font-size="11" fill="#7f3f00">syscall（ARM 上是 svc）</text>
+  <text x="616" y="190" font-size="11" fill="#7f3f00">主动陷入 —— 这是「异常」</text>
+
+  <line x1="310" y1="164" x2="336" y2="164" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="570" y1="164" x2="596" y2="164" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 特权级分界 -->
+  <line x1="60" y1="236" x2="1140" y2="236" stroke="#c62828" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="76" y="230" font-size="11" font-weight="bold" fill="#c62828">特权级分界 —— 这条线由硬件强制执行，软件跨不过去</text>
+
+  <!-- 穿越箭头 -->
+  <path d="M 715 204 L 715 268" fill="none" stroke="#e65100" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="727" y="258" font-size="11" fill="#c62828">CPU 切到内核态</text>
+
+  <!-- 内核态区 -->
+  <rect x="60" y="268" width="1080" height="126" rx="8" fill="#f1f8e9" stroke="#c8e6c9" stroke-width="1"/>
+  <text x="76" y="288" font-size="11" fill="#2e7d32">内核态（特权运行级别：特权指令随便用，能直接操作硬件）</text>
+
+  <rect x="80" y="300" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="96" y="324" font-size="12" font-weight="bold" fill="#123314">④ 按号查服务表</text>
+  <text x="96" y="346" font-size="11" fill="#1b3d1e">调用号 1 → 内核的 sys_write</text>
+  <text x="96" y="366" font-size="11" fill="#1b3d1e">参数从用户栈拷进来校验</text>
+
+  <rect x="340" y="300" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="356" y="324" font-size="12" font-weight="bold" fill="#123314">⑤ 内核代你干活</text>
+  <text x="356" y="346" font-size="11" fill="#1b3d1e">设备管理：驱动真的去写</text>
+  <text x="356" y="366" font-size="11" fill="#1b3d1e">读文件 / malloc 同理</text>
+
+  <rect x="600" y="300" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="616" y="324" font-size="12" font-weight="bold" fill="#123314">⑥ 结果放回、切回用户态</text>
+  <text x="616" y="346" font-size="11" fill="#1b3d1e">返回值写进 rax</text>
+  <text x="616" y="366" font-size="11" fill="#1b3d1e">成功 / 失败 / 阻塞三态要看</text>
+
+  <line x1="310" y1="340" x2="336" y2="340" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="570" y1="340" x2="596" y2="340" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- 返回箭头 -->
+  <path d="M 830 300 L 830 208" fill="none" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="846" y="258" font-size="11" fill="#2e7d32">返回用户态（sysret）</text>
+
+  <!-- 右侧性质 -->
+  <rect x="860" y="124" width="264" height="80" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="876" y="146" font-size="11.5" font-weight="bold" fill="#37474f">两个关键性质</text>
+  <text x="876" y="168" font-size="11" fill="#37474f">① 有穿越开销：比函数调用高一个量级</text>
+  <text x="876" y="188" font-size="11" fill="#37474f">② 受理 ≠ 完成：可能阻塞在等 IO</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="404" width="1080" height="40" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="431" font-size="12.5" fill="#7f3f00">所以高频小操作要批量化（缓冲就是为此而生）；「读文件」不是你在读，是内核替你在读</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="462" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="472" font-size="11" fill="#37474f">用户态步骤</text>
+  <rect x="230" y="462" width="22" height="12" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="260" y="472" font-size="11" fill="#37474f">陷入指令</text>
+  <rect x="400" y="462" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="430" y="472" font-size="11" fill="#37474f">内核态步骤</text>
+  <line x1="560" y1="468" x2="602" y2="468" stroke="#c62828" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="610" y="472" font-size="11" fill="#37474f">特权级分界</text>
+</svg>

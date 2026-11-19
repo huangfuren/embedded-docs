@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>printf 之旅：五站，以及缓冲为什么让输出迟到</title>
+  <rect x="0" y="0" width="1200" height="520" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">printf 之旅：你写一行，字节要过五站才到屏幕</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 003 §3.4 buf.c 本机实录（重定向到文件，1 秒时为空）· 2026-11-14</text>
+
+  <!-- 五站 -->
+  <rect x="60" y="100" width="196" height="96" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="76" y="124" font-size="12" font-weight="bold" fill="#0d2f5c">① 你的调用</text>
+  <text x="76" y="146" font-size="11" fill="#0d2f5c">printf("abc")</text>
+  <text x="76" y="168" font-size="11" fill="#0d2f5c">写代码的人只看到这一步</text>
+  <text x="76" y="186" font-size="10" fill="#1565c0">C 语言 001</text>
+
+  <rect x="276" y="100" width="196" height="96" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="292" y="124" font-size="12" font-weight="bold" fill="#5d4700">② stdio 库缓冲</text>
+  <text x="292" y="146" font-size="11" fill="#5d4700">格式化后放进用户态缓冲区</text>
+  <text x="292" y="168" font-size="11" fill="#5d4700">攒一批再走，摊薄穿越开销</text>
+  <text x="292" y="186" font-size="10" fill="#8d6e00">满 / 换行 / fflush 才出门</text>
+
+  <rect x="492" y="100" width="196" height="96" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="508" y="124" font-size="12" font-weight="bold" fill="#7f3f00">③ write() 系统调用</text>
+  <text x="508" y="146" font-size="11" fill="#7f3f00">穿越特权级的那道门</text>
+  <text x="508" y="168" font-size="11" fill="#7f3f00">用户态 → 内核态</text>
+  <text x="508" y="186" font-size="10" fill="#7f3f00">003 §3.3 的机制</text>
+
+  <rect x="708" y="100" width="196" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="724" y="124" font-size="12" font-weight="bold" fill="#123314">④ 内核驱动接管</text>
+  <text x="724" y="146" font-size="11" fill="#1b3d1e">按下标查文件表，找到设备</text>
+  <text x="724" y="168" font-size="11" fill="#1b3d1e">设备管理职责在此兑现</text>
+  <text x="724" y="186" font-size="10" fill="#2e5230">001 §1.2 四大职责</text>
+
+  <rect x="924" y="100" width="196" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="940" y="124" font-size="12" font-weight="bold" fill="#123314">⑤ 送到硬件</text>
+  <text x="940" y="146" font-size="11" fill="#1b3d1e">驱动把字节写进外设寄存器</text>
+  <text x="940" y="168" font-size="11" fill="#1b3d1e">屏幕 / 串口 / 磁盘收到</text>
+  <text x="940" y="186" font-size="10" fill="#2e5230">C 005 §5.6 寄存器地址</text>
+
+  <line x1="256" y1="148" x2="272" y2="148" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="472" y1="148" x2="488" y2="148" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="688" y1="148" x2="704" y2="148" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="904" y1="148" x2="920" y2="148" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 回发中断 -->
+  <path d="M 1022 196 L 1022 226 L 158 226 L 158 200" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowGreen)"/>
+  <text x="590" y="246" font-size="11" fill="#2e7d32" text-anchor="middle">设备输出完毕可能回发中断 —— 硬件向软件回报（003 §3.2）</text>
+
+  <!-- 缓冲实验 -->
+  <text x="60" y="292" font-size="13" font-weight="bold" fill="#37474f">缓冲实验：为什么「printf 了但文件里没有」</text>
+
+  <rect x="60" y="304" width="520" height="112" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="78" y="328" font-size="12" font-weight="bold" fill="#7f0000">不带 f 参数：输出迟到 3 秒</text>
+  <text x="78" y="352" font-size="11" fill="#7f0000">重定向到文件 → stdio 用「全缓冲」</text>
+  <text x="78" y="374" font-size="11" fill="#7f0000">1 秒时打开 out.txt：空的（字还在用户态缓冲区）</text>
+  <text x="78" y="396" font-size="11" fill="#7f0000">程序结束后再看：abc-without-newline done</text>
+
+  <rect x="620" y="304" width="520" height="112" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="638" y="328" font-size="12" font-weight="bold" fill="#123314">带 f 参数：立刻可见</text>
+  <text x="638" y="352" font-size="11" fill="#1b3d1e">程序里先调 fflush(stdout) 强制出门</text>
+  <text x="638" y="374" font-size="11" fill="#1b3d1e">1 秒时文件里已经有 abc-without-newline</text>
+  <text x="638" y="396" font-size="11" fill="#1b3d1e">缓冲被清空 —— 这就是「有没有 OS」的体验差异</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="434" width="1080" height="40" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="461" font-size="12.5" fill="#7f3f00">裸机的 printf 常直通串口寄存器（没缓冲）；有 OS 才有缓冲这层 —— 同一句代码，两个世界的体验</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="492" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="502" font-size="11" fill="#37474f">你的代码</text>
+  <rect x="220" y="492" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="250" y="502" font-size="11" fill="#37474f">用户态缓冲</text>
+  <rect x="400" y="492" width="22" height="12" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="430" y="502" font-size="11" fill="#37474f">系统调用（穿门）</text>
+  <rect x="610" y="492" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="640" y="502" font-size="11" fill="#37474f">内核与硬件</text>
+  <rect x="790" y="492" width="22" height="12" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1"/>
+  <text x="820" y="502" font-size="11" fill="#37474f">症状（输出迟到）</text>
+  <rect x="980" y="492" width="22" height="12" rx="3" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="1010" y="502" font-size="11" fill="#37474f">fflush 后的正确结果</text>
+</svg>

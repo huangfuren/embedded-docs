@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>hello.o 反汇编逐行对照：8 行 C 变成 11 条指令</title>
+  <rect x="0" y="0" width="1200" height="580" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">反汇编逐行对照：你的 8 行 C，硬件层是 11 条指令</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 002 §2.1 objdump -d hello.o 本机实录（x86-64 / Windows）· 2026-11-14</text>
+  <text x="60" y="96" font-size="11.5" fill="#37474f">左边十六进制就是机器码本身 —— 编译器按 ISA 契约产出的东西；中间是反汇编器翻回来的可读形式</text>
+
+  <!-- 表头 -->
+  <rect x="60" y="108" width="1080" height="30" rx="4" fill="#eceff1" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="128" font-size="11.5" font-weight="bold" fill="#37474f">机器码（hex）</text>
+  <text x="332" y="128" font-size="11.5" font-weight="bold" fill="#37474f">汇编指令</text>
+  <text x="656" y="128" font-size="11.5" font-weight="bold" fill="#37474f">这段在干什么</text>
+
+  <!-- 行 1 -->
+  <rect x="60" y="142" width="1080" height="30" fill="#f1f8e9"/>
+  <text x="76" y="162" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">55</text>
+  <text x="332" y="162" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">push %rbp</text>
+  <text x="656" y="162" font-size="11.5" fill="#37474f">开场①：把调用者的栈底存进栈</text>
+
+  <!-- 行 2 -->
+  <rect x="60" y="172" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="192" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">48 89 e5</text>
+  <text x="332" y="192" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">mov %rsp,%rbp</text>
+  <text x="656" y="192" font-size="11.5" fill="#37474f">开场②：建立自己的栈帧（C 005 §5.4 的栈在这落地）</text>
+
+  <!-- 行 3 -->
+  <rect x="60" y="202" width="1080" height="30" fill="#f1f8e9"/>
+  <text x="76" y="222" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">48 83 ec 20</text>
+  <text x="332" y="222" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">sub $0x20,%rsp</text>
+  <text x="656" y="222" font-size="11.5" fill="#37474f">开场③：在栈上留出 32 字节给局部变量</text>
+
+  <!-- 行 4 -->
+  <rect x="60" y="232" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="252" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">e8 00 00 00 00</text>
+  <text x="332" y="252" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">call d &lt;main+0xd&gt;</text>
+  <text x="656" y="252" font-size="11.5" fill="#37474f">调 printf 相关（未链接，地址先填 0）</text>
+
+  <!-- 行 5 -->
+  <rect x="60" y="262" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="282" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">48 8d 05 00 00 00 00</text>
+  <text x="332" y="282" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">lea 0x0(%rip),%rax</text>
+  <text x="656" y="282" font-size="11.5" fill="#37474f">算出字符串地址，装进 rax</text>
+
+  <!-- 行 6 -->
+  <rect x="60" y="292" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="312" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">48 89 c1</text>
+  <text x="332" y="312" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">mov %rax,%rcx</text>
+  <text x="656" y="312" font-size="11.5" fill="#37474f">第一个参数走 rcx —— Windows x64 调用约定</text>
+
+  <!-- 行 7 -->
+  <rect x="60" y="322" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="342" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">e8 00 00 00 00</text>
+  <text x="332" y="342" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">call 1c &lt;main+0x1c&gt;</text>
+  <text x="656" y="342" font-size="11.5" fill="#37474f">真正调用 printf（参数已就位）</text>
+
+  <!-- 行 8 -->
+  <rect x="60" y="352" width="1080" height="30" fill="#fff9c4"/>
+  <text x="76" y="372" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">b8 00 00 00 00</text>
+  <text x="332" y="372" font-size="11.5" fill="#5d4700" font-family="ui-monospace,Menlo,Consolas,monospace">mov $0x0,%eax</text>
+  <text x="656" y="372" font-size="11.5" fill="#5d4700">return 0 —— 返回值走 eax</text>
+
+  <!-- 行 9 -->
+  <rect x="60" y="382" width="1080" height="30" fill="#f1f8e9"/>
+  <text x="76" y="402" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">48 83 c4 20</text>
+  <text x="332" y="402" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">add $0x20,%rsp</text>
+  <text x="656" y="402" font-size="11.5" fill="#37474f">收尾：把栈空间还回去</text>
+
+  <!-- 行 10 -->
+  <rect x="60" y="412" width="1080" height="30" fill="#ffffff"/>
+  <text x="76" y="432" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">5d</text>
+  <text x="332" y="432" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">pop %rbp</text>
+  <text x="656" y="432" font-size="11.5" fill="#37474f">收尾：恢复调用者的栈底</text>
+
+  <!-- 行 11 -->
+  <rect x="60" y="442" width="1080" height="30" fill="#f1f8e9"/>
+  <text x="76" y="462" font-size="11.5" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">c3</text>
+  <text x="332" y="462" font-size="11.5" fill="#0d2f5c" font-family="ui-monospace,Menlo,Consolas,monospace">ret</text>
+  <text x="656" y="462" font-size="11.5" fill="#37474f">返回 —— ret 就是「改 PC 回到调用者」</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="486" width="1080" height="46" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="514" font-size="13" fill="#7f3f00">读懂执行流只需三样：栈帧在干什么（开场/收尾）、参数放哪（rcx）、返回值放哪（eax）—— 不必逐条背指令</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="546" width="22" height="14" rx="3" fill="#f1f8e9" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="90" y="558" font-size="11" fill="#37474f">栈帧建立与回收</text>
+  <rect x="270" y="546" width="22" height="14" rx="3" fill="#ffffff" stroke="#90a4ae" stroke-width="1"/>
+  <text x="300" y="558" font-size="11" fill="#37474f">参数准备与调用</text>
+  <rect x="460" y="546" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="490" y="558" font-size="11" fill="#37474f">返回值</text>
+  <text x="600" y="558" font-size="11" fill="#616161" font-family="ui-monospace,Menlo,Consolas,monospace">等宽字体 = 机器码与汇编原文</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>四种访问模式实测：同为读内存，最慢比最快慢 114 倍</title>
+  <rect x="0" y="0" width="1200" height="480" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">四种访问模式：同为读内存，最慢比最快慢 114 倍</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 003 §3.2 cache_test.c 本机实录（256MB 数组 / -O0 / QPC 计时）· 2026-11-14</text>
+  <text x="60" y="98" font-size="11.5" fill="#37474f">横条按对数刻度画 —— 线性画的话，最快那条只有 0.8px 宽，看不见</text>
+
+  <!-- 行 1：顺序 -->
+  <text x="60" y="136" font-size="12.5" font-weight="bold" fill="#123314">顺序遍历 6400 万</text>
+  <rect x="280" y="134" width="6" height="16" rx="3" fill="#2e7d32"/>
+  <text x="294" y="147" font-size="12" font-weight="bold" fill="#2e7d32">0.83 ns/add</text>
+  <text x="280" y="172" font-size="11" fill="#616161">空间局部性拉满：预取器提前把后面几行搬进缓存，内存像流水线一样供数</text>
+
+  <!-- 行 2：跨步 -->
+  <text x="60" y="200" font-size="12.5" font-weight="bold" fill="#5d4700">规则跨步 16</text>
+  <rect x="280" y="198" width="84" height="16" rx="3" fill="#f9a825"/>
+  <text x="374" y="211" font-size="12" font-weight="bold" fill="#5d4700">1.47 ns/add</text>
+  <text x="280" y="236" font-size="11" fill="#616161">跨步恰好 64B = 一行：预取器认出这个规律，照样救回来 —— 规律跳变不可怕</text>
+
+  <!-- 行 3：随机 -->
+  <text x="60" y="264" font-size="12.5" font-weight="bold" fill="#0d2f5c">独立随机 400 万</text>
+  <rect x="280" y="262" width="394" height="16" rx="3" fill="#1565c0"/>
+  <text x="684" y="275" font-size="12" font-weight="bold" fill="#0d2f5c">12 ns/add</text>
+  <text x="280" y="300" font-size="11" fill="#616161">真随机打脸预取器；但乱序执行能同时挂多个等数据的请求，把延迟摊薄（内存级并行）</text>
+
+  <!-- 行 4：追逐 -->
+  <text x="60" y="328" font-size="12.5" font-weight="bold" fill="#7f0000">指针追逐 400 万</text>
+  <rect x="280" y="326" width="700" height="16" rx="3" fill="#c62828"/>
+  <text x="990" y="339" font-size="12" font-weight="bold" fill="#7f0000">95 ns/hop</text>
+  <text x="280" y="364" font-size="11" fill="#616161">每次加载的地址来自上一次的结果：无法并行、无法预取，内存延迟全额暴露（≈100ns）</text>
+
+  <!-- 对数刻度 -->
+  <line x1="280" y1="382" x2="1000" y2="382" stroke="#cfd8dc" stroke-width="1"/>
+  <line x1="307" y1="378" x2="307" y2="386" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="647" y1="378" x2="647" y2="386" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="979" y1="378" x2="979" y2="386" stroke="#90a4ae" stroke-width="1"/>
+  <text x="307" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">1 ns</text>
+  <text x="647" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">10 ns</text>
+  <text x="979" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">100 ns</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="412" width="1080" height="44" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="440" font-size="13" fill="#7f3f00">这就是「链表比数组慢」的硬件真相：链表遍历 = 指针追逐；局部性不是教条，是能量出来的钱</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="466" width="22" height="12" rx="3" fill="#2e7d32"/>
+  <text x="90" y="476" font-size="11" fill="#37474f">顺序</text>
+  <rect x="160" y="466" width="22" height="12" rx="3" fill="#f9a825"/>
+  <text x="190" y="476" font-size="11" fill="#37474f">跨步</text>
+  <rect x="260" y="466" width="22" height="12" rx="3" fill="#1565c0"/>
+  <text x="290" y="476" font-size="11" fill="#37474f">随机</text>
+  <rect x="360" y="466" width="22" height="12" rx="3" fill="#c62828"/>
+  <text x="390" y="476" font-size="11" fill="#37474f">指针追逐</text>
+  <text x="500" y="476" font-size="11" fill="#616161">对数刻度：1ns / 10ns / 100ns</text>
+</svg>

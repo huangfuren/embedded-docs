@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 512" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>程序、进程与线程：什么共享，什么独立</title>
+  <rect x="0" y="0" width="1200" height="512" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">程序、进程与线程：一个文件，两次运行，三条执行流</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 002 §2.1/§2.3 tasklist 本机实录（两个记事本两个 PID）· 2026-11-14</text>
+
+  <!-- 上：程序 → 两个进程 -->
+  <rect x="60" y="132" width="180" height="92" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="76" y="158" font-size="12" font-weight="bold" fill="#37474f">notepad.exe</text>
+  <text x="76" y="180" font-size="11" fill="#37474f">磁盘上的一个文件</text>
+  <text x="76" y="200" font-size="11" fill="#616161">代码 + 数据的静态组合</text>
+  <text x="76" y="218" font-size="10" fill="#616161">程序 = 文件，不是运行</text>
+
+  <path d="M 240 178 L 290 178 L 290 152 L 328 152" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 240 178 L 290 178 L 290 246 L 328 246" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="330" y="106" width="360" height="92" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="348" y="130" font-size="12" font-weight="bold" fill="#123314">进程 A · PID 76292</text>
+  <text x="348" y="152" font-size="11" fill="#1b3d1e">PCB：状态 / 寄存器快照 / 内存区域表 / 文件清单</text>
+  <text x="348" y="172" font-size="11" fill="#1b3d1e">内存占用 15,108 K</text>
+  <text x="348" y="190" font-size="10" fill="#2e5230">独立地址空间（内核 + MMU 伪造的独占假象）</text>
+
+  <rect x="330" y="210" width="360" height="92" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="348" y="234" font-size="12" font-weight="bold" fill="#123314">进程 B · PID 77296</text>
+  <text x="348" y="256" font-size="11" fill="#1b3d1e">PCB：另一套完全独立的档案</text>
+  <text x="348" y="276" font-size="11" fill="#1b3d1e">内存占用 100,364 K</text>
+  <text x="348" y="294" font-size="10" fill="#2e5230">关掉 B，A 安然无恙 —— 这就是隔离</text>
+
+  <rect x="720" y="106" width="420" height="196" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="740" y="132" font-size="12.5" font-weight="bold" fill="#37474f">切换进程 = 三步</text>
+  <text x="740" y="158" font-size="11.5" fill="#37474f">① 存现场：把寄存器压进 PCB</text>
+  <text x="740" y="182" font-size="11.5" fill="#37474f">② 换档案：把另一份 PCB 请出来</text>
+  <text x="740" y="206" font-size="11.5" fill="#37474f">③ 恢复现场：把寄存器装回去</text>
+  <text x="740" y="238" font-size="11" fill="#616161">换地址空间很贵 —— 这是「线程比进程轻」的根源</text>
+  <text x="740" y="262" font-size="11" fill="#616161">微秒级开销，但一分活也没干，纯成本</text>
+
+  <!-- 下：线程共享 -->
+  <rect x="60" y="320" width="560" height="152" rx="8" fill="#f1f8e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="78" y="344" font-size="12.5" font-weight="bold" fill="#123314">同一进程内：三个线程</text>
+
+  <rect x="80" y="356" width="520" height="40" rx="4" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="96" y="381" font-size="11.5" font-weight="bold" fill="#123314">共享：代码段 · 全局变量 · 堆 —— 一个线程改了，别人立刻看得见</text>
+
+  <rect x="80" y="406" width="165" height="52" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="96" y="426" font-size="11.5" font-weight="bold" fill="#0d2f5c">线程 1</text>
+  <text x="96" y="446" font-size="11" fill="#0d2f5c">独立栈 + 独立寄存器</text>
+
+  <rect x="258" y="406" width="165" height="52" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="274" y="426" font-size="11.5" font-weight="bold" fill="#0d2f5c">线程 2</text>
+  <text x="274" y="446" font-size="11" fill="#0d2f5c">独立栈 + 独立寄存器</text>
+
+  <rect x="436" y="406" width="164" height="52" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="452" y="426" font-size="11.5" font-weight="bold" fill="#0d2f5c">线程 3</text>
+  <text x="452" y="446" font-size="11" fill="#0d2f5c">独立栈 + 独立寄存器</text>
+
+  <rect x="656" y="320" width="484" height="152" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="676" y="346" font-size="12.5" font-weight="bold" fill="#37474f">一句话记住取舍</text>
+  <text x="676" y="372" font-size="11.5" fill="#37474f">要隔离 → 多进程：一个崩了不影响别人，但换档案贵</text>
+  <text x="676" y="396" font-size="11.5" fill="#37474f">要轻快共享 → 多线程：省掉换地址空间，但共享是事故之源</text>
+  <text x="676" y="424" font-size="11" fill="#e65100">下一张的竞态，就是「共享」这份甜头的账单</text>
+  <text x="676" y="450" font-size="11" fill="#616161">进程间交换数据走 IPC；线程直接读写共享变量</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="486" width="22" height="12" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="90" y="496" font-size="11" fill="#37474f">程序（磁盘文件）</text>
+  <rect x="230" y="486" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="260" y="496" font-size="11" fill="#37474f">进程（独立地址空间）</text>
+  <rect x="440" y="486" width="22" height="12" rx="3" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
+  <text x="470" y="496" font-size="11" fill="#37474f">线程共享区</text>
+  <rect x="600" y="486" width="22" height="12" rx="3" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="630" y="496" font-size="11" fill="#37474f">线程私有（栈与寄存器）</text>
+</svg>

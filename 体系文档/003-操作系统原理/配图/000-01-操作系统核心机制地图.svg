@@ -1,72 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="670.59" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
-  <title>操作系统核心机制地图</title>
-  <desc>003-操作系统原理 板块全貌图：用户态应用、内核四职责、硬件层，系统调用与中断两条穿越通道（680 内部坐标系 x 1.764706）</desc>
-  <rect x="0" y="0" width="680" height="380" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>操作系统 · 核心机制地图</title>
+  <rect x="0" y="0" width="1200" height="740" fill="#ffffff"/>
+
   <defs>
-    <marker id="a0Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#90a4ae"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">操作系统 · 核心机制地图</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：本库建库批 · 2026-11-14</text>
 
-  <!-- 上：用户态 -->
-  <rect x="18" y="44" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="58" font-size="9" fill="#4A4945">用户态 —— 应用，受限运行级别（001 §1.4）</text>
-  <rect x="26" y="64" width="200" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="126" y="76" font-size="9" fill="#1F4468" text-anchor="middle">hello 进程</text>
-  <text x="126" y="88" font-size="8" fill="#4A4945" text-anchor="middle">程序的一次运行（002 §2.1）</text>
-  <rect x="240" y="64" width="200" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="340" y="76" font-size="9" fill="#1F4468" text-anchor="middle">Shell / 服务</text>
-  <text x="340" y="88" font-size="8" fill="#4A4945" text-anchor="middle">命令行解释器 · 后台进程</text>
-  <rect x="454" y="64" width="200" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="554" y="76" font-size="9" fill="#1F4468" text-anchor="middle">FreeRTOS 任务</text>
-  <text x="554" y="88" font-size="8" fill="#4A4945" text-anchor="middle">单地址空间，共享内存</text>
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">操作系统 · 核心机制地图</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：本库建库批 · 口径：Linux 与 FreeRTOS 双线，机制级不读源码 · 2026-11-14</text>
 
-  <!-- 穿越通道：系统调用 -->
-  <line x1="120" y1="108" x2="120" y2="124" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
-  <text x="128" y="120" font-size="8.5" fill="#1D5A45">系统调用 ↓（程序请求内核服务，003 §3.3）</text>
+  <!-- 用户态 -->
+  <text x="60" y="100" font-size="11" fill="#1565c0">用户态 —— 应用，受限运行级别（001 §1.4）</text>
 
-  <!-- 中：内核 -->
-  <rect x="18" y="124" width="644" height="84" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="26" y="140" font-size="9" fill="#1F4468">内核（内核态 · 常驻 · 特权）—— 四大职责（001 §1.2）</text>
-  <rect x="26" y="146" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="101" y="159" font-size="9" fill="#1F4468" text-anchor="middle">进程管理</text>
-  <text x="101" y="173" font-size="8" fill="#4A4945" text-anchor="middle">谁下一个上 CPU（002）</text>
-  <rect x="184" y="146" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="259" y="159" font-size="9" fill="#1F4468" text-anchor="middle">内存管理</text>
-  <text x="259" y="173" font-size="8" fill="#4A4945" text-anchor="middle">记账 + 划界，防互踩</text>
-  <rect x="342" y="146" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="417" y="159" font-size="9" fill="#1F4468" text-anchor="middle">文件系统</text>
-  <text x="417" y="173" font-size="8" fill="#4A4945" text-anchor="middle">把块抽象成文件目录</text>
-  <rect x="500" y="146" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
-  <text x="575" y="159" font-size="9" fill="#1F4468" text-anchor="middle">设备管理</text>
-  <text x="575" y="173" font-size="8" fill="#4A4945" text-anchor="middle">驱动统一成接口（003）</text>
+  <rect x="60" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="78" y="134" font-size="12.5" font-weight="bold" fill="#0d2f5c">hello 进程</text>
+  <text x="78" y="156" font-size="11" fill="#0d2f5c">程序的一次运行（002 §2.1）</text>
+  <text x="78" y="176" font-size="11" fill="#0d2f5c">独立地址空间，崩溃不连累别人</text>
 
-  <!-- 穿越通道：中断 -->
-  <line x1="560" y1="224" x2="560" y2="208" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
-  <text x="552" y="220" font-size="8.5" fill="#1D5A45" text-anchor="end">中断 / 异常 ↑（硬件与程序打断 CPU，003 §3.2）</text>
+  <rect x="430" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="448" y="134" font-size="12.5" font-weight="bold" fill="#0d2f5c">Shell / 服务</text>
+  <text x="448" y="156" font-size="11" fill="#0d2f5c">命令行解释器 · 后台进程</text>
+  <text x="448" y="176" font-size="11" fill="#0d2f5c">它们也是普通进程，不特殊</text>
 
-  <!-- 下：硬件 -->
-  <rect x="18" y="224" width="644" height="58" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
-  <text x="26" y="238" font-size="9" fill="#4A4945">硬件 —— 计算机体系结构板块（001~003）</text>
-  <rect x="26" y="242" width="150" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="101" y="254" font-size="9" fill="#1F4468" text-anchor="middle">CPU</text>
-  <text x="101" y="266" font-size="8" fill="#4A4945" text-anchor="middle">取指 · 译码 · 执行</text>
-  <rect x="184" y="242" width="150" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="259" y="254" font-size="9" fill="#1F4468" text-anchor="middle">内存</text>
-  <text x="259" y="266" font-size="8" fill="#4A4945" text-anchor="middle">RAM 层次与缓存</text>
-  <rect x="342" y="242" width="150" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="417" y="254" font-size="9" fill="#1F4468" text-anchor="middle">磁盘 / Flash</text>
-  <text x="417" y="266" font-size="8" fill="#4A4945" text-anchor="middle">程序与数据的仓库</text>
-  <rect x="500" y="242" width="150" height="32" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
-  <text x="575" y="254" font-size="9" fill="#1F4468" text-anchor="middle">外设</text>
-  <text x="575" y="266" font-size="8" fill="#4A4945" text-anchor="middle">串口 · 定时器 · 中断控制器</text>
+  <rect x="800" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="818" y="134" font-size="12.5" font-weight="bold" fill="#0d2f5c">FreeRTOS 任务</text>
+  <text x="818" y="156" font-size="11" fill="#0d2f5c">单地址空间，全共享（001 §1.5）</text>
+  <text x="818" y="176" font-size="11" fill="#0d2f5c">没有特权级强制，纪律靠自觉</text>
 
-  <!-- 总结 -->
-  <rect x="18" y="296" width="644" height="44" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
-  <text x="32" y="313" font-size="9.5" font-weight="600" fill="#7A4A12">printf 之旅：stdio 库 → 用户态缓冲 → write() 系统调用 → 内核驱动 → 硬件输出（003 §3.4 闭环）</text>
-  <text x="32" y="330" font-size="8.5" fill="#7A4A12">Linux 与 RTOS 是同一原理的两种形态（001 §1.5）：吞吐优先 vs 确定响应</text>
-  <text x="32" y="358" font-size="8" fill="#8C8980">口径：Linux 与 FreeRTOS 双线 · 机制级不读源码 — 2026-11-14</text>
+  <!-- 双向通道 -->
+  <path d="M 400 186 L 400 244" fill="none" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="412" y="206" font-size="11.5" font-weight="bold" fill="#e65100">系统调用 ↓</text>
+  <text x="412" y="224" font-size="11" fill="#e65100">程序请求内核服务（003 §3.3）</text>
+
+  <path d="M 760 244 L 760 186" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="772" y="206" font-size="11.5" font-weight="bold" fill="#1565c0">中断 / 异常 ↑</text>
+  <text x="772" y="224" font-size="11" fill="#1565c0">硬件与程序打断 CPU（003 §3.2）</text>
+
+  <!-- 内核 -->
+  <text x="60" y="266" font-size="11" fill="#2e7d32">内核态 —— 常驻内存 · 特权运行</text>
+
+  <rect x="60" y="276" width="1080" height="132" rx="8" fill="#f1f8e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="80" y="300" font-size="13" font-weight="bold" fill="#123314">内核：四大职责，共同点都是「仲裁」（001 §1.2）</text>
+
+  <rect x="80" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="96" y="332" font-size="12" font-weight="bold" fill="#123314">进程管理</text>
+  <text x="96" y="354" font-size="11" fill="#1b3d1e">谁下一个上 CPU</text>
+  <text x="96" y="374" font-size="11" fill="#1b3d1e">三态、调度、上下文切换（002）</text>
+
+  <rect x="346" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="362" y="332" font-size="12" font-weight="bold" fill="#123314">内存管理</text>
+  <text x="362" y="354" font-size="11" fill="#1b3d1e">记账 + 划界，防互踩</text>
+  <text x="362" y="374" font-size="11" fill="#1b3d1e">虚拟地址空间的伪造者</text>
+
+  <rect x="612" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="628" y="332" font-size="12" font-weight="bold" fill="#123314">文件系统</text>
+  <text x="628" y="354" font-size="11" fill="#1b3d1e">把块设备抽象成文件目录</text>
+  <text x="628" y="374" font-size="11" fill="#1b3d1e">名字 → inode → 扇区</text>
+
+  <rect x="878" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="894" y="332" font-size="12" font-weight="bold" fill="#123314">设备管理</text>
+  <text x="894" y="354" font-size="11" fill="#1b3d1e">驱动统一成接口</text>
+  <text x="894" y="374" font-size="11" fill="#1b3d1e">printf 的最后一站（003 §3.4）</text>
+
+  <!-- 内核到硬件 -->
+  <line x1="600" y1="408" x2="600" y2="444" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <text x="612" y="432" font-size="11" fill="#616161">驱动代你操作寄存器</text>
+
+  <!-- 硬件 -->
+  <text x="60" y="466" font-size="11" fill="#616161">硬件 —— 计算机体系结构板块（001~003）</text>
+
+  <rect x="60" y="476" width="242" height="72" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="76" y="500" font-size="12" font-weight="bold" fill="#37474f">CPU</text>
+  <text x="76" y="522" font-size="11" fill="#37474f">取指 · 译码 · 执行</text>
+  <text x="76" y="540" font-size="11" fill="#37474f">PC 是唯一路标</text>
+
+  <rect x="326" y="476" width="242" height="72" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="342" y="500" font-size="12" font-weight="bold" fill="#37474f">内存 RAM</text>
+  <text x="342" y="522" font-size="11" fill="#37474f">层次与缓存</text>
+  <text x="342" y="540" font-size="11" fill="#37474f">易失，断电即失</text>
+
+  <rect x="592" y="476" width="242" height="72" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="608" y="500" font-size="12" font-weight="bold" fill="#37474f">磁盘 / Flash</text>
+  <text x="608" y="522" font-size="11" fill="#37474f">程序与数据的仓库</text>
+  <text x="608" y="540" font-size="11" fill="#37474f">非易失，按块擦除</text>
+
+  <rect x="858" y="476" width="242" height="72" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="874" y="500" font-size="12" font-weight="bold" fill="#37474f">外设</text>
+  <text x="874" y="522" font-size="11" fill="#37474f">串口 · 定时器 · 中断控制器</text>
+  <text x="874" y="540" font-size="11" fill="#37474f">中断的源头</text>
+
+  <!-- printf 之旅 -->
+  <rect x="60" y="566" width="1080" height="46" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="595" font-size="12.5" fill="#7f3f00">一条主线串起全册：printf("abc") → stdio 缓冲 → write() 系统调用 → 内核驱动 → 硬件输出（003 §3.4 闭环）</text>
+
+  <!-- 两种形态 -->
+  <rect x="60" y="616" width="530" height="58" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="78" y="638" font-size="12" font-weight="bold" fill="#37474f">Linux：吞吐优先</text>
+  <text x="78" y="660" font-size="11" fill="#37474f">MB~GB 内存 · 每进程独立地址空间 · 公平调度</text>
+
+  <rect x="610" y="616" width="530" height="58" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="628" y="638" font-size="12" font-weight="bold" fill="#37474f">FreeRTOS：确定响应</text>
+  <text x="628" y="660" font-size="11" fill="#37474f">KB 内存 · 单一地址空间 · 优先级抢占</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="708" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="718" font-size="11" fill="#37474f">用户态</text>
+  <rect x="180" y="708" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="210" y="718" font-size="11" fill="#37474f">内核四大职责</text>
+  <rect x="360" y="708" width="22" height="12" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="390" y="718" font-size="11" fill="#37474f">硬件</text>
+  <rect x="480" y="708" width="22" height="12" rx="3" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
+  <text x="510" y="718" font-size="11" fill="#37474f">贯穿主线</text>
+  <rect x="630" y="708" width="22" height="12" rx="3" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="660" y="718" font-size="11" fill="#37474f">两种形态对照</text>
 </svg>
