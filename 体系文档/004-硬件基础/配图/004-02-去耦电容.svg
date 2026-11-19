@@ -8,7 +8,7 @@
   <rect x="0" y="0" width="1200" height="530" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">去耦电容：芯片旁边那颗 0.1μF，是几十纳秒的救命水</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 003 §3.2 · 口径：0.1μF 为工程惯例值，波形为原理示意，非实测 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 004 §4.1 · 口径：0.1μF 为工程惯例值，波形为原理示意，非实测 · 2026-11-14</text>
 
   <!-- 左：拓扑 -->
   <rect x="60" y="96" width="500" height="284" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>

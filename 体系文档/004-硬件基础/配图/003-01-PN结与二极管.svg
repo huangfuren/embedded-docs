@@ -11,7 +11,7 @@
   <rect x="0" y="0" width="1200" height="520" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">PN 结：耗尽层是一堵墙，正偏推倒它、反偏加高它</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：003 §3.1~3.2 · 单向导电不是"阀门"的比喻，而是耗尽层宽度随电压方向变化的结果</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：003 §3.1~3.3 · 单向导电不是"阀门"的比喻，而是耗尽层宽度随电压方向变化的结果</text>
 
   <!-- 卡① 平衡态 -->
   <rect x="60" y="92" width="340" height="152" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>

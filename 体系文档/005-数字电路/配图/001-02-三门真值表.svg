@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="510" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">真值表不用背：跑一遍 gates.c，四行输出自己长出来</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 002 §2.2 · 代码与输出均为本机实录，可用 gcc 复现 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：005 板块 001 §1.2 · 代码与输出均为本机实录，可用 gcc 复现 · 2026-11-14</text>
 
   <rect x="60" y="96" width="510" height="240" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
   <text x="80" y="122" font-size="12.5" font-weight="bold" fill="#37474f">gates.c 的核心四行：两个循环枚举输入，一次打印四列</text>
@@ -12,7 +12,7 @@
   <text x="80" y="200" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">        printf("%d %d |   %d     %d     %d    %d\n",</text>
   <text x="80" y="224" font-size="11.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">               a, b, a &amp;&amp; b, a || b, !a, a ^ b);</text>
   <text x="80" y="264" font-size="11" fill="#616161">编译：gcc -Wall gates.c -o gates.exe　运行：.\gates.exe</text>
-  <text x="80" y="290" font-size="11" fill="#7f3f00">试一试补一列 NAND = !(a &amp;&amp; b)：四行全 1，只有 1 1 行是 0</text>
+  <text x="80" y="290" font-size="11" fill="#7f3f00">试一试补一列 NAND = !(a &amp;&amp; b)：三行全 1，只有 1 1 行是 0</text>
   <text x="80" y="312" font-size="11" fill="#7f3f00">这就是「一种门能拼出全部逻辑」的第一直觉</text>
 
   <rect x="610" y="138" width="520" height="50" fill="#eceff1"/>

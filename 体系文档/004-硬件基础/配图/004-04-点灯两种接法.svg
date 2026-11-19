@@ -8,7 +8,7 @@
   <rect x="0" y="0" width="1200" height="560" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">点灯两种接法：一样亮，电流方向反着来</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 003 §3.4 · 口径：3.3V 供电，LED 压降约 2V，限流电阻取 001 §1.2 算出的 220Ω · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：004 板块 004 §4.4 · 口径：3.3V 供电，LED 压降约 2V，限流电阻取 001 §1.3 算出的 220Ω · 2026-11-14</text>
 
   <!-- 方式一 -->
   <rect x="60" y="96" width="520" height="204" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
