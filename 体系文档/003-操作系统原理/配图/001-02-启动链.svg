@@ -99,7 +99,7 @@
   <rect x="700" y="354" width="440" height="112" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
   <text x="718" y="378" font-size="11.5" font-weight="bold" fill="#5d4700">这一排就是启动链的直接产物</text>
   <text x="718" y="400" font-size="11" fill="#5d4700">smss 是内核拉起的第一个用户进程</text>
-  <text x="718" y="420" font-size="11" fill="#5d4700">csrss / winlogon / services / lsass 依次跟上</text>
+  <text x="718" y="420" font-size="11" fill="#5d4700">节选 4 行：csrss 之后还有 winlogon，再到 services / lsass</text>
   <text x="718" y="442" font-size="11" fill="#5d4700">每次开机都重演「内核拉起 init → init 拉起服务」</text>
 
   <!-- 结论 -->
