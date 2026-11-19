@@ -10,26 +10,26 @@
   </defs>
 
   <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">007 · 内存对齐：padding 从哪来、重排能省多少</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.1/§7.5 本机实测 · C17 · 2026-11-19</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.1 struct_align / offsetof 本机实测 · C17 · 2026-11-19</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">规则只有一条：每个成员必须落在「自身大小的整数倍」地址上——所以中间和末尾都会插空</text>
 
-  <text x="40" y="120" font-size="17" font-weight="bold" fill="#7f0000">原始写法 struct { char c1; int n; char c2; } —— sizeof = 12</text>
+  <text x="40" y="120" font-size="17" font-weight="bold" fill="#7f0000">原始写法 struct A { char c; int i; char c2; } —— sizeof = 12</text>
 
   <text x="100" y="146" font-size="11" fill="#616161">字节 0</text>
-  <text x="413" y="146" font-size="11" fill="#616161" text-anchor="middle">4</text>
-  <text x="684" y="146" font-size="11" fill="#616161" text-anchor="middle">8</text>
-  <text x="892" y="146" font-size="11" fill="#616161" text-anchor="middle">12</text>
+  <text x="342" y="146" font-size="11" fill="#616161" text-anchor="middle">4</text>
+  <text x="579" y="146" font-size="11" fill="#616161" text-anchor="middle">8</text>
+  <text x="816" y="146" font-size="11" fill="#616161" text-anchor="middle">12</text>
 
   <rect x="100" y="154" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="129" y="188" font-size="12" fill="#123314" text-anchor="middle">c1</text>
+  <text x="129" y="188" font-size="12" fill="#123314" text-anchor="middle">c</text>
 
   <rect x="163" y="154" width="174" height="56" rx="4" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4 3"/>
   <text x="250" y="180" font-size="11.5" fill="#616161" text-anchor="middle">padding 3 字节</text>
-  <text x="250" y="198" font-size="11" fill="#616161" text-anchor="middle">为对齐 n 而空出来</text>
+  <text x="250" y="198" font-size="11" fill="#616161" text-anchor="middle">为对齐 i 而空出来</text>
 
   <rect x="342" y="154" width="232" height="56" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="458" y="180" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">n（int，4 字节）</text>
+  <text x="458" y="180" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">i（int，4 字节）</text>
   <text x="458" y="200" font-size="11.5" fill="#0d2f5c" text-anchor="middle">必须落在 4 的倍数地址</text>
 
   <rect x="579" y="154" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
@@ -39,21 +39,21 @@
   <text x="729" y="180" font-size="11.5" fill="#616161" text-anchor="middle">padding 3 字节</text>
   <text x="729" y="198" font-size="11" fill="#616161" text-anchor="middle">为让总大小整除 4</text>
 
-  <text x="840" y="186" font-size="15" font-weight="bold" fill="#7f0000">9 字节数据 + 6 字节空洞 = 12</text>
+  <text x="840" y="186" font-size="15" font-weight="bold" fill="#7f0000">6 字节数据 + 6 字节空洞 = 12</text>
   <text x="840" y="210" font-size="11.5" fill="#37474f">浪费了整整一半空间</text>
 
-  <text x="40" y="252" font-size="17" font-weight="bold" fill="#1b5e20">重排后 struct { int n; char c1; char c2; } —— sizeof = 8</text>
+  <text x="40" y="252" font-size="17" font-weight="bold" fill="#1b5e20">重排后 struct B { int i; char c; char c2; } —— sizeof = 8</text>
 
   <text x="100" y="278" font-size="11" fill="#616161">字节 0</text>
-  <text x="371" y="278" font-size="11" fill="#616161" text-anchor="middle">4</text>
-  <text x="561" y="278" font-size="11" fill="#616161" text-anchor="middle">8</text>
+  <text x="337" y="278" font-size="11" fill="#616161" text-anchor="middle">4</text>
+  <text x="579" y="278" font-size="11" fill="#616161" text-anchor="middle">8</text>
 
   <rect x="100" y="286" width="232" height="56" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="216" y="312" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">n（int，4 字节）</text>
-  <text x="216" y="332" font-size="11.5" fill="#0d2f5c" text-anchor="middle">放在最前面，正好对齐</text>
+  <text x="216" y="312" font-size="12.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">i（int，4 字节）</text>
+  <text x="216" y="332" font-size="11.5" fill="#0d2f5c" text-anchor="middle">放在最前面，偏移 0</text>
 
   <rect x="337" y="286" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="366" y="320" font-size="12" fill="#123314" text-anchor="middle">c1</text>
+  <text x="366" y="320" font-size="12" fill="#123314" text-anchor="middle">c</text>
 
   <rect x="400" y="286" width="58" height="56" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="429" y="320" font-size="12" fill="#123314" text-anchor="middle">c2</text>

@@ -15,7 +15,7 @@
   </defs>
 
   <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">012 · 栈（LIFO）与队列（FIFO）：进出规则对照</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：012 §12.1/§12.2 ds_stack / ds_queue 本机实录 · C17 · 2026-11-19</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：012 §12.1~12.3 ds_stack / ds_queue 本机实录 · C17 · 2026-11-19</text>
 
   <!-- 左面板：栈 -->
   <rect x="40" y="70" width="540" height="330" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
@@ -67,7 +67,7 @@
   <!-- 结论 -->
   <rect x="40" y="420" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="62" y="444" font-size="13" font-weight="bold" fill="#5d4037">一个只在顶端动（栈），一个一端进、另一端出（队列）——限制访问位置换来的是 O(1) 进出</text>
-  <text x="62" y="466" font-size="12" fill="#5d4037">栈用于回溯（递归、撤销、括号匹配），队列用于排队（任务调度、BFS 层序遍历）</text>
+  <text x="62" y="466" font-size="12" fill="#5d4037">嵌入式里：栈 = 函数调用栈 / 表达式求值 / 中断现场；队列 = 串口环形缓冲 / 消息队列 / 打印排队（012 §12.4）</text>
 
   <!-- 图例 -->
   <rect x="40" y="494" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>

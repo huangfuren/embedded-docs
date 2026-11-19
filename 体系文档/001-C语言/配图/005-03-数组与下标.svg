@@ -10,7 +10,7 @@
   </defs>
 
   <text x="40" y="46" font-size="20" font-weight="bold" fill="#1b5e20">005 · 下标就是地址运算：arr[2] 与 *(arr + 2) 是同一件事</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.1 addr.c 本机实测 · C17 · 2026-11-19</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.3 · 地址为示意（真实地址每次运行都变，看差值）· 2026-11-19</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">数组名不是指针，但会「退化」成首元素地址——下标的全部含义，就是从首地址走 i 个元素</text>
 

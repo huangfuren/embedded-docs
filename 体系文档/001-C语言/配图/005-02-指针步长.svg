@@ -10,7 +10,7 @@
   </defs>
 
   <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">005 · 指针 +1 走多远：由指向的类型决定</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.1 addr.c 步长实测 · C17 · 2026-11-19</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.2 步长实测 · C17 · 2026-11-19</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">同一句 p + 1，四种指针落点不同——指针算术的单位是「元素」，不是「字节」</text>
 

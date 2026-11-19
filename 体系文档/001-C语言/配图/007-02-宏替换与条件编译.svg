@@ -37,7 +37,7 @@
   <text x="818" y="180" font-size="15" font-weight="bold" fill="#0d2f5c">25　（编译器从没见过 SQ）</text>
 
   <rect x="40" y="216" width="1120" height="46" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
-  <text x="60" y="245" font-size="12.5" fill="#7f0000">副作用实锤：SQ(j++) 展开成 ((j++) * (j++)) —— j 被加了两次，输出 2 12 30 并触发 -Wsequence-point</text>
+  <text x="60" y="245" font-size="12.5" fill="#7f0000">副作用实锤：SQ(j++) 展开成 ((j++) * (j++))——括号挡不住副作用：j 被加了两次，输出 2 12 30 并触发 -Wsequence-point</text>
 
   <text x="40" y="298" font-size="17" font-weight="bold" fill="#0d47a1">条件编译：编译前的代码裁剪（FLAG = 2 实测）</text>
 
