@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
+  <title>数组与字符串：一种结构派生出的三种形态</title>
+  <desc>003-数组与字符串：数组是全册唯一的基础结构，一维、二维、字符数组都是它的派生形态；三种形态共用同一套"长度现算、边界自守"的判断依据（680 内部坐标系 x 1.764706）</desc>
+  <rect x="0" y="0" width="680" height="340" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a3Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
+    </marker>
+    <marker id="a3Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
+    </marker>
+  </defs>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">003 · 数组与字符串：一种结构派生出的三种形态</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：003 §3.1~3.5 arr_demo.c 等本机实测 · 2026-11-19</text>
+
+  <!-- ① 基础结构 -->
+  <rect x="18" y="46" width="644" height="40" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
+  <text x="30" y="63" font-size="9.5" font-weight="600" fill="#1F4468">数组 = 同类型数据的连续格子</text>
+  <text x="30" y="79" font-size="8" fill="#4A4945">三条约束：元素类型一致 · 长度与首地址不可变 · 没有 length 属性，长度靠 sizeof 现算</text>
+
+  <!-- ② 三种派生形态：三条箭头带派生条件 -->
+  <line x1="120" y1="86" x2="120" y2="114" stroke="#7FA6D0" marker-end="url(#a3Blue)"/>
+  <line x1="340" y1="86" x2="340" y2="114" stroke="#7FA6D0" marker-end="url(#a3Blue)"/>
+  <line x1="560" y1="86" x2="560" y2="114" stroke="#7FA6D0" marker-end="url(#a3Blue)"/>
+  <text x="126" y="106" font-size="7" fill="#8C8980">不加修饰</text>
+  <text x="346" y="106" font-size="7" fill="#8C8980">元素又是一维数组</text>
+  <text x="566" y="106" font-size="7" fill="#8C8980">元素是 char + 哨兵</text>
+
+  <!-- 卡 1 一维 -->
+  <rect x="18" y="116" width="204" height="112" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="30" y="134" font-size="9" font-weight="600" fill="#1F4468">一维数组</text>
+  <text x="30" y="152" font-size="8" fill="#4A4945">int arr[5]</text>
+  <text x="30" y="170" font-size="7.5" fill="#4A4945">下标 0 ~ 4，最大索引 = 长度 − 1</text>
+  <text x="30" y="186" font-size="7.5" fill="#4A4945">长度 sizeof arr / sizeof arr[0]</text>
+  <text x="30" y="202" font-size="7.5" fill="#7A322B">公式只在定义处有效，传参得 8</text>
+  <text x="30" y="218" font-size="7.5" fill="#7A322B">arr[5] 越界不报错</text>
+
+  <!-- 卡 2 二维 -->
+  <rect x="238" y="116" width="204" height="112" rx="3" fill="#FFFFFF" stroke="#7FA6D0"/>
+  <text x="250" y="134" font-size="9" font-weight="600" fill="#1F4468">二维数组</text>
+  <text x="250" y="152" font-size="8" fill="#4A4945">int arr[2][3]</text>
+  <text x="250" y="170" font-size="7.5" fill="#4A4945">本质：2 个元素，每个是 int[3]</text>
+  <text x="250" y="186" font-size="7.5" fill="#4A4945">arr[i] 是第 i 行的地址</text>
+  <text x="250" y="202" font-size="7.5" fill="#4A4945">除 arr[0] 数行、除 arr[0][0] 数总数</text>
+  <text x="250" y="218" font-size="7.5" fill="#7A322B">arr[1] = ... 编译报错：行地址不可改</text>
+
+  <!-- 卡 3 字符串 -->
+  <rect x="458" y="116" width="204" height="112" rx="3" fill="#FFFFFF" stroke="#D9A458"/>
+  <text x="470" y="134" font-size="9" font-weight="600" fill="#7A4A12">字符数组（字符串）</text>
+  <text x="470" y="152" font-size="8" fill="#4A4945">char s[] = "lily"</text>
+  <text x="470" y="170" font-size="7.5" fill="#4A4945">C 没有 string 类型，它是 char[]</text>
+  <text x="470" y="186" font-size="7.5" fill="#4A4945">\0 是哨兵，决定 %s 在哪停</text>
+  <text x="470" y="202" font-size="7.5" fill="#4A4945">sizeof 13 含哨兵 / strlen 12 有效字符</text>
+  <text x="470" y="218" font-size="7.5" fill="#7A322B">缺哨兵：%s 越界，打印出 jacktom</text>
+
+  <!-- ③ 贯穿结论 -->
+  <rect x="18" y="248" width="644" height="48" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
+  <text x="32" y="267" font-size="9.5" font-weight="600" fill="#7A4A12">三种形态共用两条判断依据：长度只能现算，边界必须自守</text>
+  <text x="32" y="285" font-size="8" fill="#7A4A12">C 不为任何形态保存长度，也不检查任何下标——这是数组类麻烦的总根源（005 §5.5 有越界不报错的实证）</text>
+
+  <text x="32" y="322" font-size="8" fill="#8C8980">口径 C17 · 本机 GCC 16.2.0 实测 · 完整可运行程序见 001-C语言/code/003/ · 2026-11-19</text>
+</svg>
