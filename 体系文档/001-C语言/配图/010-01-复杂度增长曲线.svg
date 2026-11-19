@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="635.29" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>七种复杂度的增长曲线</title>
-  <desc>013-时间与空间复杂度：O(1)/O(log n)/O(√n)/O(n)/O(n log n)/O(n²)/O(n³) 的增长趋势示意曲线（680 内部坐标系 x 1.764706）</desc>
+  <desc>010-时间与空间复杂度：O(1)/O(log n)/O(√n)/O(n)/O(n log n)/O(n²)/O(n³) 的增长趋势示意曲线（680 内部坐标系 x 1.764706）</desc>
   <rect x="0" y="0" width="680" height="360" fill="#FFFFFF"/>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">013 · 七种阶的增长曲线（示意，非等比例尺）</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：013 §13.1 ds_complexity 实测 n=1000 · 2026-11-15</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">010 · 七种阶的增长曲线（示意，非等比例尺）</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：010 §10.1 ds_complexity 实测 n=1000 · 2026-11-19</text>
 
   <!-- 坐标轴 -->
   <line x1="70" y1="300" x2="640" y2="300" stroke="#4A4945" marker-end="url(#a13G)"/>

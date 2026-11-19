@@ -9,7 +9,7 @@
     </marker>
   </defs>
   <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">C 语言 · 知识骨架与学习路线</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：本库 C 板块十四册 · 口径 C17 · 2026-11-15</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：本库 C 板块十四册 · 口径 C17 · 2026-11-19</text>
 
   <!-- 顶：编译主链 -->
   <rect x="18" y="44" width="644" height="64" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
@@ -43,7 +43,7 @@
   <text x="619" y="88" font-size="8" fill="#4A4945" text-anchor="middle">退出码 0</text>
 
   <!-- 组1：地基 001~004 -->
-  <text x="26" y="128" font-size="9" fill="#1D5A45">地基 001~004 —— 工具 / 语言 / 内存 / 组织</text>
+  <text x="26" y="128" font-size="9" fill="#1D5A45">地基 001~004 —— 工具 / 语言 / 数据 / 逻辑</text>
   <circle cx="60" cy="152" r="15" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="60" y="156" font-size="9" font-weight="600" fill="#1F4468" text-anchor="middle">001</text>
   <circle cx="150" cy="152" r="15" fill="#E4EEF9" stroke="#7FA6D0"/>
@@ -57,11 +57,11 @@
   <line x1="257" y1="152" x2="313" y2="152" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
   <text x="60" y="184" font-size="8" fill="#4A4945" text-anchor="middle">环境与编译</text>
   <text x="150" y="184" font-size="8" fill="#4A4945" text-anchor="middle">语法与类型</text>
-  <text x="240" y="184" font-size="8" fill="#4A4945" text-anchor="middle">指针与内存</text>
-  <text x="330" y="184" font-size="8" fill="#4A4945" text-anchor="middle">结构体与宏</text>
+  <text x="240" y="184" font-size="8" fill="#4A4945" text-anchor="middle">数组与字符串</text>
+  <text x="330" y="184" font-size="8" fill="#4A4945" text-anchor="middle">函数与作用域</text>
 
   <!-- 组2：语言深化 005~009 -->
-  <text x="26" y="212" font-size="9" fill="#1D5A45">语言深化 005~009 —— 容器 / 逻辑 / 指针进阶 / 边界 / 接口</text>
+  <text x="26" y="212" font-size="9" fill="#1D5A45">语言深化 005~009 —— 内存 / 进阶 / 组织 / 边界 / 接口</text>
   <circle cx="105" cy="236" r="15" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="105" y="240" font-size="9" font-weight="600" fill="#1F4468" text-anchor="middle">005</text>
   <circle cx="195" cy="236" r="15" fill="#E4EEF9" stroke="#7FA6D0"/>
@@ -76,14 +76,14 @@
   <line x1="212" y1="236" x2="268" y2="236" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
   <line x1="302" y1="236" x2="358" y2="236" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
   <line x1="392" y1="236" x2="448" y2="236" stroke="#7FA6D0" marker-end="url(#a0Blue)"/>
-  <text x="105" y="268" font-size="8" fill="#4A4945" text-anchor="middle">数组与字符串</text>
-  <text x="195" y="268" font-size="8" fill="#4A4945" text-anchor="middle">函数与作用域</text>
-  <text x="285" y="268" font-size="8" fill="#4A4945" text-anchor="middle">指针进阶与堆</text>
+  <text x="105" y="268" font-size="8" fill="#4A4945" text-anchor="middle">指针与内存</text>
+  <text x="195" y="268" font-size="8" fill="#4A4945" text-anchor="middle">指针进阶与堆</text>
+  <text x="285" y="268" font-size="8" fill="#4A4945" text-anchor="middle">结构体与宏</text>
   <text x="375" y="268" font-size="8" fill="#4A4945" text-anchor="middle">文件IO</text>
   <text x="465" y="268" font-size="8" fill="#4A4945" text-anchor="middle">命令行与格式化</text>
 
   <!-- 组3：数据与算法 010~014 -->
-  <text x="26" y="296" font-size="9" fill="#7A4A12">数据与算法 010~014 —— 组织数据的容器与度量/查找/排序</text>
+  <text x="26" y="296" font-size="9" fill="#7A4A12">数据与算法 010~014 —— 尺子 / 结构 / 容器 / 算法 / 高级</text>
   <circle cx="105" cy="320" r="15" fill="#FBEEDA" stroke="#D9A458"/>
   <text x="105" y="324" font-size="9" font-weight="600" fill="#7A4A12" text-anchor="middle">010</text>
   <circle cx="195" cy="320" r="15" fill="#FBEEDA" stroke="#D9A458"/>
@@ -98,13 +98,13 @@
   <line x1="212" y1="320" x2="268" y2="320" stroke="#D9A458" marker-end="url(#a0Blue)"/>
   <line x1="302" y1="320" x2="358" y2="320" stroke="#D9A458" marker-end="url(#a0Blue)"/>
   <line x1="392" y1="320" x2="448" y2="320" stroke="#D9A458" marker-end="url(#a0Blue)"/>
-  <text x="105" y="352" font-size="8" fill="#4A4945" text-anchor="middle">动态数组与链表</text>
-  <text x="195" y="352" font-size="8" fill="#4A4945" text-anchor="middle">栈与队列</text>
-  <text x="285" y="352" font-size="8" fill="#4A4945" text-anchor="middle">散列与红黑树</text>
-  <text x="375" y="352" font-size="8" fill="#4A4945" text-anchor="middle">时间空间复杂度</text>
-  <text x="465" y="352" font-size="8" fill="#4A4945" text-anchor="middle">查找与排序</text>
+  <text x="105" y="352" font-size="8" fill="#4A4945" text-anchor="middle">时间空间复杂度</text>
+  <text x="195" y="352" font-size="8" fill="#4A4945" text-anchor="middle">动态数组与链表</text>
+  <text x="285" y="352" font-size="8" fill="#4A4945" text-anchor="middle">栈与队列</text>
+  <text x="375" y="352" font-size="8" fill="#4A4945" text-anchor="middle">查找与排序</text>
+  <text x="465" y="352" font-size="8" fill="#4A4945" text-anchor="middle">散列与红黑树</text>
 
   <rect x="18" y="376" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
   <text x="32" y="399" font-size="9.5" font-weight="600" fill="#7A4A12">学完本板块你能：独立写 C 并组织数据 · 说清指针与内存 · 用复杂度尺子选容器与算法 · 进入体系结构板块</text>
-  <text x="32" y="424" font-size="8" fill="#8C8980">口径 C17 · 工具链 GCC（MinGW-w64）· 三用法：教材 / 手册 / 术语反查 — 2026-11-15</text>
+  <text x="32" y="424" font-size="8" fill="#8C8980">口径 C17 · 工具链 GCC（MinGW-w64）· 三用法：教材 / 手册 / 术语反查 — 2026-11-19</text>
 </svg>

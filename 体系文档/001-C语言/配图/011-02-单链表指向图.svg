@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="691.76" viewBox="0 0 680 392" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>单链表：节点与指针操作</title>
-  <desc>010-动态数组与链表：链表结构、头插两步指针操作与摘除操作（680 内部坐标系 x 1.764706）</desc>
+  <desc>011-动态数组与链表：链表结构、头插两步指针操作与摘除操作（680 内部坐标系 x 1.764706）</desc>
   <rect x="0" y="0" width="680" height="392" fill="#FFFFFF"/>
   <defs>
-    <marker id="a10Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a11Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
-    <marker id="a10Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a11Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
     </marker>
-    <marker id="a10Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a11Red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#D2948C"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">010 · 单链表：箭头 = 指针域里存的地址</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：010 §10.2 ds_list 本机实测 · 2026-11-15</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">011 · 单链表：箭头 = 指针域里存的地址</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：011 §11.2 ds_list 本机实测 · 2026-11-19</text>
 
   <!-- 链表结构 -->
   <rect x="18" y="44" width="644" height="118" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
@@ -27,18 +27,18 @@
   <text x="153" y="86" font-size="8" fill="#1F4468" text-anchor="middle">data</text>
   <text x="153" y="98" font-size="7.5" fill="#4A4945" text-anchor="middle">10</text>
   <rect x="186" y="68" width="62" height="38" fill="none"/>
-  <line x1="217" y1="87" x2="246" y2="87" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="217" y1="87" x2="246" y2="87" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
   <rect x="248" y="68" width="130" height="38" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="281" y="86" font-size="8" fill="#1F4468" text-anchor="middle">data</text>
   <text x="281" y="98" font-size="7.5" fill="#4A4945" text-anchor="middle">20</text>
-  <line x1="345" y1="87" x2="374" y2="87" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="345" y1="87" x2="374" y2="87" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
   <rect x="376" y="68" width="130" height="38" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="409" y="86" font-size="8" fill="#1F4468" text-anchor="middle">data</text>
   <text x="409" y="98" font-size="7.5" fill="#4A4945" text-anchor="middle">30</text>
-  <line x1="473" y1="87" x2="500" y2="87" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="473" y1="87" x2="500" y2="87" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
   <rect x="502" y="72" width="64" height="30" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="534" y="91" font-size="8.5" fill="#46337A" text-anchor="middle">NULL</text>
-  <line x1="88" y1="87" x2="116" y2="87" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="88" y1="87" x2="116" y2="87" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
   <text x="586" y="98" font-size="7.5" fill="#8C8980">next = NULL</text>
   <text x="26" y="128" font-size="8" fill="#8C8980">访问第 3 个节点要从 header 顺着 next 走三步——链表没有"按下标直达"</text>
   <text x="26" y="146" font-size="8" fill="#8C8980">每节点多一个指针域（64 位平台 8 字节）——链表的空间 overhead</text>
@@ -56,11 +56,11 @@
   <text x="395" y="215" font-size="8.5" fill="#1F4468" text-anchor="middle">node(data=20)</text>
   <rect x="510" y="196" width="64" height="30" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="542" y="215" font-size="8.5" fill="#46337A" text-anchor="middle">NULL</text>
-  <line x1="86" y1="247" x2="146" y2="222" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="86" y1="247" x2="146" y2="222" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
   <text x="118" y="260" font-size="7.5" fill="#1F4468" text-anchor="middle">① new-&gt;next = header</text>
-  <line x1="86" y1="241" x2="84" y2="230" stroke="#D9A458" marker-end="url(#a10Amber)"/>
+  <line x1="86" y1="241" x2="84" y2="230" stroke="#D9A458" marker-end="url(#a11Amber)"/>
   <text x="56" y="274" font-size="7.5" fill="#7A4A12" text-anchor="middle">② header = new</text>
-  <line x1="282" y1="211" x2="326" y2="211" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="282" y1="211" x2="326" y2="211" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
 
   <!-- 摘除 -->
   <rect x="18" y="284" width="644" height="60" rx="3" fill="#F4F2EC" stroke="#CFCCC2"/>
@@ -71,8 +71,8 @@
   <text x="241" y="327" font-size="8.5" fill="#7A322B" text-anchor="middle">del（待 free）</text>
   <rect x="346" y="310" width="110" height="26" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="401" y="327" font-size="8.5" fill="#1F4468" text-anchor="middle">后继</text>
-  <line x1="136" y1="330" x2="182" y2="330" stroke="#D2948C" marker-end="url(#a10Red)"/>
-  <polyline points="81,308 81,300 401,300 401,308" fill="none" stroke="#7FA6D0" marker-end="url(#a10Blue)"/>
+  <line x1="136" y1="330" x2="182" y2="330" stroke="#D2948C" marker-end="url(#a11Red)"/>
+  <polyline points="81,308 81,300 401,300 401,308" fill="none" stroke="#7FA6D0" marker-end="url(#a11Blue)"/>
 
   <rect x="18" y="348" width="644" height="36" rx="3" fill="#FBEEDA" stroke="#D9A458"/>
   <text x="32" y="371" font-size="9.5" font-weight="600" fill="#7A4A12">插入/删除只动指针不搬数据——但找到位置本身要 O(n) 顺 next 走；摘下来的节点必须 free</text>

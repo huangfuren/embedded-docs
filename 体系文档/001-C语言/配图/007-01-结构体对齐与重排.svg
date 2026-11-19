@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="529.41" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>结构体对齐与重排</title>
-  <desc>004-结构体位域与预处理：成员偏移、padding 与重排收益（12→8 本机实测）（680 内部坐标系 x 1.764706）</desc>
+  <desc>007-结构体位域与预处理：成员偏移、padding 与重排收益（12→8 本机实测）（680 内部坐标系 x 1.764706）</desc>
   <rect x="0" y="0" width="680" height="300" fill="#FFFFFF"/>
   <defs>
-    <marker id="a4Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a7Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">004 · 内存对齐：padding 从哪来、重排省多少</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：004 §4.1/§4.5 本机实测 · 2026-11-15</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">007 · 内存对齐：padding 从哪来、重排省多少</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：007 §7.1/§7.5 本机实测 · 2026-11-19</text>
 
   <!-- 声明顺序：12 字节 -->
   <text x="26" y="58" font-size="9" fill="#4A4945">按声明顺序 {char c1; int n; char c2} —— 本机 sizeof = 12 字节（偏移：c1@0 n@4 c2@8）</text>
@@ -27,7 +27,7 @@
   <text x="330" y="90" font-size="8" fill="#7A322B">两段 padding 共 6 字节——浪费了整整一半</text>
 
   <!-- 重排箭头 -->
-  <line x1="170" y1="104" x2="170" y2="134" stroke="#7FA6D0" marker-end="url(#a4Blue)"/>
+  <line x1="170" y1="104" x2="170" y2="134" stroke="#7FA6D0" marker-end="url(#a7Blue)"/>
   <text x="182" y="124" font-size="8.5" fill="#1F4468">成员从大到小重排 —— 不改任何逻辑，白捡的优化</text>
 
   <!-- 重排后：8 字节 -->

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="529.41" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif">
   <title>哈希表：桶链结构</title>
-  <desc>012-散列与红黑树：桶数组 + 桶内链表 + 查找路径（ds_hash 本机实录）（680 内部坐标系 x 1.764706）</desc>
+  <desc>014-散列与红黑树：桶数组 + 桶内链表 + 查找路径（ds_hash 本机实录）（680 内部坐标系 x 1.764706）</desc>
   <rect x="0" y="0" width="680" height="300" fill="#FFFFFF"/>
   <defs>
-    <marker id="a12Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a14Blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#7FA6D0"/>
     </marker>
-    <marker id="a12Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="a14Amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#D9A458"/>
     </marker>
   </defs>
-  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">012 · 哈希表 = 桶数组 + 桶内链表（冲突挂链）</text>
-  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：012 §12.1 ds_hash 本机实录 · 2026-11-15</text>
+  <text x="32" y="30" font-size="13.5" font-weight="600" fill="#2B2A27">014 · 哈希表 = 桶数组 + 桶内链表（冲突挂链）</text>
+  <text x="648" y="30" font-size="9" fill="#8C8980" text-anchor="end">来源：014 §14.1 ds_hash 本机实录 · 2026-11-19</text>
 
   <!-- 桶数组 -->
   <text x="26" y="58" font-size="9" fill="#4A4945">桶数组（BUCKETS=5）· 哈希函数 hash(key) = key % 5 · 冲突元素在桶内串成链表</text>
@@ -36,9 +36,9 @@
   <text x="390" y="99" font-size="7.5" fill="#4A4945" text-anchor="middle">被覆盖过（去重）</text>
   <rect x="480" y="70" width="58" height="34" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="509" y="91" font-size="8.5" fill="#46337A" text-anchor="middle">NULL</text>
-  <line x1="136" y1="87" x2="176" y2="87" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <line x1="300" y1="87" x2="326" y2="87" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <line x1="450" y1="87" x2="476" y2="87" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
+  <line x1="136" y1="87" x2="176" y2="87" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <line x1="300" y1="87" x2="326" y2="87" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <line x1="450" y1="87" x2="476" y2="87" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
   <text x="430" y="62" font-size="8" fill="#7A322B">← 15 与 10 冲突，桶内挂链</text>
 
   <!-- 桶 1 链 -->
@@ -46,19 +46,19 @@
   <text x="240" y="133" font-size="8" fill="#1F4468" text-anchor="middle">key=21 · val=200</text>
   <rect x="330" y="112" width="58" height="34" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="359" y="133" font-size="8.5" fill="#46337A" text-anchor="middle">NULL</text>
-  <line x1="136" y1="129" x2="176" y2="129" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <line x1="300" y1="129" x2="326" y2="129" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
+  <line x1="136" y1="129" x2="176" y2="129" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <line x1="300" y1="129" x2="326" y2="129" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
 
   <!-- 桶 2 链 -->
   <rect x="180" y="154" width="120" height="34" rx="3" fill="#E4EEF9" stroke="#7FA6D0"/>
   <text x="240" y="175" font-size="8" fill="#1F4468" text-anchor="middle">key=32 · val=300</text>
   <rect x="330" y="154" width="58" height="34" rx="3" fill="#ECE7F7" stroke="#9C8ACB"/>
   <text x="359" y="175" font-size="8.5" fill="#46337A" text-anchor="middle">NULL</text>
-  <line x1="136" y1="171" x2="176" y2="171" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
-  <line x1="300" y1="171" x2="326" y2="171" stroke="#7FA6D0" marker-end="url(#a12Blue)"/>
+  <line x1="136" y1="171" x2="176" y2="171" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
+  <line x1="300" y1="171" x2="326" y2="171" stroke="#7FA6D0" marker-end="url(#a14Blue)"/>
 
   <!-- 查找路径 -->
-  <polyline points="600,196 600,129 306,129" fill="none" stroke="#D9A458" marker-end="url(#a12Amber)"/>
+  <polyline points="600,196 600,129 306,129" fill="none" stroke="#D9A458" marker-end="url(#a14Amber)"/>
   <text x="596" y="188" font-size="7.5" fill="#7A4A12" text-anchor="end">get(21)：hash(21)=1 → 桶 1</text>
   <text x="596" y="200" font-size="7.5" fill="#7A4A12" text-anchor="end">只扫 1 个节点就命中</text>
 
