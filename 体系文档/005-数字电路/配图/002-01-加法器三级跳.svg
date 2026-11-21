@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>加法的三级跳：半加器补进位入口、全加器补位宽、多位加法器串进位</title>
+  <rect x="0" y="0" width="1200" height="700" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">加法的三级跳：每一跳都在补上一个缺口</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §2.1~2.4 · 三个缺口排下来就是加法器的进化顺序——进位没有入口、只有一位、进位要排队</text>
+
+  <!-- ===== 第一跳 ===== -->
+  <rect x="60" y="100" width="250" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="80" y="130" font-size="15" font-weight="bold" fill="#123314">① 半加器</text>
+  <text x="80" y="154" font-size="11.5" fill="#1b3d1e">两位相加，得出和与进位</text>
+  <text x="80" y="176" font-size="11.5" fill="#2e5230">异或求和，与门求进位</text>
+
+  <rect x="330" y="100" width="420" height="96" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="350" y="155" font-size="13" font-weight="bold" fill="#0d2f5c">A B</text>
+  <line x1="392" y1="150" x2="414" y2="150" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <rect x="420" y="124" width="180" height="52" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="510" y="155" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">异或 + 与门</text>
+  <line x1="604" y1="150" x2="626" y2="150" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="634" y="155" font-size="13" font-weight="bold" fill="#0d2f5c">S C</text>
+
+  <rect x="790" y="100" width="350" height="96" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="810" y="130" font-size="13" font-weight="bold" fill="#7f0000">缺口：没有进位入口</text>
+  <text x="810" y="154" font-size="11.5" fill="#7f0000">低位送上来的进位无处可接</text>
+  <text x="810" y="176" font-size="11" fill="#7f0000">1+1 算出 10，却接不上下一位</text>
+
+  <!-- ===== 第二跳 ===== -->
+  <rect x="60" y="220" width="250" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="80" y="250" font-size="15" font-weight="bold" fill="#123314">② 一位全加器</text>
+  <text x="80" y="274" font-size="11.5" fill="#1b3d1e">三位相加：A、B 与低位进位</text>
+  <text x="80" y="296" font-size="11.5" fill="#2e5230">两个半加器 + 一个或门</text>
+
+  <rect x="330" y="220" width="420" height="96" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="350" y="275" font-size="13" font-weight="bold" fill="#0d2f5c">A B Cin</text>
+  <line x1="416" y1="270" x2="438" y2="270" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <rect x="444" y="244" width="180" height="52" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="534" y="275" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">半加 ×2 + 或门</text>
+  <line x1="628" y1="270" x2="650" y2="270" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="658" y="275" font-size="13" font-weight="bold" fill="#0d2f5c">S Cout</text>
+
+  <rect x="790" y="220" width="350" height="96" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="810" y="250" font-size="13" font-weight="bold" fill="#7f0000">缺口：只处理一位</text>
+  <text x="810" y="274" font-size="11.5" fill="#7f0000">算完这一位，下一位还不知道在哪</text>
+  <text x="810" y="296" font-size="11" fill="#7f0000">需要 N 个它并排，还要把进位接上</text>
+
+  <!-- ===== 第三跳 ===== -->
+  <rect x="60" y="340" width="250" height="180" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="80" y="370" font-size="15" font-weight="bold" fill="#123314">③ 四位加法器</text>
+  <text x="80" y="396" font-size="11.5" fill="#1b3d1e">四个全加器串联</text>
+  <text x="80" y="418" font-size="11.5" fill="#2e5230">本位 Cout 接到高位的 Cin</text>
+  <text x="80" y="446" font-size="11.5" fill="#1b3d1e">叫行波进位加法器</text>
+  <text x="80" y="468" font-size="11" fill="#2e5230">输出多一位：低四位 = S</text>
+  <text x="80" y="488" font-size="11" fill="#2e5230">最高位 = 第 4 个全加器的 Cout</text>
+
+  <rect x="330" y="340" width="420" height="180" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="350" y="366" font-size="11.5" fill="#616161">第 1 位 → 第 2 位 → 第 3 位 → 第 4 位</text>
+
+  <rect x="348" y="390" width="84" height="56" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="390" y="423" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">全加器</text>
+  <line x1="432" y1="418" x2="446" y2="418" stroke="#1565c0" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="448" y="390" width="84" height="56" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="490" y="423" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">全加器</text>
+  <line x1="532" y1="418" x2="546" y2="418" stroke="#1565c0" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="548" y="390" width="84" height="56" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="590" y="423" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">全加器</text>
+  <line x1="632" y1="418" x2="646" y2="418" stroke="#1565c0" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="648" y="390" width="84" height="56" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="690" y="423" font-size="12" font-weight="bold" fill="#0d2f5c" text-anchor="middle">全加器</text>
+
+  <text x="344" y="470" font-size="11" fill="#616161">箭头就是进位：从最低位一路荡到最高位</text>
+  <text x="344" y="492" font-size="11" fill="#616161">12 + 10 = 6（低四位）与 Cout=1，拼起来是 10110</text>
+
+  <rect x="790" y="340" width="350" height="180" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="810" y="370" font-size="13" font-weight="bold" fill="#7f0000">代价：进位要排队</text>
+  <text x="810" y="396" font-size="11.5" fill="#7f0000">第 4 位必须等前 3 位的进位算完</text>
+  <text x="810" y="418" font-size="11.5" fill="#7f0000">位宽越大，最高的那位等得越久</text>
+  <text x="810" y="446" font-size="11" fill="#7f0000">32 位最坏要等 32 级门延迟</text>
+  <text x="810" y="468" font-size="11" fill="#7f0000">这是 CPU 主频上不去的源头之一</text>
+  <text x="810" y="490" font-size="11" fill="#7f0000">后来的超前进位就是为打破这条链</text>
+
+  <!-- ===== 结论 ===== -->
+  <rect x="60" y="540" width="1080" height="90" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="572" font-size="14" font-weight="bold" fill="#7f3f00">三跳解决的是同一个问题：进位往哪传</text>
+  <text x="84" y="600" font-size="12" fill="#5d4037">半加器没有入口 → 全加器补上 Cin → 多位加法器把 Cout 接到下一位的 Cin</text>
+  <text x="84" y="620" font-size="12" fill="#5d4037">ALU 再往上加一层：8 个运算器并行，用 3 位选码决定谁说话（§2.5）</text>
+
+  <!-- ===== 图例 ===== -->
+  <rect x="60" y="650" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="92" y="661" font-size="11" fill="#37474f">加法器的三个阶段</text>
+  <rect x="420" y="650" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="452" y="661" font-size="11" fill="#37474f">元件与数据通路</text>
+  <rect x="780" y="650" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="812" y="661" font-size="11" fill="#37474f">缺口与代价</text>
+</svg>

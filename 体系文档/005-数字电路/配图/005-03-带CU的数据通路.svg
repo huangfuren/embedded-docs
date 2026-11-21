@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>带控制单元的数据通路：PC 取指、CU 译码、ALU 执行、结果写回累加器或内存与 GPIO</title>
+  <rect x="0" y="0" width="1200" height="600" fill="#ffffff"/>
+
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="aOrange" viewBox="0 0 7 7" refX="6.5" refY="3.5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 7 3.5 L 0 7 z" fill="#e65100"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">带 CU 的数据通路：谁在指挥，谁在干活</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.3~5.5 · 蓝线是数据（搬的东西），橙虚线是控制（怎么搬）；两者混在一起就是一团糨糊</text>
+
+  <!-- ===== 控制信号（先画，压在数据线下面） ===== -->
+  <polyline points="560,160 560,196 360,196 360,246" fill="none" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#aOrange)"/>
+  <text x="368" y="184" font-size="11" fill="#bf360c">寄存器写</text>
+
+  <polyline points="660,160 660,214 915,214 915,246" fill="none" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#aOrange)"/>
+  <text x="700" y="200" font-size="11" fill="#bf360c">内存 / 设备写</text>
+
+  <line x1="610" y1="160" x2="610" y2="246" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#aOrange)"/>
+  <text x="618" y="232" font-size="11" fill="#bf360c">ALU 运算选择</text>
+
+  <!-- ===== 数据通路 ===== -->
+  <line x1="200" y1="128" x2="246" y2="128" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="206" y="120" font-size="11" fill="#1565c0">地址</text>
+
+  <line x1="470" y1="128" x2="516" y2="128" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="476" y="120" font-size="11" fill="#1565c0">指令码</text>
+
+  <line x1="474" y1="300" x2="516" y2="300" stroke="#1565c0" stroke-width="2" marker-start="url(#aBlue)" marker-end="url(#aBlue)"/>
+
+  <line x1="766" y1="284" x2="704" y2="284" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="706" y="278" font-size="11" fill="#1565c0">读数据</text>
+
+  <line x1="702" y1="316" x2="766" y2="316" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="706" y="338" font-size="11" fill="#1565c0">写数据</text>
+
+  <line x1="140" y1="160" x2="140" y2="196" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <polyline points="80,222 60,222 60,128 76,128" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <!-- ===== 部件 ===== -->
+  <rect x="80" y="96" width="120" height="64" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="140" y="124" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">PC</text>
+  <text x="140" y="146" font-size="11" fill="#37474f" text-anchor="middle">程序计数器</text>
+
+  <rect x="80" y="200" width="120" height="44" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="100" y="228" font-size="13" font-weight="bold" fill="#7f3f00">＋1</text>
+  <text x="128" y="228" font-size="11" fill="#7f3f00">硬件连线</text>
+
+  <rect x="250" y="96" width="220" height="64" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="270" y="124" font-size="13" font-weight="bold" fill="#123314">指令内存</text>
+  <text x="270" y="146" font-size="11" fill="#1b3d1e">8 条 × 8 位</text>
+
+  <rect x="520" y="96" width="180" height="64" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2.5"/>
+  <text x="540" y="124" font-size="13" font-weight="bold" fill="#7f3f00">控制器 CU</text>
+  <text x="540" y="146" font-size="11" fill="#7f3f00">opcode → 控制信号</text>
+
+  <rect x="250" y="250" width="220" height="80" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="270" y="280" font-size="13" font-weight="bold" fill="#0d2f5c">累加器 acc</text>
+  <text x="270" y="302" font-size="11" fill="#37474f">手边的临时值</text>
+  <text x="270" y="322" font-size="11" fill="#37474f">写使能为 1 才更新</text>
+
+  <rect x="520" y="250" width="180" height="80" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="540" y="280" font-size="15" font-weight="bold" fill="#0d2f5c">ALU</text>
+  <text x="540" y="302" font-size="11" fill="#37474f">加减与或移位</text>
+  <text x="540" y="322" font-size="11" fill="#37474f">与累加器交换操作数</text>
+
+  <rect x="770" y="250" width="290" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="790" y="280" font-size="13" font-weight="bold" fill="#123314">数据内存 / GPIO</text>
+  <text x="790" y="302" font-size="11" fill="#1b3d1e">dev=0 写内存，dev=1 写 GPIO</text>
+  <text x="790" y="322" font-size="11" fill="#1b3d1e">地址由 addr 4 位选中</text>
+
+  <!-- ===== 四步流程 ===== -->
+  <rect x="60" y="380" width="240" height="64" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="80" y="408" font-size="13" font-weight="bold" fill="#0d2f5c">① 取指</text>
+  <text x="80" y="430" font-size="11" fill="#37474f">PC 给地址，取回 8 位</text>
+
+  <line x1="304" y1="412" x2="336" y2="412" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="340" y="380" width="240" height="64" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="360" y="408" font-size="13" font-weight="bold" fill="#0d2f5c">② 译码</text>
+  <text x="360" y="430" font-size="11" fill="#37474f">CU 拆成三截位域</text>
+
+  <line x1="584" y1="412" x2="616" y2="412" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="620" y="380" width="240" height="64" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="640" y="408" font-size="13" font-weight="bold" fill="#0d2f5c">③ 执行</text>
+  <text x="640" y="430" font-size="11" fill="#37474f">ALU 按 opcode 算</text>
+
+  <line x1="864" y1="412" x2="896" y2="412" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="900" y="380" width="240" height="64" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="920" y="408" font-size="13" font-weight="bold" fill="#0d2f5c">④ 写回</text>
+  <text x="920" y="430" font-size="11" fill="#37474f">进 acc，或写内存 / GPIO</text>
+
+  <!-- ===== 结论 ===== -->
+  <rect x="60" y="464" width="1080" height="68" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="494" font-size="14" font-weight="bold" fill="#7f3f00">CU 只做一件事：把 3 位 opcode 变成几根开关的通断</text>
+  <text x="84" y="518" font-size="12" fill="#5d4037">控制说「怎么走」，数据才是「走的内容」；PC 的 +1 是硬件连线，不需要任何指令（§5.5）</text>
+
+  <!-- ===== 图例 ===== -->
+  <rect x="60" y="556" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="92" y="567" font-size="11" fill="#37474f">部件（PC / 累加器 / ALU）</text>
+  <rect x="400" y="556" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="432" y="567" font-size="11" fill="#37474f">存储器（指令 / 数据 / GPIO）</text>
+  <rect x="700" y="556" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1.5"/>
+  <text x="732" y="567" font-size="11" fill="#37474f">本册主角：控制器 CU</text>
+  <rect x="900" y="556" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="932" y="567" font-size="11" fill="#37474f">PC 自增（硬件连线）</text>
+</svg>

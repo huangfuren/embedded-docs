@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>冯诺依曼五部件：程序和数据住在同一个存储器里，控制器负责喊开始</title>
+  <rect x="0" y="0" width="1200" height="660" fill="#ffffff"/>
+
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">冯诺依曼五部件：缺一件都不转</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.1 · 前四册造的是零件，这一册造那个「喊开始」的控制器；五件之外还有一条规则：程序和数据同住一块存储器</text>
+
+  <!-- ===== 存储器 ===== -->
+  <rect x="60" y="100" width="700" height="112" rx="12" fill="#f1f8e9" fill-opacity="0.55" stroke="#2e7d32" stroke-width="2"/>
+  <text x="84" y="126" font-size="15" font-weight="bold" fill="#123314">存储器</text>
+  <text x="736" y="126" font-size="11" fill="#2e5230" text-anchor="end">同一个地址空间，靠地址区分</text>
+
+  <rect x="84" y="136" width="318" height="56" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="104" y="160" font-size="13" font-weight="bold" fill="#123314">指令区</text>
+  <text x="104" y="180" font-size="11" fill="#1b3d1e">一条条指令的 8 个位</text>
+
+  <rect x="418" y="136" width="318" height="56" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="438" y="160" font-size="13" font-weight="bold" fill="#123314">数据区</text>
+  <text x="438" y="180" font-size="11" fill="#1b3d1e">被运算的数</text>
+
+  <!-- 存储器 → CPU 总线 -->
+  <line x1="410" y1="212" x2="410" y2="254" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="422" y="238" font-size="11" fill="#1565c0">地址 / 数据 / 控制</text>
+
+  <!-- ===== CPU ===== -->
+  <rect x="60" y="258" width="700" height="150" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="84" y="282" font-size="13" font-weight="bold" fill="#0d2f5c">CPU</text>
+  <text x="126" y="282" font-size="11" fill="#616161">中央处理器 —— 本册造的就是它中间的 CU</text>
+
+  <rect x="84" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="104" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">控制器 CU</text>
+  <text x="104" y="350" font-size="11.5" fill="#37474f">取指 · 译码 · 发控制</text>
+  <text x="104" y="372" font-size="11" fill="#1565c0">本册 §5.3</text>
+
+  <line x1="286" y1="343" x2="306" y2="343" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="310" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="330" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">寄存器 / 累加器</text>
+  <text x="330" y="350" font-size="11.5" fill="#37474f">手边的临时值</text>
+  <text x="330" y="372" font-size="11" fill="#1565c0">本库 003 册</text>
+
+  <line x1="512" y1="343" x2="532" y2="343" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="536" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="556" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">运算器 ALU</text>
+  <text x="556" y="350" font-size="11.5" fill="#37474f">加减与或移位</text>
+  <text x="556" y="372" font-size="11" fill="#1565c0">本库 002 册</text>
+
+  <!-- CPU → 输入输出 -->
+  <line x1="410" y1="410" x2="410" y2="446" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <rect x="84" y="452" width="652" height="56" rx="28" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
+  <text x="112" y="486" font-size="15" font-weight="bold" fill="#37474f">输入 / 输出</text>
+  <text x="236" y="486" font-size="11.5" fill="#546e7a">与外部世界打交道 · GPIO 是它的最小形态 · 本库 006 册</text>
+
+  <!-- ===== 右栏 1：存储程序 ===== -->
+  <rect x="790" y="100" width="350" height="176" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="812" y="128" font-size="13" font-weight="bold" fill="#7f3f00">「存储程序」这条规则</text>
+  <text x="812" y="158" font-size="11.5" fill="#5d4037">程序和数据住在同一个存储器里</text>
+  <text x="812" y="182" font-size="11.5" fill="#5d4037">改存的内容，不改电路</text>
+  <text x="812" y="206" font-size="11.5" fill="#5d4037">这是「通用计算机」的前提</text>
+  <text x="812" y="230" font-size="11.5" fill="#5d4037">也是同一条加法指令能反复用的原因</text>
+  <text x="812" y="254" font-size="11" fill="#5d4037">PC 能一直往下走，靠的也是这条规则（§5.5）</text>
+
+  <!-- ===== 右栏 2：缺一件 ===== -->
+  <rect x="790" y="296" width="350" height="212" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="812" y="324" font-size="13" font-weight="bold" fill="#7f0000">缺一件会怎样</text>
+  <text x="812" y="352" font-size="11.5" fill="#7f0000">没 ALU：什么也算不了</text>
+  <text x="812" y="376" font-size="11.5" fill="#7f0000">没寄存器：每步都得写回内存</text>
+  <text x="812" y="400" font-size="11.5" fill="#7f0000">没存储器：程序无处安放</text>
+  <text x="812" y="424" font-size="11.5" fill="#7f0000">没输入输出：算完没人知道</text>
+  <text x="812" y="448" font-size="11.5" fill="#7f0000">没 CU：所有部件躺着，没人喊开始</text>
+  <text x="812" y="476" font-size="11" fill="#7f0000">最致命的是最后一条 —— 所以本册造它</text>
+
+  <!-- ===== 结论 ===== -->
+  <rect x="60" y="528" width="1080" height="76" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="560" font-size="14" font-weight="bold" fill="#7f3f00">五件凑齐只是「能算」，还差一条指令流把它们串起来</text>
+  <text x="84" y="586" font-size="12" fill="#5d4037">这条流就是后面四节：指令怎么编（§5.2~5.4）→ 谁记住下一条（§5.5）→ 怎么对外动作（§5.6）→ 怎么真的跑起来（§5.7）</text>
+
+  <!-- ===== 图例 ===== -->
+  <rect x="60" y="622" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="92" y="633" font-size="11" fill="#37474f">存储器（程序 + 数据同住）</text>
+  <rect x="400" y="622" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="432" y="633" font-size="11" fill="#37474f">CPU 内部部件</text>
+  <rect x="660" y="622" width="22" height="14" rx="10" fill="#eceff1" stroke="#607d8b" stroke-width="1.5"/>
+  <text x="692" y="633" font-size="11" fill="#37474f">外部世界（输入 / 输出）</text>
+  <rect x="940" y="622" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
+  <text x="972" y="633" font-size="11" fill="#37474f">缺件的后果</text>
+</svg>

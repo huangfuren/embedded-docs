@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>电平与边沿：同一组输入下，锁存器跟着 D 走，触发器只听上升沿</title>
+  <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">电平与边沿：同一个 D，两种反应</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.4 实测输出 · 8 拍输入下 D 变了 5 次，锁存器跟了 5 次，触发器只动了 4 次（4 个上升沿）</text>
+
+  <!-- 上升沿参考线 -->
+  <line x1="260" y1="130" x2="260" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="500" y1="130" x2="500" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="740" y1="130" x2="740" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="980" y1="130" x2="980" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>
+
+  <!-- clk 行 -->
+  <rect x="140" y="130" width="960" height="60" rx="3" fill="#eceff1"/>
+  <text x="60" y="166" font-size="13" font-weight="bold" fill="#37474f">clk</text>
+  <polyline points="140,178 260,178 260,142 380,142 380,178 500,178 500,142 620,142 620,178 740,178 740,142 860,142 860,178 980,178 980,142 1100,142" fill="none" stroke="#546e7a" stroke-width="2.5"/>
+  <text x="262" y="124" font-size="11" fill="#7f0000">↑</text>
+  <text x="502" y="124" font-size="11" fill="#7f0000">↑</text>
+  <text x="742" y="124" font-size="11" fill="#7f0000">↑</text>
+  <text x="982" y="124" font-size="11" fill="#7f0000">↑</text>
+
+  <!-- D 行 -->
+  <rect x="140" y="215" width="960" height="60" rx="3" fill="#fff9c4"/>
+  <text x="60" y="251" font-size="13" font-weight="bold" fill="#37474f">D</text>
+  <polyline points="140,263 260,263 260,227 380,227 380,263 620,263 620,227 860,227 860,263 980,263 980,227 1100,227" fill="none" stroke="#f9a825" stroke-width="2.5"/>
+
+  <!-- Q 锁存器 -->
+  <rect x="140" y="300" width="960" height="60" rx="3" fill="#c8e6c9"/>
+  <text x="60" y="336" font-size="12" font-weight="bold" fill="#123314">Q 锁存</text>
+  <polyline points="140,348 260,348 260,312 380,312 380,348 620,348 620,312 1100,312" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+  <text x="830" y="336" font-size="11" fill="#1b5e20">en=0 期间冻结，D 再变也不理</text>
+
+  <!-- Q 触发器 -->
+  <rect x="140" y="385" width="960" height="60" rx="3" fill="#bbdefb"/>
+  <text x="60" y="421" font-size="12" font-weight="bold" fill="#0d2f5c">Q 触发</text>
+  <polyline points="140,433 260,433 260,397 500,397 500,433 740,433 740,397 1100,397" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="520" y="421" font-size="11" fill="#0d2f5c">只在 ↑ 换值，其余时间不动</text>
+
+  <!-- 拍号 -->
+  <text x="200" y="468" font-size="11" fill="#616161" text-anchor="middle">t0</text>
+  <text x="320" y="468" font-size="11" fill="#616161" text-anchor="middle">t1</text>
+  <text x="440" y="468" font-size="11" fill="#616161" text-anchor="middle">t2</text>
+  <text x="560" y="468" font-size="11" fill="#616161" text-anchor="middle">t3</text>
+  <text x="680" y="468" font-size="11" fill="#616161" text-anchor="middle">t4</text>
+  <text x="800" y="468" font-size="11" fill="#616161" text-anchor="middle">t5</text>
+  <text x="920" y="468" font-size="11" fill="#616161" text-anchor="middle">t6</text>
+  <text x="1040" y="468" font-size="11" fill="#616161" text-anchor="middle">t7</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="492" width="1080" height="76" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="520" font-size="13" font-weight="bold" fill="#7f3f00">第 2 拍看懂全部差别：D=0 且 en=1，锁存器立刻变 0；此时 clk=0，触发器纹丝不动，仍停在 1</text>
+  <text x="84" y="546" font-size="12" fill="#5d4037">触发器 8 拍只换 4 次值，锁存器每个 en=1 的拍都可能换——多出来的那些"换"，就是毛刺能钻进来的口子</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="586" width="22" height="14" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
+  <text x="92" y="597" font-size="11" fill="#37474f">时钟 clk</text>
+  <rect x="330" y="586" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="362" y="597" font-size="11" fill="#37474f">数据 D</text>
+  <rect x="600" y="586" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="632" y="597" font-size="11" fill="#37474f">D 锁存器输出</text>
+  <rect x="870" y="586" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="902" y="597" font-size="11" fill="#37474f">D 触发器输出</text>
+</svg>

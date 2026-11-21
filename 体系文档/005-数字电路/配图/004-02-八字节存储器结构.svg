@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>8 字节存储器：地址选格子、共用数据总线、使能决定改不改</title>
+  <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">8 字节存储器：一条总线，八格轮流说话</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §4.3~4.4 · 地址决定谁被选中，使能决定这一拍改不改，数据线八格共用</text>
+
+  <!-- 地址 -->
+  <rect x="60" y="210" width="120" height="48" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="120" y="240" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">A[2:0]</text>
+  <line x1="180" y1="234" x2="212" y2="234" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- 译码器 -->
+  <rect x="216" y="160" width="160" height="148" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="296" y="228" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">3-8 译码器</text>
+  <text x="296" y="252" font-size="11.5" fill="#1b3d1e" text-anchor="middle">8 根选中线</text>
+  <text x="296" y="272" font-size="11.5" fill="#1b3d1e" text-anchor="middle">只有 1 根为 1</text>
+  <line x1="376" y1="234" x2="404" y2="234" stroke="#e65100" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+
+  <!-- 存储阵列 -->
+  <rect x="410" y="110" width="350" height="290" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="424" y="136" font-size="12.5" font-weight="bold" fill="#37474f">8 个存储单元 · 每格 8 位</text>
+
+  <rect x="422" y="146" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="164" font-size="11" fill="#0d2f5c">格子 0　·　8 位触发器</text>
+  <rect x="422" y="176" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="194" font-size="11" fill="#0d2f5c">格子 1　·　8 位触发器</text>
+  <rect x="422" y="206" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="224" font-size="11" fill="#0d2f5c">格子 2　·　8 位触发器</text>
+  <rect x="422" y="236" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="254" font-size="11" fill="#0d2f5c">格子 3　·　8 位触发器</text>
+  <rect x="422" y="266" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="284" font-size="11" fill="#0d2f5c">格子 4　·　8 位触发器</text>
+  <rect x="422" y="296" width="326" height="26" rx="4" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="436" y="314" font-size="11" font-weight="bold" fill="#7f3f00">格子 5　·　被选中（本次读写的目标）</text>
+  <rect x="422" y="326" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="344" font-size="11" fill="#0d2f5c">格子 6　·　8 位触发器</text>
+  <rect x="422" y="356" width="326" height="26" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="436" y="374" font-size="11" fill="#0d2f5c">格子 7　·　8 位触发器</text>
+
+  <!-- 共用数据总线 -->
+  <line x1="746" y1="159" x2="770" y2="159" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="189" x2="770" y2="189" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="219" x2="770" y2="219" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="249" x2="770" y2="249" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="279" x2="770" y2="279" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="309" x2="770" y2="309" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="339" x2="770" y2="339" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="746" y1="369" x2="770" y2="369" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="770" y1="159" x2="770" y2="369" stroke="#1565c0" stroke-width="2.5"/>
+  <line x1="770" y1="264" x2="788" y2="264" stroke="#1565c0" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="790" y="240" width="120" height="48" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="850" y="270" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">D[7:0]</text>
+  <text x="790" y="232" font-size="11" fill="#616161">八格共用</text>
+
+  <!-- 使能 -->
+  <rect x="422" y="420" width="326" height="50" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="436" y="443" font-size="12" font-weight="bold" fill="#7f3f00">WE 写使能 / OE 读使能</text>
+  <text x="436" y="462" font-size="11" fill="#7f3f00">这一根扇出到每一格：没许可就一格都不动</text>
+
+  <!-- 说明卡 -->
+  <rect x="790" y="110" width="350" height="112" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="810" y="138" font-size="13" font-weight="bold" fill="#123314">地址决定"谁说话"</text>
+  <text x="810" y="164" font-size="11.5" fill="#1b3d1e">3 位地址 → 8 格选 1</text>
+  <text x="810" y="186" font-size="11.5" fill="#1b3d1e">没被选中的格子把输出断开（高阻）</text>
+  <text x="810" y="208" font-size="11" fill="#2e5230">否则多路同时驱动，总线就打架了</text>
+
+  <rect x="790" y="300" width="350" height="100" rx="6" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="810" y="328" font-size="13" font-weight="bold" fill="#311b92">两个位宽是两件事</text>
+  <text x="810" y="354" font-size="11.5" fill="#311b92">地址 3 位 → 选 8 格（容量）</text>
+  <text x="810" y="376" font-size="11.5" fill="#311b92">数据 8 位 → 每格宽度；总容量 8×8=64 位</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="490" width="1080" height="70" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="520" font-size="14" font-weight="bold" fill="#7f3f00">八格共用八根数据线，全靠"选中 + 使能"两条控制线管住</text>
+  <text x="84" y="544" font-size="12" fill="#5d4037">选中决定谁能上总线，使能决定这一拍改不改——两条控制线管八个格子，才谈得上做大</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="580" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="92" y="591" font-size="11" fill="#37474f">译码器与说明卡</text>
+  <rect x="276" y="580" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="308" y="591" font-size="11" fill="#37474f">存储单元与数据线</text>
+  <rect x="492" y="580" width="22" height="14" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1.5"/>
+  <text x="524" y="591" font-size="11" fill="#37474f">被选中的格子</text>
+  <rect x="708" y="580" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="740" y="591" font-size="11" fill="#37474f">读写使能</text>
+  <rect x="924" y="580" width="22" height="14" rx="3" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="956" y="591" font-size="11" fill="#37474f">位宽说明</text>
+</svg>

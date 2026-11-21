@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>8 位指令的位域：高 3 位 opcode 决定做什么，第 5 位 dev 选设备，低 4 位地址决定对谁做</title>
+  <rect x="0" y="0" width="1200" height="700" fill="#ffffff"/>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">8 位指令的位域：一位一位都有主</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.4 · 3 + 1 + 4 = 8，八位一位不剩；高位决定「做什么」，低位决定「对谁做」</text>
+
+  <!-- ===== 字段标签 ===== -->
+  <text x="226" y="104" font-size="13" font-weight="bold" fill="#0d47a1" text-anchor="middle">opcode 3 位 · 决定做什么</text>
+  <text x="398" y="104" font-size="12.5" font-weight="bold" fill="#311b92" text-anchor="middle">dev 1 位</text>
+  <text x="613" y="104" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">addr 4 位 · 对谁做</text>
+
+  <!-- ===== 位格：bit7 → bit0 ===== -->
+  <rect x="100" y="114" width="80" height="70" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="140" y="138" font-size="11" fill="#1565c0" text-anchor="middle">bit 7</text>
+  <text x="140" y="168" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">op2</text>
+
+  <rect x="186" y="114" width="80" height="70" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="226" y="138" font-size="11" fill="#1565c0" text-anchor="middle">bit 6</text>
+  <text x="226" y="168" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">op1</text>
+
+  <rect x="272" y="114" width="80" height="70" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="312" y="138" font-size="11" fill="#1565c0" text-anchor="middle">bit 5</text>
+  <text x="312" y="168" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">op0</text>
+
+  <rect x="358" y="114" width="80" height="70" rx="4" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="398" y="138" font-size="11" fill="#5e35b1" text-anchor="middle">bit 4</text>
+  <text x="398" y="168" font-size="15" font-weight="bold" fill="#311b92" text-anchor="middle">dev</text>
+
+  <rect x="444" y="114" width="80" height="70" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="484" y="138" font-size="11" fill="#2e7d32" text-anchor="middle">bit 3</text>
+  <text x="484" y="168" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">a3</text>
+
+  <rect x="530" y="114" width="80" height="70" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="570" y="138" font-size="11" fill="#2e7d32" text-anchor="middle">bit 2</text>
+  <text x="570" y="168" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">a2</text>
+
+  <rect x="616" y="114" width="80" height="70" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="656" y="138" font-size="11" fill="#2e7d32" text-anchor="middle">bit 1</text>
+  <text x="656" y="168" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">a1</text>
+
+  <rect x="702" y="114" width="80" height="70" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="742" y="138" font-size="11" fill="#2e7d32" text-anchor="middle">bit 0</text>
+  <text x="742" y="168" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">a0</text>
+
+  <!-- ===== 例子 ===== -->
+  <text x="100" y="200" font-size="11" fill="#616161">例：0x41 = 0100 0001，逐位填进去</text>
+
+  <rect x="100" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="140" y="238" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">0</text>
+  <rect x="186" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="226" y="238" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">1</text>
+  <rect x="272" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="312" y="238" font-size="15" font-weight="bold" fill="#0d2f5c" text-anchor="middle">0</text>
+  <rect x="358" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="398" y="238" font-size="15" font-weight="bold" fill="#311b92" text-anchor="middle">0</text>
+  <rect x="444" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="484" y="238" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">0</text>
+  <rect x="530" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="570" y="238" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">0</text>
+  <rect x="616" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="656" y="238" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">0</text>
+  <rect x="702" y="208" width="80" height="44" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="742" y="238" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">1</text>
+
+  <!-- ===== 三截拆解 ===== -->
+  <rect x="100" y="272" width="252" height="62" rx="6" fill="#ffffff" stroke="#1565c0" stroke-width="2"/>
+  <text x="116" y="300" font-size="12.5" font-weight="bold" fill="#0d47a1">opcode = 010 = 2</text>
+  <text x="116" y="322" font-size="11.5" fill="#37474f">决定做什么：加</text>
+
+  <rect x="358" y="272" width="180" height="62" rx="6" fill="#ffffff" stroke="#5e35b1" stroke-width="2"/>
+  <text x="374" y="300" font-size="12.5" font-weight="bold" fill="#311b92">dev = 0</text>
+  <text x="374" y="322" font-size="11.5" fill="#311b92">内部数据内存</text>
+
+  <rect x="562" y="272" width="220" height="62" rx="6" fill="#ffffff" stroke="#2e7d32" stroke-width="2"/>
+  <text x="578" y="300" font-size="12.5" font-weight="bold" fill="#1b5e20">addr = 0001 = 1</text>
+  <text x="578" y="322" font-size="11.5" fill="#1b5e20">数据内存第 1 个地址</text>
+
+  <rect x="800" y="272" width="340" height="62" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="822" y="300" font-size="13" font-weight="bold" fill="#7f3f00">0x41 读作：加 内存[1]</text>
+  <text x="822" y="322" font-size="11.5" fill="#5d4037">一条指令 = 动作 + 对象，没有第三个东西</text>
+
+  <!-- ===== opcode 表 ===== -->
+  <text x="60" y="366" font-size="13" font-weight="bold" fill="#0d2f5c">opcode 的 8 个取值（本册指令集）</text>
+
+  <rect x="60" y="376" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="404" font-size="13" font-weight="bold" fill="#0d2f5c">000</text>
+  <text x="140" y="404" font-size="11.5" fill="#37474f">存结果（开内存写）</text>
+
+  <rect x="60" y="424" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="452" font-size="13" font-weight="bold" fill="#0d2f5c">001</text>
+  <text x="140" y="452" font-size="11.5" fill="#37474f">装载（值进累加器）</text>
+
+  <rect x="60" y="472" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="500" font-size="13" font-weight="bold" fill="#0d2f5c">010</text>
+  <text x="140" y="500" font-size="11.5" fill="#37474f">加</text>
+
+  <rect x="60" y="520" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="76" y="548" font-size="13" font-weight="bold" fill="#0d2f5c">011</text>
+  <text x="140" y="548" font-size="11.5" fill="#37474f">减</text>
+
+  <rect x="342" y="376" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="358" y="404" font-size="13" font-weight="bold" fill="#0d2f5c">100</text>
+  <text x="422" y="404" font-size="11.5" fill="#37474f">与</text>
+
+  <rect x="342" y="424" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="358" y="452" font-size="13" font-weight="bold" fill="#0d2f5c">101</text>
+  <text x="422" y="452" font-size="11.5" fill="#37474f">或</text>
+
+  <rect x="342" y="472" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="358" y="500" font-size="13" font-weight="bold" fill="#0d2f5c">110</text>
+  <text x="422" y="500" font-size="11.5" fill="#37474f">左移</text>
+
+  <rect x="342" y="520" width="258" height="44" rx="4" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="358" y="548" font-size="13" font-weight="bold" fill="#0d2f5c">111</text>
+  <text x="422" y="548" font-size="11.5" fill="#37474f">右移</text>
+
+  <!-- ===== 右栏：为什么这样排 ===== -->
+  <rect x="630" y="366" width="510" height="198" rx="12" fill="#f1f8e9" fill-opacity="0.55" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="654" y="394" font-size="13" font-weight="bold" fill="#123314">为什么 opcode 在高位、地址在低位</text>
+  <text x="654" y="422" font-size="11.5" fill="#1b3d1e">① 读指令先认动作，再找对象 —— 和人读句子一个顺序</text>
+  <text x="654" y="446" font-size="11.5" fill="#1b3d1e">② 地址在低 4 位：raw &amp; 0x0F 直接截取，不用移位</text>
+  <text x="654" y="470" font-size="11.5" fill="#1b3d1e">③ opcode 在最高位：raw &gt;&gt; 5 就是三位运算码</text>
+  <text x="654" y="494" font-size="11.5" fill="#1b3d1e">④ 真实 CPU 也这么做：操作码在前，操作数在后</text>
+  <text x="654" y="518" font-size="11.5" fill="#1b3d1e">⑤ 只有 dev 夹在中间 —— 它是后来挤进去的那一位</text>
+  <text x="654" y="546" font-size="11" fill="#2e5230">第一版没有 dev（§5.2），八位全被控制位占满</text>
+
+  <!-- ===== 结论 ===== -->
+  <rect x="60" y="584" width="1080" height="64" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="84" y="612" font-size="14" font-weight="bold" fill="#7f3f00">3 + 1 + 4 = 8，一位不剩 —— 这是设计，不是巧合</text>
+  <text x="84" y="636" font-size="12" fill="#5d4037">想再加功能就只能重定义 opcode 的含义；把「多个控制位」压成「一段编码」再解码，就是 CU 存在的理由（§5.3）</text>
+
+  <!-- ===== 图例 ===== -->
+  <rect x="60" y="666" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="92" y="677" font-size="11" fill="#37474f">opcode 字段（3 位）</text>
+  <rect x="320" y="666" width="22" height="14" rx="3" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="352" y="677" font-size="11" fill="#37474f">dev 字段（1 位）</text>
+  <rect x="560" y="666" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="592" y="677" font-size="11" fill="#37474f">addr 字段（4 位）</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>四种存储单元：从双稳态到边沿触发，控制端一路细化</title>
+  <rect x="0" y="0" width="1200" height="460" fill="#ffffff"/>
+
+  <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">四种存储单元：一步步把"何时能改"钉死</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.1~3.5 · 前三种看电平、最后一种看边沿；记忆的底子始终是同一个——输出接回输入</text>
+
+  <!-- 卡 1 -->
+  <rect x="60" y="100" width="252" height="170" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="80" y="130" font-size="15" font-weight="bold" fill="#123314">① 双稳态</text>
+  <text x="80" y="160" font-size="11.5" fill="#1b3d1e">两个非门首尾相接</text>
+  <text x="80" y="182" font-size="11.5" fill="#1b3d1e">状态自己撑住自己</text>
+  <text x="80" y="204" font-size="11.5" fill="#2e5230">所有记忆的底子</text>
+  <line x1="76" y1="218" x2="296" y2="218" stroke="#2e7d32" stroke-width="1"/>
+  <text x="80" y="240" font-size="11.5" font-weight="bold" fill="#1b5e20">敏感：无控制端</text>
+
+  <!-- 卡 2 -->
+  <rect x="336" y="100" width="252" height="170" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="356" y="130" font-size="15" font-weight="bold" fill="#123314">② SR 锁存器</text>
+  <text x="356" y="160" font-size="11.5" fill="#1b3d1e">加 S 置位、R 复位</text>
+  <text x="356" y="182" font-size="11.5" fill="#1b3d1e">都不动则保持</text>
+  <text x="356" y="204" font-size="11.5" fill="#2e5230">双 1 是异常态</text>
+  <line x1="352" y1="218" x2="572" y2="218" stroke="#2e7d32" stroke-width="1"/>
+  <text x="356" y="240" font-size="11.5" font-weight="bold" fill="#1b5e20">敏感：S/R 两个电平</text>
+
+  <!-- 卡 3 -->
+  <rect x="612" y="100" width="252" height="170" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="632" y="130" font-size="15" font-weight="bold" fill="#123314">③ D 锁存器</text>
+  <text x="632" y="160" font-size="11.5" fill="#1b3d1e">单数据端 D + 使能 en</text>
+  <text x="632" y="182" font-size="11.5" fill="#1b3d1e">存什么与何时存分开</text>
+  <text x="632" y="204" font-size="11.5" fill="#2e5230">en=1 期间透明</text>
+  <line x1="628" y1="218" x2="848" y2="218" stroke="#2e7d32" stroke-width="1"/>
+  <text x="632" y="240" font-size="11.5" font-weight="bold" fill="#1b5e20">敏感：en 的电平</text>
+
+  <!-- 卡 4 -->
+  <rect x="888" y="100" width="252" height="170" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="908" y="130" font-size="15" font-weight="bold" fill="#123314">④ D 触发器</text>
+  <text x="908" y="160" font-size="11.5" fill="#1b3d1e">改成时钟边沿采样</text>
+  <text x="908" y="182" font-size="11.5" fill="#1b3d1e">边沿之外 D 变也无效</text>
+  <text x="908" y="204" font-size="11.5" fill="#2e5230">寄存器由它并排而成</text>
+  <line x1="904" y1="218" x2="1124" y2="218" stroke="#2e7d32" stroke-width="1"/>
+  <text x="908" y="240" font-size="11.5" font-weight="bold" fill="#1b5e20">敏感：clk 的边沿</text>
+
+  <!-- 三条判据 -->
+  <rect x="60" y="300" width="344" height="90" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="84" y="326" font-size="13" font-weight="bold" fill="#7f3f00">抗毛刺：锁存器差，触发器好</text>
+  <text x="84" y="350" font-size="11.5" fill="#7f3f00">en 打开期间 D 抖动会原样传出</text>
+  <text x="84" y="370" font-size="11.5" fill="#7f3f00">边沿只给一个截止瞬间，之后免疫</text>
+
+  <rect x="428" y="300" width="344" height="90" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="452" y="326" font-size="13" font-weight="bold" fill="#7f3f00">面积：锁存器小，触发器大</text>
+  <text x="452" y="350" font-size="11.5" fill="#7f3f00">锁存器门更少，触发器约两个锁存器</text>
+  <text x="452" y="370" font-size="11.5" fill="#7f3f00">省面积的代价是抗干扰能力</text>
+
+  <rect x="796" y="300" width="344" height="90" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="820" y="326" font-size="13" font-weight="bold" fill="#7f3f00">选型：同步用触发器</text>
+  <text x="820" y="350" font-size="11.5" fill="#7f3f00">绝大多数时序电路都用触发器</text>
+  <text x="820" y="370" font-size="11.5" fill="#7f3f00">锁存器留给"总线要能直通"的场合</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="420" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="92" y="431" font-size="11" fill="#37474f">存储单元</text>
+  <rect x="300" y="420" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="332" y="431" font-size="11" fill="#37474f">选型判据</text>
+</svg>
