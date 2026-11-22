@@ -28,25 +28,25 @@
   <text x="96" y="226" font-size="12.5" font-weight="bold" fill="#123314">进程管理</text>
   <text x="96" y="248" font-size="11" fill="#1b3d1e">谁什么时候上 CPU</text>
   <text x="96" y="268" font-size="11" fill="#1b3d1e">决定下一个运行者并切换</text>
-  <text x="96" y="284" font-size="10" fill="#2e5230">深入：本板块 002</text>
+  <text x="96" y="284" font-size="11" fill="#2e5230">深入：本板块 002</text>
 
   <rect x="346" y="204" width="242" height="86" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="362" y="226" font-size="12.5" font-weight="bold" fill="#123314">内存管理</text>
   <text x="362" y="248" font-size="11" fill="#1b3d1e">每块内存归谁</text>
   <text x="362" y="268" font-size="11" fill="#1b3d1e">记账 + 划界，防互踩</text>
-  <text x="362" y="284" font-size="10" fill="#2e5230">深入：002 §2.1 + 体系结构 003</text>
+  <text x="362" y="284" font-size="11" fill="#2e5230">深入：002 §2.1 + 体系结构 003</text>
 
   <rect x="612" y="204" width="242" height="86" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="628" y="226" font-size="12.5" font-weight="bold" fill="#123314">文件系统</text>
   <text x="628" y="248" font-size="11" fill="#1b3d1e">存储上的数据</text>
   <text x="628" y="268" font-size="11" fill="#1b3d1e">把「块设备」抽象成文件与目录</text>
-  <text x="628" y="284" font-size="10" fill="#2e5230">深入：后续扩册</text>
+  <text x="628" y="284" font-size="11" fill="#2e5230">深入：后续扩册</text>
 
   <rect x="878" y="204" width="242" height="86" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="894" y="226" font-size="12.5" font-weight="bold" fill="#123314">设备管理</text>
   <text x="894" y="248" font-size="11" fill="#1b3d1e">千差万别的硬件</text>
   <text x="894" y="268" font-size="11" fill="#1b3d1e">驱动统一成接口</text>
-  <text x="894" y="284" font-size="10" fill="#2e5230">深入：规划 008 嵌入式 Linux</text>
+  <text x="894" y="284" font-size="11" fill="#2e5230">深入：规划 008 嵌入式 Linux</text>
 
   <line x1="600" y1="150" x2="600" y2="166" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
   <line x1="600" y1="308" x2="600" y2="324" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>

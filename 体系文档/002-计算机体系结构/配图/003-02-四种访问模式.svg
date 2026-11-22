@@ -35,9 +35,9 @@
   <line x1="307" y1="378" x2="307" y2="386" stroke="#90a4ae" stroke-width="1"/>
   <line x1="647" y1="378" x2="647" y2="386" stroke="#90a4ae" stroke-width="1"/>
   <line x1="979" y1="378" x2="979" y2="386" stroke="#90a4ae" stroke-width="1"/>
-  <text x="307" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">1 ns</text>
-  <text x="647" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">10 ns</text>
-  <text x="979" y="400" font-size="10" fill="#90a4ae" text-anchor="middle">100 ns</text>
+  <text x="307" y="400" font-size="11" fill="#90a4ae" text-anchor="middle">1 ns</text>
+  <text x="647" y="400" font-size="11" fill="#90a4ae" text-anchor="middle">10 ns</text>
+  <text x="979" y="400" font-size="11" fill="#90a4ae" text-anchor="middle">100 ns</text>
 
   <!-- 结论 -->
   <rect x="60" y="412" width="1080" height="44" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>

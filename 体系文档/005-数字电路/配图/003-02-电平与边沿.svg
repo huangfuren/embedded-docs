@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">电平与边沿：同一个 D，两种反应</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.4 实测输出 · 8 拍输入下 D 变了 5 次，锁存器跟了 5 次，触发器只动了 4 次（4 个上升沿）</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.4 latch.c 本机输出 · 同样 8 拍下 D 变 5 次：锁存器变 3 次，触发器 4 个上升沿各采样一次、也只变 3 次</text>
 
   <!-- 上升沿参考线 -->
   <line x1="260" y1="130" x2="260" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>
@@ -50,7 +50,7 @@
   <!-- 结论 -->
   <rect x="60" y="492" width="1080" height="76" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="84" y="520" font-size="13" font-weight="bold" fill="#7f3f00">第 2 拍看懂全部差别：D=0 且 en=1，锁存器立刻变 0；此时 clk=0，触发器纹丝不动，仍停在 1</text>
-  <text x="84" y="546" font-size="12" fill="#5d4037">触发器 8 拍只换 4 次值，锁存器每个 en=1 的拍都可能换——多出来的那些"换"，就是毛刺能钻进来的口子</text>
+  <text x="84" y="546" font-size="12" fill="#5d4037">触发器 8 拍只在 4 个上升沿采样，其中 1 次采到的 D 与现值相同、Q 不动；锁存器在 en=1 的 6 个拍里全程跟着 D——「全程可见」正是毛刺钻进来的口子</text>
 
   <!-- 图例 -->
   <rect x="60" y="586" width="22" height="14" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>

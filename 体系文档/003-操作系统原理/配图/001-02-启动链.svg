@@ -20,22 +20,22 @@
   <rect x="60" y="116" width="250" height="72" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="78" y="140" font-size="12" font-weight="bold" fill="#0d2f5c">① 固件 BIOS/UEFI</text>
   <text x="78" y="162" font-size="11" fill="#0d2f5c">自检硬件，找启动盘</text>
-  <text x="78" y="180" font-size="10" fill="#0d2f5c">出厂就有，烧在主板 ROM</text>
+  <text x="78" y="180" font-size="11" fill="#0d2f5c">出厂就有，烧在主板 ROM</text>
 
   <rect x="336" y="116" width="250" height="72" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="354" y="140" font-size="12" font-weight="bold" fill="#0d2f5c">② 引导程序 GRUB</text>
   <text x="354" y="162" font-size="11" fill="#0d2f5c">加载内核到内存</text>
-  <text x="354" y="180" font-size="10" fill="#0d2f5c">多系统选择就在这里</text>
+  <text x="354" y="180" font-size="11" fill="#0d2f5c">多系统选择就在这里</text>
 
   <rect x="612" y="116" width="250" height="72" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="630" y="140" font-size="12" font-weight="bold" fill="#123314">③ 内核装载</text>
   <text x="630" y="162" font-size="11" fill="#1b3d1e">初始化四大子系统</text>
-  <text x="630" y="180" font-size="10" fill="#2e5230">内存、调度、驱动就位</text>
+  <text x="630" y="180" font-size="11" fill="#2e5230">内存、调度、驱动就位</text>
 
   <rect x="888" y="116" width="252" height="72" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
   <text x="906" y="140" font-size="12" font-weight="bold" fill="#123314">④ 第一个进程 init</text>
   <text x="906" y="162" font-size="11" fill="#1b3d1e">一切进程的祖先</text>
-  <text x="906" y="180" font-size="10" fill="#1b3d1e">它再去拉起所有服务</text>
+  <text x="906" y="180" font-size="11" fill="#1b3d1e">它再去拉起所有服务</text>
 
   <line x1="310" y1="152" x2="332" y2="152" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
   <line x1="586" y1="152" x2="608" y2="152" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
@@ -47,22 +47,22 @@
   <rect x="60" y="234" width="250" height="72" rx="6" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
   <text x="78" y="258" font-size="12" font-weight="bold" fill="#37474f">① 芯片 ROM 代码</text>
   <text x="78" y="280" font-size="11" fill="#37474f">厂商烧死的启动代码</text>
-  <text x="78" y="298" font-size="10" fill="#616161">用户改不了，也不该改</text>
+  <text x="78" y="298" font-size="11" fill="#616161">用户改不了，也不该改</text>
 
   <rect x="336" y="234" width="250" height="72" rx="6" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
   <text x="354" y="258" font-size="12" font-weight="bold" fill="#37474f">② 向量表定入口</text>
   <text x="354" y="280" font-size="11" fill="#37474f">复位向量指向启动代码</text>
-  <text x="354" y="298" font-size="10" fill="#616161">省掉了 bootloader 这一环</text>
+  <text x="354" y="298" font-size="11" fill="#616161">省掉了 bootloader 这一环</text>
 
   <rect x="612" y="234" width="250" height="72" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="630" y="258" font-size="12" font-weight="bold" fill="#123314">③ 跑 main 或 RTOS</text>
   <text x="630" y="280" font-size="11" fill="#1b3d1e">先把 .data 搬到 SRAM</text>
-  <text x="630" y="298" font-size="10" fill="#2e5230">.bss 清零后才进 main</text>
+  <text x="630" y="298" font-size="11" fill="#2e5230">.bss 清零后才进 main</text>
 
   <rect x="888" y="234" width="252" height="72" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
   <text x="906" y="258" font-size="12" font-weight="bold" fill="#123314">④ 主循环 / 调度器</text>
   <text x="906" y="280" font-size="11" fill="#1b3d1e">裸机是前后台，RTOS 是调度</text>
-  <text x="906" y="298" font-size="10" fill="#1b3d1e">没有 init，没有进程</text>
+  <text x="906" y="298" font-size="11" fill="#1b3d1e">没有 init，没有进程</text>
 
   <line x1="310" y1="270" x2="332" y2="270" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arrowGray)"/>
   <line x1="586" y1="270" x2="608" y2="270" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arrowGray)"/>
@@ -108,13 +108,13 @@
 
   <!-- 图例 -->
   <rect x="60" y="542" width="22" height="10" rx="2" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
-  <text x="90" y="551" font-size="10" fill="#37474f">PC 启动棒次</text>
+  <text x="90" y="551" font-size="11" fill="#37474f">PC 启动棒次</text>
   <rect x="220" y="542" width="22" height="10" rx="2" fill="#fafafa" stroke="#90a4ae" stroke-width="1"/>
-  <text x="250" y="551" font-size="10" fill="#37474f">MCU 对应棒次</text>
+  <text x="250" y="551" font-size="11" fill="#37474f">MCU 对应棒次</text>
   <rect x="400" y="542" width="22" height="10" rx="2" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
-  <text x="430" y="551" font-size="10" fill="#37474f">交棒终点（第一个执行流）</text>
+  <text x="430" y="551" font-size="11" fill="#37474f">交棒终点（第一个执行流）</text>
   <rect x="600" y="542" width="22" height="10" rx="2" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
-  <text x="630" y="551" font-size="10" fill="#37474f">内核与系统层</text>
+  <text x="630" y="551" font-size="11" fill="#37474f">内核与系统层</text>
   <rect x="760" y="542" width="22" height="10" rx="2" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
-  <text x="790" y="551" font-size="10" fill="#37474f">读法要点</text>
+  <text x="790" y="551" font-size="11" fill="#37474f">读法要点</text>
 </svg>

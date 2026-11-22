@@ -57,7 +57,7 @@
 
   <rect x="84" y="452" width="652" height="56" rx="28" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
   <text x="112" y="486" font-size="15" font-weight="bold" fill="#37474f">输入 / 输出</text>
-  <text x="236" y="486" font-size="11.5" fill="#546e7a">与外部世界打交道 · GPIO 是它的最小形态 · 本库 006 册</text>
+  <text x="236" y="486" font-size="11.5" fill="#546e7a">与外部世界打交道 · GPIO 是它的最小形态 · 规划 006 册</text>
 
   <!-- ===== 右栏 1：存储程序 ===== -->
   <rect x="790" y="100" width="350" height="176" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>

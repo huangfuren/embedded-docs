@@ -17,27 +17,27 @@
   <text x="80" y="142" font-size="11" fill="#616161">KB 级内存 · 裸机或 RTOS · 单地址空间</text>
 
   <rect x="80" y="156" width="306" height="146" rx="8" fill="#f1f8e9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="92" y="174" font-size="10" fill="#2e5230">一颗芯片的边界</text>
+  <text x="92" y="174" font-size="11" fill="#2e5230">一颗芯片的边界</text>
 
   <rect x="92" y="182" width="132" height="44" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
   <text x="104" y="200" font-size="11.5" font-weight="bold" fill="#123314">CPU 核心</text>
-  <text x="104" y="216" font-size="10" fill="#1b3d1e">Cortex-M 级，几十 MHz</text>
+  <text x="104" y="216" font-size="11" fill="#1b3d1e">Cortex-M · 几十 MHz</text>
 
   <rect x="242" y="182" width="132" height="44" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
   <text x="254" y="200" font-size="11.5" font-weight="bold" fill="#123314">外设</text>
-  <text x="254" y="216" font-size="10" fill="#1b3d1e">GPIO / 串口 / 定时器</text>
+  <text x="254" y="216" font-size="11" fill="#1b3d1e">GPIO / 串口 / 定时器</text>
 
   <rect x="92" y="236" width="132" height="44" rx="4" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
   <text x="104" y="254" font-size="11.5" font-weight="bold" fill="#123314">Flash 64KB</text>
-  <text x="104" y="270" font-size="10" fill="#1b3d1e">存程序，只读</text>
+  <text x="104" y="270" font-size="11" fill="#1b3d1e">存程序，只读</text>
 
   <rect x="242" y="236" width="132" height="44" rx="4" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1"/>
   <text x="254" y="254" font-size="11.5" font-weight="bold" fill="#123314">SRAM 20KB</text>
-  <text x="254" y="270" font-size="10" fill="#1b3d1e">存变量，断电即失</text>
+  <text x="254" y="270" font-size="11" fill="#1b3d1e">存变量，断电即失</text>
 
   <rect x="80" y="300" width="306" height="46" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
   <text x="92" y="321" font-size="11.5" font-weight="bold" fill="#5d4700">全部集成在一颗芯片里</text>
-  <text x="92" y="338" font-size="10" fill="#5d4700">引脚直接出去接 LED / 传感器，中间没有别的芯片</text>
+  <text x="92" y="338" font-size="11" fill="#5d4700">引脚直接出去接 LED / 传感器，中间没有别的芯片</text>
 
   <text x="80" y="364" font-size="11" fill="#37474f">选它的理由：微秒级确定性、低功耗、几元钱</text>
 
@@ -47,23 +47,23 @@
   <text x="447" y="142" font-size="11" fill="#616161">MB~GB 级内存 · 嵌入式 Linux · MMU 虚拟内存</text>
 
   <rect x="447" y="156" width="306" height="146" rx="8" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="459" y="174" font-size="10" fill="#0d2f5c">一颗芯片的边界</text>
+  <text x="459" y="174" font-size="11" fill="#0d2f5c">一颗芯片的边界</text>
 
   <rect x="459" y="182" width="132" height="44" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
   <text x="471" y="200" font-size="11.5" font-weight="bold" fill="#0d2f5c">CPU 多核</text>
-  <text x="471" y="216" font-size="10" fill="#0d2f5c">带 MMU，能跑 Linux</text>
+  <text x="471" y="216" font-size="11" fill="#0d2f5c">带 MMU，能跑 Linux</text>
 
   <rect x="609" y="182" width="132" height="44" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
   <text x="621" y="200" font-size="11.5" font-weight="bold" fill="#0d2f5c">GPU / NPU</text>
-  <text x="621" y="216" font-size="10" fill="#0d2f5c">图形与算力加速</text>
+  <text x="621" y="216" font-size="11" fill="#0d2f5c">图形与算力加速</text>
 
   <rect x="459" y="236" width="132" height="44" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
   <text x="471" y="254" font-size="11.5" font-weight="bold" fill="#0d2f5c">内存控制器</text>
-  <text x="471" y="270" font-size="10" fill="#0d2f5c">通往片外 DRAM 的门</text>
+  <text x="471" y="270" font-size="11" fill="#0d2f5c">通往片外 DRAM 的门</text>
 
   <rect x="609" y="236" width="132" height="44" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
   <text x="621" y="254" font-size="11.5" font-weight="bold" fill="#0d2f5c">外设控制器</text>
-  <text x="621" y="270" font-size="10" fill="#0d2f5c">USB / 以太网 / SDIO</text>
+  <text x="621" y="270" font-size="11" fill="#0d2f5c">USB / 以太网 / SDIO</text>
 
   <line x1="525" y1="302" x2="525" y2="314" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowGray)"/>
   <rect x="447" y="316" width="306" height="34" rx="6" fill="#ffffff" stroke="#1565c0" stroke-width="1.5"/>
@@ -77,23 +77,23 @@
   <text x="814" y="142" font-size="11" fill="#616161">GB 级内存 · 桌面 OS · 部件可更换</text>
 
   <rect x="814" y="156" width="306" height="146" rx="8" fill="#fafafa" stroke="#90a4ae" stroke-width="1.5"/>
-  <text x="826" y="174" font-size="10" fill="#616161">主板与插座：部件各自独立</text>
+  <text x="826" y="174" font-size="11" fill="#616161">主板与插座：部件各自独立</text>
 
   <rect x="826" y="182" width="132" height="44" rx="4" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
   <text x="838" y="200" font-size="11.5" font-weight="bold" fill="#37474f">CPU 插座</text>
-  <text x="838" y="216" font-size="10" fill="#37474f">8 核 16 线程（本机）</text>
+  <text x="838" y="216" font-size="11" fill="#37474f">8 核 16 线程（本机）</text>
 
   <rect x="976" y="182" width="132" height="44" rx="4" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
   <text x="988" y="200" font-size="11.5" font-weight="bold" fill="#37474f">内存条</text>
-  <text x="988" y="216" font-size="10" fill="#37474f">16GB（本机实测）</text>
+  <text x="988" y="216" font-size="11" fill="#37474f">16GB（本机实测）</text>
 
   <rect x="826" y="236" width="132" height="44" rx="4" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
   <text x="838" y="254" font-size="11.5" font-weight="bold" fill="#37474f">芯片组</text>
-  <text x="838" y="270" font-size="10" fill="#37474f">挂 USB / SATA / PCIe</text>
+  <text x="838" y="270" font-size="11" fill="#37474f">USB / SATA / PCIe</text>
 
   <rect x="976" y="236" width="132" height="44" rx="4" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
   <text x="988" y="254" font-size="11.5" font-weight="bold" fill="#37474f">存储与显卡</text>
-  <text x="988" y="270" font-size="10" fill="#37474f">1TB NVMe / 独立显卡</text>
+  <text x="988" y="270" font-size="11" fill="#37474f">1TB NVMe / 独立显卡</text>
 
   <rect x="814" y="316" width="306" height="34" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
   <text x="826" y="338" font-size="11.5" fill="#37474f">坏了能换、能升级 —— 代价是体积与功耗</text>

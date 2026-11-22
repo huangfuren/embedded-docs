@@ -39,11 +39,11 @@
   <text x="60" y="230" font-size="13" font-weight="bold" fill="#37474f">两个线程交错执行时，同一份读被用两次</text>
 
   <line x1="200" y1="252" x2="1140" y2="252" stroke="#cfd8dc" stroke-width="1.5"/>
-  <text x="210" y="248" font-size="10" fill="#90a4ae">t1</text>
-  <text x="450" y="248" font-size="10" fill="#90a4ae">t2</text>
-  <text x="700" y="248" font-size="10" fill="#90a4ae">t3</text>
-  <text x="950" y="248" font-size="10" fill="#90a4ae">t4</text>
-  <text x="1146" y="256" font-size="10" fill="#90a4ae">时间</text>
+  <text x="210" y="248" font-size="11" fill="#90a4ae">t1</text>
+  <text x="450" y="248" font-size="11" fill="#90a4ae">t2</text>
+  <text x="700" y="248" font-size="11" fill="#90a4ae">t3</text>
+  <text x="950" y="248" font-size="11" fill="#90a4ae">t4</text>
+  <text x="1146" y="256" font-size="11" fill="#90a4ae">时间</text>
 
   <!-- T1 泳道 -->
   <text x="60" y="292" font-size="12" font-weight="bold" fill="#0d2f5c">线程 1</text>
