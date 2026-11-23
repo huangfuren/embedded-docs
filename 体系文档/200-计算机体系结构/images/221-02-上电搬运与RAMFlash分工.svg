@@ -8,8 +8,8 @@
     </marker>
   </defs>
 
-  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">RAM 与 Flash：三条本质差异，决定数据能不能活过断电</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 003 §3.3 · 口径：本机与 MCU 双线对照（16GB DRAM / 1TB NVMe；SRAM 20KB / Flash 64KB）· 2026-11-14</text>
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">RAM 与 Flash 的分工，以及上电时谁把变量搬过去</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：200 板块 221 §221.2 · 口径：MCU 视角（SRAM 20KB / Flash 64KB 为 STM32F103 规格参照）· 2026-11-23</text>
 
   <!-- RAM -->
   <rect x="60" y="96" width="520" height="142" rx="8" fill="#ffffff" stroke="#1565c0" stroke-width="2"/>

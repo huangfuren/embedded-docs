@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="580" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">反汇编逐行对照：你的 8 行 C，硬件层是 11 条指令</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 002 §2.1 objdump -d hello.o 本机实录（x86-64 / Windows）· 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：200 板块 222 §222.2 objdump -d hello.o 本机实录（x86-64 / Windows）· 2026-11-23</text>
   <text x="60" y="96" font-size="11.5" fill="#37474f">左边十六进制就是机器码本身 —— 编译器按 ISA 契约产出的东西；中间是反汇编器翻回来的可读形式</text>
 
   <!-- 表头 -->

@@ -9,7 +9,7 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">补码：同一串二进制，读法不同结果就不同</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 001 §1.4 bin.c 本机实录（C17 / gcc）· 32 位 int · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：200 板块 211 §211.3 binary.c 本机实录（C17 / gcc）· 32 位 int · 2026-11-23</text>
 
   <!-- ============ 上：0xFFFFFFFF 的 32 位 ============ -->
   <text x="60" y="106" font-size="13" font-weight="bold" fill="#37474f">unsigned u = 0xFFFFFFFF —— 32 位全是 1（4 个字节，每个 0xFF）</text>

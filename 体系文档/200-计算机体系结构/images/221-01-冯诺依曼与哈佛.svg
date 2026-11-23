@@ -12,7 +12,7 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">冯·诺依曼与哈佛：指令和数据放不放一起</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 001 §1.2 · 口径：机制通用，Cortex-M 与 PC 双线对照 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：200 板块 221 §221.1 · 口径：机制通用，Cortex-M 与 PC 双线对照 · 2026-11-23</text>
 
   <!-- ================= 左：冯·诺依曼 ================= -->
   <rect x="60" y="100" width="520" height="256" rx="12" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>

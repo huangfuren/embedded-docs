@@ -15,7 +15,7 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">一条指令的一生：三步一个循环，所有岔路都是改 PC</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：002 板块 002 §2.1~2.2 · 口径：机制通用，例证 x86-64 与本机 hello.o 反汇编 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：200 板块 222 §222.1~222.2 · 口径：机制通用，例证 x86-64 与本机 hello.o 反汇编 · 2026-11-23</text>
 
   <!-- 三步 -->
   <rect x="100" y="104" width="260" height="112" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>

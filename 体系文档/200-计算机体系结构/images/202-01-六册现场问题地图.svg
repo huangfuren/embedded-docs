@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
+
+  <text x="40" y="42" font-size="20" font-weight="bold" fill="#37474f">200 计算机体系结构 · 六册对应的现场问题</text>
+  <text x="40" y="68" font-size="12" fill="#757575">来源：200 板块 · 六册与各自要回答的排障问题 · 2026-11-23</text>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#90a4ae"/>
+    </marker>
+  </defs>
+
+  <!-- ========== 左列：数据表示 ========== -->
+  <rect x="40" y="96" width="340" height="42" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="210" y="123" font-size="17" font-weight="bold" fill="#1565c0" text-anchor="middle">210 数据表示 · 数值怎么塞进位里</text>
+
+  <rect x="40" y="152" width="340" height="110" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="58" y="180" font-size="15" font-weight="bold" fill="#0d47a1">211 补码与整数范围</text>
+  <text x="58" y="205" font-size="11.5" fill="#37474f">整数回绕、负数表示、溢出为什么是 UB</text>
+  <text x="58" y="228" font-size="11.5" fill="#bf360c">现场：ADC 值、定时器计数、减出 65535</text>
+
+  <rect x="40" y="282" width="340" height="110" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="58" y="310" font-size="15" font-weight="bold" fill="#0d47a1">212 浮点精度与字节序</text>
+  <text x="58" y="335" font-size="11.5" fill="#37474f">IEEE 754 三段、2²⁴ 天花板、大端小端</text>
+  <text x="58" y="358" font-size="11.5" fill="#bf360c">现场：Modbus 拼包、传感器 float 解析</text>
+
+  <line x1="386" y1="117" x2="424" y2="117" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ========== 中列：执行模型 ========== -->
+  <rect x="430" y="96" width="340" height="42" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="600" y="123" font-size="17" font-weight="bold" fill="#2e7d32" text-anchor="middle">220 执行模型 · 芯片怎么跑起来</text>
+
+  <rect x="430" y="152" width="340" height="110" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="448" y="180" font-size="15" font-weight="bold" fill="#1b5e20">221 上电与内存布局</text>
+  <text x="448" y="205" font-size="11.5" fill="#37474f">哈佛结构、.data 搬运、.bss 清零、noinit</text>
+  <text x="448" y="228" font-size="11.5" fill="#bf360c">现场：变量初值错、startup 看不懂</text>
+
+  <rect x="430" y="282" width="340" height="110" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="448" y="310" font-size="15" font-weight="bold" fill="#1b5e20">222 指令周期与软件延时</text>
+  <text x="448" y="335" font-size="11.5" fill="#37474f">取指译码执行、反汇编读法、CPI</text>
+  <text x="448" y="358" font-size="11.5" fill="#bf360c">现场：延时不准、GPIO 翻转达不到标称</text>
+
+  <rect x="430" y="412" width="340" height="110" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="448" y="440" font-size="15" font-weight="bold" fill="#1b5e20">223 中断与异常</text>
+  <text x="448" y="465" font-size="11.5" fill="#37474f">向量表、现场保存、ISR 铁律</text>
+  <text x="448" y="488" font-size="11.5" fill="#bf360c">现场：ISR 里死机、HardFault 定位</text>
+
+  <line x1="776" y1="117" x2="814" y2="117" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ========== 右列：存储 ========== -->
+  <rect x="820" y="96" width="340" height="42" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="990" y="123" font-size="17" font-weight="bold" fill="#e65100" text-anchor="middle">230 存储 · 数据住哪、为什么慢</text>
+
+  <rect x="820" y="152" width="340" height="110" rx="8" fill="#ffcc80" stroke="#e65100" stroke-width="1.5"/>
+  <text x="838" y="180" font-size="15" font-weight="bold" fill="#bf360c">231 MCU 存储速度阶梯</text>
+  <text x="838" y="205" font-size="11.5" fill="#37474f">Flash 等待周期、__ramfunc、DMA、cache</text>
+  <text x="838" y="228" font-size="11.5" fill="#5d4037">现场：提频后跑飞、DMA 数据不对</text>
+
+  <rect x="820" y="282" width="340" height="110" rx="8" fill="#fafafa" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="838" y="310" font-size="15" font-weight="bold" fill="#616161">再往下一站</text>
+  <text x="838" y="335" font-size="11.5" fill="#757575">外设、RTOS、驱动</text>
+  <text x="838" y="358" font-size="11.5" fill="#757575">归 600 MCU / 700 RTOS / 800 Linux</text>
+
+  <!-- ========== 结论 ========== -->
+  <rect x="40" y="536" width="1120" height="50" rx="8" fill="#fff8e1" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="60" y="558" font-size="12.5" fill="#5d4037">这六册不是组成原理课本，是排障时用来"推"而不是"试"的模型：数值为什么错 → 数据住哪 → 指令怎么跑 → 被打断怎么回来。</text>
+  <text x="60" y="578" font-size="12.5" font-weight="bold" fill="#e65100">读懂一条，就少烧一次板子。</text>
+
+  <!-- ========== 图例 ========== -->
+  <rect x="40" y="594" width="11" height="11" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="57" y="603" font-size="11" fill="#616161">数据表示</text>
+  <rect x="140" y="594" width="11" height="11" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="157" y="603" font-size="11" fill="#616161">执行模型</text>
+  <rect x="240" y="594" width="11" height="11" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="257" y="603" font-size="11" fill="#616161">存储</text>
+</svg>
