@@ -12,7 +12,7 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">操作系统的四大职责：本质都是「仲裁」</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 001 §1.2 · 口径：机制通用，Linux 与 FreeRTOS 双线 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：300 板块 311 §311.2 · 口径：机制通用，Linux 与 FreeRTOS 双线 · 2026-11-23</text>
 
   <!-- 应用层 -->
   <rect x="60" y="96" width="1080" height="54" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
@@ -28,13 +28,13 @@
   <text x="96" y="226" font-size="12.5" font-weight="bold" fill="#123314">进程管理</text>
   <text x="96" y="248" font-size="11" fill="#1b3d1e">谁什么时候上 CPU</text>
   <text x="96" y="268" font-size="11" fill="#1b3d1e">决定下一个运行者并切换</text>
-  <text x="96" y="284" font-size="11" fill="#2e5230">深入：本板块 002</text>
+  <text x="96" y="284" font-size="11" fill="#2e5230">深入：本板块 321</text>
 
   <rect x="346" y="204" width="242" height="86" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="362" y="226" font-size="12.5" font-weight="bold" fill="#123314">内存管理</text>
   <text x="362" y="248" font-size="11" fill="#1b3d1e">每块内存归谁</text>
   <text x="362" y="268" font-size="11" fill="#1b3d1e">记账 + 划界，防互踩</text>
-  <text x="362" y="284" font-size="11" fill="#2e5230">深入：002 §2.1 + 体系结构 003</text>
+  <text x="362" y="284" font-size="11" fill="#2e5230">深入：321 §321.1 + 体系结构 003</text>
 
   <rect x="612" y="204" width="242" height="86" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="628" y="226" font-size="12.5" font-weight="bold" fill="#123314">文件系统</text>
@@ -71,7 +71,7 @@
 
   <!-- 结论 -->
   <rect x="60" y="408" width="1080" height="42" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
-  <text x="80" y="435" font-size="13" fill="#7f3f00">OS 的权威来自它独占的特权（§1.4）—— 应用想碰硬件只能「请求」，不能自己动手</text>
+  <text x="80" y="435" font-size="13" fill="#7f3f00">OS 的权威来自它独占的特权（313 §313.1）—— 应用想碰硬件只能「请求」，不能自己动手</text>
 
   <!-- 图例 -->
   <rect x="60" y="466" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>

@@ -17,5 +17,5 @@ _issues/
 Thumbs.db
 desktop.ini
 
-# docs/（持久工作文档：规格书/交接工单，仅本地）
-docs/
+# _docs/（持久工作文档：规格书/方案/设计决策，仅本地）
+_docs/

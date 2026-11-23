@@ -15,14 +15,14 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">操作系统 · 核心机制地图</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：本库建库批 · 口径：Linux 与 FreeRTOS 双线，机制级不读源码 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：本库建库批 · 口径：Linux 与 FreeRTOS 双线，机制级不读源码 · 2026-11-23</text>
 
   <!-- 用户态 -->
-  <text x="60" y="100" font-size="11" fill="#1565c0">用户态 —— 应用，受限运行级别（001 §1.4）</text>
+  <text x="60" y="100" font-size="11" fill="#1565c0">用户态 —— 应用，受限运行级别（313 §313.1）</text>
 
   <rect x="60" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="78" y="134" font-size="12.5" font-weight="bold" fill="#0d2f5c">hello 进程</text>
-  <text x="78" y="156" font-size="11" fill="#0d2f5c">程序的一次运行（002 §2.1）</text>
+  <text x="78" y="156" font-size="11" fill="#0d2f5c">程序的一次运行（321 §321.1）</text>
   <text x="78" y="176" font-size="11" fill="#0d2f5c">独立地址空间，崩溃不连累别人</text>
 
   <rect x="430" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
@@ -32,28 +32,28 @@
 
   <rect x="800" y="110" width="340" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="818" y="134" font-size="12.5" font-weight="bold" fill="#0d2f5c">FreeRTOS 任务</text>
-  <text x="818" y="156" font-size="11" fill="#0d2f5c">单地址空间，全共享（001 §1.5）</text>
+  <text x="818" y="156" font-size="11" fill="#0d2f5c">单地址空间，全共享（312 §312.5）</text>
   <text x="818" y="176" font-size="11" fill="#0d2f5c">没有特权级强制，纪律靠自觉</text>
 
   <!-- 双向通道 -->
   <path d="M 400 186 L 400 244" fill="none" stroke="#e65100" stroke-width="2" marker-end="url(#arrowOrange)"/>
   <text x="412" y="206" font-size="11.5" font-weight="bold" fill="#e65100">系统调用 ↓</text>
-  <text x="412" y="224" font-size="11" fill="#e65100">程序请求内核服务（003 §3.3）</text>
+  <text x="412" y="224" font-size="11" fill="#e65100">程序请求内核服务（313 §313.2）</text>
 
   <path d="M 760 244 L 760 186" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
   <text x="772" y="206" font-size="11.5" font-weight="bold" fill="#1565c0">中断 / 异常 ↑</text>
-  <text x="772" y="224" font-size="11" fill="#1565c0">硬件与程序打断 CPU（003 §3.1~3.2）</text>
+  <text x="772" y="224" font-size="11" fill="#1565c0">硬件与程序打断 CPU（331 §331.1）</text>
 
   <!-- 内核 -->
   <text x="60" y="266" font-size="11" fill="#2e7d32">内核态 —— 常驻内存 · 特权运行</text>
 
   <rect x="60" y="276" width="1080" height="132" rx="8" fill="#f1f8e9" stroke="#2e7d32" stroke-width="2"/>
-  <text x="80" y="300" font-size="13" font-weight="bold" fill="#123314">内核：四大职责，共同点都是「仲裁」（001 §1.2）</text>
+  <text x="80" y="300" font-size="13" font-weight="bold" fill="#123314">内核：四大职责，共同点都是「仲裁」（311 §311.2）</text>
 
   <rect x="80" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="96" y="332" font-size="12" font-weight="bold" fill="#123314">进程管理</text>
   <text x="96" y="354" font-size="11" fill="#1b3d1e">谁下一个上 CPU</text>
-  <text x="96" y="374" font-size="11" fill="#1b3d1e">三态、调度、上下文切换（002）</text>
+  <text x="96" y="374" font-size="11" fill="#1b3d1e">三态、调度、上下文切换（321）</text>
 
   <rect x="346" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="362" y="332" font-size="12" font-weight="bold" fill="#123314">内存管理</text>
@@ -68,7 +68,7 @@
   <rect x="878" y="310" width="242" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="894" y="332" font-size="12" font-weight="bold" fill="#123314">设备管理</text>
   <text x="894" y="354" font-size="11" fill="#1b3d1e">驱动统一成接口</text>
-  <text x="894" y="374" font-size="11" fill="#1b3d1e">printf 的最后一站（003 §3.4）</text>
+  <text x="894" y="374" font-size="11" fill="#1b3d1e">printf 的最后一站（313 §313.4）</text>
 
   <!-- 内核到硬件 -->
   <line x1="600" y1="408" x2="600" y2="444" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowGray)"/>
@@ -99,7 +99,7 @@
 
   <!-- printf 之旅 -->
   <rect x="60" y="566" width="1080" height="46" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
-  <text x="80" y="595" font-size="12.5" fill="#7f3f00">一条主线串起全册：printf("abc") → stdio 缓冲 → write() 系统调用 → 内核驱动 → 硬件输出（003 §3.4 闭环）</text>
+  <text x="80" y="595" font-size="12.5" fill="#7f3f00">一条主线串起全册：printf("abc") → stdio 缓冲 → write() 系统调用 → 内核驱动 → 硬件输出（313 §313.4 闭环）</text>
 
   <!-- 两种形态 -->
   <rect x="60" y="616" width="530" height="58" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>

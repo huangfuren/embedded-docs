@@ -12,7 +12,7 @@
   </defs>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">printf 之旅：你写一行，字节要过五站才到屏幕</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：003 板块 003 §3.4 buf.c 本机实录（重定向到文件，1 秒时为空）· 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：300 板块 313 §313.4 buf.c 本机实录（重定向到文件，1 秒时为空）· 2026-11-23</text>
 
   <!-- 五站 -->
   <rect x="60" y="100" width="196" height="96" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
@@ -31,13 +31,13 @@
   <text x="508" y="124" font-size="12" font-weight="bold" fill="#7f3f00">③ write() 系统调用</text>
   <text x="508" y="146" font-size="11" fill="#7f3f00">穿越特权级的那道门</text>
   <text x="508" y="168" font-size="11" fill="#7f3f00">用户态 → 内核态</text>
-  <text x="508" y="186" font-size="11" fill="#7f3f00">003 §3.3 的机制</text>
+  <text x="508" y="186" font-size="11" fill="#7f3f00">313 §313.2 的机制</text>
 
   <rect x="708" y="100" width="196" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="724" y="124" font-size="12" font-weight="bold" fill="#123314">④ 内核驱动接管</text>
   <text x="724" y="146" font-size="11" fill="#1b3d1e">按下标查文件表，找到设备</text>
   <text x="724" y="168" font-size="11" fill="#1b3d1e">设备管理职责在此兑现</text>
-  <text x="724" y="186" font-size="11" fill="#2e5230">001 §1.2 四大职责</text>
+  <text x="724" y="186" font-size="11" fill="#2e5230">311 §311.2 四大职责</text>
 
   <rect x="924" y="100" width="196" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
   <text x="940" y="124" font-size="12" font-weight="bold" fill="#123314">⑤ 送到硬件</text>
@@ -52,7 +52,7 @@
 
   <!-- 回发中断 -->
   <path d="M 1022 196 L 1022 226 L 158 226 L 158 200" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowGreen)"/>
-  <text x="590" y="246" font-size="11" fill="#2e7d32" text-anchor="middle">设备输出完毕可能回发中断 —— 硬件向软件回报（003 §3.2）</text>
+  <text x="590" y="246" font-size="11" fill="#2e7d32" text-anchor="middle">设备输出完毕可能回发中断 —— 硬件向软件回报（331 §331.2）</text>
 
   <!-- 缓冲实验 -->
   <text x="60" y="292" font-size="13" font-weight="bold" fill="#37474f">缓冲实验：为什么「printf 了但文件里没有」</text>
