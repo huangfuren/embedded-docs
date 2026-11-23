@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>可调稳压电源：CV 与 CC 两只灯说明在发生什么</title>
+  <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
+
+  <!-- 坐标表：左区 40,96,540,340；右区 620,96,540,340；结论 40,470,1120,72；图例 40,552,1120,44；高 620 -->
+
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">可调稳压电源：两只灯说明它在干什么</text>
+  <text x="40" y="70" font-size="11" fill="#616161">来源：400 板块 454 §454.4 · 口径：以 HY3005B 为例（0~30V / 0~5A），下图设定 5V、限流 100mA · 2026-11-23</text>
+
+  <!-- 左：两灯 -->
+  <rect x="40" y="96" width="540" height="340" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="124" font-size="13" font-weight="bold" fill="#37474f">同一块板子，两只灯说明两种状态</text>
+  <text x="60" y="146" font-size="11" fill="#616161">设定 5V / 限流 100mA，接上负载后看哪个灯亮</text>
+
+  <rect x="70" y="166" width="480" height="110" rx="6" fill="#f1f8e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <circle cx="104" cy="200" r="11" fill="#f1f8e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <circle cx="104" cy="200" r="6" fill="#2e7d32"/>
+  <text x="124" y="205" font-size="11.5" font-weight="bold" fill="#1b5e20">CV 恒压</text>
+  <text x="300" y="204" font-size="17" font-weight="bold" fill="#1b3d1e" text-anchor="middle">5.02 V</text>
+  <text x="300" y="228" font-size="12" fill="#37474f" text-anchor="middle">80 mA</text>
+  <text x="420" y="204" font-size="11" fill="#1b3d1e">电压 = 设定值</text>
+  <text x="420" y="224" font-size="11" fill="#1b3d1e">电流由负载定</text>
+  <text x="90" y="262" font-size="11" fill="#1b3d1e">恒压：电源只盯电压，电流有多少取决于负载 → 正常状态</text>
+
+  <rect x="70" y="296" width="480" height="110" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <circle cx="104" cy="330" r="11" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <circle cx="104" cy="330" r="6" fill="#c62828"/>
+  <text x="124" y="335" font-size="11.5" font-weight="bold" fill="#bf360c">CC 恒流</text>
+  <text x="300" y="334" font-size="17" font-weight="bold" fill="#bf360c" text-anchor="middle">3.20 V</text>
+  <text x="300" y="358" font-size="12" fill="#7f3f00" text-anchor="middle">100 mA</text>
+  <text x="420" y="334" font-size="11" fill="#bf360c">电压被拉低</text>
+  <text x="420" y="354" font-size="11" fill="#bf360c">电流被钳住</text>
+  <text x="90" y="392" font-size="11" fill="#7f3f00">恒流：电流顶到上限，电压只能掉下来 → 有短路或过流</text>
+
+  <!-- 右：上电流程 -->
+  <rect x="620" y="96" width="540" height="340" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="640" y="124" font-size="13" font-weight="bold" fill="#37474f">推荐上电流程：限流先设好再接线</text>
+
+  <rect x="640" y="146" width="500" height="54" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="662" y="180" font-size="15" font-weight="bold" fill="#37474f" text-anchor="middle">1</text>
+  <text x="690" y="180" font-size="12" fill="#37474f">电压设到目标值（如 5V）</text>
+
+  <rect x="640" y="206" width="500" height="54" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="662" y="240" font-size="15" font-weight="bold" fill="#37474f" text-anchor="middle">2</text>
+  <text x="690" y="240" font-size="12" fill="#37474f">限流设到预期的 1.5 倍（80mA → 120mA）</text>
+
+  <rect x="640" y="266" width="500" height="54" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="662" y="300" font-size="15" font-weight="bold" fill="#37474f" text-anchor="middle">3</text>
+  <text x="690" y="300" font-size="12" fill="#37474f">接上板子，看亮的是 CV 还是 CC</text>
+
+  <rect x="640" y="326" width="500" height="54" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="1.2"/>
+  <text x="662" y="360" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">4</text>
+  <text x="690" y="360" font-size="12" fill="#5d4700">CV → 正常用；CC → 立刻断电查短路</text>
+
+  <text x="640" y="410" font-size="11" fill="#5d4037">限流就是实验台的保险丝——它是「接完先查再上电」（413 §413.3）的电气实现</text>
+
+  <!-- 结论 -->
+  <rect x="40" y="470" width="1120" height="72" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="60" y="498" font-size="13" font-weight="bold" fill="#bf360c">CC 灯亮不是电源坏了，是它在保护你——电压被拉低是代价，不是故障</text>
+  <text x="60" y="524" font-size="11.5" fill="#7f3f00">限流设太小会误进 CC，设太大等于没有保护；先算预期电流，再乘 1.5，然后才接线。</text>
+
+  <!-- 图例 -->
+  <rect x="40" y="552" width="1120" height="44" fill="#ffffff" stroke="#bdbdbd" stroke-width="1"/>
+  <rect x="56" y="567" width="22" height="14" rx="3" fill="#eceff1" stroke="#90a4ae" stroke-width="1"/>
+  <text x="88" y="578" font-size="12" fill="#37474f">操作步骤</text>
+  <rect x="256" y="567" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="288" y="578" font-size="12" fill="#37474f">判断点：灯亮哪个</text>
+</svg>

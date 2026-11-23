@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>万用表：先选接法，再读数字</title>
+  <rect x="0" y="0" width="1200" height="660" fill="#ffffff"/>
+
+  <!-- 坐标表：接法区 40,96,540,380；判据区 620,96,540,380；结论 40,510,1120,72；图例 40,600,1120,44；高 660 -->
+
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">万用表：先选接法，再读数字</text>
+  <text x="40" y="70" font-size="11" fill="#616161">来源：400 板块 454 §454.2 · 口径：常见数字表，通断阈值 10Ω / 51Ω 为通用量级，以表的手册为准 · 2026-11-23</text>
+
+  <!-- 左：接法 -->
+  <rect x="40" y="96" width="540" height="380" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="124" font-size="13" font-weight="bold" fill="#37474f">电压并联，电流串联</text>
+  <text x="60" y="146" font-size="11" fill="#616161">五个档位里只有电流档要拆断电路，其余都是跨接</text>
+
+  <text x="80" y="176" font-size="11.5" font-weight="bold" fill="#1b3d1e">电压档：并联</text>
+  <rect x="80" y="190" width="90" height="52" rx="5" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="125" y="214" font-size="11.5" font-weight="bold" fill="#5d4700" text-anchor="middle">负载 R</text>
+  <text x="125" y="230" font-size="11" fill="#5d4700" text-anchor="middle">220Ω</text>
+  <rect x="80" y="282" width="90" height="50" rx="5" fill="#bbdefb" stroke="#0d2f5c" stroke-width="1.5"/>
+  <text x="125" y="304" font-size="11.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">V 档（DC）</text>
+  <text x="125" y="320" font-size="11" fill="#0d2f5c" text-anchor="middle">表跨两端</text>
+  <line x1="92" y1="242" x2="92" y2="282" stroke="#616161" stroke-width="1.5"/>
+  <line x1="158" y1="242" x2="158" y2="282" stroke="#616161" stroke-width="1.5"/>
+  <text x="80" y="360" font-size="11" fill="#37474f">两根表笔夹在同一元件两端</text>
+  <text x="80" y="380" font-size="11" fill="#5d4037">读的是压差，不改变电路</text>
+
+  <text x="330" y="176" font-size="11.5" font-weight="bold" fill="#7f0000">电流档 A：串联</text>
+  <rect x="350" y="190" width="90" height="52" rx="5" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="395" y="214" font-size="11.5" font-weight="bold" fill="#5d4700" text-anchor="middle">负载 R</text>
+  <text x="395" y="230" font-size="11" fill="#5d4700" text-anchor="middle">220Ω</text>
+  <rect x="350" y="282" width="90" height="50" rx="5" fill="#bbdefb" stroke="#0d2f5c" stroke-width="1.5"/>
+  <text x="395" y="304" font-size="11.5" font-weight="bold" fill="#0d2f5c" text-anchor="middle">A 档</text>
+  <text x="395" y="320" font-size="11" fill="#0d2f5c" text-anchor="middle">串进回路</text>
+  <line x1="395" y1="242" x2="395" y2="248" stroke="#616161" stroke-width="1.5"/>
+  <line x1="395" y1="276" x2="395" y2="282" stroke="#616161" stroke-width="1.5"/>
+  <line x1="399" y1="262" x2="434" y2="262" stroke="#c62828" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="438" y="266" font-size="11" fill="#bf360c">拆断处</text>
+  <text x="330" y="360" font-size="11" fill="#37474f">断开一点，把表接进缺口</text>
+  <text x="330" y="380" font-size="11" fill="#bf360c">接错即烧表内保险</text>
+
+  <text x="60" y="424" font-size="11.5" font-weight="bold" fill="#bf360c">用电流档量电压：表内几乎 0Ω，等于把电源短路</text>
+  <text x="60" y="452" font-size="11" fill="#5d4037">换档前先撤表笔——带载拨量程，内部开关打火，伤表也可能伤人</text>
+
+  <!-- 右：判据 -->
+  <rect x="620" y="96" width="540" height="380" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="640" y="124" font-size="13" font-weight="bold" fill="#37474f">通断档三段：中间那段才是可疑区</text>
+  <text x="640" y="146" font-size="11" fill="#616161">≤10Ω 蜂鸣=通，&gt;51Ω 不响=断，之间不确定</text>
+
+  <rect x="640" y="170" width="220" height="40" fill="#c8e6c9"/>
+  <rect x="860" y="170" width="150" height="40" fill="#fff9c4"/>
+  <rect x="1010" y="170" width="110" height="40" fill="#ffcdd2"/>
+  <text x="750" y="195" font-size="11.5" font-weight="bold" fill="#1b3d1e" text-anchor="middle">≤10Ω 蜂鸣</text>
+  <text x="935" y="195" font-size="11" font-weight="bold" fill="#5d4700" text-anchor="middle">10~51Ω</text>
+  <text x="1065" y="195" font-size="11" font-weight="bold" fill="#7f0000" text-anchor="middle">&gt;51Ω 不响</text>
+
+  <text x="640" y="236" font-size="11" fill="#5d4037">落在中间：先怀疑接插件氧化、焊点虚焊，别急着换线</text>
+
+  <text x="640" y="272" font-size="11.5" font-weight="bold" fill="#37474f">二极管档：两个方向都量一次</text>
+  <rect x="640" y="288" width="150" height="64" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.2"/>
+  <text x="715" y="314" font-size="11.5" font-weight="bold" fill="#123314" text-anchor="middle">0.5~0.8V</text>
+  <text x="715" y="334" font-size="11" fill="#1b3d1e" text-anchor="middle">硅管正向，正常</text>
+
+  <rect x="815" y="288" width="150" height="64" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="890" y="314" font-size="11.5" font-weight="bold" fill="#7f0000" text-anchor="middle">两向都 0.5V</text>
+  <text x="890" y="334" font-size="11" fill="#7f0000" text-anchor="middle">击穿短路</text>
+
+  <rect x="990" y="288" width="150" height="64" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.2"/>
+  <text x="1065" y="314" font-size="11.5" font-weight="bold" fill="#37474f" text-anchor="middle">两向都 OL</text>
+  <text x="1065" y="334" font-size="11" fill="#37474f" text-anchor="middle">开路，已烧断</text>
+
+  <text x="640" y="384" font-size="11" fill="#5d4037">电阻档必须断电测：电路本身的电压会叠加进来，读数不可信</text>
+  <text x="640" y="406" font-size="11" fill="#5d4037">手别同时捏住两个表笔——人体电阻会并联进去，读数乱跳</text>
+  <text x="640" y="440" font-size="11" fill="#0d2f5c">红笔插 VΩmA（大电流插 10A），黑笔永远插 COM</text>
+
+  <!-- 结论 -->
+  <rect x="40" y="510" width="1120" height="72" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="60" y="538" font-size="13" font-weight="bold" fill="#bf360c">会读表的分界不在读数本身，而在「这个数落在哪个区间、说明什么」</text>
+  <text x="60" y="564" font-size="11.5" fill="#7f3f00">同一个 0V 可能是没通、可能只碰了一个点、也可能是档位选错——先排除接法，再怀疑电路。</text>
+
+  <!-- 图例 -->
+  <rect x="40" y="600" width="1120" height="44" fill="#ffffff" stroke="#bdbdbd" stroke-width="1"/>
+  <rect x="56" y="615" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="88" y="626" font-size="12" fill="#37474f">正常 / 通</text>
+  <rect x="256" y="615" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="288" y="626" font-size="12" fill="#37474f">不确定区（10~51Ω）</text>
+  <rect x="516" y="615" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1"/>
+  <text x="548" y="626" font-size="12" fill="#37474f">异常 / 断</text>
+  <rect x="716" y="615" width="22" height="14" rx="3" fill="#bbdefb" stroke="#0d2f5c" stroke-width="1"/>
+  <text x="748" y="626" font-size="12" fill="#37474f">万用表</text>
+</svg>

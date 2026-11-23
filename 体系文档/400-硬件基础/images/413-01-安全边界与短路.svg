@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>安全边界：国标电压分界与短路的后果链</title>
+  <rect x="0" y="0" width="1200" height="660" fill="#ffffff"/>
+
+  <!-- 坐标表：标尺区 40,96,1120,200；短路区 40,316,560,168；后果链 620,316,540,168；结论 40,510,1120,72；图例 40,600,1120,44；高 660 -->
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">安全边界：按国标电压值划线，不按手感</text>
+  <text x="40" y="70" font-size="11" fill="#616161">来源：400 板块 413 §413.2~413.3 · 口径：安全电压 = 交流 36V / 直流 24V 以下；短路电流按电源内阻 0.5Ω 估算 · 2026-11-23</text>
+
+  <!-- 标尺区 -->
+  <rect x="40" y="96" width="1120" height="200" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="124" font-size="13" font-weight="bold" fill="#37474f">一条线分强弱电：弱电传信号，强电传能量</text>
+  <text x="60" y="146" font-size="11" fill="#616161">本库全部实验 ≤5V 直流——这个上限不是保守，是「出了任何错都不会伤到人」</text>
+
+  <text x="328" y="180" font-size="11" font-weight="bold" fill="#1b3d1e" text-anchor="middle">弱电区 · 传信号</text>
+  <text x="860" y="180" font-size="11" font-weight="bold" fill="#7f0000" text-anchor="middle">强电区 · 传能量</text>
+
+  <rect x="100" y="186" width="457" height="28" fill="#c8e6c9"/>
+  <rect x="557" y="186" width="83" height="28" fill="#fff9c4"/>
+  <rect x="640" y="186" width="440" height="28" fill="#ffcdd2"/>
+  <text x="598" y="205" font-size="11" font-weight="bold" fill="#5d4700" text-anchor="middle">分界</text>
+
+  <line x1="155" y1="214" x2="155" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="155" y="240" font-size="11" fill="#37474f" text-anchor="middle">3.3V</text>
+  <line x1="240" y1="214" x2="240" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="240" y="240" font-size="11" fill="#37474f" text-anchor="middle">5V</text>
+  <line x1="417" y1="214" x2="417" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="417" y="240" font-size="11" fill="#37474f" text-anchor="middle">12V</text>
+  <line x1="557" y1="214" x2="557" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="557" y="240" font-size="11" fill="#37474f" text-anchor="middle">24V</text>
+  <line x1="640" y1="214" x2="640" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="640" y="240" font-size="11" fill="#37474f" text-anchor="middle">36V</text>
+  <line x1="698" y1="214" x2="698" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="698" y="240" font-size="11" fill="#37474f" text-anchor="middle">48V</text>
+  <line x1="1006" y1="214" x2="1006" y2="222" stroke="#616161" stroke-width="1.5"/>
+  <text x="1006" y="240" font-size="11" fill="#37474f" text-anchor="middle">220V</text>
+
+  <rect x="128" y="252" width="160" height="26" rx="4" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="208" y="270" font-size="11" font-weight="bold" fill="#123314" text-anchor="middle">本库实验区 ≤5V</text>
+  <text x="820" y="272" font-size="11" fill="#7f0000">220V 市电：一概不碰，不接线不改造</text>
+  <text x="820" y="292" font-size="11" fill="#616161">刻度按对数排布，只为看清量级</text>
+
+  <!-- 短路区 -->
+  <rect x="40" y="316" width="560" height="168" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="60" y="344" font-size="13" font-weight="bold" fill="#37474f">短路：电流只受内阻限制</text>
+  <text x="60" y="376" font-size="11.5" fill="#37474f">正常  I = U / R负载 = 5V / 220Ω ≈ 23 mA</text>
+  <text x="60" y="402" font-size="11.5" fill="#37474f">短路  I = U / R内阻 = 5V / 0.5Ω = 10 A</text>
+  <text x="60" y="432" font-size="12" font-weight="bold" fill="#bf360c">电压没变，电流放大约 400 倍</text>
+  <text x="60" y="460" font-size="11" fill="#5d4037">3.3V 有电源限流兜底；12V 电池与锂电池短路，几秒内见烟</text>
+
+  <!-- 后果链 -->
+  <rect x="620" y="316" width="540" height="168" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="640" y="344" font-size="13" font-weight="bold" fill="#37474f">后果链：顺序固定，不给反应时间</text>
+
+  <rect x="640" y="380" width="150" height="60" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="715" y="404" font-size="11.5" font-weight="bold" fill="#7f0000" text-anchor="middle">① 瞬间大电流</text>
+  <text x="715" y="424" font-size="11" fill="#7f0000" text-anchor="middle">A 级，远超额定</text>
+
+  <rect x="815" y="380" width="150" height="60" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="890" y="404" font-size="11.5" font-weight="bold" fill="#7f0000" text-anchor="middle">② 发热</text>
+  <text x="890" y="424" font-size="11" fill="#7f0000" text-anchor="middle">外皮软化、鼓包</text>
+
+  <rect x="990" y="380" width="150" height="60" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="1065" y="404" font-size="11.5" font-weight="bold" fill="#7f0000" text-anchor="middle">③ 起火 / 爆裂</text>
+  <text x="1065" y="424" font-size="11" fill="#7f0000" text-anchor="middle">3.3V 有保护</text>
+
+  <line x1="792" y1="410" x2="812" y2="410" stroke="#c62828" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="967" y1="410" x2="987" y2="410" stroke="#c62828" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 结论 -->
+  <rect x="40" y="510" width="1120" height="72" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="60" y="538" font-size="13" font-weight="bold" fill="#bf360c">四条红线不是清单，是肌肉记忆：≤5V 直流 · 接完先查再上电 · 220V 一概不碰 · 别用身体验证</text>
+  <text x="60" y="564" font-size="11.5" fill="#7f3f00">短路烧掉的板子查不回来。「我摸一下试试有没有电」是所有事故的共同开头。</text>
+
+  <!-- 图例 -->
+  <rect x="40" y="600" width="1120" height="44" fill="#ffffff" stroke="#bdbdbd" stroke-width="1"/>
+  <rect x="56" y="615" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="88" y="626" font-size="12" fill="#37474f">弱电区（≤24V 直流 / ≤36V 交流）</text>
+  <rect x="436" y="615" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="468" y="626" font-size="12" fill="#37474f">分界带（24~36V，看交直流）</text>
+  <rect x="776" y="615" width="22" height="14" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1"/>
+  <text x="808" y="626" font-size="12" fill="#37474f">强电区（传能量）</text>
+</svg>
