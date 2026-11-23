@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>硬件基础 · 知识地图</title>
+  <desc>五个技术模块十五册：从电的三个量到一块能跑的板</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff"/>
+
+  <text x="40" y="44" font-size="20" font-weight="bold" fill="#1b5e20">硬件基础 · 知识地图</text>
+  <text x="40" y="70" font-size="12" fill="#616161">来源：本库 400 板块 · 口径：直流低压 ≤5V，元件参数为典型值，正式设计以 datasheet 为准 · 2026-11-23</text>
+
+  <text x="40" y="98" font-size="14" font-weight="bold" fill="#1b5e20">五个技术模块：越往下越接近物理</text>
+  <text x="640" y="98" font-size="14" font-weight="bold" fill="#e65100">四个能亲手做出来的动作</text>
+
+  <!-- 410 -->
+  <rect x="40" y="110" width="560" height="96" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="56" y="140" font-size="15" font-weight="bold" fill="#123314">410 电学基础 · 最小模型：三个量 + 一个定律</text>
+  <text x="56" y="164" font-size="11.5" fill="#1b3d1e">电荷是属性，电流是流动，电压是推力，电阻是阻碍</text>
+  <text x="56" y="188" font-size="11.5" fill="#1b3d1e">411 电荷电压电流 · 412 欧姆定律与功率 · 413 安全边界</text>
+
+  <!-- 420 -->
+  <rect x="40" y="222" width="560" height="96" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="56" y="252" font-size="15" font-weight="bold" fill="#123314">420 电路拓扑 · 元件怎么连，连法决定结果</text>
+  <text x="56" y="276" font-size="11.5" fill="#1b3d1e">串联分压、并联分流；上拉把悬空引脚钉在确定电平</text>
+  <text x="56" y="300" font-size="11.5" fill="#1b3d1e">421 串联并联与分压分流 · 422 上拉下拉与悬空</text>
+
+  <!-- 430 -->
+  <rect x="40" y="334" width="560" height="96" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="56" y="364" font-size="15" font-weight="bold" fill="#123314">430 无源器件 · 不用电源就能工作的器件</text>
+  <text x="56" y="388" font-size="11.5" fill="#1b3d1e">电阻读丝印、电容四用、电感与机电件</text>
+  <text x="56" y="412" font-size="11.5" fill="#1b3d1e">431 全景与电阻 · 432 电容 · 433 电感继电器接插件</text>
+
+  <!-- 440 -->
+  <rect x="40" y="446" width="560" height="96" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="56" y="476" font-size="15" font-weight="bold" fill="#123314">440 半导体器件 · 单向导电是这一切的起点</text>
+  <text x="56" y="500" font-size="11.5" fill="#1b3d1e">PN 结是墙，正偏推倒、反偏加高；MOS 是芯片的最小单位</text>
+  <text x="56" y="524" font-size="11.5" fill="#1b3d1e">441 PN 结与二极管 · 442 三极管开关 · 443 MOS 与选型</text>
+
+  <!-- 450 -->
+  <rect x="40" y="558" width="560" height="96" rx="8" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="56" y="588" font-size="15" font-weight="bold" fill="#123314">450 板级实践 · 把器件接成一块能跑的板</text>
+  <text x="56" y="612" font-size="11.5" fill="#1b3d1e">最小系统四件 → 点灯 → 传感采样 → 仪器验证</text>
+  <text x="56" y="636" font-size="11.5" fill="#1b3d1e">451 最小系统 · 452 点灯 · 453 光感灯 · 454 仪器与验证</text>
+
+  <!-- 层间箭头 -->
+  <line x1="320" y1="206" x2="320" y2="218" stroke="#2e7d32" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="320" y1="318" x2="320" y2="330" stroke="#2e7d32" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="320" y1="430" x2="320" y2="442" stroke="#2e7d32" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="320" y1="542" x2="320" y2="554" stroke="#2e7d32" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 右侧四个动作 -->
+  <rect x="640" y="110" width="520" height="120" rx="8" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="656" y="142" font-size="15" font-weight="bold" fill="#7f3f00">会算 · 一颗限流电阻</text>
+  <text x="656" y="172" font-size="12.5" fill="#5d4037">（3.3 − 2）÷ 10mA ≈ 130Ω → 取标称 220Ω</text>
+  <text x="656" y="198" font-size="12.5" fill="#5d4037">再核一遍功率：13mW 远低于 1/8W 上限</text>
+  <text x="656" y="220" font-size="11.5" fill="#616161">412 · 全库所有电路计算的钥匙</text>
+
+  <rect x="640" y="246" width="520" height="120" rx="8" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="656" y="278" font-size="15" font-weight="bold" fill="#7f3f00">会读 · 一个贴片丝印</text>
+  <text x="656" y="308" font-size="12.5" fill="#5d4037">103 = 10kΩ；1002 = 10kΩ；10E = 1.24MΩ</text>
+  <text x="656" y="334" font-size="12.5" fill="#5d4037">看到字母结尾就去查表，别拿前两位当数字</text>
+  <text x="656" y="356" font-size="11.5" fill="#616161">431 · 三套读法覆盖 99% 的贴片电阻</text>
+
+  <rect x="640" y="382" width="520" height="120" rx="8" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="656" y="414" font-size="15" font-weight="bold" fill="#7f3f00">会连 · 一个 NPN 开关</text>
+  <text x="656" y="444" font-size="12.5" fill="#5d4037">GPIO 高 → B 有电流 → C-E 导通 → 负载得电</text>
+  <text x="656" y="470" font-size="12.5" fill="#5d4037">Rb 必加：B-E 是正偏 PN 结，直连等于短路</text>
+  <text x="656" y="492" font-size="11.5" fill="#616161">442 · 箭头朝外 NPN、朝内 PNP</text>
+
+  <rect x="640" y="518" width="520" height="120" rx="8" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="656" y="550" font-size="15" font-weight="bold" fill="#7f3f00">会数 · 一块板的最小系统</text>
+  <text x="656" y="580" font-size="12.5" fill="#5d4037">供电 + 去耦 · 复位 · 时钟 · BOOT 四件</text>
+  <text x="656" y="606" font-size="12.5" fill="#5d4037">缺一件就不算能跑；上电第一问就是四件齐不齐</text>
+  <text x="656" y="628" font-size="11.5" fill="#616161">451 · 拿到任何开发板先按这个顺序扫一遍</text>
+
+  <!-- 图例 -->
+  <rect x="40" y="690" width="14" height="14" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="62" y="702" font-size="12" fill="#616161">技术模块（必读主干）</text>
+  <rect x="250" y="690" width="14" height="14" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+  <text x="272" y="702" font-size="12" fill="#616161">收敛点（15 册最终合成一块板）</text>
+  <rect x="530" y="690" width="14" height="14" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="552" y="702" font-size="12" fill="#616161">可动手的动作（验证学会了没有）</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="716" width="1120" height="64" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="60" y="744" font-size="13" font-weight="bold" fill="#bf360c">一条链：电荷 → 元件 → 器件 → 电路 → 板子，每层交付一个能动手的动作</text>
+  <text x="60" y="766" font-size="11.5" fill="#7f3f00">跳层会缺直觉：跳过 440 直接看 MOS 电路图，会完全读不懂</text>
+</svg>

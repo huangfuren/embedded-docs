@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>丝印识别决策流：先看有没有字母，再数位数</title>
+  <rect x="0" y="0" width="1200" height="700" fill="#ffffff"/>
+
+  <!-- 坐标表：开始 430,96,340,56；判断1 430,176,340,64；判断2 130,290,340,64；判断3 730,290,340,64；结果 y=410 h=80 宽 230；结论 60,520,1080,84；图例 60,620,1080,44；高 700 -->
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#607d8b"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">丝印识别决策流：先看有没有字母，再数位数</text>
+  <text x="40" y="70" font-size="11" fill="#616161">来源：400 板块 431 §431.5 · 口径：贴片电阻 EIA 标准标注，精度与读法一一对应 · 2026-11-23</text>
+
+  <!-- 开始 -->
+  <rect x="430" y="96" width="340" height="56" rx="28" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="600" y="131" font-size="17" font-weight="bold" fill="#0d2f5c" text-anchor="middle">拿到丝印，先看它长什么样</text>
+
+  <line x1="600" y1="152" x2="600" y2="169" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 判断 1 -->
+  <rect x="430" y="176" width="340" height="64" rx="32" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="600" y="215" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">丝印里有字母吗？</text>
+
+  <!-- 判断 1 → 判断 2（无字母） -->
+  <path d="M 600 240 V 255 H 300 V 283" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="452" y="249" font-size="11.5" fill="#5d4700">没有字母</text>
+
+  <!-- 判断 1 → 判断 3（有字母） -->
+  <path d="M 600 240 V 255 H 900 V 283" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="700" y="249" font-size="11.5" fill="#5d4700">有字母</text>
+
+  <!-- 判断 2 -->
+  <rect x="130" y="290" width="340" height="64" rx="32" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="300" y="329" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">纯数字：一共几位？</text>
+
+  <!-- 判断 3 -->
+  <rect x="730" y="290" width="340" height="64" rx="32" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="900" y="329" font-size="15" font-weight="bold" fill="#5d4700" text-anchor="middle">字母是 R，还是乘数？</text>
+
+  <!-- 判断 2 → 结果 -->
+  <path d="M 300 354 V 362 H 175 V 403" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="214" y="356" font-size="11.5" fill="#5d4700">3 位</text>
+  <path d="M 300 354 V 362 H 425 V 403" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="372" y="356" font-size="11.5" fill="#5d4700">4 位</text>
+
+  <!-- 判断 3 → 结果 -->
+  <path d="M 900 354 V 362 H 775 V 403" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="836" y="356" font-size="11.5" fill="#5d4700">就是 R</text>
+  <path d="M 900 354 V 362 H 1025 V 403" fill="none" stroke="#607d8b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="962" y="356" font-size="11.5" fill="#5d4700">乘数字母</text>
+
+  <!-- 结果 1：三位数字法 -->
+  <rect x="60" y="410" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="175" y="440" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">三位数字法</text>
+  <text x="175" y="462" font-size="11.5" fill="#1b3d1e" text-anchor="middle">前两位 × 10 的末位次方</text>
+  <text x="175" y="480" font-size="11.5" fill="#1b3d1e" text-anchor="middle">103 → 10kΩ</text>
+
+  <!-- 结果 2：四位数字法 -->
+  <rect x="310" y="410" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="425" y="440" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">四位数字法</text>
+  <text x="425" y="462" font-size="11.5" fill="#1b3d1e" text-anchor="middle">前三位 × 10 的末位次方</text>
+  <text x="425" y="480" font-size="11.5" fill="#1b3d1e" text-anchor="middle">1002 → 10kΩ（±1%）</text>
+
+  <!-- 结果 3：R 当小数点 -->
+  <rect x="660" y="410" width="230" height="80" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="775" y="440" font-size="15" font-weight="bold" fill="#123314" text-anchor="middle">R 就是小数点</text>
+  <text x="775" y="462" font-size="11.5" fill="#1b3d1e" text-anchor="middle">2R4 = 2.4Ω　R15 = 0.15Ω</text>
+  <text x="775" y="480" font-size="11.5" fill="#1b3d1e" text-anchor="middle">不查表，直接读出</text>
+
+  <!-- 结果 4：EIA-96 -->
+  <rect x="910" y="410" width="230" height="80" rx="6" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1.5"/>
+  <text x="1025" y="440" font-size="15" font-weight="bold" fill="#311b92" text-anchor="middle">EIA-96 查表</text>
+  <text x="1025" y="462" font-size="11.5" fill="#311b92" text-anchor="middle">查 01~96 → 再乘字母乘数</text>
+  <text x="1025" y="480" font-size="11.5" fill="#311b92" text-anchor="middle">10E = 124 × 10⁴ = 1.24MΩ</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="520" width="1080" height="84" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="80" y="548" font-size="15" font-weight="bold" fill="#bf360c">最容易读错的一对：10E 与 103</text>
+  <text x="80" y="574" font-size="12.5" fill="#5d4037">103 = 10kΩ（三位数字法）；10E = 1.24MΩ（EIA-96：查表 10 = 124，乘数 E = 10⁴）—— 两者差 124 倍。</text>
+  <text x="80" y="594" font-size="12.5" fill="#5d4037">判别口诀：看到字母结尾一律查表，别把前两位当有效数字用；字母 R 例外，它只是小数点。</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="620" width="1080" height="44" fill="#ffffff" stroke="#bdbdbd" stroke-width="1"/>
+  <rect x="76" y="635" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="108" y="646" font-size="12" fill="#37474f">起点</text>
+  <rect x="346" y="635" width="22" height="14" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="378" y="646" font-size="12" fill="#37474f">判断节点</text>
+  <rect x="616" y="635" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="648" y="646" font-size="12" fill="#37474f">直接算出</text>
+  <rect x="886" y="635" width="22" height="14" rx="3" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1"/>
+  <text x="918" y="646" font-size="12" fill="#37474f">必须查表</text>
+</svg>

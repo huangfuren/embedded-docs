@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>串联分压电路</title>
+  <rect x="0" y="0" width="1200" height="580" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">串联分压：两只电阻，把 5V 降到单片机敢读的 3.3V</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：400 板块 421 §421.3 · 口径：直流低压 ≤5V，取标称值 E24 系列 · 2026-11-23</text>
+
+  <!-- 左：电路 -->
+  <rect x="60" y="96" width="560" height="324" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="122" font-size="12.5" font-weight="bold" fill="#37474f">串联 = 一条路，电流处处相等，电压按电阻比例劈开</text>
+
+  <rect x="290" y="132" width="80" height="32" rx="16" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="330" y="153" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">5 V</text>
+
+  <line x1="330" y1="164" x2="330" y2="186" stroke="#616161" stroke-width="1.5"/>
+
+  <rect x="270" y="186" width="120" height="60" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="330" y="212" font-size="14" font-weight="bold" fill="#5d4700" text-anchor="middle">R1</text>
+  <text x="330" y="234" font-size="12" fill="#5d4700" text-anchor="middle">10 kΩ</text>
+
+  <line x1="330" y1="246" x2="330" y2="306" stroke="#616161" stroke-width="1.5"/>
+  <circle cx="330" cy="278" r="4" fill="#616161"/>
+
+  <rect x="270" y="306" width="120" height="60" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="330" y="332" font-size="14" font-weight="bold" fill="#5d4700" text-anchor="middle">R2</text>
+  <text x="330" y="354" font-size="12" fill="#5d4700" text-anchor="middle">20 kΩ</text>
+
+  <line x1="330" y1="366" x2="330" y2="388" stroke="#616161" stroke-width="1.5"/>
+  <line x1="314" y1="388" x2="346" y2="388" stroke="#616161" stroke-width="2"/>
+  <line x1="320" y1="394" x2="340" y2="394" stroke="#616161" stroke-width="2"/>
+  <line x1="326" y1="400" x2="334" y2="400" stroke="#616161" stroke-width="2"/>
+
+  <line x1="330" y1="278" x2="474" y2="278" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="474" y="252" width="126" height="52" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="537" y="274" font-size="12.5" fill="#123314" text-anchor="middle">输出点 Vout</text>
+  <text x="537" y="294" font-size="14" font-weight="bold" fill="#123314" text-anchor="middle">3.33 V</text>
+
+  <text x="420" y="240" font-size="11" fill="#616161">Vout 从两电阻中间引出</text>
+  <text x="420" y="328" font-size="11" fill="#616161">R2 承担剩下的 1.67V</text>
+  <text x="420" y="346" font-size="11" fill="#616161">下端接 GND</text>
+
+  <!-- 右上：公式 -->
+  <rect x="650" y="96" width="490" height="104" rx="6" fill="#f1f8e9" stroke="#a5d6a7" stroke-width="1.5"/>
+  <text x="670" y="122" font-size="12.5" font-weight="bold" fill="#1b3d1e">通用式：输出取的是下臂</text>
+  <text x="670" y="150" font-size="12.5" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">Vout = Vin × R2 ÷ (R1 + R2)</text>
+  <text x="670" y="182" font-size="15" font-weight="bold" fill="#1b3d1e">= 5 × 20 ÷ 30 = 3.33 V</text>
+
+  <!-- 右中：用途 -->
+  <rect x="650" y="218" width="490" height="76" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="670" y="244" font-size="12.5" font-weight="bold" fill="#0d2f5c">用途：电平对齐</text>
+  <text x="670" y="270" font-size="11.5" fill="#0d2f5c">5V 传感器输出 → 分压到 3.3V → 单片机 ADC / GPIO 才敢读</text>
+
+  <!-- 右下：边界 -->
+  <rect x="650" y="312" width="490" height="108" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="670" y="338" font-size="12.5" font-weight="bold" fill="#7f3f00">边界：分压带不动负载</text>
+  <text x="670" y="362" font-size="11.5" fill="#7f3f00">输出点再接「吃电流」的器件，电压立刻被拉低（负载效应）</text>
+  <text x="670" y="384" font-size="11.5" fill="#7f3f00">喂 ADC 这类高阻输入够用；要驱动 LED 必须回到限流思路</text>
+  <text x="670" y="406" font-size="11.5" fill="#7f3f00">判断口诀：下游要电流 ⇒ 不能用分压供</text>
+
+  <!-- 下：三道题 -->
+  <rect x="60" y="440" width="340" height="70" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="80" y="466" font-size="11.5" fill="#616161">题 1　R1 = R2 = 10kΩ 串联接 5V</text>
+  <text x="80" y="492" font-size="14" font-weight="bold" fill="#0d2f5c">2.5 V —— 对半分</text>
+
+  <rect x="430" y="440" width="340" height="70" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="450" y="466" font-size="11.5" fill="#616161">题 2　要从 5V 分出 1.8V，R1 = 10kΩ</text>
+  <text x="450" y="492" font-size="14" font-weight="bold" fill="#5d4700">R2 ≈ 5.6 kΩ（标称 5.6k）</text>
+
+  <rect x="800" y="440" width="340" height="70" rx="6" fill="#ffffff" stroke="#cfd8dc" stroke-width="1.5"/>
+  <text x="820" y="466" font-size="11.5" fill="#616161">题 3　6V 串 100Ω 供 LED（压降 2V）</text>
+  <text x="820" y="492" font-size="14" font-weight="bold" fill="#c62828">40 mA 超限 → 改 200Ω</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="550" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="560" font-size="11" fill="#37474f">输入电压</text>
+  <rect x="190" y="550" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="220" y="560" font-size="11" fill="#37474f">分压电阻</text>
+  <rect x="320" y="550" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="350" y="560" font-size="11" fill="#37474f">输出点</text>
+  <rect x="450" y="550" width="22" height="12" rx="3" fill="#f1f8e9" stroke="#a5d6a7" stroke-width="1"/>
+  <text x="480" y="560" font-size="11" fill="#37474f">公式推导</text>
+  <rect x="580" y="550" width="22" height="12" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="610" y="560" font-size="11" fill="#37474f">限制与风险</text>
+</svg>

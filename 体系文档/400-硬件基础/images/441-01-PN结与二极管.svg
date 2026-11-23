@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>PN 结与二极管单向导电</title>
+  <defs>
+    <marker id="arwE" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#c62828"/>
+    </marker>
+    <marker id="arwAx2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#616161"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="520" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">PN 结：耗尽层是一堵墙，正偏推倒它、反偏加高它</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：441 §441.1~441.4 · 单向导电不是"阀门"的比喻，而是耗尽层宽度随电压方向变化的结果</text>
+
+  <!-- 卡① 平衡态 -->
+  <rect x="60" y="92" width="340" height="152" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="116" font-size="12" font-weight="bold" fill="#37474f">① 刚接触：扩散与复合</text>
+  <rect x="86" y="130" width="110" height="72" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="141" y="172" font-size="13" font-weight="bold" fill="#7f0000" text-anchor="middle">P 型</text>
+  <text x="141" y="192" font-size="11" fill="#7f0000" text-anchor="middle">空穴多</text>
+  <rect x="196" y="130" width="40" height="72" fill="#fff9c4" stroke="#f9a825" stroke-width="1.2"/>
+  <text x="216" y="160" font-size="11" fill="#5d4700" text-anchor="middle">耗尽</text>
+  <text x="216" y="176" font-size="11" fill="#5d4700" text-anchor="middle">层</text>
+  <rect x="236" y="130" width="132" height="72" fill="#bbdefb" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="302" y="172" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N 型</text>
+  <text x="302" y="192" font-size="11" fill="#0d2f5c" text-anchor="middle">电子多</text>
+  <line x1="176" y1="164" x2="194" y2="164" stroke="#c62828" stroke-width="1.5" marker-end="url(#arwE)"/>
+  <line x1="256" y1="182" x2="238" y2="182" stroke="#c62828" stroke-width="1.5" marker-end="url(#arwE)"/>
+  <text x="80" y="228" font-size="11" fill="#616161">载流子相互扩散，交界处被清空，只剩固定离子</text>
+
+  <!-- 卡② 正偏 -->
+  <rect x="430" y="92" width="340" height="152" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="450" y="116" font-size="12" font-weight="bold" fill="#2e7d32">② 正偏：P 接高、N 接低</text>
+  <rect x="456" y="130" width="128" height="72" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="520" y="172" font-size="13" font-weight="bold" fill="#7f0000" text-anchor="middle">P</text>
+  <rect x="584" y="130" width="18" height="72" fill="#fff9c4" stroke="#f9a825" stroke-width="1.2"/>
+  <rect x="602" y="130" width="138" height="72" fill="#bbdefb" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="671" y="172" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N</text>
+  <text x="450" y="222" font-size="11" font-weight="bold" fill="#2e7d32">耗尽层变窄 → 墙被削弱 → 导通</text>
+  <text x="450" y="238" font-size="11" fill="#616161">电流大，硅管压降约 0.6~0.7V</text>
+
+  <!-- 卡③ 反偏 -->
+  <rect x="800" y="92" width="340" height="152" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="820" y="116" font-size="12" font-weight="bold" fill="#7f0000">③ 反偏：P 接低、N 接高</text>
+  <rect x="826" y="130" width="100" height="72" fill="#ffcdd2" stroke="#c62828" stroke-width="1.2"/>
+  <text x="876" y="172" font-size="13" font-weight="bold" fill="#7f0000" text-anchor="middle">P</text>
+  <rect x="932" y="130" width="42" height="72" fill="#fff9c4" stroke="#f9a825" stroke-width="1.2"/>
+  <text x="953" y="160" font-size="11" fill="#5d4700" text-anchor="middle">宽</text>
+  <text x="953" y="178" font-size="11" fill="#5d4700" text-anchor="middle">耗尽层</text>
+  <rect x="980" y="130" width="100" height="72" fill="#bbdefb" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="1030" y="172" font-size="13" font-weight="bold" fill="#0d2f5c" text-anchor="middle">N</text>
+  <text x="820" y="222" font-size="11" font-weight="bold" fill="#7f0000">耗尽层变宽 → 墙加高 → 截止</text>
+  <text x="820" y="238" font-size="11" fill="#616161">只有 μA 级漏电流，几乎不导通</text>
+
+  <!-- 伏安特性 -->
+  <rect x="60" y="264" width="700" height="196" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="80" y="288" font-size="12.5" font-weight="bold" fill="#37474f">二极管的伏安特性：正向陡升、反向几乎贴轴</text>
+
+  <line x1="150" y1="400" x2="560" y2="400" stroke="#616161" stroke-width="1.2" marker-end="url(#arwAx2)"/>
+  <line x1="300" y1="430" x2="300" y2="300" stroke="#616161" stroke-width="1.2" marker-end="url(#arwAx2)"/>
+  <text x="520" y="420" font-size="11" fill="#616161">正向电压 →</text>
+  <text x="306" y="310" font-size="11" fill="#616161">电流 I ↑</text>
+
+  <!-- 正向曲线 -->
+  <path d="M 300 400 L 338 400 C 356 398 372 372 388 330 C 398 306 408 296 418 290" fill="none" stroke="#c62828" stroke-width="2.5"/>
+  <!-- 反向曲线：贴近横轴 -->
+  <path d="M 300 400 L 176 401" fill="none" stroke="#c62828" stroke-width="2.5"/>
+  <text x="344" y="346" font-size="11" font-weight="bold" fill="#c62828">0.6~0.7V 后急速上升</text>
+  <text x="168" y="386" font-size="11" fill="#7f0000">反向：μA 级漏电流</text>
+  <text x="160" y="422" font-size="11" fill="#616161">击穿区（超出本图）</text>
+
+  <!-- 右侧：五种用法 -->
+  <text x="790" y="288" font-size="12.5" font-weight="bold" fill="#37474f">一颗二极管能干五件事</text>
+  <text x="790" y="316" font-size="11.5" fill="#7f0000">① 整流：交流变直流</text>
+  <text x="790" y="340" font-size="11.5" fill="#7f0000">② 防反接：电源接反时截止</text>
+  <text x="790" y="364" font-size="11.5" fill="#7f0000">③ 续流：线圈断电时泄放</text>
+  <text x="790" y="388" font-size="11.5" fill="#7f0000">④ 稳压：反向击穿后电压稳定</text>
+  <text x="790" y="412" font-size="11.5" fill="#7f0000">⑤ 发光：LED 与数码管点阵</text>
+  <text x="790" y="440" font-size="11" fill="#616161">LED 压降更高：红黄 1.8~2.2V、蓝白 3.0~3.4V</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="488" width="22" height="12" rx="3" fill="#ffcdd2" stroke="#c62828" stroke-width="1"/>
+  <text x="90" y="498" font-size="11" fill="#37474f">P 型区（空穴多）</text>
+  <rect x="240" y="488" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="270" y="498" font-size="11" fill="#37474f">N 型区（电子多）</text>
+  <rect x="420" y="488" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="450" y="498" font-size="11" fill="#37474f">耗尽层（空间电荷区）</text>
+</svg>

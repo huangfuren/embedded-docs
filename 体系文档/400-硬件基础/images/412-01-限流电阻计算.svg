@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <title>限流电阻计算三步</title>
+  <defs>
+    <marker id="arwGray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#90a4ae"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="540" fill="#ffffff"/>
+
+  <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">LED 限流电阻：三个已知量，一条算式，三步收口</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：400 板块 412 §412.4 · 口径：直流低压 ≤5V，LED 压降为典型值，正式设计以 datasheet 为准 · 2026-11-23</text>
+
+  <!-- 已知量 -->
+  <rect x="60" y="96" width="280" height="110" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="80" y="122" font-size="12.5" fill="#0d2f5c">供电 Vcc</text>
+  <text x="80" y="160" font-size="20" font-weight="bold" fill="#0d2f5c">3.3 V</text>
+  <text x="80" y="186" font-size="11" fill="#1565c0">单片机 IO 的高电平电压</text>
+
+  <rect x="360" y="96" width="280" height="110" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="380" y="122" font-size="12.5" fill="#5d4700">LED 正向压降 Vf</text>
+  <text x="380" y="160" font-size="20" font-weight="bold" fill="#5d4700">≈ 2 V</text>
+  <text x="380" y="186" font-size="11" fill="#5d4700">典型值，以 datasheet 为准</text>
+
+  <rect x="660" y="96" width="280" height="110" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="680" y="122" font-size="12.5" fill="#123314">目标电流 I</text>
+  <text x="680" y="160" font-size="20" font-weight="bold" fill="#123314">10 mA</text>
+  <text x="680" y="186" font-size="11" fill="#2e5230">常规 LED 5~20mA 的中间值</text>
+
+  <rect x="960" y="96" width="180" height="110" rx="6" fill="#ffffff" stroke="#90a4ae" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="980" y="122" font-size="12.5" fill="#616161">要求</text>
+  <text x="980" y="160" font-size="20" font-weight="bold" fill="#616161">R = ?</text>
+  <text x="980" y="186" font-size="11" fill="#616161">要算的就是它</text>
+
+  <!-- 三步 -->
+  <rect x="60" y="232" width="330" height="108" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="80" y="258" font-size="13" font-weight="bold" fill="#123314">① 先算阻值</text>
+  <text x="80" y="286" font-size="13" fill="#1b3d1e" font-family="ui-monospace,Menlo,Consolas,monospace">R = (3.3 − 2) ÷ 0.01</text>
+  <text x="80" y="310" font-size="15" font-weight="bold" fill="#1b3d1e">= 130 Ω</text>
+  <text x="80" y="330" font-size="11" fill="#2e5230">压降差除以电流，单位先换成 A</text>
+
+  <line x1="392" y1="286" x2="424" y2="286" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arwGray)"/>
+
+  <rect x="430" y="232" width="330" height="108" rx="6" fill="#fff9c4" stroke="#f9a825" stroke-width="2"/>
+  <text x="450" y="258" font-size="13" font-weight="bold" fill="#5d4700">② 再取标称值</text>
+  <text x="450" y="286" font-size="13" fill="#5d4700" font-family="ui-monospace,Menlo,Consolas,monospace">130 Ω → 220 Ω</text>
+  <text x="450" y="310" font-size="15" font-weight="bold" fill="#5d4700">往大取，不往小取</text>
+  <text x="450" y="330" font-size="11" fill="#5d4700">宁可暗一点，不能烧</text>
+
+  <line x1="762" y1="286" x2="794" y2="286" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#arwGray)"/>
+
+  <rect x="800" y="232" width="340" height="108" rx="6" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+  <text x="820" y="258" font-size="13" font-weight="bold" fill="#7f3f00">③ 最后验功率</text>
+  <text x="820" y="286" font-size="13" fill="#7f3f00" font-family="ui-monospace,Menlo,Consolas,monospace">P = 1.3V × 0.01A</text>
+  <text x="820" y="310" font-size="15" font-weight="bold" fill="#7f3f00">= 13 mW，远低于 1/8W ✓</text>
+  <text x="820" y="330" font-size="11" fill="#7f3f00">超功率 = 发烫烧毁，必须验</text>
+
+  <!-- 验证三条 -->
+  <rect x="60" y="366" width="1080" height="80" rx="6" fill="#f1f8e9" stroke="#a5d6a7" stroke-width="1.5"/>
+  <text x="80" y="390" font-size="12.5" font-weight="bold" fill="#1b3d1e">按 220Ω 反算，三条对得上才算做完</text>
+  <text x="80" y="412" font-size="11.5" fill="#1b3d1e">① 电流 = (3.3 − 2) ÷ 220 ≈ 5.9 mA —— 比目标小，LED 略暗但安全</text>
+  <text x="600" y="412" font-size="11.5" fill="#1b3d1e">② 功率 = 0.0059² × 220 ≈ 7.6 mW ＜ 125 mW ✓</text>
+  <text x="80" y="434" font-size="11.5" fill="#c62828">③ 若不串电阻：LED 直接承担 3.3V，电流远超额定 → 烧毁（任何 LED 电路必须有限流电阻）</text>
+
+  <text x="60" y="480" font-size="11.5" fill="#616161">试一试：目标 20mA → 65Ω 取 68Ω ｜ 供电改 5V → 300Ω 取 330Ω ｜ 换的只是数字，三步一步都不能少</text>
+
+  <!-- 图例 -->
+  <rect x="60" y="514" width="22" height="12" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="90" y="524" font-size="11" fill="#37474f">已知条件</text>
+  <rect x="190" y="514" width="22" height="12" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="220" y="524" font-size="11" fill="#37474f">中间计算</text>
+  <rect x="320" y="514" width="22" height="12" rx="3" fill="#fff9c4" stroke="#f9a825" stroke-width="1"/>
+  <text x="350" y="524" font-size="11" fill="#37474f">标称取值</text>
+  <rect x="450" y="514" width="22" height="12" rx="3" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+  <text x="480" y="524" font-size="11" fill="#37474f">功率校验</text>
+  <rect x="580" y="514" width="22" height="12" rx="3" fill="#f1f8e9" stroke="#a5d6a7" stroke-width="1"/>
+  <text x="610" y="524" font-size="11" fill="#37474f">反算验证</text>
+</svg>
