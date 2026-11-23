@@ -104,7 +104,7 @@
   <text x="640" y="256" font-size="17" font-weight="bold" fill="#7f3f00" font-family="ui-monospace,Menlo,Consolas,monospace">-1</text>
   <text x="640" y="276" font-size="11" fill="#7f3f00">全 1 = −1；补码让加法电路不必为负数另做一套</text>
 
-  <text x="60" y="306" font-size="11.5" fill="#37474f">同一块内存、同一串位 —— 差别只在「用什么类型去解释」，这就是 类型 = 宽度 + 解释（C 语言 002 §2.1）</text>
+  <text x="60" y="306" font-size="11.5" fill="#37474f">同一块内存、同一串位 —— 差别只在「用什么类型去解释」，这就是 类型 = 宽度 + 解释（C 语言 121 §121.1）</text>
 
   <!-- ============ 下：0x1F 与左移 ============ -->
   <text x="60" y="344" font-size="13" font-weight="bold" fill="#37474f">换成小数字看对译：0x1F = 0001 1111 = 31</text>

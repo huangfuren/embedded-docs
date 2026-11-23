@@ -54,14 +54,14 @@
 
 ## 换机复原：机械校验脚本（本地层约定）
 
-校验执行器 `kb-validate` 在 `.agents/skills/kb-validate/scripts/validate.sh`，因 `.gitignore` 的 `.*/` 规则**不随仓库走**（脚本一律随技能走，不设根级 `scripts/`，同姊妹库提交 `418dfb1` 的决定）。换机器 clone 后按下面三条复原再跑校验，否则第 2/5、3/5 段会误报并拦住提交：
+校验执行器 `kb-validate` 在 `.agents/skills/kb-validate/scripts/validate.sh`，因 `.gitignore` 的 `.*/` 规则**不随仓库走**（脚本一律随技能走，不设根级 `scripts/`，同姊妹库提交 `418dfb1` 的决定）。换机器 clone 后按下面三条复原再跑校验，否则第 2/6、3/6 段会误报并拦住提交：
 
 1. **归档目录排除**：本库暂无归档目录；将来若产生，目录名必须含「原尺寸」三字，脚本两处 SVG 扫描按目录名排除：
-   - 第 2/5 段文件清单：`( cd 体系文档 && find . -name '*.svg' -not -path '*_render*' -not -path '*原尺寸*' )`
-   - 第 3/5 段文件计数：`find 体系文档 -name '*.svg' -not -path '*_render*' -not -path '*原尺寸*'`
+   - 第 2/6 段文件清单：`( cd 体系文档 && find . -name '*.svg' -not -path '*_render*' -not -path '*原尺寸*' )`
+   - 第 3/6 段文件计数：`find 体系文档 -name '*.svg' -not -path '*_render*' -not -path '*原尺寸*'`
 
    漏掉会把归档图算成「孤儿图」，退出码非 0，按 013 禁止提交，且假报会掩盖真报。
-2. **术语表条目数对账**：第 3/5 段除份数外还对账条目数（口径见根 `README.md` 状态表下方说明）；增删术语须同步状态表。
+2. **术语表条目数对账**：第 3/6 段除份数外还对账条目数（口径见根 `README.md` 状态表下方说明）；增删术语须同步状态表。
 3. **判定基准**：全部 PASS，状态表五项（板块 / 正文册 / 术语表份数与条目 / 图 / 引用）声称值 = 实数值，SVG 引用数 = 文件数、零孤儿零重复（**具体数字以根 `README.md` 状态表为准，本页不复述**）。
 
 规则全文在 `.agents/rules/`（同为本地层）；库背景与姊妹库源流见 `.agents/memorys/001-库背景与口径.md`。
