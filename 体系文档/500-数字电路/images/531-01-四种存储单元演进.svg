@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="460" fill="#ffffff"/>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">四种存储单元：一步步把"何时能改"钉死</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.1~3.5 · 前三种看电平、最后一种看边沿；记忆的底子始终是同一个——输出接回输入</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：531~533 · 前三种看电平、最后一种看边沿；记忆的底子始终是同一个——输出接回输入</text>
 
   <!-- 卡 1 -->
   <rect x="60" y="100" width="252" height="170" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>

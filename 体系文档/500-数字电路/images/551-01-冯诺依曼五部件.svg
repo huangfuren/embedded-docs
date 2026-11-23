@@ -9,7 +9,7 @@
   </defs>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">冯诺依曼五部件：缺一件都不转</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.1 · 前四册造的是零件，这一册造那个「喊开始」的控制器；五件之外还有一条规则：程序和数据同住一块存储器</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：551 §551.1 · 前四册造的是零件，这一册造那个「喊开始」的控制器；五件之外还有一条规则：程序和数据同住一块存储器</text>
 
   <!-- ===== 存储器 ===== -->
   <rect x="60" y="100" width="700" height="112" rx="12" fill="#f1f8e9" fill-opacity="0.55" stroke="#2e7d32" stroke-width="2"/>
@@ -36,28 +36,28 @@
   <rect x="84" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="104" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">控制器 CU</text>
   <text x="104" y="350" font-size="11.5" fill="#37474f">取指 · 译码 · 发控制</text>
-  <text x="104" y="372" font-size="11" fill="#1565c0">本册 §5.3</text>
+  <text x="104" y="372" font-size="11" fill="#1565c0">552 §552.3</text>
 
   <line x1="286" y1="343" x2="306" y2="343" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
 
   <rect x="310" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="330" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">寄存器 / 累加器</text>
   <text x="330" y="350" font-size="11.5" fill="#37474f">手边的临时值</text>
-  <text x="330" y="372" font-size="11" fill="#1565c0">本库 003 册</text>
+  <text x="330" y="372" font-size="11" fill="#1565c0">本板块 533 册</text>
 
   <line x1="512" y1="343" x2="532" y2="343" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
 
   <rect x="536" y="296" width="200" height="94" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
   <text x="556" y="324" font-size="15" font-weight="bold" fill="#0d2f5c">运算器 ALU</text>
   <text x="556" y="350" font-size="11.5" fill="#37474f">加减与或移位</text>
-  <text x="556" y="372" font-size="11" fill="#1565c0">本库 002 册</text>
+  <text x="556" y="372" font-size="11" fill="#1565c0">本板块 522 册</text>
 
   <!-- CPU → 输入输出 -->
   <line x1="410" y1="410" x2="410" y2="446" stroke="#1565c0" stroke-width="2" marker-end="url(#aBlue)"/>
 
   <rect x="84" y="452" width="652" height="56" rx="28" fill="#eceff1" stroke="#607d8b" stroke-width="2"/>
   <text x="112" y="486" font-size="15" font-weight="bold" fill="#37474f">输入 / 输出</text>
-  <text x="236" y="486" font-size="11.5" fill="#546e7a">与外部世界打交道 · GPIO 是它的最小形态 · 规划 006 册</text>
+  <text x="236" y="486" font-size="11.5" fill="#546e7a">与外部世界打交道 · GPIO 是它的最小形态 · 规划 600 板块</text>
 
   <!-- ===== 右栏 1：存储程序 ===== -->
   <rect x="790" y="100" width="350" height="176" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
@@ -66,7 +66,7 @@
   <text x="812" y="182" font-size="11.5" fill="#5d4037">改存的内容，不改电路</text>
   <text x="812" y="206" font-size="11.5" fill="#5d4037">这是「通用计算机」的前提</text>
   <text x="812" y="230" font-size="11.5" fill="#5d4037">也是同一条加法指令能反复用的原因</text>
-  <text x="812" y="254" font-size="11" fill="#5d4037">PC 能一直往下走，靠的也是这条规则（§5.5）</text>
+  <text x="812" y="254" font-size="11" fill="#5d4037">PC 能一直往下走，靠的也是这条规则（553 §553.1）</text>
 
   <!-- ===== 右栏 2：缺一件 ===== -->
   <rect x="790" y="296" width="350" height="212" rx="6" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
@@ -81,7 +81,7 @@
   <!-- ===== 结论 ===== -->
   <rect x="60" y="528" width="1080" height="76" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="84" y="560" font-size="14" font-weight="bold" fill="#7f3f00">五件凑齐只是「能算」，还差一条指令流把它们串起来</text>
-  <text x="84" y="586" font-size="12" fill="#5d4037">这条流就是后面四节：指令怎么编（§5.2~5.4）→ 谁记住下一条（§5.5）→ 怎么对外动作（§5.6）→ 怎么真的跑起来（§5.7）</text>
+  <text x="84" y="586" font-size="12" fill="#5d4037">这条流就是后面四节：指令怎么编（552 §552.2~552.4）→ 谁记住下一条（553 §553.1）→ 怎么对外动作（553 §553.3）→ 怎么真的跑起来（553 §553.5）</text>
 
   <!-- ===== 图例 ===== -->
   <rect x="60" y="622" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>

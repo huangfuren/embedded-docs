@@ -9,7 +9,7 @@
   </defs>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">加法的三级跳：每一跳都在补上一个缺口</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §2.1~2.4 · 三个缺口排下来就是加法器的进化顺序——进位没有入口、只有一位、进位要排队</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：521 §521.2~521.5· 三个缺口排下来就是加法器的进化顺序——进位没有入口、只有一位、进位要排队</text>
 
   <!-- ===== 第一跳 ===== -->
   <rect x="60" y="100" width="250" height="96" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
@@ -91,7 +91,7 @@
   <rect x="60" y="540" width="1080" height="90" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="84" y="572" font-size="14" font-weight="bold" fill="#7f3f00">三跳解决的是同一个问题：进位往哪传</text>
   <text x="84" y="600" font-size="12" fill="#5d4037">半加器没有入口 → 全加器补上 Cin → 多位加法器把 Cout 接到下一位的 Cin</text>
-  <text x="84" y="620" font-size="12" fill="#5d4037">ALU 再往上加一层：8 个运算器并行，用 3 位选码决定谁说话（§2.5）</text>
+  <text x="84" y="620" font-size="12" fill="#5d4037">ALU 再往上加一层：8 个运算器并行，用 3 位选码决定谁说话（522 §522.1）</text>
 
   <!-- ===== 图例 ===== -->
   <rect x="60" y="650" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>

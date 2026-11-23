@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="620" fill="#ffffff"/>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">电平与边沿：同一个 D，两种反应</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §3.4 latch.c 本机输出 · 同样 8 拍下 D 变 5 次：锁存器变 3 次，触发器 4 个上升沿各采样一次、也只变 3 次</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：532 §532.1 · 同样 8 拍下 D 变 5 次：锁存器变 3 次，触发器 4 个上升沿各采样一次、也只变 3 次</text>
 
   <!-- 上升沿参考线 -->
   <line x1="260" y1="130" x2="260" y2="445" stroke="#90a4ae" stroke-width="1" stroke-dasharray="6 4"/>

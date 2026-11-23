@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="510" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">真值表不用背：跑一遍 gates.c，四行输出自己长出来</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：005 板块 001 §1.2 · 代码与输出均为本机实录，可用 gcc 复现 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：512 §512.1~512.2· 代码与输出均为本机实录，可用 gcc 复现 · 2026-11-14</text>
 
   <rect x="60" y="96" width="510" height="240" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
   <text x="80" y="122" font-size="12.5" font-weight="bold" fill="#37474f">gates.c 的核心四行：两个循环枚举输入，一次打印四列</text>

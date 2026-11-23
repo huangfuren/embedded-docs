@@ -15,7 +15,7 @@
   <!-- ===== ① 001 ===== -->
   <rect x="60" y="114" width="196" height="180" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
   <rect x="78" y="132" width="46" height="18" rx="9" fill="#eceff1"/>
-  <text x="101" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">001</text>
+  <text x="101" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">511</text>
   <text x="78" y="176" font-size="13" font-weight="bold" fill="#123314">表示与门</text>
   <text x="78" y="202" font-size="11.5" fill="#1b3d1e">0/1 是两段电压区间</text>
   <text x="78" y="224" font-size="11.5" fill="#1b3d1e">与或非 + 真值表</text>
@@ -27,7 +27,7 @@
   <!-- ===== ② 002 ===== -->
   <rect x="281" y="114" width="196" height="180" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
   <rect x="299" y="132" width="46" height="18" rx="9" fill="#eceff1"/>
-  <text x="322" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">002</text>
+  <text x="322" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">521</text>
   <text x="299" y="176" font-size="13" font-weight="bold" fill="#123314">运算器</text>
   <text x="299" y="202" font-size="11.5" fill="#1b3d1e">半加 → 全加 → 四位</text>
   <text x="299" y="224" font-size="11.5" fill="#1b3d1e">ALU 3 位选 8 种运算</text>
@@ -39,7 +39,7 @@
   <!-- ===== ③ 003 ===== -->
   <rect x="502" y="114" width="196" height="180" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
   <rect x="520" y="132" width="46" height="18" rx="9" fill="#eceff1"/>
-  <text x="543" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">003</text>
+  <text x="543" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">531</text>
   <text x="520" y="176" font-size="13" font-weight="bold" fill="#123314">存储单元</text>
   <text x="520" y="202" font-size="11.5" fill="#1b3d1e">输出接回输入 = 记忆</text>
   <text x="520" y="224" font-size="11.5" fill="#1b3d1e">SR → D → 边沿触发</text>
@@ -51,7 +51,7 @@
   <!-- ===== ④ 004 ===== -->
   <rect x="723" y="114" width="196" height="180" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
   <rect x="741" y="132" width="46" height="18" rx="9" fill="#eceff1"/>
-  <text x="764" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">004</text>
+  <text x="764" y="145" font-size="11" font-weight="bold" fill="#37474f" text-anchor="middle">541</text>
   <text x="741" y="176" font-size="13" font-weight="bold" fill="#123314">存储器</text>
   <text x="741" y="202" font-size="11.5" fill="#1b3d1e">译码器：按地址选单元</text>
   <text x="741" y="224" font-size="11.5" fill="#1b3d1e">读写使能不对称</text>
@@ -63,7 +63,7 @@
   <!-- ===== ⑤ 005 ===== -->
   <rect x="944" y="114" width="196" height="180" rx="6" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
   <rect x="962" y="132" width="46" height="18" rx="9" fill="#ffffff"/>
-  <text x="985" y="145" font-size="11" font-weight="bold" fill="#1b5e20" text-anchor="middle">005</text>
+  <text x="985" y="145" font-size="11" font-weight="bold" fill="#1b5e20" text-anchor="middle">551</text>
   <text x="962" y="176" font-size="13" font-weight="bold" fill="#123314">一台机器</text>
   <text x="962" y="202" font-size="11.5" fill="#1b3d1e">冯诺依曼五部件</text>
   <text x="962" y="224" font-size="11.5" fill="#1b3d1e">指令 + CU + PC</text>
@@ -77,7 +77,7 @@
 
   <!-- ===== 图例 ===== -->
   <rect x="60" y="408" width="22" height="14" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
-  <text x="92" y="419" font-size="11" fill="#37474f">零件层（001~004：表示 · 运算 · 记忆 · 存储）</text>
+  <text x="92" y="419" font-size="11" fill="#37474f">零件层（511~542：表示 · 运算 · 记忆 · 存储）</text>
   <rect x="560" y="408" width="22" height="14" rx="3" fill="#a5d6a7" stroke="#1b5e20" stroke-width="1.5"/>
-  <text x="592" y="419" font-size="11" fill="#37474f">系统层（005：把零件接成整机）</text>
+  <text x="592" y="419" font-size="11" fill="#37474f">系统层（551~553：把零件接成整机）</text>
 </svg>

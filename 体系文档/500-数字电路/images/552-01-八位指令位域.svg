@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="700" fill="#ffffff"/>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">8 位指令的位域：一位一位都有主</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.4 · 3 + 1 + 4 = 8，八位一位不剩；高位决定「做什么」，低位决定「对谁做」</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：552 §552.4 · 3 + 1 + 4 = 8，八位一位不剩；高位决定「做什么」，低位决定「对谁做」</text>
 
   <!-- ===== 字段标签 ===== -->
   <text x="226" y="104" font-size="13" font-weight="bold" fill="#0d47a1" text-anchor="middle">opcode 3 位 · 决定做什么</text>
@@ -123,12 +123,12 @@
   <text x="654" y="470" font-size="11.5" fill="#1b3d1e">③ opcode 在最高位：raw &gt;&gt; 5 就是三位运算码</text>
   <text x="654" y="494" font-size="11.5" fill="#1b3d1e">④ 真实 CPU 也这么做：操作码在前，操作数在后</text>
   <text x="654" y="518" font-size="11.5" fill="#1b3d1e">⑤ 只有 dev 夹在中间 —— 它是后来挤进去的那一位</text>
-  <text x="654" y="546" font-size="11" fill="#2e5230">第一版没有 dev（§5.2），八位被写使能 + 运算码 + 地址占满</text>
+  <text x="654" y="546" font-size="11" fill="#2e5230">第一版没有 dev（552 §552.2），八位被写使能 + 运算码 + 地址占满</text>
 
   <!-- ===== 结论 ===== -->
   <rect x="60" y="584" width="1080" height="64" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="84" y="612" font-size="14" font-weight="bold" fill="#7f3f00">3 + 1 + 4 = 8，一位不剩 —— 这是设计，不是巧合</text>
-  <text x="84" y="636" font-size="12" fill="#5d4037">想再加功能就只能重定义 opcode 的含义；把「多个控制位」压成「一段编码」再解码，就是 CU 存在的理由（§5.3）</text>
+  <text x="84" y="636" font-size="12" fill="#5d4037">想再加功能就只能重定义 opcode 的含义；把「多个控制位」压成「一段编码」再解码，就是 CU 存在的理由（552 §552.3）</text>
 
   <!-- ===== 图例 ===== -->
   <rect x="60" y="666" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>

@@ -12,7 +12,7 @@
   </defs>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d47a1">带 CU 的数据通路：谁在指挥，谁在干活</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §5.3~5.5 · 蓝线是数据（搬的东西），橙虚线是控制（怎么搬）；两者混在一起就是一团糨糊</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：553 §553.2~553.4 · 蓝线是数据（搬的东西），橙虚线是控制（怎么搬）；两者混在一起就是一团糨糊</text>
 
   <!-- ===== 控制信号（先画，压在数据线下面） ===== -->
   <polyline points="560,160 560,196 360,196 360,246" fill="none" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#aOrange)"/>
@@ -101,7 +101,7 @@
   <!-- ===== 结论 ===== -->
   <rect x="60" y="464" width="1080" height="68" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="84" y="494" font-size="14" font-weight="bold" fill="#7f3f00">CU 只做一件事：把 3 位 opcode 变成几根开关的通断</text>
-  <text x="84" y="518" font-size="12" fill="#5d4037">控制说「怎么走」，数据才是「走的内容」；PC 的 +1 是硬件连线，不需要任何指令（§5.5）</text>
+  <text x="84" y="518" font-size="12" fill="#5d4037">控制说「怎么走」，数据才是「走的内容」；PC 的 +1 是硬件连线，不需要任何指令（553 §553.1）</text>
 
   <!-- ===== 图例 ===== -->
   <rect x="60" y="556" width="22" height="14" rx="3" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>

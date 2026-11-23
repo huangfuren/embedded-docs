@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="600" fill="#ffffff"/>
 
   <text x="60" y="46" font-size="20" font-weight="bold" fill="#0d2f5c">触发器：只在时钟边沿那一瞬看 D，其余时间纹丝不动</text>
-  <text x="60" y="70" font-size="11" fill="#616161">来源：005 板块 001 §1.4 · 口径：上升沿触发，D 型触发器 · 2026-11-14</text>
+  <text x="60" y="70" font-size="11" fill="#616161">来源：533 §533.1 · 口径：上升沿触发，D 型触发器 · 2026-11-14</text>
 
   <!-- 左：符号 -->
   <rect x="60" y="96" width="460" height="334" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
@@ -25,7 +25,7 @@
 
   <text x="80" y="352" font-size="11.5" font-weight="bold" fill="#1b3d1e">边沿到来那一瞬：Q ← D（锁存）</text>
   <text x="80" y="374" font-size="11.5" fill="#616161">其余时间：D 怎么变，Q 都当没看见</text>
-  <text x="80" y="404" font-size="11" fill="#5e35b1">时钟 = 全体触发器同时动手的号令（晶振提供，004 §4.3）</text>
+  <text x="80" y="404" font-size="11" fill="#5e35b1">时钟 = 全体触发器同时动手的号令（晶振提供，532 §532.4）</text>
 
   <!-- 右：时序图 -->
   <rect x="560" y="96" width="580" height="334" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>

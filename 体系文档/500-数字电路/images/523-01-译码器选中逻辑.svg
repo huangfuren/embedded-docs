@@ -3,7 +3,7 @@
   <rect x="0" y="0" width="1200" height="650" fill="#ffffff"/>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">3-8 译码器：把地址翻成"哪一根线"</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §4.2 实测输出 · 3 位地址 8 种组合，每种只点亮一路；地址写 101 时，只有 Y5 是 1</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：523 §523.2 · 3 位地址 8 种组合，每种只点亮一路；地址写 101 时，只有 Y5 是 1</text>
 
   <!-- 地址输入 -->
   <rect x="60" y="180" width="90" height="40" rx="6" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>

@@ -12,7 +12,7 @@
   </defs>
 
   <text x="60" y="48" font-size="20" font-weight="bold" fill="#0d2f5c">ALU：8 条路并行算好，选码只决定放谁出去</text>
-  <text x="60" y="72" font-size="11" fill="#616161">来源：005 §2.5 · 硬件里没有 if-else，有的是"八条通路 + 一个选择器"；opcode 一变，出去的线就换一条</text>
+  <text x="60" y="72" font-size="11" fill="#616161">来源：522 §522.1~522.2· 硬件里没有 if-else，有的是"八条通路 + 一个选择器"；opcode 一变，出去的线就换一条</text>
 
   <!-- 输入 -->
   <rect x="70" y="190" width="90" height="40" rx="20" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
@@ -99,7 +99,7 @@
   <text x="820" y="418" font-size="13" font-weight="bold" fill="#311b92">直通也算一种运算</text>
   <text x="820" y="444" font-size="11.5" fill="#311b92">000 输出 A：ALU 不加工，只把 A 送出去</text>
   <text x="820" y="466" font-size="11.5" fill="#311b92">它的用处是配合写使能把 A 存下来</text>
-  <text x="820" y="488" font-size="11" fill="#311b92">谁把结果接走，比结果本身更关键（004 §4.3）</text>
+  <text x="820" y="488" font-size="11" fill="#311b92">谁把结果接走，比结果本身更关键（523 §523.3）</text>
 
   <!-- 结论 -->
   <rect x="60" y="620" width="1080" height="70" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
