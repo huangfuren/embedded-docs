@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">002 · 值传递 vs 传地址：swap 两版结局</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：002 §2.6 本机实录 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">122 · 值传递 vs 传地址：swap 两版结局</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：122 §122.3 本机实录 · C17 · 2026-11-23</text>
 
   <rect x="40" y="72" width="1120" height="152" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
   <text x="60" y="100" font-size="15" font-weight="bold" fill="#7f0000">swap_broken —— 换的是副本（值传递）</text>

@@ -2,8 +2,8 @@
      font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
   <rect x="0" y="0" width="1200" height="472" fill="#ffffff"/>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">010 · 七种阶的增长曲线：规模变大时谁先撑不住</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：010 §10.1~10.2 ds_complexity 实测 n=1000 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">161 · 七种阶的增长曲线：规模变大时谁先撑不住</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：161 §161.1~161.2 ds_complexity 实测 n=1000 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">曲线是示意（非等比例尺），重点看形状：谁在 n 变大时陡得最快——O(n³) 横轴还没走完就冲出画面</text>
 

@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">014 · 哈希表 = 桶数组 + 桶内链表（冲突挂链）</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：014 §14.1 ds_hash 本机实录 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">165 · 哈希表 = 桶数组 + 桶内链表（冲突挂链）</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：165 §165.1 ds_hash 本机实录 · C17 · 2026-11-23</text>
 
   <!-- ① 结构 -->
   <rect x="40" y="66" width="1120" height="330" rx="12" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>

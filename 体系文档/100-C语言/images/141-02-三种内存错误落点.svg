@@ -2,8 +2,8 @@
      font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
   <rect x="0" y="0" width="1200" height="540" fill="#ffffff"/>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#7f0000">005 · 三种内存错误，各自落在哪里</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.5 bug_overrun.c 本机实录 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#7f0000">141 · 三种内存错误，各自落在哪里</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：141 §141.2 bug_overrun.c 本机实录 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">C 不做边界检查、不管指针是否有效——三种错误都能编译通过、正常跑完，区别只在「踩到谁的格子」</text>
 

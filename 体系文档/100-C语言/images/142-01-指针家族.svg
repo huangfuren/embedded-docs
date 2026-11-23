@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">006 · 指针家族：箭头 = 「存的是谁的地址」</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：006 §6.3/§6.4/§6.6 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">142 · 指针家族：箭头 = 「存的是谁的地址」</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：142 §142.3/§142.4/§142.6 · C17 · 2026-11-23</text>
 
   <rect x="40" y="70" width="540" height="196" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
   <text x="60" y="98" font-size="15" font-weight="bold" fill="#1b5e20">二级指针：p2 存 p1 的地址</text>

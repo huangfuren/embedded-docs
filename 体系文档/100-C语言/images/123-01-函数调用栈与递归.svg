@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">004 · 调用栈与递归：fact(3) 的压栈与回归</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：004 §4.7 · 005 §5.4 栈 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">123 · 调用栈与递归：fact(3) 的压栈与回归</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：123 §123.7 · 141 §141.1 栈 · C17 · 2026-11-23</text>
 
   <text x="100" y="86" font-size="15" font-weight="bold" fill="#1b5e20">压栈：每层调用占一帧，栈顶在上</text>
   <text x="520" y="86" font-size="15" font-weight="bold" fill="#0d47a1">回归：返回值沿调用链回传</text>

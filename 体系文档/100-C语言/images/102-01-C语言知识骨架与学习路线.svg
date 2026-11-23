@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880"
+     font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <rect x="0" y="0" width="1200" height="880" fill="#ffffff"/>
+
+  <text x="40" y="38" font-size="20" font-weight="bold" fill="#1b5e20">102 · C 语言知识骨架与学习路线</text>
+  <text x="1160" y="38" font-size="12" fill="#616161" text-anchor="end">来源：本板块二十册 · C17 · 2026-11-23</text>
+  <line x1="40" y1="54" x2="1160" y2="54" stroke="#cfd8dc" stroke-width="1"/>
+
+  <!-- ===== 110 工具链 ===== -->
+  <rect x="40" y="88" width="180" height="100" rx="8" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="130" y="132" font-size="17" font-weight="bold" fill="#0d47a1" text-anchor="middle">110 工具链</text>
+  <text x="130" y="158" font-size="11.5" fill="#37474f" text-anchor="middle">代码怎么变成程序</text>
+
+  <rect x="240" y="88" width="452" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="466" y="120" font-size="15" font-weight="bold" fill="#0d47a1" text-anchor="middle">111 编译四阶段与第一个程序</text>
+  <text x="466" y="146" font-size="15" fill="#37474f" text-anchor="middle">从源码到可执行，报错怎么读</text>
+  <text x="466" y="168" font-size="11.5" fill="#616161" text-anchor="middle">四阶段 · 报错三段式 · Makefile · 交叉编译</text>
+
+  <rect x="708" y="88" width="452" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="934" y="120" font-size="15" font-weight="bold" fill="#0d47a1" text-anchor="middle">112 调试：从报错到根因</text>
+  <text x="934" y="146" font-size="15" fill="#37474f" text-anchor="middle">能编过却跑不对时怎么办</text>
+  <text x="934" y="168" font-size="11.5" fill="#616161" text-anchor="middle">打点法 · GDB 三件套 · 栈回溯 · 优化等级</text>
+
+  <!-- ===== 120 语言核心 ===== -->
+  <rect x="40" y="204" width="180" height="100" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="130" y="248" font-size="17" font-weight="bold" fill="#1b5e20" text-anchor="middle">120 语言核心</text>
+  <text x="130" y="274" font-size="11.5" fill="#37474f" text-anchor="middle">词汇与流程</text>
+
+  <rect x="240" y="204" width="218" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="349" y="236" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">121 变量类型与运算符</text>
+  <text x="349" y="262" font-size="13" fill="#37474f" text-anchor="middle">宽度 + 解释</text>
+  <text x="349" y="284" font-size="11" fill="#616161" text-anchor="middle">短路 · 四模板</text>
+
+  <rect x="474" y="204" width="218" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="583" y="236" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">122 控制流与分支</text>
+  <text x="583" y="262" font-size="13" fill="#37474f" text-anchor="middle">if 链 · 循环</text>
+  <text x="583" y="284" font-size="11" fill="#616161" text-anchor="middle">穿落 · off-by-one</text>
+
+  <rect x="708" y="204" width="218" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="817" y="236" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">123 函数作用域与链接</text>
+  <text x="817" y="262" font-size="13" fill="#37474f" text-anchor="middle">原型 · static</text>
+  <text x="817" y="284" font-size="11" fill="#616161" text-anchor="middle">多文件 · 递归</text>
+
+  <rect x="942" y="204" width="218" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1051" y="236" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">124 预处理与宏</text>
+  <text x="1051" y="262" font-size="13" fill="#37474f" text-anchor="middle">文本替换</text>
+  <text x="1051" y="284" font-size="11" fill="#616161" text-anchor="middle">条件编译 · 守卫</text>
+
+  <!-- ===== 130 类型与数据组织 ===== -->
+  <rect x="40" y="320" width="180" height="100" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="130" y="364" font-size="17" font-weight="bold" fill="#1b5e20" text-anchor="middle">130 类型与数据</text>
+  <text x="130" y="390" font-size="11.5" fill="#37474f" text-anchor="middle">一批数据长什么样</text>
+
+  <rect x="240" y="320" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="388" y="352" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">131 数组与字符串</text>
+  <text x="388" y="378" font-size="15" fill="#37474f" text-anchor="middle">连续格子与哨兵</text>
+  <text x="388" y="400" font-size="11.5" fill="#616161" text-anchor="middle">sizeof 长度 · \0 · string.h 四函数</text>
+
+  <rect x="552" y="320" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="700" y="352" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">132 结构体 · 联合 · 位域</text>
+  <text x="700" y="378" font-size="15" fill="#37474f" text-anchor="middle">把字段捆成一个整体</text>
+  <text x="700" y="400" font-size="11.5" fill="#616161" text-anchor="middle">padding 入门 · 小端序 · 位域打包</text>
+
+  <rect x="864" y="320" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1012" y="352" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">133 指针：地址与步长</text>
+  <text x="1012" y="378" font-size="15" fill="#37474f" text-anchor="middle">嵌入式第一关</text>
+  <text x="1012" y="400" font-size="11.5" fill="#616161" text-anchor="middle">&amp; 与 * · 步长 · 没有边界 · 五个步骤</text>
+
+  <!-- ===== 140 内存管理 ===== -->
+  <rect x="40" y="436" width="180" height="100" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="130" y="480" font-size="17" font-weight="bold" fill="#1b5e20" text-anchor="middle">140 内存管理</text>
+  <text x="130" y="506" font-size="11.5" fill="#37474f" text-anchor="middle">住哪 · 谁回收</text>
+
+  <rect x="240" y="436" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="388" y="468" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">141 内存四区</text>
+  <text x="388" y="494" font-size="15" fill="#37474f" text-anchor="middle">数据住在哪、谁负责回收</text>
+  <text x="388" y="516" font-size="11.5" fill="#616161" text-anchor="middle">四区实测 · 三种落点六种成因</text>
+
+  <rect x="552" y="436" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="700" y="468" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">142 指针进阶与动态内存</text>
+  <text x="700" y="494" font-size="15" fill="#37474f" text-anchor="middle">堆怎么手动管</text>
+  <text x="700" y="516" font-size="11.5" fill="#616161" text-anchor="middle">指针家族 · 回调 · malloc 四函数</text>
+
+  <rect x="864" y="436" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1012" y="468" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">143 对齐与字节序</text>
+  <text x="1012" y="494" font-size="15" fill="#37474f" text-anchor="middle">换个芯片就变大、变反</text>
+  <text x="1012" y="516" font-size="11.5" fill="#616161" text-anchor="middle">offsetof · pack · bswap · 报文纪律</text>
+
+  <!-- ===== 150 标准库与IO ===== -->
+  <rect x="40" y="552" width="180" height="100" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="130" y="596" font-size="17" font-weight="bold" fill="#1b5e20" text-anchor="middle">150 标准库</text>
+  <text x="130" y="622" font-size="11.5" fill="#37474f" text-anchor="middle">对外的三条通道</text>
+
+  <rect x="240" y="552" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="388" y="584" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">151 文件IO与缓冲</text>
+  <text x="388" y="610" font-size="15" fill="#37474f" text-anchor="middle">数据走出内存</text>
+  <text x="388" y="632" font-size="11.5" fill="#616161" text-anchor="middle">流 · scanf 缓冲 · fopen/mode · fclose</text>
+
+  <rect x="552" y="552" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="700" y="584" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">152 命令行与格式化</text>
+  <text x="700" y="610" font-size="15" fill="#37474f" text-anchor="middle">程序怎么接外部输入</text>
+  <text x="700" y="632" font-size="11.5" fill="#616161" text-anchor="middle">argc/argv · sprintf/sscanf · 变参</text>
+
+  <rect x="864" y="552" width="296" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1012" y="584" font-size="15" font-weight="bold" fill="#1b5e20" text-anchor="middle">153 时间 · 随机 · 数学</text>
+  <text x="1012" y="610" font-size="15" fill="#37474f" text-anchor="middle">三个最易用错的标准库</text>
+  <text x="1012" y="632" font-size="11.5" fill="#616161" text-anchor="middle">时钟精度 · 种子 · 浮点比较</text>
+
+  <!-- ===== 160 数据结构与算法 ===== -->
+  <rect x="40" y="668" width="180" height="100" rx="8" fill="#d1c4e9" stroke="#5e35b1" stroke-width="2"/>
+  <text x="130" y="712" font-size="17" font-weight="bold" fill="#311b92" text-anchor="middle">160 数据结构</text>
+  <text x="130" y="738" font-size="11.5" fill="#37474f" text-anchor="middle">不是语言，是工具箱</text>
+
+  <rect x="240" y="668" width="171" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="325" y="700" font-size="13" font-weight="bold" fill="#311b92" text-anchor="middle">161 复杂度</text>
+  <text x="325" y="726" font-size="13" fill="#37474f" text-anchor="middle">成本的尺子</text>
+  <text x="325" y="748" font-size="11" fill="#616161" text-anchor="middle">大 O · 七种阶</text>
+
+  <rect x="427" y="668" width="171" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="512" y="700" font-size="13" font-weight="bold" fill="#311b92" text-anchor="middle">162 数组与链表</text>
+  <text x="512" y="726" font-size="13" fill="#37474f" text-anchor="middle">顺序 vs 链式</text>
+  <text x="512" y="748" font-size="11" fill="#616161" text-anchor="middle">扩容 · 头插 · 选型</text>
+
+  <rect x="614" y="668" width="171" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="699" y="700" font-size="13" font-weight="bold" fill="#311b92" text-anchor="middle">163 栈与队列</text>
+  <text x="699" y="726" font-size="13" fill="#37474f" text-anchor="middle">受限访问</text>
+  <text x="699" y="748" font-size="11" fill="#616161" text-anchor="middle">LIFO · 假溢出</text>
+
+  <rect x="801" y="668" width="171" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="886" y="700" font-size="13" font-weight="bold" fill="#311b92" text-anchor="middle">164 查找与排序</text>
+  <text x="886" y="726" font-size="13" fill="#37474f" text-anchor="middle">两族常用算法</text>
+  <text x="886" y="748" font-size="11" fill="#616161" text-anchor="middle">二分 · 冒泡 · 快排</text>
+
+  <rect x="988" y="668" width="171" height="100" rx="8" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="1073" y="700" font-size="13" font-weight="bold" fill="#311b92" text-anchor="middle">165 散列与树</text>
+  <text x="1073" y="726" font-size="13" fill="#37474f" text-anchor="middle">查找加速结构</text>
+  <text x="1073" y="748" font-size="11" fill="#616161" text-anchor="middle">桶链 · 红黑树</text>
+
+  <!-- ===== 结论块 ===== -->
+  <rect x="40" y="784" width="1120" height="52" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="60" y="806" font-size="12.5" fill="#5d4037">读法：自上而下是一条依赖链——131 的数组遍历要用 122 的循环，133 的指针要用 131 的 sizeof，141 的四区把指针落地，142 的 malloc 建立在 141 之上。</text>
+  <text x="60" y="828" font-size="12.5" font-weight="bold" fill="#bf360c">跳过任何一站，后面都会退化成背结论。</text>
+
+  <!-- ===== 图例 ===== -->
+  <rect x="40" y="850" width="12" height="12" fill="#bbdefb" stroke="#1565c0" stroke-width="1"/>
+  <text x="60" y="860" font-size="12" fill="#616161">入口（工具链）</text>
+  <rect x="200" y="850" width="12" height="12" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="220" y="860" font-size="12" fill="#616161">语言本体（核心 / 数据 / 内存 / 标准库）</text>
+  <rect x="560" y="850" width="12" height="12" fill="#d1c4e9" stroke="#5e35b1" stroke-width="1"/>
+  <text x="580" y="860" font-size="12" fill="#616161">工具箱（数据结构与算法，不是语言本身）</text>
+</svg>

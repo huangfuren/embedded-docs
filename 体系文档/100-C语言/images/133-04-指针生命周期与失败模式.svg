@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#1b5e20">005 · 指针的一生：五个步骤与各自的失败模式</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.2~5.5 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#1b5e20">133 · 指针的一生：五个步骤与各自的失败模式</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：133 §133.2~133.4 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">指针只有出生、使用、死亡三个时刻；五步之间每漏一步，失败就落在不同的位置上</text>
 

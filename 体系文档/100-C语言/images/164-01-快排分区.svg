@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">013 · 快排一轮分区：基准归位，左小右大</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：013 §13.4 ds_sort 本机实录 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">164 · 快排一轮分区：基准归位，左小右大</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：164 §164.4 ds_sort 本机实录 · C17 · 2026-11-23</text>
 
   <!-- ① 分区前 -->
   <rect x="40" y="70" width="1120" height="186" rx="12" fill="#ffffff" stroke="#cfd8dc" stroke-width="1"/>

@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">007 · 内存对齐：padding 从哪来、重排能省多少</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.1 struct_align / offsetof 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">132 · 内存对齐：padding 从哪来、重排能省多少</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：132 §132.1 struct_align / 143 §143.1 offsetof 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">规则只有一条：每个成员必须落在「自身大小的整数倍」地址上——所以中间和末尾都会插空</text>
 

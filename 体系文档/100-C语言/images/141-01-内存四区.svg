@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">005 · 内存四区：变量住哪、谁负责释放</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.4 memzones.c 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">141 · 内存四区：变量住哪、谁负责释放</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：141 §141.1 memzones.c 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">分界线是「谁管释放」：编译器自动回收的那一半，和必须自己 free 的那一半</text>
 

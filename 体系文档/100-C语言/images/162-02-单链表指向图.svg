@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">011 · 单链表：箭头 = 指针域里存的地址</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：011 §11.2 ds_list 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">162 · 单链表：箭头 = 指针域里存的地址</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：162 §162.2 ds_list 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">节点 = 数据域 + 指针域；header 存首节点地址（NULL 即空表），节点之间不连续</text>
 

@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">005 · 指针 +1 走多远：由指向的类型决定</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：005 §5.2 步长实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">133 · 指针 +1 走多远：由指向的类型决定</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：133 §133.2 步长实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">同一句 p + 1，四种指针落点不同——指针算术的单位是「元素」，不是「字节」</text>
 
@@ -55,7 +55,7 @@
 
   <rect x="40" y="382" width="1120" height="56" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
   <text x="62" y="406" font-size="13" font-weight="bold" fill="#5d4037">编译器把 p + 1 翻译成「地址 + sizeof(*p)」——指针自己不知道长度，靠类型算</text>
-  <text x="62" y="428" font-size="12" fill="#5d4037">所以 int* 加 1 跳 4 字节；这也是数组下标能退化成地址运算的原因（005 §5.3）</text>
+  <text x="62" y="428" font-size="12" fill="#5d4037">所以 int* 加 1 跳 4 字节；这也是数组下标能退化成地址运算的原因（133 §133.3）</text>
 
   <line x1="40" y1="452" x2="82" y2="452" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
   <text x="94" y="456" font-size="12" fill="#37474f">p + 1 后的落点（长度 = sizeof(*p)）</text>

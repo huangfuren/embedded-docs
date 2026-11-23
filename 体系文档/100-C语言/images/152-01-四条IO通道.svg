@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">009 · 四条 IO 通道：设备流与字符串流</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：009 §9.2/§9.3 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">152 · 四条 IO 通道：设备流与字符串流</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：152 §152.2/§152.3 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">printf 与 sprintf 只差第一个参数：目的地从「屏幕」换成「内存里的字符数组」</text>
 

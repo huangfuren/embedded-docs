@@ -9,8 +9,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">003 · 字符串 = 以 \0 结尾的字符数组</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：003 §3.3 str_demo 本机实录 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#0d47a1">131 · 字符串 = 以 \0 结尾的字符数组</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：131 §131.3 str_demo 本机实录 · C17 · 2026-11-23</text>
 
   <text x="40" y="96" font-size="17" font-weight="bold" fill="#1b5e20">有哨兵：char e[] = &quot;lily&quot; —— 编译器自动补 \0</text>
 

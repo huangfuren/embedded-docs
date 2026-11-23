@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">007 · 预处理器：先替换、再裁剪，然后才轮到编译器</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：007 §7.5/§7.6 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">124 · 预处理器：先替换、再裁剪，然后才轮到编译器</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：124 §124.5/§124.6 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="88" font-size="17" font-weight="bold" fill="#1b5e20">带参宏：编译前的纯文本替换</text>
   <text x="40" y="110" font-size="12" fill="#37474f" font-family="ui-monospace,Menlo,Consolas,monospace">#define SQ(x)  ((x) * (x))</text>

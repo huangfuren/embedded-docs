@@ -14,8 +14,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#1b5e20">011 · 动态数组：length 是已用格数，capacity 是已买下的格数</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：011 §11.1 ds_array 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#1b5e20">162 · 动态数组：length 是已用格数，capacity 是已买下的格数</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：162 §162.1 ds_array 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">两个数分开记：写满 length == capacity 时才扩容，扩容一次翻倍并且要搬全部已有元素</text>
 

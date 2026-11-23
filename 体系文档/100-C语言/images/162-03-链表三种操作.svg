@@ -19,8 +19,8 @@
     </marker>
   </defs>
 
-  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">011 · 链表三种操作：改的永远只有两个指针</text>
-  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：011 §11.2 ds_list.c 本机实测 · C17 · 2026-11-19</text>
+  <text x="40" y="46" font-size="20" font-weight="bold" fill="#263238">162 · 链表三种操作：改的永远只有两个指针</text>
+  <text x="1160" y="46" font-size="12" fill="#616161" text-anchor="end">来源：162 §162.2 ds_list.c 本机实测 · C17 · 2026-11-23</text>
 
   <text x="40" y="86" font-size="12" fill="#37474f">橙色 = 本次新建的节点，红色 = 本次要摘除的节点；每个操作只动两个指针，赋值顺序不能颠倒</text>
 
