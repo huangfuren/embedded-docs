@@ -1,0 +1,210 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+  <!-- P沟道增强型MOS管原理图：由 PNG 等比转换（原稿 1354x553 → 1200x500），内容忠实复刻、不删改 -->
+  <rect x="0" y="0" width="1200" height="500" fill="#FFFFFF"/>
+
+  <defs>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8000FF"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#00A2E8"/>
+    </marker>
+  </defs>
+
+  <g font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif">
+
+    <!-- ===== 标题 ===== -->
+    <text x="18" y="115" font-size="20" font-weight="bold" fill="#000000">绝缘栅型场效应管[P沟道增强型MOS管]</text>
+
+    <!-- ===== 左栏：作用与链接技巧（红=强调 / 蓝=接线说明，忠实原稿配色） ===== -->
+    <g font-size="12.5" font-weight="bold">
+      <text x="18" y="140" fill="#E60000">作用：</text>
+      <text x="18" y="162" fill="#E60000">1. 开关</text>
+      <text x="18" y="184" fill="#E60000">2. 放大电路</text>
+      <text x="18" y="216" fill="#E60000">P沟道增强型MOS管链接技巧：</text>
+      <text x="18" y="240" fill="#00A2E8">1. 漏极d链接电源正极,源极s链接电源负极</text>
+      <text x="18" y="260" fill="#00A2E8">MOS管渠道 [无意义]</text>
+      <text x="18" y="282" fill="#E60000">电流方向：漏极d --&gt; 源极s</text>
+      <text x="18" y="312" fill="#E60000">2.</text>
+      <text x="18" y="338" fill="#00A2E8">a. 栅极g链接小电源负极,源极s链接小电路正极</text>
+      <text x="18" y="360" fill="#00A2E8">让MOS管内部的P沟道形成</text>
+      <text x="18" y="382" fill="#E60000">电流方向：源极s --&gt; 栅极g</text>
+      <text x="18" y="410" fill="#00A2E8">b. 漏极d链接大电源负极,源极s链接大电路正极</text>
+      <text x="18" y="432" fill="#00A2E8">控制大电路</text>
+      <text x="18" y="454" fill="#E60000">电流方向：源极s --&gt; 漏极d</text>
+    </g>
+
+    <!-- ===== 中部电路：大电源 → 用电器 → 漏极（顶部回路，紫色为电源一侧走线） ===== -->
+    <g stroke="#8000FF" stroke-width="2" fill="none">
+      <line x1="472" y1="282" x2="472" y2="197"/>
+      <line x1="472" y1="197" x2="503" y2="197"/>
+      <!-- 大电源电池符号：上长线(+)下短线(-) -->
+      <line x1="448" y1="282" x2="495" y2="282" stroke-width="2.5"/>
+      <line x1="461" y1="293" x2="482" y2="293" stroke-width="3"/>
+      <!-- 底部回路：电池负极 → 下 → 右 → 上 → 源极 -->
+      <polyline points="472,293 472,483 620,483 620,417 588,417 588,393"/>
+    </g>
+    <text x="440" y="291" font-size="12.5" font-weight="bold" fill="#8000FF" text-anchor="end">大电源</text>
+
+    <!-- 用电器 -->
+    <line x1="561" y1="197" x2="583" y2="197" stroke="#000000" stroke-width="2"/>
+    <circle cx="532" cy="197" r="29" fill="#FFFFFF" stroke="#00A2E8" stroke-width="2.5"/>
+    <text x="532" y="202" font-size="12.5" font-weight="bold" fill="#00A2E8" text-anchor="middle">用电器</text>
+
+    <!-- 漏极 d：圆点 + 粗金属引线 + P型半导体（顶部） -->
+    <circle cx="588" cy="197" r="4.5" fill="#000000"/>
+    <rect x="593" y="194" width="63" height="6" fill="#000000"/>
+    <text x="594" y="190" font-size="12.5" font-weight="bold" fill="#000000">漏极 d</text>
+    <rect x="656" y="180" width="16" height="34" fill="#000000"/>
+    <rect x="672" y="180" width="88" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+    <text x="716" y="201" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">P型半导体</text>
+
+    <!-- 源极 s：圆点 + 粗金属引线 + P型半导体（底部） -->
+    <circle cx="588" cy="388" r="4.5" fill="#000000"/>
+    <rect x="593" y="385" width="63" height="6" fill="#000000"/>
+    <rect x="656" y="375" width="16" height="31" fill="#000000"/>
+    <rect x="672" y="375" width="88" height="31" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+    <text x="716" y="395" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">P型半导体</text>
+    <text x="596" y="405" font-size="12.5" font-weight="bold" fill="#000000">源极 s</text>
+
+    <!-- MOS 管本体大框 -->
+    <rect x="660" y="170" width="177" height="273" fill="none" stroke="#000000" stroke-width="2.5"/>
+
+    <!-- 中部结构：左窄条（耗尽层示意 - / +） -->
+    <rect x="630" y="222" width="30" height="90" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+    <g font-size="11" font-weight="bold" fill="#E60000" text-anchor="middle">
+      <text x="645" y="232">----</text>
+      <text x="645" y="246">----</text>
+      <text x="645" y="266">+++</text>
+      <text x="645" y="283">+++</text>
+      <text x="645" y="300">+++</text>
+    </g>
+
+    <!-- 栅极金属板（黑）+ 绝缘栅竖排 -->
+    <rect x="662" y="222" width="10" height="90" fill="#000000"/>
+    <g font-size="11" font-weight="bold" fill="#E60000" text-anchor="middle">
+      <text x="667" y="240">绝</text>
+      <text x="667" y="254">缘</text>
+      <text x="667" y="268">栅</text>
+    </g>
+
+    <!-- P 沟道（红框 + 空穴 + 号阵列） -->
+    <rect x="674" y="224" width="85" height="86" fill="#FFFFFF" stroke="#E60000" stroke-width="1.5"/>
+    <g font-size="11" font-weight="bold" fill="#E60000" text-anchor="middle">
+      <text x="716" y="234">+++++++++</text>
+      <text x="716" y="245">+++++++++</text>
+      <text x="716" y="256">+++++++++</text>
+      <text x="716" y="267">+++++++++</text>
+      <text x="716" y="278">+++++++++</text>
+      <text x="716" y="289">+++++++++</text>
+      <text x="716" y="300">+++++++++</text>
+    </g>
+
+    <!-- N 型半导体（底衬）+ 右侧黑条 -->
+    <g font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">
+      <text x="784" y="247">N</text>
+      <text x="784" y="269">型</text>
+      <text x="784" y="291">半</text>
+      <text x="784" y="313">导</text>
+    </g>
+    <g font-size="12" font-weight="bold" fill="#E60000" text-anchor="middle">
+      <text x="806" y="272">底</text>
+      <text x="806" y="294">衬</text>
+    </g>
+    <rect x="812" y="224" width="12" height="88" fill="#000000"/>
+    <g font-size="11" font-weight="bold" fill="#E60000" text-anchor="middle">
+      <text x="818" y="234">+</text>
+      <text x="818" y="245">+</text>
+      <text x="818" y="256">+</text>
+      <text x="818" y="267">+</text>
+      <text x="818" y="278">+</text>
+      <text x="818" y="289">+</text>
+      <text x="818" y="300">+</text>
+      <text x="818" y="311">+</text>
+    </g>
+
+    <!-- 电子移动方向（紫，箭头朝左） -->
+    <line x1="748" y1="338" x2="740" y2="338" stroke="#8000FF" stroke-width="2" marker-end="url(#arrowPurple)"/>
+    <text x="750" y="342" font-size="11.5" font-weight="bold" fill="#8000FF">电子移动方向</text>
+
+    <!-- 右侧竖导线：N 型黑条上下两端引出（寄生二极管支路） -->
+    <line x1="824" y1="224" x2="846" y2="224" stroke="#000000" stroke-width="2"/>
+    <line x1="824" y1="312" x2="846" y2="312" stroke="#000000" stroke-width="2"/>
+    <line x1="846" y1="140" x2="846" y2="463" stroke="#000000" stroke-width="2"/>
+
+    <!-- 顶部寄生二极管（蓝） -->
+    <g stroke="#00A2E8" stroke-width="2" fill="none">
+      <polyline points="704,140 725,140"/>
+      <polyline points="755,140 846,140"/>
+      <line x1="704" y1="140" x2="704" y2="170"/>
+      <line x1="744" y1="132" x2="744" y2="148" stroke-width="2.5"/>
+    </g>
+    <path d="M728,133 L728,147 L744,140 Z" fill="#00A2E8"/>
+    <text x="762" y="144" font-size="12" font-weight="bold" fill="#00A2E8">寄生二极管</text>
+
+    <!-- 底部寄生二极管（蓝，同向） -->
+    <g stroke="#00A2E8" stroke-width="2" fill="none">
+      <polyline points="704,463 725,463"/>
+      <polyline points="755,463 846,463"/>
+      <line x1="704" y1="463" x2="704" y2="443"/>
+      <line x1="744" y1="455" x2="744" y2="471" stroke-width="2.5"/>
+    </g>
+    <path d="M728,456 L728,470 L744,463 Z" fill="#00A2E8"/>
+
+    <!-- 栅极 g + 小电源回路（紫）：圆点 → 栅极板；中段分叉接小电源 → 源极 -->
+    <circle cx="588" cy="288" r="4.5" fill="#000000"/>
+    <text x="570" y="270" font-size="12.5" font-weight="bold" fill="#000000">栅极 g</text>
+    <g stroke="#8000FF" stroke-width="2" fill="none">
+      <line x1="593" y1="288" x2="662" y2="288"/>
+      <polyline points="619,288 619,330 576,330"/>
+      <!-- 小电源电池（两节） -->
+      <line x1="532" y1="330" x2="576" y2="330" stroke-width="2.2"/>
+      <line x1="543" y1="337" x2="569" y2="337" stroke-width="2.8"/>
+      <line x1="532" y1="344" x2="576" y2="344" stroke-width="2.2"/>
+      <line x1="543" y1="351" x2="569" y2="351" stroke-width="2.8"/>
+      <!-- 电池下端 → 开关斜杠 → 源极 -->
+      <line x1="556" y1="351" x2="556" y2="388"/>
+      <line x1="556" y1="388" x2="583" y2="388"/>
+      <line x1="544" y1="378" x2="568" y2="357"/>
+    </g>
+
+    <!-- ===== 右侧：P沟道增强型 MOS管 简化图 ===== -->
+    <text x="877" y="158" font-size="13" font-weight="bold" fill="#000000">P沟道增强型 MOS管 简化图：</text>
+
+    <!-- 漏极 d -->
+    <circle cx="1019" cy="190" r="4.5" fill="#000000"/>
+    <text x="1052" y="195" font-size="12.5" font-weight="bold" fill="#000000">漏极 d</text>
+
+    <!-- 蓝圈 + 增强型 MOS 符号 + 寄生二极管 -->
+    <circle cx="1019" cy="288" r="55" fill="none" stroke="#00A2E8" stroke-width="2.5"/>
+    <g stroke="#00A2E8" stroke-width="2" fill="none">
+      <!-- 栅极：引线 + 竖板 -->
+      <line x1="960" y1="288" x2="991" y2="288"/>
+      <line x1="991" y1="268" x2="991" y2="308" stroke-width="3"/>
+      <!-- 沟道三横线 + 衬底竖线 -->
+      <line x1="991" y1="257" x2="1019" y2="257"/>
+      <line x1="991" y1="288" x2="1019" y2="288"/>
+      <line x1="991" y1="319" x2="1019" y2="319"/>
+      <line x1="1019" y1="257" x2="1019" y2="319"/>
+      <!-- P 沟道箭头（朝栅极，向左） -->
+      <line x1="1013" y1="288" x2="999" y2="288" marker-end="url(#arrowBlue)"/>
+      <!-- 漏极 / 源极引出线 -->
+      <line x1="1019" y1="195" x2="1019" y2="257"/>
+      <line x1="1019" y1="319" x2="1019" y2="380"/>
+      <!-- 寄生二极管支路（漏 → 源，三角朝下） -->
+      <polyline points="1019,257 1045,257 1045,319 1019,319"/>
+      <line x1="1030" y1="287" x2="1060" y2="287" stroke-width="2.5"/>
+    </g>
+    <path d="M1030,270 L1060,270 L1045,285 Z" fill="#00A2E8"/>
+
+    <!-- 栅极 g / 源极 s -->
+    <circle cx="955" cy="288" r="4.5" fill="#000000"/>
+    <text x="895" y="292" font-size="12.5" font-weight="bold" fill="#000000">栅极 g</text>
+    <circle cx="1019" cy="385" r="4.5" fill="#000000"/>
+    <text x="1050" y="397" font-size="12.5" font-weight="bold" fill="#000000">源极 s</text>
+
+    <!-- 链接技巧 -->
+    <text x="932" y="431" font-size="12.5" font-weight="bold" fill="#E60000">链接技巧：反接寄生二极管</text>
+
+  </g>
+</svg>

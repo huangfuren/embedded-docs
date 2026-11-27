@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1353 620"
+     font-family="'Microsoft YaHei','微软雅黑','PingFang SC','Noto Sans SC','Noto Sans CJK SC','Source Han Sans SC',sans-serif">
+  <title>NPN型三极管 原理图</title>
+  <desc>由 NPN型三极管.png 矢量重绘，图形、文字、颜色与原图一致；底部图例为新增。</desc>
+
+  <rect x="0" y="0" width="1353" height="620" fill="#FFFFFF"/>
+
+  <!-- ============ 一、文字说明（左栏） ============ -->
+  <g id="text-left" font-weight="700">
+    <text x="25" y="42" font-size="22" fill="#000000" textLength="158" lengthAdjust="spacingAndGlyphs">NPN型三极管：</text>
+
+    <text x="31" y="84" font-size="17.5" fill="#ED1C24" textLength="208" lengthAdjust="spacingAndGlyphs">三极管的作用【NPN,PNP】：</text>
+    <text x="32" y="110" font-size="17.5" fill="#ED1C24" textLength="50" lengthAdjust="spacingAndGlyphs">1. 开关</text>
+    <text x="32" y="137" font-size="17.5" fill="#ED1C24" textLength="266" lengthAdjust="spacingAndGlyphs">2. 利用小电流控制大电路【放大电路】</text>
+
+    <text x="21" y="216" font-size="17.5" fill="#3F48CC" textLength="201" lengthAdjust="spacingAndGlyphs">NPN型三极管的导通步骤：</text>
+    <text x="21" y="270" font-size="17.5" fill="#3F48CC" textLength="295" lengthAdjust="spacingAndGlyphs">1. 基极链接电源正极,发射极链接电源负极</text>
+    <text x="21" y="297" font-size="17.5" fill="#3F48CC" textLength="206" lengthAdjust="spacingAndGlyphs">电流方向：基极B -&gt; 发射极E</text>
+    <text x="21" y="351" font-size="17.5" fill="#3F48CC" textLength="391" lengthAdjust="spacingAndGlyphs">2. 把集电极链接大电路的正极,发射极链接大电路的负极</text>
+    <text x="21" y="377" font-size="17.5" fill="#3F48CC" textLength="213" lengthAdjust="spacingAndGlyphs">电流方向：集电极C -&gt; 发射极E</text>
+  </g>
+
+  <!-- ============ 二、主回路（紫色导线） ============ -->
+  <g id="loop-main" stroke="#A349A4" stroke-width="3" fill="none" stroke-linecap="square">
+    <path d="M 487 32 L 487 95"/>            <!-- 顶部导线 → 大用电器上引线 -->
+    <path d="M 487 32 L 748 32"/>            <!-- 顶部导线 -->
+    <path d="M 748 32 L 748 39"/>            <!-- 接集电极引线 -->
+    <path d="M 487 160 L 487 207"/>          <!-- 大用电器下引线 → 大电源长板 -->
+    <path d="M 487 226 L 487 454"/>          <!-- 大电源短板 → 底部导线 -->
+    <path d="M 487 454 L 748 454"/>          <!-- 底部导线 -->
+    <path d="M 748 435 L 748 454"/>          <!-- 接发射极引线 -->
+    <path d="M 457 207 L 519 207"/>          <!-- 大电源：长板 -->
+    <path d="M 477 226 L 493 226"/>          <!-- 大电源：短板 -->
+  </g>
+
+  <!-- 大用电器（椭圆，原图为横向压扁的圆）与标注 -->
+  <ellipse cx="486.5" cy="127.5" rx="36.75" ry="33.75" fill="none" stroke="#A349A4" stroke-width="3"/>
+  <text x="456" y="137" font-size="18.5" font-weight="700" fill="#A349A4"
+        textLength="61" lengthAdjust="spacingAndGlyphs">大用电器</text>
+  <text x="401" y="231" font-size="17.5" font-weight="700" fill="#A349A4"
+        textLength="48" lengthAdjust="spacingAndGlyphs">大电源</text>
+
+  <!-- ============ 三、基极回路（蓝色导线） ============ -->
+  <g id="loop-base" stroke="#3F48CC" stroke-width="3" fill="none" stroke-linecap="square">
+    <path d="M 524 233 L 610 233"/>          <!-- 基极横线（蓝段） -->
+    <path d="M 530 233 L 530 295"/>          <!-- 竖线下行 → 0.7V 电池长板 -->
+    <path d="M 512 295 L 547 295"/>          <!-- 0.7V 电池：长板 -->
+    <path d="M 524 308 L 537 308"/>          <!-- 0.7V 电池：短板 -->
+    <path d="M 530 308 L 530 439"/>          <!-- 竖线下行 → 底部 -->
+    <path d="M 528 439 L 608 439"/>          <!-- 底部横线（左段） -->
+    <path d="M 604 439 L 664 419"/>          <!-- 开关：上升斜线（右上端为闸刀杆头） -->
+    <path d="M 652 414 L 655 419" stroke-linecap="butt"/>          <!-- 开关：闸刀短杠（与斜线交叉） -->
+    <path d="M 655 420 L 667 437"/>          <!-- 开关：下降斜线 -->
+    <path d="M 669 439 L 746 439"/>          <!-- 底部横线（右段） -->
+  </g>
+  <text x="551" y="316" font-size="16" font-weight="700" fill="#3F48CC"
+        textLength="34" lengthAdjust="spacingAndGlyphs">0.7v</text>
+  <text x="613" y="421" font-size="17.5" font-weight="700" fill="#3F48CC"
+        textLength="33" lengthAdjust="spacingAndGlyphs">开关</text>
+
+  <!-- ============ 四、三极管本体（黑色） ============ -->
+  <g id="npn-body" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square">
+    <rect x="689.5" y="90.5" width="120" height="291"/>
+    <path d="M 689.5 209 L 809.5 209"/>
+    <path d="M 689.5 253 L 809.5 253"/>
+    <path d="M 748 39 L 748 89"/>            <!-- 集电极引线 -->
+    <path d="M 748 382 L 748 435"/>          <!-- 发射极引线 -->
+  </g>
+  <g id="npn-letters" font-size="21" font-weight="700" fill="#000000" text-anchor="middle">
+    <text x="746" y="158">N</text>
+    <text x="746" y="240">P</text>
+    <text x="746" y="333">N</text>
+  </g>
+  <g id="npn-labels" font-size="17.5" font-weight="700" fill="#000000">
+    <text x="715" y="28" textLength="63" lengthAdjust="spacingAndGlyphs">集电极 C</text>
+    <text x="722" y="470" textLength="62" lengthAdjust="spacingAndGlyphs">发射极 E</text>
+  </g>
+  <text x="593" y="219" font-size="17.5" font-weight="700" fill="#000000"
+        textLength="52" lengthAdjust="spacingAndGlyphs">基极 B</text>
+  <path id="base-black" d="M 610 232 L 689 232" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square"/>
+
+  <!-- ============ 五、方块右侧的双二极管符号 ============ -->
+  <g id="two-diodes" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M 861 110 L 861 182"/>                    <!-- 上引线 -->
+    <path d="M 830 182 L 891 182"/>                    <!-- 上横板 -->
+    <path d="M 861 184 L 829 229 L 893 229 Z"/>        <!-- 上三角（尖朝上） -->
+    <path d="M 829 240 L 894 240"/>                    <!-- 中横线 -->
+    <path d="M 830 240 L 894 240 L 861 286 Z"/>        <!-- 下三角（尖朝下） -->
+    <path d="M 832 287 L 893 287"/>                    <!-- 下横板 -->
+    <path d="M 861 288 L 861 355"/>                    <!-- 下引线 -->
+  </g>
+
+  <!-- ============ 六、右侧：三极管简化符号 ============ -->
+  <g id="symbol-right">
+    <ellipse cx="1166" cy="228" rx="42" ry="37" fill="none" stroke="#000000" stroke-width="3"/>
+    <g stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square">
+      <path d="M 1167 128 L 1167 195"/>               <!-- 集电极引线 -->
+      <path d="M 1078 231 L 1137 231"/>               <!-- 基极引线 -->
+      <path d="M 1134 231 L 1167 195"/>               <!-- 上斜线 -->
+      <path d="M 1134 231 L 1168 257"/>               <!-- 下斜线 -->
+      <path d="M 1171 244 L 1171 322"/>               <!-- 发射极引线 -->
+      <path d="M 1159 260 L 1173 260"/>               <!-- 箭头横杠（原图此处为短横，非实心三角） -->
+    </g>
+  </g>
+  <g id="symbol-text" font-size="17.5" font-weight="700">
+    <text x="1059" y="63" fill="#000000" textLength="202" lengthAdjust="spacingAndGlyphs">NPN型三极管的简化符号：</text>
+    <text x="1143" y="123" fill="#000000" textLength="63" lengthAdjust="spacingAndGlyphs">集电极 C</text>
+    <text x="1145" y="358" fill="#000000" textLength="62" lengthAdjust="spacingAndGlyphs">发射极 E</text>
+  </g>
+  <text x="1012" y="242" font-size="17.5" font-weight="700" fill="#000000"
+        textLength="52" lengthAdjust="spacingAndGlyphs">基极 B</text>
+  <text x="1034" y="393" font-size="17.5" font-weight="700" fill="#3F48CC"
+        textLength="254" lengthAdjust="spacingAndGlyphs">三极管简化符号中：箭头的方向代表</text>
+  <text x="1035" y="420" font-size="17.5" font-weight="700" fill="#ED1C24"
+        textLength="110" lengthAdjust="spacingAndGlyphs">电流的流动方向</text>
+
+  <!-- ============ 七、图例（新增） ============ -->
+  <g id="legend">
+    <rect x="24" y="484" width="1305" height="118" fill="#FAFAFA" stroke="#BBBBBB" stroke-width="1"/>
+    <text x="44" y="510" font-size="15" font-weight="700" fill="#333333">图例</text>
+
+    <!-- 第一行 -->
+    <g stroke="#A349A4" stroke-width="3"><path d="M 44 538 L 84 538"/></g>
+    <text x="96" y="544" font-size="14" fill="#333333">紫色导线：大电流回路</text>
+
+    <g stroke="#3F48CC" stroke-width="3"><path d="M 370 538 L 410 538"/></g>
+    <text x="422" y="544" font-size="14" fill="#333333">蓝色导线：基极回路</text>
+
+    <g stroke="#000000" stroke-width="3"><path d="M 696 538 L 736 538"/></g>
+    <text x="748" y="544" font-size="14" fill="#333333">黑色导线：器件与引线</text>
+
+    <g fill="none" stroke="#A349A4" stroke-width="3"><circle cx="1040" cy="538" r="9"/></g>
+    <text x="1058" y="544" font-size="14" fill="#333333">圆圈：大用电器</text>
+
+    <!-- 第二行 -->
+    <g stroke="#3F48CC" stroke-width="3">
+      <path d="M 44 572 L 68 572"/>
+      <path d="M 50 580 L 62 580"/>
+    </g>
+    <text x="96" y="584" font-size="14" fill="#333333">长短横线：电池（大电源 / 0.7v）</text>
+
+    <g stroke="#3F48CC" stroke-width="3" fill="none">
+      <path d="M 368 584 L 396 570"/>
+      <path d="M 390 565 L 395 570"/>
+      <path d="M 395 570 L 404 584"/>
+    </g>
+    <text x="422" y="584" font-size="14" fill="#333333">折线（带闸刀短杠）：开关</text>
+
+    <g stroke="#000000" stroke-width="2" fill="none">
+      <rect x="700" y="562" width="26" height="22"/>
+      <path d="M 700 571 L 726 571"/>
+      <path d="M 700 575 L 726 575"/>
+    </g>
+    <text x="748" y="584" font-size="14" fill="#333333">方块 N/P/N：三层结构</text>
+
+    <g stroke="#000000" stroke-width="2" fill="none">
+      <path d="M 1040 561 L 1028 569 L 1052 569 Z"/>
+      <path d="M 1028 571 L 1052 571 L 1040 579 Z"/>
+    </g>
+    <text x="1062" y="584" font-size="14" fill="#333333">双三角：三极管符号（箭头＝电流方向）</text>
+  </g>
+</svg>
