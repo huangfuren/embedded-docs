@@ -68,3 +68,11 @@
 规则全文在 `.agents/rules/`（同为本地层）；库背景与姊妹库源流见 `.agents/memorys/001-库背景与口径.md`。
 
 **维护脚本同理**：`kb-maintain`（替换 / 换行归一 / 统计对账 / 渲染）也在本地层，换机后要一并复原，否则 007 §七 的渲染与 013 之前的准备工作无处可跑。
+
+复原完再装一次**提交门禁钩子**（钩子在 `.git/hooks/`，不随仓库走）：
+
+```bash
+bash .agents/skills/kb-maintain/scripts/install_hooks.sh
+```
+
+装好后每次 `git commit` 只要动了 md/svg 就会自动跑 `validate.sh`，不通过直接拦下（013 从「自觉」变成「强制」）；本地层脚本缺失时钩子自动放行并提示，不会把人锁死。绕过用 `git commit --no-verify`，须在 `CHANGELOG.local.md` 写明理由。
