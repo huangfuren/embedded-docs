@@ -24,7 +24,7 @@
       <text x="18" y="184" fill="#E60000">2. 放大电路</text>
       <text x="18" y="216" fill="#E60000">P沟道增强型MOS管链接技巧：</text>
       <text x="18" y="240" fill="#00A2E8">1. 漏极d链接电源正极,源极s链接电源负极</text>
-      <text x="18" y="260" fill="#00A2E8">MOS管渠道 [无意义]</text>
+      <text x="18" y="260" fill="#00A2E8">MOS管沟道 [无意义]</text>
       <text x="18" y="282" fill="#E60000">电流方向：漏极d --&gt; 源极s</text>
       <text x="18" y="312" fill="#E60000">2.</text>
       <text x="18" y="338" fill="#00A2E8">a. 栅极g链接小电源负极,源极s链接小电路正极</text>

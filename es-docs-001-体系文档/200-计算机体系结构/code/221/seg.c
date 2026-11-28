@@ -1,5 +1,5 @@
 /* seg.c —— 一张可执行文件里，哪些数据要"装进镜像"，哪些只在上电时清零
- * 用途：200 板块 212 册 §212.2 实测
+ * 用途：200 板块 221 册 §221.2 实测
  * 三种编译：
  *   gcc -Wall seg.c -o seg_base.exe
  *   gcc -Wall -DWITH_BSS  seg.c -o seg_bss.exe

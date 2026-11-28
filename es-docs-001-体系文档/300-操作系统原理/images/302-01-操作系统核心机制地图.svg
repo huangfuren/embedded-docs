@@ -75,7 +75,7 @@
   <text x="612" y="432" font-size="11" fill="#616161">驱动代你操作寄存器</text>
 
   <!-- 硬件 -->
-  <text x="60" y="466" font-size="11" fill="#616161">硬件 —— 计算机体系结构板块（001~003）</text>
+  <text x="60" y="466" font-size="11" fill="#616161">硬件 —— 计算机体系结构板块（211~231）</text>
 
   <rect x="60" y="476" width="242" height="72" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5"/>
   <text x="76" y="500" font-size="12" font-weight="bold" fill="#37474f">CPU</text>
